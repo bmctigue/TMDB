@@ -1,0 +1,112 @@
+[
+    {
+        "id": "1",
+        "name": "Black Coffee",
+        "text": "Rich and delicious",
+        "price": "1.99",
+        "type": 0,
+        "size": 0,
+        "temp": 0,
+        "image_url": "http://google.com/images/small_black_coffee",
+        "image": "coffee"
+    },
+    {
+        "id": "2",
+        "name": "Latte",
+        "text": "Milky and smooth",
+        "price": "2.99",
+        "type": 0,
+        "size": 1,
+        "temp": 0,
+        "image_url": "http://google.com/images/medium_latte",
+        "image": "latte"
+    },
+    {
+        "id": "3",
+        "name": "English Breakfast Tea",
+        "text": "Warm and inviting",
+        "price": "0.99",
+        "type": 0,
+        "size": 0,
+        "temp": 0,
+        "image_url": "http://google.com/images/english_breakfast _tea",
+        "image": "tea"
+    },
+    {
+        "id": "4",
+        "name": "Cold Brew",
+        "text": "Cold and refreshing black coffee",
+        "price": "1.99",
+        "type": 0,
+        "size": 0,
+        "temp": 1,
+        "image_url": "http://google.com/images/cold_brew",
+        "image": "iced_coffee"
+    },
+    {
+        "id": "5",
+        "name": "Breakfast Burrito",
+        "text": "Scrambled eggs and bacon wrapped in a burrito",
+        "price": "7.99",
+        "type": 1,
+        "size": 0,
+        "temp": 0,
+        "image_url": "http://google.com/images/breakfast_burrito",
+        "image": "breakfast_burrito"
+    },
+    {
+        "id": "6",
+        "name": "Fruit Plate",
+        "text": "Assorted fresh fruit",
+        "price": "6.99",
+        "type": 1,
+        "size": 0,
+        "temp": 0,
+        "image_url": "http://google.com/images/fruit_plate",
+        "image": "fruit_plate"
+    },
+    {
+        "id": "7",
+        "name": "Chicken Panini",
+        "text": "Sliced chicken in a warm panini",
+        "price": "9.99",
+        "type": 1,
+        "size": 0,
+        "temp": 0,
+        "image_url": "http://google.com/images/chicken_panini",
+        "image": "chicken_panini"
+    },
+    {
+        "id": "8",
+        "name": "Cookies",
+        "text": "Delicious chocolate chip cookies",
+        "price": "1.99",
+        "type": 2,
+        "size": 0,
+        "temp": 0,
+        "image_url": "http://google.com/images/cookies",
+        "image": "cookies"
+    },
+    {
+        "id": "9",
+        "name": "Carrot Carrot",
+        "text": "Rich carrot cake with cream cheese icing",
+        "price": "2.99",
+        "type": 2,
+        "size": 0,
+        "temp": 0,
+        "image_url": "http://google.com/images/carrot_cake",
+        "image": "carrot_cake"
+    },
+    {
+        "id": "10",
+        "name": "Chocolate Cake",
+        "text": "Rich chocolate cake with truffel frosting",
+        "price": "3.99",
+        "type": 2,
+        "size": 0,
+        "temp": 0,
+        "image_url": "http://google.com/images/chocolate_cake",
+        "image": "chocolate_cake"
+    }
+]

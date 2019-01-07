@@ -1,0 +1,35 @@
+//
+//  MoviesBuilder.swift
+//  Tally
+//
+//  Created by Bruce McTigue on 12/25/18.
+//  Copyright © 2018 tiguer. All rights reserved.
+//
+
+import Foundation
+
+enum Movies {
+    final class Builder: VCBuilder {
+        
+        private var title: String
+        
+        private var state: MovieFilterState
+        private var store: StoreProtocol
+        private lazy var dataAdapter = UnboxDataAdapter<Movie>()
+        private lazy var service = Service(store, dataAdapter: dataAdapter)
+        private lazy var presenter = Movies.Presenter([])
+        private lazy var interactor = Movies.Interactor(service, presenter: presenter, state: state)
+        private lazy var tableViewController = MoviesTableViewController(with: interactor, presenter: presenter)
+        
+        init(with title: String, store: StoreProtocol, state: MovieFilterState) {
+            self.title = title
+            self.store = store
+            self.state = state
+        }
+        
+        func run(completionHandler: VCBuilderBlock) {
+            let controller = MoviesViewController(with: tableViewController)
+            completionHandler(controller)
+        }
+    }
+}
