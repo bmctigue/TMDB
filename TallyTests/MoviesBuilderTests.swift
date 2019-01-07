@@ -16,7 +16,7 @@ class MoviesBuilderTests: XCTestCase {
 
     func testMoviesBuilder() {
         let expectation = self.expectation(description: "run")
-        let sut = Movies.Builder.init(with: "test", title: "test", store: store, state: .movie)
+        let sut = Movies.Builder.init(with: "test", store: store, state: .movie)
         sut.run { controller in 
             resultController = controller as? MoviesViewController
             expectation.fulfill()

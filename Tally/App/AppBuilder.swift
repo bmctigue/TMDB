@@ -11,7 +11,7 @@ import UIKit
 enum Builder {
     final class App: BaseBuilder {
         
-        private static let moviesAssetName = "moviesJson"
+        static let moviesAssetName = "moviesJson"
         private static let moviesTitle = "Movies"
         
         private var window: UIWindow?
