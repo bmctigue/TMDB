@@ -72,11 +72,11 @@
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d77-is-D28">
-                        <rect key="frame" x="282" y="72" width="21" height="21"/>
+                        <rect key="frame" x="274" y="66" width="46" height="34"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="2of-az-WsR"/>
-                            <constraint firstAttribute="width" constant="21" id="BdR-OP-R67"/>
+                            <constraint firstAttribute="height" constant="34" id="2of-az-WsR"/>
+                            <constraint firstAttribute="width" constant="46" id="BdR-OP-R67"/>
                         </constraints>
                         <connections>
                             <action selector="favoriteButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ehT-6q-Ksh"/>
@@ -94,12 +94,12 @@
                     <constraint firstItem="wqp-1B-AVH" firstAttribute="top" secondItem="HHg-gq-qP7" secondAttribute="bottom" constant="6.5" id="FhI-8u-Gi3"/>
                     <constraint firstItem="khx-hD-SrZ" firstAttribute="top" secondItem="BHd-0a-Qh4" secondAttribute="bottom" constant="4" id="LP6-gx-56F"/>
                     <constraint firstAttribute="bottom" secondItem="wqp-1B-AVH" secondAttribute="bottom" id="M84-1s-Edg"/>
-                    <constraint firstItem="wqp-1B-AVH" firstAttribute="top" secondItem="d77-is-D28" secondAttribute="bottom" constant="6.5" id="MG2-VH-lI1"/>
+                    <constraint firstItem="wqp-1B-AVH" firstAttribute="top" secondItem="d77-is-D28" secondAttribute="bottom" constant="-0.5" id="MG2-VH-lI1"/>
                     <constraint firstItem="dql-LB-1Hp" firstAttribute="leading" secondItem="OWW-Ai-mm3" secondAttribute="trailing" constant="8" id="NHQ-AD-woa"/>
                     <constraint firstItem="khx-hD-SrZ" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="X1f-4o-2sP"/>
                     <constraint firstItem="oLI-hZ-l9E" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="b5F-vZ-8QI"/>
                     <constraint firstItem="BHd-0a-Qh4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="cin-IJ-7fs"/>
-                    <constraint firstAttribute="trailing" secondItem="d77-is-D28" secondAttribute="trailing" constant="17" id="d6Q-WI-cq4"/>
+                    <constraint firstAttribute="trailing" secondItem="d77-is-D28" secondAttribute="trailing" id="d6Q-WI-cq4"/>
                     <constraint firstAttribute="trailing" secondItem="HHg-gq-qP7" secondAttribute="trailing" constant="17" id="dpK-GK-Ns6"/>
                     <constraint firstItem="BHd-0a-Qh4" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="gIP-sA-W62"/>
                     <constraint firstItem="OWW-Ai-mm3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="70" id="k3W-2F-5qu"/>
