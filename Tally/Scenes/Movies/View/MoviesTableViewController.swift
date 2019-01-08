@@ -65,7 +65,9 @@ class MoviesTableViewController: UIViewController {
     
     func updateTableView(_ models: [ViewModel]) {
         self.tableViewDatasource?.models = models
-        self.tableView.reloadData()
+        self.tableView.reloadData {
+            self.tableView.scroll(to: .top, animated: true)
+        }
     }
     
     func updateFilterState(_ state: MovieFilterState) {
