@@ -177,10 +177,10 @@
 			isa = PBXGroup;
 			children = (
 				A87D0A8521E41325001D62B9 /* App */,
-				A87D0AAF21E41333001D62B9 /* Models */,
-				A87D0A9021E41333001D62B9 /* Resources */,
 				A87D0A9221E41333001D62B9 /* Scenes */,
 				A87D0AA121E41333001D62B9 /* Shared */,
+				A87D0AAF21E41333001D62B9 /* Models */,
+				A87D0A9021E41333001D62B9 /* Resources */,
 				A87D0A7021E412DC001D62B9 /* Podfile */,
 				A87D0A4221E4109E001D62B9 /* AppDelegate.swift */,
 				A87D0A4621E4109E001D62B9 /* Main.storyboard */,
@@ -221,9 +221,9 @@
 			isa = PBXGroup;
 			children = (
 				A87D0A8621E41325001D62B9 /* AppBuilder.swift */,
+				A87D0A8B21E41325001D62B9 /* ColorManager.swift */,
 				A87D0A8721E41325001D62B9 /* LaunchScreen.storyboard */,
 				A87D0A8921E41325001D62B9 /* Colors */,
-				A87D0A8B21E41325001D62B9 /* ColorManager.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -296,12 +296,12 @@
 		A87D0AA121E41333001D62B9 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				A87D0AA221E41333001D62B9 /* Binder */,
 				A87D0AA421E41333001D62B9 /* Enumerations.swift */,
-				A87D0AA521E41333001D62B9 /* Structs.swift */,
 				A87D0AA621E41333001D62B9 /* Protocols.swift */,
+				A87D0AA521E41333001D62B9 /* Structs.swift */,
 				A87D0AA721E41333001D62B9 /* BusinessLogic */,
 				A87D0AAC21E41333001D62B9 /* View */,
+				A87D0AA221E41333001D62B9 /* Binder */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
