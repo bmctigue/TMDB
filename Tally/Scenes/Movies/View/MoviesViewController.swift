@@ -16,6 +16,7 @@ final class MoviesViewController: UIViewController {
     init(with tableViewController: MoviesTableViewController) {
         self.tableViewController = tableViewController
         super.init(nibName: nil, bundle: nil)
+        self.title = "Movies"
     }
     
     override func viewDidLoad() {

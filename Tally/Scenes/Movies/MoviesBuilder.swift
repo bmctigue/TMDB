@@ -6,7 +6,7 @@
 //  Copyright © 2018 tiguer. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum Movies {
     final class Builder: VCBuilder {
@@ -28,8 +28,10 @@ enum Movies {
         }
         
         func run(completionHandler: VCBuilderBlock) {
+            let navigationController = UINavigationController()
             let controller = MoviesViewController(with: tableViewController)
-            completionHandler(controller)
+            navigationController.add(controller)
+            completionHandler(navigationController)
         }
     }
 }
