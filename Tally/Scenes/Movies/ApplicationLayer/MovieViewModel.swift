@@ -10,15 +10,11 @@ import UIKit
 
 extension Movies {
     struct ViewModel {
-        let movieId: String
-        let name: String
-        let text: String
-        let price: String
-        let imageUrl: String
+        let movieId: Int
+        let title: String
+        let overview: String
+        let releaseDate: String
+        let posterPath: String
         let image: String
-        
-        var formattedPrice: String {
-            return "$\(price)"
-        }
     }
 }

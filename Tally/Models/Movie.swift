@@ -9,30 +9,42 @@
 import UIKit
 import Unbox
 
-enum MovieType: Int, UnboxableEnum {
-    case movie
-}
+typealias Movie = Result
 
-struct Movie {
-    var movieId: String
-    var name: String
-    var text: String
-    var price: String
-    var type: MovieType
-    var imageUrl: String
-    var image: String
+struct Result {
+    var voteCount: Int
+    var movieId: Int
+    var video: Bool
+    var voteAverage: Int
+    var title: String
+    var popularity: Double
+    var posterPath: String
+    var originalLanguage: String
+    var originalTitle: String
+    var genreIds: [Int]
+    var backdropPath: String
+    var adult: Bool
+    var overview: String
+    var releaseDate: String
     var wantToSee: Bool
 }
 
-extension Movie: Unboxable {
+extension Result: Unboxable {
     init(unboxer: Unboxer) throws {
+        self.voteCount = try unboxer.unbox(key: "vote_count")
         self.movieId = try unboxer.unbox(key: "id")
-        self.name = try unboxer.unbox(key: "name")
-        self.text = try unboxer.unbox(key: "text")
-        self.price = try unboxer.unbox(key: "price")
-        self.type = try unboxer.unbox(key: "type")
-        self.imageUrl = try unboxer.unbox(key: "image_url")
-        self.image = try unboxer.unbox(key: "image")
+        self.video = try unboxer.unbox(key: "video")
+        self.voteAverage = try unboxer.unbox(key: "vote_average")
+        self.title = try unboxer.unbox(key: "title")
+        self.popularity = try unboxer.unbox(key: "popularity")
+        self.posterPath = try unboxer.unbox(key: "poster_path")
+        self.originalLanguage = try unboxer.unbox(key: "original_language")
+        self.originalTitle = try unboxer.unbox(key: "original_language")
+        self.genreIds = try unboxer.unbox(key: "genre_ids")
+        self.backdropPath = try unboxer.unbox(key: "backdrop_path")
+        self.adult = try unboxer.unbox(key: "adult")
+        self.overview = try unboxer.unbox(key: "overview")
+        self.releaseDate = try unboxer.unbox(key: "release_date")
         self.wantToSee = false
     }
 }

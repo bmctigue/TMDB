@@ -23,7 +23,7 @@ extension Movies {
         var viewModels: [ViewModel] {
             var resultModels = [ViewModel]()
             for model in models {
-                let displayedModel = ViewModel(movieId: model.movieId, name: model.name, text: model.text, price: model.price, imageUrl: model.imageUrl, image: model.image)
+                let displayedModel = ViewModel(movieId: model.movieId, title: model.title, overview: model.overview, releaseDate: model.releaseDate, posterPath: model.posterPath, image: "movie_poster")
                 resultModels.append(displayedModel)
             }
             return resultModels

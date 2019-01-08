@@ -11,9 +11,9 @@ import UIKit
 class MovieTableViewCell: UITableViewCell {
     typealias ViewModel = Movies.ViewModel
     
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var overViewLabel: UILabel!
+    @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var cellImageView: UIImageView!
     
     override func layoutSubviews() {
