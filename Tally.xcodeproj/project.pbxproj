@@ -51,6 +51,8 @@
 		A891BDB621E4C9800009FFFE /* MovieTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A891BDB521E4C9800009FFFE /* MovieTableViewCellTests.swift */; };
 		A891BDB821E4DFA60009FFFE /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A891BDB721E4DFA60009FFFE /* Cache.swift */; };
 		A891BDBA21E4E2F40009FFFE /* CacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A891BDB921E4E2F40009FFFE /* CacheTests.swift */; };
+		A891BDBC21E4F3590009FFFE /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A891BDBB21E4F3590009FFFE /* FavoritesManager.swift */; };
+		A891BDBE21E4F7310009FFFE /* FavoritesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A891BDBD21E4F7310009FFFE /* FavoritesManagerTests.swift */; };
 		BC3F6B609B4FD1435C8F2161 /* Pods_TallyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0EA0611899F5D8BA81990E /* Pods_TallyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -125,6 +127,8 @@
 		A891BDB521E4C9800009FFFE /* MovieTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCellTests.swift; sourceTree = "<group>"; };
 		A891BDB721E4DFA60009FFFE /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		A891BDB921E4E2F40009FFFE /* CacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTests.swift; sourceTree = "<group>"; };
+		A891BDBB21E4F3590009FFFE /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
+		A891BDBD21E4F7310009FFFE /* FavoritesManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManagerTests.swift; sourceTree = "<group>"; };
 		B97BF234A5B208F1B7669625 /* Pods-Tally.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tally.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tally/Pods-Tally.release.xcconfig"; sourceTree = "<group>"; };
 		EEDD071EF8BE4C3B4A8DD8D2 /* Pods-TallyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TallyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TallyTests/Pods-TallyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FF4F6A9E87C6A2BD95114F07 /* Pods-TallyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TallyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TallyTests/Pods-TallyTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 				A87D0A7221E412F9001D62B9 /* TallyTests-Bridging-Header.h */,
 				A891BDB521E4C9800009FFFE /* MovieTableViewCellTests.swift */,
 				A891BDB921E4E2F40009FFFE /* CacheTests.swift */,
+				A891BDBD21E4F7310009FFFE /* FavoritesManagerTests.swift */,
 			);
 			path = TallyTests;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 				A87D0A9721E41333001D62B9 /* MoviesInteractor.swift */,
 				A87D0A9821E41333001D62B9 /* MoviesPresenter.swift */,
 				A87D0A9921E41333001D62B9 /* MovieViewModel.swift */,
+				A891BDBB21E4F3590009FFFE /* FavoritesManager.swift */,
 			);
 			path = ApplicationLayer;
 			sourceTree = "<group>";
@@ -594,6 +600,7 @@
 				A87D0AB221E41333001D62B9 /* MoviesBuilder.swift in Sources */,
 				A87D0AB421E41333001D62B9 /* MoviesPresenter.swift in Sources */,
 				A87D0AC321E41333001D62B9 /* LocalStore.swift in Sources */,
+				A891BDBC21E4F3590009FFFE /* FavoritesManager.swift in Sources */,
 				A87D0A8E21E41325001D62B9 /* BlueColorTheme.swift in Sources */,
 				A87D0A4321E4109E001D62B9 /* AppDelegate.swift in Sources */,
 				A87D0A8C21E41325001D62B9 /* AppBuilder.swift in Sources */,
@@ -624,6 +631,7 @@
 				A87D0A8321E412FA001D62B9 /* TableViewDataSourceTests.swift in Sources */,
 				A87D0A7E21E412FA001D62B9 /* DynamicValueTests.swift in Sources */,
 				A87D0A7C21E412FA001D62B9 /* AppBuilderTests.swift in Sources */,
+				A891BDBE21E4F7310009FFFE /* FavoritesManagerTests.swift in Sources */,
 				A87D0A7D21E412FA001D62B9 /* ServiceTests.swift in Sources */,
 				A87D0A8421E412FA001D62B9 /* LocalStoreTests.swift in Sources */,
 				A87D0A8121E412FA001D62B9 /* MoviesUnboxDataAdapterTests.swift in Sources */,

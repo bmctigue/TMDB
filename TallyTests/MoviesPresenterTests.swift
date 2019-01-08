@@ -62,6 +62,23 @@ class MoviesPresenterTests: XCTestCase {
         
     }
     
+    func testFilterAllModelsByState() {
+        let models = [movie1, movie2]
+        var presenter = Movies.Presenter(models)
+        presenter.filterModelsByState(.all)
+        let filteredModels = presenter.getModels()
+        XCTAssert(filteredModels.count == 2)
+    }
+    
+    func testFilterModelsByState() {
+        let models = [movie1, movie2]
+        var presenter = Movies.Presenter(models)
+        presenter.updateFavorites(.selected(movie1.movieId))
+        presenter.filterModelsByState(.favorite)
+        let filteredModels = presenter.getModels()
+        XCTAssert(filteredModels.count == 1)
+    }
+    
     func testGetModels() {
         let models = [movie1, movie2]
         let presenter = Movies.Presenter(models)

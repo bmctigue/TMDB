@@ -10,7 +10,7 @@ import Foundation
 
 enum MovieFilterState {
     case all
-    case wantToSee
+    case favorite
 }
 
 enum MovieFavoriteState: Equatable {

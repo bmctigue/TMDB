@@ -16,34 +16,20 @@ extension Movies {
         
         private var service: ServProtocol
         private var presenter: Presenter
-        private var state: MovieFilterState
         
-        init(_ service: ServProtocol, presenter: Presenter, state: MovieFilterState) {
+        init(_ service: ServProtocol, presenter: Presenter) {
             self.service = service
             self.presenter = presenter
-            self.state = state
         }
         
         func fetchItems(_ request: Request) {
             service.fetchItems(request) { [weak self] models in
                 let models = models as! [Model]
                 if let self = self {
-                    let filteredModels = self.filterModelsByState(models, state: self.state)
-                    let response = Response(models: filteredModels)
+                    let response = Response(models: models)
                     self.presenter.updateViewModels(response)
                 }
             }
-        }
-        
-        private func filterModelsByState(_ models: [Model], state: MovieFilterState) -> [Model] {
-            var filteredModels = models
-//            switch state {
-//            case .all:
-//                filteredModels = models.filter { $0.wantToSee == false }
-//            case .wantToSee:
-//                filteredModels = models.filter { $0.wantToSee == true }
-//            }
-            return filteredModels
         }
     }
 }

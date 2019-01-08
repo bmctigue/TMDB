@@ -12,16 +12,15 @@ extension Movies {
     struct Presenter: PresenterProtocol {
         typealias Model = Movie
         typealias ViewModel = Movies.ViewModel
-        let favoritesKey = "favorites"
         private var models: [Model]
         private var dynamicModels: DynamicValue<[ViewModel]> = DynamicValue([ViewModel]())
-        private var favorites: Set<Int> = []
-        private var favoritesCache = FavoritesCache()
+        private var state: MovieFilterState
+        private var favoritesManager = FavoritesManager()
         
         init(_ models: [Model] = [Model]()) {
             self.models = models
+            self.state = .all
             dynamicModels.value = viewModels
-            self.favorites = favoritesCache.getObject(favoritesKey) ?? []
         }
         
         var viewModels: [ViewModel] {
@@ -38,14 +37,13 @@ extension Movies {
             self.dynamicModels.value = viewModels
         }
         
-        mutating func updateFavorites(_ state: MovieFavoriteState) {
+        mutating func filterModelsByState(_ state: MovieFilterState) {
             switch state {
-            case .selected(let movieId):
-                favorites.insert(movieId)
-            case .unSelected(let movieId):
-                favorites.remove(movieId)
+            case .all:
+                self.updateViewModels(favoritesManager.filterModelsByState(models, state: .all))
+            case .favorite:
+                self.updateViewModels(favoritesManager.filterModelsByState(models, state: .favorite))
             }
-            favoritesCache.setObject(favorites, key: favoritesKey)
         }
         
         func getDynamicModels() -> DynamicValue<[ViewModel]> {
@@ -56,8 +54,12 @@ extension Movies {
             return models
         }
         
+        mutating func updateFavorites(_ state: MovieFavoriteState) {
+            favoritesManager.updateFavorites(state)
+        }
+        
         func getFavorites() -> Set<Int> {
-            return favorites
+            return favoritesManager.getFavorites()
         }
     }
 }

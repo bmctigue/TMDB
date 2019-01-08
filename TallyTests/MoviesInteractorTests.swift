@@ -22,7 +22,7 @@ class MoviesInteractorTests: XCTestCase {
     func testFetchItemsForAllMovies() {
         let expectation = self.expectation(description: "fetch")
         let presenter = Movies.Presenter([])
-        let interactor = Movies.Interactor(service, presenter: presenter, state: .all)
+        let interactor = Movies.Interactor(service, presenter: presenter)
         let dynamicModels = presenter.getDynamicModels()
         dynamicModels.addObserver(self) { [weak self] in
             self?.viewModels = dynamicModels.value
@@ -36,7 +36,7 @@ class MoviesInteractorTests: XCTestCase {
     func testFetchItemsForEntree() {
         let expectation = self.expectation(description: "fetch")
         let presenter = Movies.Presenter([])
-        let interactor = Movies.Interactor(service, presenter: presenter, state: .wantToSee)
+        let interactor = Movies.Interactor(service, presenter: presenter)
         let dynamicModels = presenter.getDynamicModels()
         dynamicModels.addObserver(self) { [weak self] in
             self?.viewModels = dynamicModels.value
