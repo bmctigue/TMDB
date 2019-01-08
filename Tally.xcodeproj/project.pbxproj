@@ -48,6 +48,7 @@
 		A87D0AC421E41333001D62B9 /* UIViewController+AddRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0AAD21E41333001D62B9 /* UIViewController+AddRemove.swift */; };
 		A87D0AC521E41333001D62B9 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0AAE21E41333001D62B9 /* LoadingViewController.swift */; };
 		A87D0AC621E41333001D62B9 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0AB021E41333001D62B9 /* Movie.swift */; };
+		A891BDB621E4C9800009FFFE /* MovieTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A891BDB521E4C9800009FFFE /* MovieTableViewCellTests.swift */; };
 		BC3F6B609B4FD1435C8F2161 /* Pods_TallyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0EA0611899F5D8BA81990E /* Pods_TallyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +120,7 @@
 		A87D0AAD21E41333001D62B9 /* UIViewController+AddRemove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddRemove.swift"; sourceTree = "<group>"; };
 		A87D0AAE21E41333001D62B9 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		A87D0AB021E41333001D62B9 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		A891BDB521E4C9800009FFFE /* MovieTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCellTests.swift; sourceTree = "<group>"; };
 		B97BF234A5B208F1B7669625 /* Pods-Tally.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tally.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tally/Pods-Tally.release.xcconfig"; sourceTree = "<group>"; };
 		EEDD071EF8BE4C3B4A8DD8D2 /* Pods-TallyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TallyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TallyTests/Pods-TallyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FF4F6A9E87C6A2BD95114F07 /* Pods-TallyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TallyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TallyTests/Pods-TallyTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				A87D0A7821E412FA001D62B9 /* MoviesUnboxDataAdapterTests.swift */,
 				A87D0A5921E410A0001D62B9 /* Info.plist */,
 				A87D0A7221E412F9001D62B9 /* TallyTests-Bridging-Header.h */,
+				A891BDB521E4C9800009FFFE /* MovieTableViewCellTests.swift */,
 			);
 			path = TallyTests;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 			files = (
 				A87D0A7F21E412FA001D62B9 /* MoviesBuilderTests.swift in Sources */,
 				A87D0A8221E412FA001D62B9 /* MoviesPresenterTests.swift in Sources */,
+				A891BDB621E4C9800009FFFE /* MovieTableViewCellTests.swift in Sources */,
 				A87D0A8321E412FA001D62B9 /* TableViewDataSourceTests.swift in Sources */,
 				A87D0A7E21E412FA001D62B9 /* DynamicValueTests.swift in Sources */,
 				A87D0A7C21E412FA001D62B9 /* AppBuilderTests.swift in Sources */,

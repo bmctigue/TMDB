@@ -18,19 +18,17 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet weak var favoriteImageView: UIImageView!
     @IBOutlet weak var favoriteButton: UIButton!
     
-    var favorite: Bool? {
+    var movieId: Int = 0
+    
+    var favoriteState: MovieFavoriteState? {
         didSet {
-            if let favorite = favorite {
-                if favorite {
-                    favoriteImageView.image = UIImage(named: "enabled_heart")
-                    favoriteImageView.tintColor = UIColor.flatRed
-                } else {
-                    favoriteImageView.image = UIImage(named: "disabled_heart")
-                    favoriteImageView.tintColor = UIColor.flatWhite
-                }
+            if let favoriteState = favoriteState {
+                self.favoriteStateChanged(favoriteState)
             }
         }
     }
+    
+    lazy var dynamicFavoriteState: DynamicValue<MovieFavoriteState?> = DynamicValue(favoriteState)
     
     override func awakeFromNib() {
         favoriteButton.backgroundColor = .clear
@@ -41,8 +39,26 @@ class MovieTableViewCell: UITableViewCell {
     }
     
     @IBAction func favoriteButtonPressed(_ sender: Any) {
-        if let favorite = favorite {
-            self.favorite = !favorite
+        if let favoriteState = favoriteState {
+            switch favoriteState {
+            case .selected:
+                self.favoriteState = .unSelected(movieId)
+            case .unSelected:
+                self.favoriteState = .selected(movieId)
+            }
+        }
+    }
+    
+    func favoriteStateChanged(_ state: MovieFavoriteState) {
+        switch state {
+        case .selected(let movieId):
+            dynamicFavoriteState.value = .selected(movieId)
+            favoriteImageView.image = UIImage(named: "enabled_heart")
+            favoriteImageView.tintColor = UIColor.flatRed
+        case .unSelected(let movieId):
+            dynamicFavoriteState.value = .unSelected(movieId)
+            favoriteImageView.image = UIImage(named: "disabled_heart")
+            favoriteImageView.tintColor = UIColor.flatWhite
         }
     }
 }

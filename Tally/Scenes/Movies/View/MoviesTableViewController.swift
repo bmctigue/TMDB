@@ -38,11 +38,12 @@ class MoviesTableViewController: UIViewController {
         
         self.tableViewDatasource = TableViewDataSource(models: viewModels, reuseIdentifier: cellName) { (model: ViewModel, cell: UITableViewCell) in
             let cell = cell as! MovieTableViewCell
+            cell.movieId = model.movieId
             cell.titleLabel.text = model.title
             cell.overViewLabel.text = model.overview
             cell.releaseDateLabel.text = model.releaseDate
             cell.cellImageView.image = model.posterPath.isEmpty ? UIImage(named: model.image) : nil
-            cell.favorite = model.favorite
+            cell.favoriteState = model.favorite ? MovieFavoriteState.selected(model.movieId) : MovieFavoriteState.unSelected(model.movieId)
         }
         self.tableView.dataSource = tableViewDatasource
         

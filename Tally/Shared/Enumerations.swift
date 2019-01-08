@@ -13,6 +13,11 @@ enum MovieFilterState {
     case wantToSee
 }
 
+enum MovieFavoriteState: Equatable {
+    case selected(Int)
+    case unSelected(Int)
+}
+
 enum StoreError: Error {
     case fetchDataFailed
 }
