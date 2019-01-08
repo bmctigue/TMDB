@@ -17,7 +17,7 @@ class FavoritesManagerTests: XCTestCase {
 
     func testUpdateFavorites() {
         let movieId = 5
-        var manager = Movies.FavoritesManager()
+        let manager = Movies.FavoritesManager()
         manager.updateFavorites(.selected(movieId))
         XCTAssertTrue(manager.getFavorites().contains(movieId))
         
@@ -25,20 +25,4 @@ class FavoritesManagerTests: XCTestCase {
         XCTAssertFalse(manager.getFavorites().contains(movieId))
         
     }
-    
-    func testFilterAllModelsByState() {
-        let models = [movie1, movie2]
-        let manager = Movies.FavoritesManager()
-        let response = manager.filterModelsByState(models, state: .all)
-        XCTAssert(response.models.count == 2)
-    }
-    
-    func testFilterModelsByState() {
-        let models = [movie1, movie2]
-        var manager = Movies.FavoritesManager()
-        manager.updateFavorites(.selected(movie1.movieId))
-        let response = manager.filterModelsByState(models, state: .favorite)
-        XCTAssert(response.models.count == 1)
-    }
-
 }

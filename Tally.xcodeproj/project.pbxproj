@@ -25,8 +25,6 @@
 		A87D0A8421E412FA001D62B9 /* LocalStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A7B21E412FA001D62B9 /* LocalStoreTests.swift */; };
 		A87D0A8C21E41325001D62B9 /* AppBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A8621E41325001D62B9 /* AppBuilder.swift */; };
 		A87D0A8D21E41325001D62B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87D0A8721E41325001D62B9 /* LaunchScreen.storyboard */; };
-		A87D0A8E21E41325001D62B9 /* BlueColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A8A21E41325001D62B9 /* BlueColorTheme.swift */; };
-		A87D0A8F21E41325001D62B9 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A8B21E41325001D62B9 /* ColorManager.swift */; };
 		A87D0AB121E41333001D62B9 /* moviesJson.json in Resources */ = {isa = PBXBuildFile; fileRef = A87D0A9121E41333001D62B9 /* moviesJson.json */; };
 		A87D0AB221E41333001D62B9 /* MoviesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A9421E41333001D62B9 /* MoviesBuilder.swift */; };
 		A87D0AB321E41333001D62B9 /* MoviesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A9721E41333001D62B9 /* MoviesInteractor.swift */; };
@@ -101,8 +99,6 @@
 		A87D0A7B21E412FA001D62B9 /* LocalStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStoreTests.swift; sourceTree = "<group>"; };
 		A87D0A8621E41325001D62B9 /* AppBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBuilder.swift; sourceTree = "<group>"; };
 		A87D0A8821E41325001D62B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A87D0A8A21E41325001D62B9 /* BlueColorTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueColorTheme.swift; sourceTree = "<group>"; };
-		A87D0A8B21E41325001D62B9 /* ColorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		A87D0A9121E41333001D62B9 /* moviesJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = moviesJson.json; sourceTree = "<group>"; };
 		A87D0A9421E41333001D62B9 /* MoviesBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesBuilder.swift; sourceTree = "<group>"; };
 		A87D0A9721E41333001D62B9 /* MoviesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesInteractor.swift; sourceTree = "<group>"; };
@@ -234,19 +230,9 @@
 			isa = PBXGroup;
 			children = (
 				A87D0A8621E41325001D62B9 /* AppBuilder.swift */,
-				A87D0A8B21E41325001D62B9 /* ColorManager.swift */,
 				A87D0A8721E41325001D62B9 /* LaunchScreen.storyboard */,
-				A87D0A8921E41325001D62B9 /* Colors */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		A87D0A8921E41325001D62B9 /* Colors */ = {
-			isa = PBXGroup;
-			children = (
-				A87D0A8A21E41325001D62B9 /* BlueColorTheme.swift */,
-			);
-			path = Colors;
 			sourceTree = "<group>";
 		};
 		A87D0A9021E41333001D62B9 /* Resources */ = {
@@ -540,13 +526,11 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Tally/Pods-Tally-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
-				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Unbox/Unbox.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Unbox.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,13 +585,11 @@
 				A87D0AB421E41333001D62B9 /* MoviesPresenter.swift in Sources */,
 				A87D0AC321E41333001D62B9 /* LocalStore.swift in Sources */,
 				A891BDBC21E4F3590009FFFE /* FavoritesManager.swift in Sources */,
-				A87D0A8E21E41325001D62B9 /* BlueColorTheme.swift in Sources */,
 				A87D0A4321E4109E001D62B9 /* AppDelegate.swift in Sources */,
 				A87D0A8C21E41325001D62B9 /* AppBuilder.swift in Sources */,
 				A87D0AB521E41333001D62B9 /* MovieViewModel.swift in Sources */,
 				A87D0ABC21E41333001D62B9 /* DynamicValue.swift in Sources */,
 				A87D0AC021E41333001D62B9 /* Service.swift in Sources */,
-				A87D0A8F21E41325001D62B9 /* ColorManager.swift in Sources */,
 				A87D0AB821E41333001D62B9 /* MoviesTableViewController.swift in Sources */,
 				A87D0AC521E41333001D62B9 /* LoadingViewController.swift in Sources */,
 				A87D0ABE21E41333001D62B9 /* Structs.swift in Sources */,

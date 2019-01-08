@@ -37,7 +37,7 @@ class MoviesPresenterTests: XCTestCase {
 
     func testUpdateDisplayedMovies() {
         let models = [movie1, movie2]
-        var presenter = Movies.Presenter()
+        let presenter = Movies.Presenter()
         var resultMovies = [Movies.ViewModel]()
         let expectation = self.expectation(description: "testUpdateViewModels")
         let dynamicModels = presenter.getDynamicModels()
@@ -53,7 +53,7 @@ class MoviesPresenterTests: XCTestCase {
     
     func testUpdateFavorites() {
         let movieId = 5
-        var presenter = Movies.Presenter()
+        let presenter = Movies.Presenter()
         presenter.updateFavorites(.selected(movieId))
         XCTAssertTrue(presenter.getFavorites().contains(movieId))
         
@@ -64,7 +64,7 @@ class MoviesPresenterTests: XCTestCase {
     
     func testFilterAllModelsByState() {
         let models = [movie1, movie2]
-        var presenter = Movies.Presenter(models)
+        let presenter = Movies.Presenter(models)
         presenter.filterModelsByState(.all)
         let filteredModels = presenter.getModels()
         XCTAssert(filteredModels.count == 2)
@@ -72,11 +72,11 @@ class MoviesPresenterTests: XCTestCase {
     
     func testFilterModelsByState() {
         let models = [movie1, movie2]
-        var presenter = Movies.Presenter(models)
+        let presenter = Movies.Presenter(models)
         presenter.updateFavorites(.selected(movie1.movieId))
         presenter.filterModelsByState(.favorite)
-        let filteredModels = presenter.getModels()
-        XCTAssert(filteredModels.count == 1)
+        let dynamicModels = presenter.getDynamicModels()
+        XCTAssert(dynamicModels.value.count == 1)
     }
     
     func testGetModels() {

@@ -54,11 +54,11 @@ class MovieTableViewCell: UITableViewCell {
         case .selected(let movieId):
             dynamicFavoriteState.value = .selected(movieId)
             favoriteImageView.image = UIImage(named: "enabled_heart")
-            favoriteImageView.tintColor = UIColor.flatRed
+            favoriteImageView.tintColor = .red
         case .unSelected(let movieId):
             dynamicFavoriteState.value = .unSelected(movieId)
             favoriteImageView.image = UIImage(named: "disabled_heart")
-            favoriteImageView.tintColor = UIColor.flatGrayDark
+            favoriteImageView.tintColor = .red
         }
     }
 }

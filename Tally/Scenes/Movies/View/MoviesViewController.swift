@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ChameleonFramework
 
 final class MoviesViewController: UIViewController {
     
@@ -41,10 +40,10 @@ final class MoviesViewController: UIViewController {
         switch state {
         case .all:
             favoritesButton.image = UIImage(named: "enabled_heart")
-            favoritesButton.tintColor = .flatRed
+            favoritesButton.tintColor = .red
         case .favorite:
             favoritesButton.image = UIImage(named: "disabled_heart")
-            favoritesButton.tintColor = .flatRed
+            favoritesButton.tintColor = .red
         }
     }
     
@@ -54,9 +53,5 @@ final class MoviesViewController: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         return nil
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return UIStatusBarStyleContrast
     }
 }
