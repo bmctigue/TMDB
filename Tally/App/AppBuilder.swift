@@ -10,8 +10,7 @@ import UIKit
 
 enum Builder {
     final class App: BaseBuilder {
-        
-        static let moviesAssetName = "moviesJson"
+
         private static let moviesTitle = "Movies"
         
         private var window: UIWindow?
@@ -19,7 +18,7 @@ enum Builder {
         
         init(with window: UIWindow?) {
             self.window = window
-            let store = LocalStore(Builder.App.moviesAssetName)
+            let store = Movies.RemoteStore()
             self.moviesBuilder = Movies.Builder(with: Builder.App.moviesTitle, store: store, state: .all)
         }
         

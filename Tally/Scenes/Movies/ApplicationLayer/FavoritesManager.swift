@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Cache
 
 extension Movies {
     final class FavoritesManager {
