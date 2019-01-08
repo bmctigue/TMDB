@@ -15,6 +15,5 @@ extension Movies {
         let overview: String
         let releaseDate: String
         let posterPath: String
-        let image: String
     }
 }

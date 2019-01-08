@@ -6,7 +6,7 @@
 //  Copyright © 2019 tiguer. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 final class URLManager {
     
@@ -32,7 +32,8 @@ final class URLManager {
     
     func fetchMoviePosterURL(_ posterPath: String) -> URL? {
         var components = moviesURLComponents()
-        components.queryItems?.append(URLQueryItem(name: "poster_path", value: posterPath))
+        components.host = "image.tmdb.org"
+        components.path = "/t/p/w500\(posterPath)"
         return components.url
     }
 }

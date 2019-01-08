@@ -30,7 +30,7 @@ extension Movies {
                 filteredModels = models.filter { favoritesManager.getFavorites().contains($0.movieId) }
             }
             for model in filteredModels {
-                let displayedModel = ViewModel(movieId: model.movieId, title: model.title, overview: model.overview, releaseDate: model.releaseDate, posterPath: model.posterPath, image: "movie_poster")
+                let displayedModel = ViewModel(movieId: model.movieId, title: model.title, overview: model.overview, releaseDate: model.releaseDate, posterPath: model.posterPath)
                 resultModels.append(displayedModel)
             }
             return resultModels

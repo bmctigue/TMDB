@@ -5,6 +5,7 @@ target 'Tally' do
 
     pod 'Unbox'
     pod 'Cache'
+    pod 'Kingfisher'
 
     target 'TallyTests' do
         inherit! :search_paths
