@@ -15,7 +15,7 @@ final class ColorManager {
     
     init(_ theme: ColorTheme) {
         self.theme = theme
-        Chameleon.setGlobalThemeUsingPrimaryColor(theme.primaryColor(), withSecondaryColor: theme.secondaryColor(), andContentStyle: UIContentStyle.contrast)
+//        Chameleon.setGlobalThemeUsingPrimaryColor(theme.primaryColor(), withSecondaryColor: theme.secondaryColor(), andContentStyle: UIContentStyle.contrast)
     }
 }
 

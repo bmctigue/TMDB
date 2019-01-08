@@ -68,6 +68,10 @@ class MoviesTableViewController: UIViewController {
         self.tableView.reloadData()
     }
     
+    func updateFilterState(_ state: MovieFilterState) {
+        presenter.filterModelsByState(state)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         return nil
     }

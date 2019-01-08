@@ -58,7 +58,7 @@ class MovieTableViewCell: UITableViewCell {
         case .unSelected(let movieId):
             dynamicFavoriteState.value = .unSelected(movieId)
             favoriteImageView.image = UIImage(named: "disabled_heart")
-            favoriteImageView.tintColor = UIColor.flatWhite
+            favoriteImageView.tintColor = UIColor.flatGrayDark
         }
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 extension Movies {
-    struct Presenter: PresenterProtocol {
+  final class Presenter: PresenterProtocol {
         typealias Model = Movie
         typealias ViewModel = Movies.ViewModel
         private var models: [Model]
@@ -24,26 +24,26 @@ extension Movies {
         }
         
         var viewModels: [ViewModel] {
+            var filteredModels = models
             var resultModels = [ViewModel]()
-            for model in models {
+            if state == .favorite {
+                filteredModels = models.filter { favoritesManager.getFavorites().contains($0.movieId) }
+            }
+            for model in filteredModels {
                 let displayedModel = ViewModel(movieId: model.movieId, title: model.title, overview: model.overview, releaseDate: model.releaseDate, posterPath: model.posterPath, image: "movie_poster")
                 resultModels.append(displayedModel)
             }
             return resultModels
         }
         
-        mutating func updateViewModels(_ response: Response<Model>) {
+        func updateViewModels(_ response: Response<Model>) {
             self.models = response.models
             self.dynamicModels.value = viewModels
         }
         
-        mutating func filterModelsByState(_ state: MovieFilterState) {
-            switch state {
-            case .all:
-                self.updateViewModels(favoritesManager.filterModelsByState(models, state: .all))
-            case .favorite:
-                self.updateViewModels(favoritesManager.filterModelsByState(models, state: .favorite))
-            }
+        func filterModelsByState(_ state: MovieFilterState) {
+            self.state = state
+            self.dynamicModels.value = viewModels
         }
         
         func getDynamicModels() -> DynamicValue<[ViewModel]> {
@@ -54,7 +54,7 @@ extension Movies {
             return models
         }
         
-        mutating func updateFavorites(_ state: MovieFavoriteState) {
+        func updateFavorites(_ state: MovieFavoriteState) {
             favoritesManager.updateFavorites(state)
         }
         

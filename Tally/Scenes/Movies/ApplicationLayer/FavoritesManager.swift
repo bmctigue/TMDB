@@ -10,7 +10,7 @@ import UIKit
 import Cache
 
 extension Movies {
-    struct FavoritesManager {
+    final class FavoritesManager {
         
         typealias Model = Movie
         typealias ViewModel = Movies.ViewModel
@@ -23,7 +23,7 @@ extension Movies {
             self.favorites = favoritesCache.getObject(favoritesKey) ?? []
         }
         
-        mutating func updateFavorites(_ state: MovieFavoriteState) {
+        func updateFavorites(_ state: MovieFavoriteState) {
             switch state {
             case .selected(let movieId):
                 favorites.insert(movieId)
@@ -31,16 +31,6 @@ extension Movies {
                 favorites.remove(movieId)
             }
             favoritesCache.setObject(favorites, key: favoritesKey)
-        }
-        
-        func filterModelsByState(_ models: [Model], state: MovieFilterState) -> Response<Model> {
-            switch state {
-            case .all:
-                return Response(models: models)
-            case .favorite:
-                let filteredModels = models.filter { favorites.contains($0.movieId) }
-                return Response(models: filteredModels)
-            }
         }
         
         func getFavorites() -> Set<Int> {
