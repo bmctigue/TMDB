@@ -12,13 +12,13 @@ import XCTest
 class MoviesBuilderTests: XCTestCase {
     
     lazy var store = LocalStore(Builder.App.moviesAssetName)
-    var resultController: MoviesViewController?
+    var resultController: UINavigationController?
 
     func testMoviesBuilder() {
         let expectation = self.expectation(description: "run")
         let sut = Movies.Builder.init(with: "test", store: store, state: .all)
         sut.run { controller in 
-            resultController = controller as? MoviesViewController
+            resultController = controller as? UINavigationController
             expectation.fulfill()
         }
         waitForExpectations(timeout: 3.0, handler: nil)
