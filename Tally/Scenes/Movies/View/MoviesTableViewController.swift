@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import UIEmptyState
 
 class MoviesTableViewController: UIViewController {
     typealias ViewModel = Movies.ViewModel
@@ -37,6 +38,8 @@ class MoviesTableViewController: UIViewController {
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = rowHeight
         self.tableView.register(UINib(nibName: cellNibName, bundle: nil), forCellReuseIdentifier: cellName)
+        self.emptyStateDataSource = self
+        self.emptyStateDelegate = self
         
         self.tableViewDatasource = TableViewDataSource(models: viewModels, reuseIdentifier: cellName) { (model: ViewModel, cell: UITableViewCell) in
             let cell = cell as! MovieTableViewCell
@@ -69,6 +72,7 @@ class MoviesTableViewController: UIViewController {
         self.tableViewDatasource?.models = models
         self.tableView.reloadData {
             self.tableView.scroll(to: .top, animated: true)
+            self.reloadEmptyStateForTableView(self.tableView)
         }
     }
     
@@ -97,5 +101,14 @@ class MoviesTableViewController: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         return nil
+    }
+}
+
+extension MoviesTableViewController: UIEmptyStateDelegate, UIEmptyStateDataSource {
+    
+    var emptyStateTitle: NSAttributedString {
+        let attrs = [NSAttributedString.Key.foregroundColor: UIColor.red,
+                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22)]
+        return NSAttributedString(string: "Sorry, no favorites!", attributes: attrs)
     }
 }
