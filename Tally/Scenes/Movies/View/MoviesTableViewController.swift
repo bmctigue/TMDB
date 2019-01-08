@@ -88,7 +88,7 @@ class MoviesTableViewController: UIViewController {
             options: [
                 .processor(processor),
                 .scaleFactor(UIScreen.main.scale),
-                .transition(.fade(1)),
+                .transition(.fade(0.25)),
                 .cacheOriginalImage
             ]) { _ in
                 // noop
