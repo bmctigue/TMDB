@@ -12,13 +12,16 @@ extension Movies {
     struct Presenter: PresenterProtocol {
         typealias Model = Movie
         typealias ViewModel = Movies.ViewModel
+        let favoritesKey = "favorites"
         private var models: [Model]
         private var dynamicModels: DynamicValue<[ViewModel]> = DynamicValue([ViewModel]())
         private var favorites: Set<Int> = []
+        lazy var favoritesCache = FavoritesCache()
         
         init(_ models: [Model] = [Model]()) {
             self.models = models
             dynamicModels.value = viewModels
+            self.favorites = favoritesCache.getObject(favoritesKey) ?? []
         }
         
         var viewModels: [ViewModel] {
@@ -42,6 +45,7 @@ extension Movies {
             case .unSelected(let movieId):
                 favorites.remove(movieId)
             }
+            favoritesCache.setObject(favorites, key: favoritesKey)
         }
         
         func getDynamicModels() -> DynamicValue<[ViewModel]> {

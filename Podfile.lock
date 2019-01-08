@@ -1,15 +1,18 @@
 PODS:
+  - Cache (5.2.0)
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
   - Unbox (3.0.0)
 
 DEPENDENCIES:
+  - Cache
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - Unbox
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Cache
     - Unbox
 
 EXTERNAL SOURCES:
@@ -22,9 +25,10 @@ CHECKOUT OPTIONS:
     :git: https://github.com/ViccAlexander/Chameleon.git
 
 SPEC CHECKSUMS:
+  Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Unbox: 9ed33b2a31f7a8a049f54b94d40c4a52a28c4d9d
 
-PODFILE CHECKSUM: 464163b201bba19a3ff78e78e719a3b516e3932c
+PODFILE CHECKSUM: 1f4af86e38e549413c4671d5510e4bb95285abe6
 
 COCOAPODS: 1.5.2

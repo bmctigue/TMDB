@@ -49,6 +49,8 @@
 		A87D0AC521E41333001D62B9 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0AAE21E41333001D62B9 /* LoadingViewController.swift */; };
 		A87D0AC621E41333001D62B9 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0AB021E41333001D62B9 /* Movie.swift */; };
 		A891BDB621E4C9800009FFFE /* MovieTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A891BDB521E4C9800009FFFE /* MovieTableViewCellTests.swift */; };
+		A891BDB821E4DFA60009FFFE /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A891BDB721E4DFA60009FFFE /* Cache.swift */; };
+		A891BDBA21E4E2F40009FFFE /* CacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A891BDB921E4E2F40009FFFE /* CacheTests.swift */; };
 		BC3F6B609B4FD1435C8F2161 /* Pods_TallyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0EA0611899F5D8BA81990E /* Pods_TallyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +123,8 @@
 		A87D0AAE21E41333001D62B9 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		A87D0AB021E41333001D62B9 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		A891BDB521E4C9800009FFFE /* MovieTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCellTests.swift; sourceTree = "<group>"; };
+		A891BDB721E4DFA60009FFFE /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		A891BDB921E4E2F40009FFFE /* CacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTests.swift; sourceTree = "<group>"; };
 		B97BF234A5B208F1B7669625 /* Pods-Tally.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tally.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tally/Pods-Tally.release.xcconfig"; sourceTree = "<group>"; };
 		EEDD071EF8BE4C3B4A8DD8D2 /* Pods-TallyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TallyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TallyTests/Pods-TallyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FF4F6A9E87C6A2BD95114F07 /* Pods-TallyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TallyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TallyTests/Pods-TallyTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 				A87D0A5921E410A0001D62B9 /* Info.plist */,
 				A87D0A7221E412F9001D62B9 /* TallyTests-Bridging-Header.h */,
 				A891BDB521E4C9800009FFFE /* MovieTableViewCellTests.swift */,
+				A891BDB921E4E2F40009FFFE /* CacheTests.swift */,
 			);
 			path = TallyTests;
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 				A87D0AA721E41333001D62B9 /* BusinessLogic */,
 				A87D0AAC21E41333001D62B9 /* View */,
 				A87D0AA221E41333001D62B9 /* Binder */,
+				A891BDB721E4DFA60009FFFE /* Cache.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -527,11 +533,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Tally/Pods-Tally-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Unbox/Unbox.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Unbox.framework",
 			);
@@ -579,6 +587,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A891BDB821E4DFA60009FFFE /* Cache.swift in Sources */,
 				A87D0ABF21E41333001D62B9 /* Protocols.swift in Sources */,
 				A87D0AB321E41333001D62B9 /* MoviesInteractor.swift in Sources */,
 				A87D0AC121E41333001D62B9 /* TableViewDataSource.swift in Sources */,
@@ -608,6 +617,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A891BDBA21E4E2F40009FFFE /* CacheTests.swift in Sources */,
 				A87D0A7F21E412FA001D62B9 /* MoviesBuilderTests.swift in Sources */,
 				A87D0A8221E412FA001D62B9 /* MoviesPresenterTests.swift in Sources */,
 				A891BDB621E4C9800009FFFE /* MovieTableViewCellTests.swift in Sources */,
