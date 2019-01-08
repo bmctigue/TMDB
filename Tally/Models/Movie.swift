@@ -42,7 +42,6 @@ struct Result {
     var adult: Bool
     var overview: String
     var releaseDate: String
-    var wantToSee: Bool
 }
 
 extension Result: Unboxable {
@@ -61,6 +60,5 @@ extension Result: Unboxable {
         self.adult = try unboxer.unbox(key: "adult")
         self.overview = try unboxer.unbox(key: "overview")
         self.releaseDate = try unboxer.unbox(key: "release_date")
-        self.wantToSee = false
     }
 }

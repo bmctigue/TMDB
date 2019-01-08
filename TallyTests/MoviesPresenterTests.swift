@@ -11,9 +11,9 @@ import XCTest
 
 class MoviesPresenterTests: XCTestCase {
     
-    let movie1 = Movie(voteCount: 0, movieId: 1, video: false, voteAverage: 1, title: "test", popularity: 0, posterPath: "", originalLanguage: "en", originalTitle: "test", genreIds: [0], backdropPath: "", adult: false, overview: "test", releaseDate: "11-03-18", wantToSee: false)
+    let movie1 = Movie(voteCount: 0, movieId: 1, video: false, voteAverage: 1, title: "test", popularity: 0, posterPath: "", originalLanguage: "en", originalTitle: "test", genreIds: [0], backdropPath: "", adult: false, overview: "test", releaseDate: "11-03-18")
     
-    let movie2 = Movie(voteCount: 0, movieId: 2, video: false, voteAverage: 1, title: "test", popularity: 0, posterPath: "", originalLanguage: "en", originalTitle: "test", genreIds: [0], backdropPath: "", adult: false, overview: "test", releaseDate: "11-03-18", wantToSee: false)
+    let movie2 = Movie(voteCount: 0, movieId: 2, video: false, voteAverage: 1, title: "test", popularity: 0, posterPath: "", originalLanguage: "en", originalTitle: "test", genreIds: [0], backdropPath: "", adult: false, overview: "test", releaseDate: "11-03-18")
     
     func testDisplayedMovies() {
         let presenter = Movies.Presenter()
@@ -49,5 +49,22 @@ class MoviesPresenterTests: XCTestCase {
         presenter.updateViewModels(response)
         waitForExpectations(timeout: 3.0, handler: nil)
         XCTAssert(resultMovies.count == models.count)
+    }
+    
+    func testUpdateFavorites() {
+        let movieId = 5
+        var presenter = Movies.Presenter()
+        presenter.updateFavorites(.selected(movieId))
+        XCTAssertTrue(presenter.getFavorites().contains(movieId))
+        
+        presenter.updateFavorites(.unSelected(movieId))
+        XCTAssertFalse(presenter.getFavorites().contains(movieId))
+        
+    }
+    
+    func testGetModels() {
+        let models = [movie1, movie2]
+        let presenter = Movies.Presenter(models)
+        XCTAssert(presenter.getModels().count == models.count)
     }
 }

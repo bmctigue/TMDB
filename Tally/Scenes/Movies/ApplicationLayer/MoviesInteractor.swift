@@ -36,13 +36,13 @@ extension Movies {
         }
         
         private func filterModelsByState(_ models: [Model], state: MovieFilterState) -> [Model] {
-            var filteredModels = [Model]()
-            switch state {
-            case .all:
-                filteredModels = models.filter { $0.wantToSee == false }
-            case .wantToSee:
-                filteredModels = models.filter { $0.wantToSee == true }
-            }
+            var filteredModels = models
+//            switch state {
+//            case .all:
+//                filteredModels = models.filter { $0.wantToSee == false }
+//            case .wantToSee:
+//                filteredModels = models.filter { $0.wantToSee == true }
+//            }
             return filteredModels
         }
     }

@@ -14,6 +14,7 @@ extension Movies {
         typealias ViewModel = Movies.ViewModel
         private var models: [Model]
         private var dynamicModels: DynamicValue<[ViewModel]> = DynamicValue([ViewModel]())
+        private var favorites: Set<Int> = []
         
         init(_ models: [Model] = [Model]()) {
             self.models = models
@@ -23,7 +24,7 @@ extension Movies {
         var viewModels: [ViewModel] {
             var resultModels = [ViewModel]()
             for model in models {
-                let displayedModel = ViewModel(movieId: model.movieId, title: model.title, overview: model.overview, releaseDate: model.releaseDate, posterPath: model.posterPath, image: "movie_poster", favorite: model.wantToSee)
+                let displayedModel = ViewModel(movieId: model.movieId, title: model.title, overview: model.overview, releaseDate: model.releaseDate, posterPath: model.posterPath, image: "movie_poster", favorite: favorites.contains(model.movieId))
                 resultModels.append(displayedModel)
             }
             return resultModels
@@ -34,12 +35,25 @@ extension Movies {
             self.dynamicModels.value = viewModels
         }
         
+        mutating func updateFavorites(_ state: MovieFavoriteState) {
+            switch state {
+            case .selected(let movieId):
+                favorites.insert(movieId)
+            case .unSelected(let movieId):
+                favorites.remove(movieId)
+            }
+        }
+        
         func getDynamicModels() -> DynamicValue<[ViewModel]> {
             return dynamicModels
         }
         
         func getModels() -> [Model] {
             return models
+        }
+        
+        func getFavorites() -> Set<Int> {
+            return favorites
         }
     }
 }
