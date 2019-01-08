@@ -17,7 +17,6 @@ class AppBuilderTests: XCTestCase {
         let window = UIWindow(frame: UIScreen.main.bounds)
         let builder = Builder.App(with: window)
         builder.run()
-        buildersCount = builder.configureBuilders().count
-        XCTAssert(buildersCount > 0)
+        XCTAssert(builder.getWindow() != nil)
     }
 }

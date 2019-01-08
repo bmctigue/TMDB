@@ -34,3 +34,10 @@ enum DataAdapter {
         case error(DataAdapterError)
     }
 }
+
+enum MovieDataAdapter {
+    enum Result {
+        case success([Movie])
+        case error(DataAdapterError)
+    }
+}

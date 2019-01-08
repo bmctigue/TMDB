@@ -27,6 +27,10 @@ enum Builder {
             self.moviesBuilder = Movies.Builder(with: Builder.App.moviesTitle, store: store, state: .all)
         }
         
+        func getWindow() -> UIWindow? {
+            return self.window
+        }
+        
         func run() {
             moviesBuilder.run { [weak self] viewController in
                 self?.window?.rootViewController = viewController

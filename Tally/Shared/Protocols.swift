@@ -24,6 +24,10 @@ protocol DataAdapterProtocol {
     func itemsFromData(_ data: Data, completionHandler: @escaping (DataAdapter.Result<Model>) -> Void)
 }
 
+protocol MoviesDataAdapterProtocol {
+    func itemsFromData(_ data: Data, completionHandler: @escaping (MovieDataAdapter.Result) -> Void)
+}
+
 protocol StoreProtocol {
     func fetchData(_ request: Request, completionHandler: @escaping (Store.Result) -> Void)
 }

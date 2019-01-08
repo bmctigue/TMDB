@@ -11,8 +11,9 @@ import XCTest
 
 class MoviesPresenterTests: XCTestCase {
     
-    let movie1 = Movie(movieId: "1", name: "Movie1", text: "Movie1", price: "1.99", type: .movie, imageUrl: "", image: "")
-    let movie2 = Movie(movieId: "2", name: "Movie2", text: "Movie2", price: "2.99", type: .movie, imageUrl: "", image: "")
+    let movie1 = Movie(voteCount: 0, movieId: 1, video: false, voteAverage: 1, title: "test", popularity: 0, posterPath: "", originalLanguage: "en", originalTitle: "test", genreIds: [0], backdropPath: "", adult: false, overview: "test", releaseDate: "11-03-18", wantToSee: false)
+    
+    let movie2 = Movie(voteCount: 0, movieId: 2, video: false, voteAverage: 1, title: "test", popularity: 0, posterPath: "", originalLanguage: "en", originalTitle: "test", genreIds: [0], backdropPath: "", adult: false, overview: "test", releaseDate: "11-03-18", wantToSee: false)
     
     func testDisplayedMovies() {
         let presenter = Movies.Presenter()

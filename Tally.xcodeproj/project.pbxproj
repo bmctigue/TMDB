@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8520DB90ECCA53EED6B841CE /* Pods_Tally.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6637F641524C612548B8F25C /* Pods_Tally.framework */; };
+		A815A47721E43E3D00AB9A0C /* MoviesUnboxDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A815A47621E43E3D00AB9A0C /* MoviesUnboxDataAdapter.swift */; };
 		A87D0A4321E4109E001D62B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A4221E4109E001D62B9 /* AppDelegate.swift */; };
 		A87D0A4821E4109E001D62B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87D0A4621E4109E001D62B9 /* Main.storyboard */; };
 		A87D0A4A21E410A0001D62B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A87D0A4921E410A0001D62B9 /* Assets.xcassets */; };
@@ -18,7 +19,7 @@
 		A87D0A7E21E412FA001D62B9 /* DynamicValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A7521E412FA001D62B9 /* DynamicValueTests.swift */; };
 		A87D0A7F21E412FA001D62B9 /* MoviesBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A7621E412FA001D62B9 /* MoviesBuilderTests.swift */; };
 		A87D0A8021E412FA001D62B9 /* MoviesInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A7721E412FA001D62B9 /* MoviesInteractorTests.swift */; };
-		A87D0A8121E412FA001D62B9 /* UnboxDataAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A7821E412FA001D62B9 /* UnboxDataAdapterTests.swift */; };
+		A87D0A8121E412FA001D62B9 /* MoviesUnboxDataAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A7821E412FA001D62B9 /* MoviesUnboxDataAdapterTests.swift */; };
 		A87D0A8221E412FA001D62B9 /* MoviesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A7921E412FA001D62B9 /* MoviesPresenterTests.swift */; };
 		A87D0A8321E412FA001D62B9 /* TableViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A7A21E412FA001D62B9 /* TableViewDataSourceTests.swift */; };
 		A87D0A8421E412FA001D62B9 /* LocalStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A7B21E412FA001D62B9 /* LocalStoreTests.swift */; };
@@ -43,7 +44,6 @@
 		A87D0ABF21E41333001D62B9 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0AA621E41333001D62B9 /* Protocols.swift */; };
 		A87D0AC021E41333001D62B9 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0AA821E41333001D62B9 /* Service.swift */; };
 		A87D0AC121E41333001D62B9 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0AA921E41333001D62B9 /* TableViewDataSource.swift */; };
-		A87D0AC221E41333001D62B9 /* UnboxDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0AAA21E41333001D62B9 /* UnboxDataAdapter.swift */; };
 		A87D0AC321E41333001D62B9 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0AAB21E41333001D62B9 /* LocalStore.swift */; };
 		A87D0AC421E41333001D62B9 /* UIViewController+AddRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0AAD21E41333001D62B9 /* UIViewController+AddRemove.swift */; };
 		A87D0AC521E41333001D62B9 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0AAE21E41333001D62B9 /* LoadingViewController.swift */; };
@@ -72,6 +72,7 @@
 		4A0EA0611899F5D8BA81990E /* Pods_TallyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TallyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6637F641524C612548B8F25C /* Pods_Tally.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tally.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92ACC6547960FE9C73EB1939 /* Pods-Tally.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tally.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tally/Pods-Tally.debug.xcconfig"; sourceTree = "<group>"; };
+		A815A47621E43E3D00AB9A0C /* MoviesUnboxDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesUnboxDataAdapter.swift; sourceTree = "<group>"; };
 		A87D0A3F21E4109E001D62B9 /* Tally.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tally.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87D0A4221E4109E001D62B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A87D0A4721E4109E001D62B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -89,7 +90,7 @@
 		A87D0A7521E412FA001D62B9 /* DynamicValueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicValueTests.swift; sourceTree = "<group>"; };
 		A87D0A7621E412FA001D62B9 /* MoviesBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesBuilderTests.swift; sourceTree = "<group>"; };
 		A87D0A7721E412FA001D62B9 /* MoviesInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesInteractorTests.swift; sourceTree = "<group>"; };
-		A87D0A7821E412FA001D62B9 /* UnboxDataAdapterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnboxDataAdapterTests.swift; sourceTree = "<group>"; };
+		A87D0A7821E412FA001D62B9 /* MoviesUnboxDataAdapterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesUnboxDataAdapterTests.swift; sourceTree = "<group>"; };
 		A87D0A7921E412FA001D62B9 /* MoviesPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesPresenterTests.swift; sourceTree = "<group>"; };
 		A87D0A7A21E412FA001D62B9 /* TableViewDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSourceTests.swift; sourceTree = "<group>"; };
 		A87D0A7B21E412FA001D62B9 /* LocalStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStoreTests.swift; sourceTree = "<group>"; };
@@ -114,7 +115,6 @@
 		A87D0AA621E41333001D62B9 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		A87D0AA821E41333001D62B9 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		A87D0AA921E41333001D62B9 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
-		A87D0AAA21E41333001D62B9 /* UnboxDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnboxDataAdapter.swift; sourceTree = "<group>"; };
 		A87D0AAB21E41333001D62B9 /* LocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
 		A87D0AAD21E41333001D62B9 /* UIViewController+AddRemove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddRemove.swift"; sourceTree = "<group>"; };
 		A87D0AAE21E41333001D62B9 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 				A87D0A7921E412FA001D62B9 /* MoviesPresenterTests.swift */,
 				A87D0A7421E412FA001D62B9 /* ServiceTests.swift */,
 				A87D0A7A21E412FA001D62B9 /* TableViewDataSourceTests.swift */,
-				A87D0A7821E412FA001D62B9 /* UnboxDataAdapterTests.swift */,
+				A87D0A7821E412FA001D62B9 /* MoviesUnboxDataAdapterTests.swift */,
 				A87D0A5921E410A0001D62B9 /* Info.plist */,
 				A87D0A7221E412F9001D62B9 /* TallyTests-Bridging-Header.h */,
 			);
@@ -266,6 +266,7 @@
 		A87D0A9521E41333001D62B9 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				A815A47621E43E3D00AB9A0C /* MoviesUnboxDataAdapter.swift */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -319,7 +320,6 @@
 			children = (
 				A87D0AA821E41333001D62B9 /* Service.swift */,
 				A87D0AA921E41333001D62B9 /* TableViewDataSource.swift */,
-				A87D0AAA21E41333001D62B9 /* UnboxDataAdapter.swift */,
 				A87D0AAB21E41333001D62B9 /* LocalStore.swift */,
 			);
 			path = BusinessLogic;
@@ -596,7 +596,7 @@
 				A87D0AB821E41333001D62B9 /* MoviesTableViewController.swift in Sources */,
 				A87D0AC521E41333001D62B9 /* LoadingViewController.swift in Sources */,
 				A87D0ABE21E41333001D62B9 /* Structs.swift in Sources */,
-				A87D0AC221E41333001D62B9 /* UnboxDataAdapter.swift in Sources */,
+				A815A47721E43E3D00AB9A0C /* MoviesUnboxDataAdapter.swift in Sources */,
 				A87D0AC421E41333001D62B9 /* UIViewController+AddRemove.swift in Sources */,
 				A87D0ABB21E41333001D62B9 /* MovieTableViewCell.swift in Sources */,
 				A87D0ABD21E41333001D62B9 /* Enumerations.swift in Sources */,
@@ -616,7 +616,7 @@
 				A87D0A7C21E412FA001D62B9 /* AppBuilderTests.swift in Sources */,
 				A87D0A7D21E412FA001D62B9 /* ServiceTests.swift in Sources */,
 				A87D0A8421E412FA001D62B9 /* LocalStoreTests.swift in Sources */,
-				A87D0A8121E412FA001D62B9 /* UnboxDataAdapterTests.swift in Sources */,
+				A87D0A8121E412FA001D62B9 /* MoviesUnboxDataAdapterTests.swift in Sources */,
 				A87D0A8021E412FA001D62B9 /* MoviesInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

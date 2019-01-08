@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class Service<Adapter: DataAdapterProtocol>: ServiceProtocol {
+final class Service<Adapter: MoviesDataAdapterProtocol>: ServiceProtocol {
     
     private var store: StoreProtocol
     private var dataAdapter: Adapter

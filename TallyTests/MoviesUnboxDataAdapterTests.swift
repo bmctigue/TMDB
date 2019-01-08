@@ -9,12 +9,12 @@
 import XCTest
 @testable import Tally
 
-class UnboxDataAdapterTests: XCTestCase {
+class MoviesUnboxDataAdapterTests: XCTestCase {
     
     let assetName = "moviesJson"
     var error: StoreError?
     var items: [Movie] = [Movie]()
-    lazy var sut = UnboxDataAdapter<Movie>()
+    lazy var sut = Movies.UnboxDataAdapter()
     
     override func setUp() {
         items = [Movie]()

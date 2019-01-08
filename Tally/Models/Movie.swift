@@ -11,6 +11,22 @@ import Unbox
 
 typealias Movie = Result
 
+struct MoviePage {
+    var page: Int
+    var totalResults: Int
+    var totalPages: Int
+    var results: [Result]
+}
+
+extension MoviePage: Unboxable {
+    init(unboxer: Unboxer) throws {
+        self.page = try unboxer.unbox(key: "page")
+        self.totalResults = try unboxer.unbox(key: "total_results")
+        self.totalPages = try unboxer.unbox(key: "total_pages")
+        self.results = try unboxer.unbox(key: "results")
+    }
+}
+
 struct Result {
     var voteCount: Int
     var movieId: Int

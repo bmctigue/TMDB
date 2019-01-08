@@ -15,7 +15,7 @@ enum Movies {
         
         private var state: MovieFilterState
         private var store: StoreProtocol
-        private lazy var dataAdapter = UnboxDataAdapter<Movie>()
+        private lazy var dataAdapter = Movies.UnboxDataAdapter()
         private lazy var service = Service(store, dataAdapter: dataAdapter)
         private lazy var presenter = Movies.Presenter([])
         private lazy var interactor = Movies.Interactor(service, presenter: presenter, state: state)

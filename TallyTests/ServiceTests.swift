@@ -12,7 +12,7 @@ import XCTest
 class ServiceTests: XCTestCase {
     
     let assetName = Builder.App.moviesAssetName
-    lazy var dataAdapter = UnboxDataAdapter<Movie>()
+    lazy var dataAdapter = Movies.UnboxDataAdapter()
 
     func testService() {
         let expectation = self.expectation(description: "fetchItems")
