@@ -26,7 +26,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dql-LB-1Hp">
-                        <rect key="frame" x="138" y="72" width="166" height="21"/>
+                        <rect key="frame" x="138" y="72" width="136" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="WM9-DK-AsC"/>
                         </constraints>
@@ -64,6 +64,24 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disabled_heart" translatesAutoresizingMaskIntoConstraints="NO" id="HHg-gq-qP7">
+                        <rect key="frame" x="282" y="72" width="21" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="21" id="KQg-H3-6p7"/>
+                            <constraint firstAttribute="height" constant="21" id="slr-wR-rQD"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d77-is-D28">
+                        <rect key="frame" x="282" y="72" width="21" height="21"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="2of-az-WsR"/>
+                            <constraint firstAttribute="width" constant="21" id="BdR-OP-R67"/>
+                        </constraints>
+                        <connections>
+                            <action selector="favoriteButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ehT-6q-Ksh"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="wqp-1B-AVH" firstAttribute="top" secondItem="dql-LB-1Hp" secondAttribute="bottom" constant="6.5" id="5C9-Df-Zhf"/>
@@ -73,15 +91,19 @@
                     <constraint firstItem="wqp-1B-AVH" firstAttribute="top" secondItem="OWW-Ai-mm3" secondAttribute="bottom" constant="6.5" id="BX8-ck-Lpy"/>
                     <constraint firstItem="dql-LB-1Hp" firstAttribute="top" secondItem="khx-hD-SrZ" secondAttribute="bottom" constant="8" id="CM6-eu-rwk"/>
                     <constraint firstItem="wqp-1B-AVH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Cgy-21-V7p"/>
+                    <constraint firstItem="wqp-1B-AVH" firstAttribute="top" secondItem="HHg-gq-qP7" secondAttribute="bottom" constant="6.5" id="FhI-8u-Gi3"/>
                     <constraint firstItem="khx-hD-SrZ" firstAttribute="top" secondItem="BHd-0a-Qh4" secondAttribute="bottom" constant="4" id="LP6-gx-56F"/>
                     <constraint firstAttribute="bottom" secondItem="wqp-1B-AVH" secondAttribute="bottom" id="M84-1s-Edg"/>
+                    <constraint firstItem="wqp-1B-AVH" firstAttribute="top" secondItem="d77-is-D28" secondAttribute="bottom" constant="6.5" id="MG2-VH-lI1"/>
                     <constraint firstItem="dql-LB-1Hp" firstAttribute="leading" secondItem="OWW-Ai-mm3" secondAttribute="trailing" constant="8" id="NHQ-AD-woa"/>
                     <constraint firstItem="khx-hD-SrZ" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="X1f-4o-2sP"/>
                     <constraint firstItem="oLI-hZ-l9E" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="b5F-vZ-8QI"/>
                     <constraint firstItem="BHd-0a-Qh4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="cin-IJ-7fs"/>
+                    <constraint firstAttribute="trailing" secondItem="d77-is-D28" secondAttribute="trailing" constant="17" id="d6Q-WI-cq4"/>
+                    <constraint firstAttribute="trailing" secondItem="HHg-gq-qP7" secondAttribute="trailing" constant="17" id="dpK-GK-Ns6"/>
                     <constraint firstItem="BHd-0a-Qh4" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="gIP-sA-W62"/>
                     <constraint firstItem="OWW-Ai-mm3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="70" id="k3W-2F-5qu"/>
-                    <constraint firstAttribute="trailing" secondItem="dql-LB-1Hp" secondAttribute="trailing" constant="16" id="m8V-RX-BrC"/>
+                    <constraint firstItem="HHg-gq-qP7" firstAttribute="leading" secondItem="dql-LB-1Hp" secondAttribute="trailing" constant="8" id="lgt-dp-a8H"/>
                     <constraint firstItem="oLI-hZ-l9E" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="pOb-cr-dGd"/>
                     <constraint firstItem="BHd-0a-Qh4" firstAttribute="leading" secondItem="oLI-hZ-l9E" secondAttribute="trailing" constant="12" id="tyW-3F-DZP"/>
                 </constraints>
@@ -89,11 +111,16 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cellImageView" destination="oLI-hZ-l9E" id="zWw-ak-zgH"/>
+                <outlet property="favoriteButton" destination="d77-is-D28" id="Gcd-XH-BhE"/>
+                <outlet property="favoriteImageView" destination="HHg-gq-qP7" id="hir-an-w2L"/>
                 <outlet property="overViewLabel" destination="khx-hD-SrZ" id="5gD-Yy-v24"/>
                 <outlet property="releaseDateLabel" destination="dql-LB-1Hp" id="Ax3-u7-bum"/>
                 <outlet property="titleLabel" destination="BHd-0a-Qh4" id="VKO-pj-fhn"/>
             </connections>
-            <point key="canvasLocation" x="-259" y="-54"/>
+            <point key="canvasLocation" x="-259.19999999999999" y="-54.422788605697157"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="disabled_heart" width="25" height="23"/>
+    </resources>
 </document>

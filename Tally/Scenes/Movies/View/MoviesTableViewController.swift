@@ -42,6 +42,7 @@ class MoviesTableViewController: UIViewController {
             cell.overViewLabel.text = model.overview
             cell.releaseDateLabel.text = model.releaseDate
             cell.cellImageView.image = model.posterPath.isEmpty ? UIImage(named: model.image) : nil
+            cell.favorite = model.favorite
         }
         self.tableView.dataSource = tableViewDatasource
         
