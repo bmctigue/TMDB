@@ -16,7 +16,7 @@ extension Movies {
         private var models: [Model]
         private var dynamicModels: DynamicValue<[ViewModel]> = DynamicValue([ViewModel]())
         private var favorites: Set<Int> = []
-        lazy var favoritesCache = FavoritesCache()
+        private var favoritesCache = FavoritesCache()
         
         init(_ models: [Model] = [Model]()) {
             self.models = models
