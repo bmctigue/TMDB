@@ -16,6 +16,5 @@ extension Movies {
         let releaseDate: String
         let posterPath: String
         let image: String
-        var favorite: Bool
     }
 }

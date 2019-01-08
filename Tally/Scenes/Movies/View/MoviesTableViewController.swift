@@ -43,7 +43,7 @@ class MoviesTableViewController: UIViewController {
             cell.overViewLabel.text = model.overview
             cell.releaseDateLabel.text = model.releaseDate
             cell.cellImageView.image = model.posterPath.isEmpty ? UIImage(named: model.image) : nil
-            cell.favoriteState = model.favorite ? MovieFavoriteState.selected(model.movieId) : MovieFavoriteState.unSelected(model.movieId)
+            cell.favoriteState = self.presenter.getFavorites().contains(model.movieId) ? MovieFavoriteState.selected(model.movieId) : MovieFavoriteState.unSelected(model.movieId)
             cell.dynamicFavoriteState.addObserver(self) {
                 if let state = cell.dynamicFavoriteState.value {
                     self.presenter.updateFavorites(state)
