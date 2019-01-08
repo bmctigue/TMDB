@@ -41,7 +41,7 @@ class MoviesTableViewController: UIViewController {
             cell.titleLabel.text = model.title
             cell.overViewLabel.text = model.overview
             cell.releaseDateLabel.text = model.releaseDate
-            cell.cellImageView.image = model.posterPath.isEmpty ? nil : UIImage(named: model.image)
+            cell.cellImageView.image = model.posterPath.isEmpty ? UIImage(named: model.image) : nil
         }
         self.tableView.dataSource = tableViewDatasource
         
