@@ -12,7 +12,6 @@
 		A80E04E721E546FB008E74FD /* MoviesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80E04E621E546FB008E74FD /* MoviesStore.swift */; };
 		A815A47721E43E3D00AB9A0C /* MoviesUnboxDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A815A47621E43E3D00AB9A0C /* MoviesUnboxDataAdapter.swift */; };
 		A87D0A4321E4109E001D62B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A4221E4109E001D62B9 /* AppDelegate.swift */; };
-		A87D0A4821E4109E001D62B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87D0A4621E4109E001D62B9 /* Main.storyboard */; };
 		A87D0A4A21E410A0001D62B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A87D0A4921E410A0001D62B9 /* Assets.xcassets */; };
 		A87D0A6321E410A0001D62B9 /* TallyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A6221E410A0001D62B9 /* TallyUITests.swift */; };
 		A87D0A7121E412DC001D62B9 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A87D0A7021E412DC001D62B9 /* Podfile */; };
@@ -83,7 +82,6 @@
 		A815A47621E43E3D00AB9A0C /* MoviesUnboxDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesUnboxDataAdapter.swift; sourceTree = "<group>"; };
 		A87D0A3F21E4109E001D62B9 /* Tally.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tally.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87D0A4221E4109E001D62B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A87D0A4721E4109E001D62B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A87D0A4921E410A0001D62B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A87D0A4E21E410A0001D62B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A87D0A5321E410A0001D62B9 /* TallyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TallyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,7 +193,6 @@
 				A87D0A9021E41333001D62B9 /* Resources */,
 				A87D0A7021E412DC001D62B9 /* Podfile */,
 				A87D0A4221E4109E001D62B9 /* AppDelegate.swift */,
-				A87D0A4621E4109E001D62B9 /* Main.storyboard */,
 				A87D0A4921E410A0001D62B9 /* Assets.xcassets */,
 				A87D0A4E21E410A0001D62B9 /* Info.plist */,
 			);
@@ -488,7 +485,6 @@
 				A87D0A7121E412DC001D62B9 /* Podfile in Resources */,
 				A87D0A8D21E41325001D62B9 /* LaunchScreen.storyboard in Resources */,
 				A87D0AB121E41333001D62B9 /* moviesJson.json in Resources */,
-				A87D0A4821E4109E001D62B9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,14 +653,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A87D0A4621E4109E001D62B9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A87D0A4721E4109E001D62B9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A87D0A8721E41325001D62B9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

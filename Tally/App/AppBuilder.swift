@@ -10,7 +10,8 @@ import UIKit
 
 enum Builder {
     final class App: BaseBuilder {
-
+        
+        static let moviesAssetName = "moviesJson"
         private static let moviesTitle = "Movies"
         
         private var window: UIWindow?
