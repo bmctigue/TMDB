@@ -47,7 +47,8 @@ class MoviesTableViewController: UIViewController {
             cell.titleLabel.text = model.title
             cell.overViewLabel.text = model.overview
             cell.releaseDateLabel.text = model.releaseDate
-            self.updateCellImageView(model.posterPath, imageView: cell.cellImageView)
+            cell.cellImageView.kf.indicatorType = .activity
+            cell.cellImageView.kf.setImage(with: self.urlManager.fetchMoviePosterURL(model.posterPath))
             cell.favoriteState = self.presenter.getFavorites().contains(model.movieId) ? MovieFavoriteState.selected(model.movieId) : MovieFavoriteState.unSelected(model.movieId)
             cell.dynamicFavoriteState.addObserver(self) {
                 if let state = cell.dynamicFavoriteState.value {
@@ -78,25 +79,6 @@ class MoviesTableViewController: UIViewController {
     
     func updateFilterState(_ state: MovieFilterState) {
         presenter.filterModelsByState(state)
-    }
-    
-    func updateCellImageView(_ posterPath: String, imageView: UIImageView) {
-        var imageView = imageView
-        let url = self.urlManager.fetchMoviePosterURL(posterPath)
-        let processor = DownsamplingImageProcessor(size: imageView.frame.size)
-            >> RoundCornerImageProcessor(cornerRadius: 8)
-        imageView.kf.indicatorType = .activity
-        imageView.kf.setImage(
-            with: url,
-            placeholder: UIImage(named: "movie_poster"),
-            options: [
-                .processor(processor),
-                .scaleFactor(UIScreen.main.scale),
-                .transition(.fade(0.25)),
-                .cacheOriginalImage
-            ]) { _ in
-                // noop
-            }
     }
     
     required init?(coder aDecoder: NSCoder) {
