@@ -14,35 +14,39 @@ extension Movies {
         typealias ViewModel = Movies.ViewModel
         private var models: [Model]
         private var dynamicModels: DynamicValue<[ViewModel]> = DynamicValue([ViewModel]())
-        private var state: MovieFilterState
+        private var filterState: MovieFilterState
         private var favoritesManager = FavoritesManager()
         
         init(_ models: [Model] = [Model]()) {
             self.models = models
-            self.state = .all
+            self.filterState = .all
             dynamicModels.value = viewModels
         }
-        
-        var viewModels: [ViewModel] {
-            var filteredModels = models
+    
+        var baseViewModels: [ViewModel] {
             var resultModels = [ViewModel]()
-            if state == .favorite {
-                filteredModels = models.filter { favoritesManager.getFavorites().contains($0.movieId) }
-            }
-            for model in filteredModels {
+            for model in models {
                 let displayedModel = ViewModel(movieId: model.movieId, title: model.title, overview: model.overview, releaseDate: model.releaseDate, posterPath: model.posterPath)
                 resultModels.append(displayedModel)
             }
             return resultModels
         }
         
+        var viewModels: [ViewModel] {
+            var resultModels = baseViewModels
+            if filterState == .favorite {
+                resultModels = resultModels.filter { favoritesManager.getFavorites().contains($0.movieId) }
+            }
+            return resultModels
+        }
+        
         func updateViewModels(_ response: Response<Model>) {
             self.models = response.models
-            self.dynamicModels.value = viewModels
+            self.dynamicModels.value = baseViewModels
         }
         
         func filterModelsByState(_ state: MovieFilterState) {
-            self.state = state
+            self.filterState = state
             self.dynamicModels.value = viewModels
         }
         

@@ -14,7 +14,7 @@ class BaseCache {
     lazy var memoryConfig = MemoryConfig(expiry: .never, countLimit: 10, totalCostLimit: 10)
 }
 
-class FavoritesCache: BaseCache, CacheProtocol {
+final class FavoritesCache: BaseCache, CacheProtocol {
     typealias CacheObject = Set<Int>
     
     lazy var storage = try? Storage(

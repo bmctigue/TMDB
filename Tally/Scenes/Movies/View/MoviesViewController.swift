@@ -12,12 +12,11 @@ final class MoviesViewController: UIViewController {
     
     lazy var favoritesButton = UIBarButtonItem(image: UIImage(named: "enabled_heart"), style: .plain, target: self, action: #selector(favoritesButtonPressed(_:)))
     
-    private var state: MovieFilterState
-    private var tableViewController: MoviesTableViewController
+    var state: MovieFilterState = .all
+    var tableViewController: MoviesTableViewController
     
     init(with tableViewController: MoviesTableViewController) {
         self.tableViewController = tableViewController
-        self.state = .all
         super.init(nibName: nil, bundle: nil)
         self.title = "Movies"
     }
@@ -28,27 +27,6 @@ final class MoviesViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = favoritesButton
         filterStateChanged(state)
         add(tableViewController)
-    }
-    
-    @IBAction func favoritesButtonPressed(_ sender: Any) {
-        self.state = state == .all ? .favorite : .all
-        filterStateChanged(state)
-    }
-    
-    func filterStateChanged(_ state: MovieFilterState) {
-        tableViewController.updateFilterState(state)
-        switch state {
-        case .all:
-            favoritesButton.image = UIImage(named: "enabled_heart")
-            favoritesButton.tintColor = .red
-        case .favorite:
-            favoritesButton.image = UIImage(named: "disabled_heart")
-            favoritesButton.tintColor = .red
-        }
-    }
-    
-    func updateFilteredMovies() {
-        self.tableViewController.updateFilterState(state)
     }
     
     required init?(coder aDecoder: NSCoder) {
