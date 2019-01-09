@@ -11,6 +11,9 @@ import UIKit
 enum Movies {
     final class Builder: VCBuilder {
         
+        static let moviesAssetName = "moviesJson"
+        static let moviesTitle = "Movies"
+        
         private var title: String
         
         private var state: MovieFilterState

@@ -8,19 +8,15 @@
 
 import UIKit
 
-enum Builder {
-    final class App: BaseBuilder {
-        
-        static let moviesAssetName = "moviesJson"
-        private static let moviesTitle = "Movies"
+enum App {
+    final class Builder: BaseBuilder {
         
         private var window: UIWindow?
-        private (set) var moviesBuilder: Movies.Builder
+        private (set) var splashBuilder: Splash.Builder
         
         init(with window: UIWindow?) {
             self.window = window
-            let store = Movies.RemoteStore()
-            self.moviesBuilder = Movies.Builder(with: Builder.App.moviesTitle, store: store, state: .all)
+            self.splashBuilder = Splash.Builder(with: window)
         }
         
         func getWindow() -> UIWindow? {
@@ -28,7 +24,7 @@ enum Builder {
         }
         
         func run() {
-            moviesBuilder.run { [weak self] viewController in
+            splashBuilder.run { [weak self] viewController in
                 self?.window?.rootViewController = viewController
                 self?.window?.makeKeyAndVisible()
             }

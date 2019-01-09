@@ -15,6 +15,10 @@
 		A8775FC021E6128B004AEAE1 /* MoviesViewController+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8775FBF21E6128B004AEAE1 /* MoviesViewController+Filter.swift */; };
 		A8775FC221E61B9C004AEAE1 /* MoviesViewController+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8775FC121E61B9C004AEAE1 /* MoviesViewController+Sort.swift */; };
 		A8775FC621E63E44004AEAE1 /* MoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8775FC521E63E44004AEAE1 /* MoviesService.swift */; };
+		A8775FC921E659CE004AEAE1 /* StoryboardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8775FC821E659CE004AEAE1 /* StoryboardFactory.swift */; };
+		A8775FCE21E659DD004AEAE1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8775FCC21E659DD004AEAE1 /* SplashViewController.swift */; };
+		A8775FCF21E659DD004AEAE1 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8775FCD21E659DD004AEAE1 /* Splash.storyboard */; };
+		A8775FD121E65C76004AEAE1 /* SplashBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8775FD021E65C76004AEAE1 /* SplashBuilder.swift */; };
 		A87D0A4321E4109E001D62B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A4221E4109E001D62B9 /* AppDelegate.swift */; };
 		A87D0A4A21E410A0001D62B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A87D0A4921E410A0001D62B9 /* Assets.xcassets */; };
 		A87D0A6321E410A0001D62B9 /* TallyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A6221E410A0001D62B9 /* TallyUITests.swift */; };
@@ -87,6 +91,10 @@
 		A8775FBF21E6128B004AEAE1 /* MoviesViewController+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoviesViewController+Filter.swift"; sourceTree = "<group>"; };
 		A8775FC121E61B9C004AEAE1 /* MoviesViewController+Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoviesViewController+Sort.swift"; sourceTree = "<group>"; };
 		A8775FC521E63E44004AEAE1 /* MoviesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesService.swift; sourceTree = "<group>"; };
+		A8775FC821E659CE004AEAE1 /* StoryboardFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardFactory.swift; sourceTree = "<group>"; };
+		A8775FCC21E659DD004AEAE1 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		A8775FCD21E659DD004AEAE1 /* Splash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		A8775FD021E65C76004AEAE1 /* SplashBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashBuilder.swift; sourceTree = "<group>"; };
 		A87D0A3F21E4109E001D62B9 /* Tally.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tally.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87D0A4221E4109E001D62B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A87D0A4921E410A0001D62B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -167,6 +175,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A8775FC721E659CE004AEAE1 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				A8775FC821E659CE004AEAE1 /* StoryboardFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		A8775FCA21E659DD004AEAE1 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				A8775FD021E65C76004AEAE1 /* SplashBuilder.swift */,
+				A8775FCB21E659DD004AEAE1 /* Views */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		A8775FCB21E659DD004AEAE1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A8775FCC21E659DD004AEAE1 /* SplashViewController.swift */,
+				A8775FCD21E659DD004AEAE1 /* Splash.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A87D0A3621E4109E001D62B9 = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +230,7 @@
 				A87D0A9221E41333001D62B9 /* Scenes */,
 				A87D0AA121E41333001D62B9 /* Shared */,
 				A87D0AAF21E41333001D62B9 /* Models */,
+				A8775FC721E659CE004AEAE1 /* Factories */,
 				A87D0A9021E41333001D62B9 /* Resources */,
 				A87D0A7021E412DC001D62B9 /* Podfile */,
 				A87D0A4221E4109E001D62B9 /* AppDelegate.swift */,
@@ -256,6 +291,7 @@
 		A87D0A9221E41333001D62B9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				A8775FCA21E659DD004AEAE1 /* Splash */,
 				A87D0A9321E41333001D62B9 /* Movies */,
 			);
 			path = Scenes;
@@ -492,6 +528,7 @@
 				A87D0A4A21E410A0001D62B9 /* Assets.xcassets in Resources */,
 				A87D0ABA21E41333001D62B9 /* MoviesViewController.xib in Resources */,
 				A87D0A7121E412DC001D62B9 /* Podfile in Resources */,
+				A8775FCF21E659DD004AEAE1 /* Splash.storyboard in Resources */,
 				A87D0A8D21E41325001D62B9 /* LaunchScreen.storyboard in Resources */,
 				A87D0AB121E41333001D62B9 /* moviesJson.json in Resources */,
 				A80E04E921E5716E008E74FD /* glow_loading.json in Resources */,
@@ -600,6 +637,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8775FCE21E659DD004AEAE1 /* SplashViewController.swift in Sources */,
 				A891BDB821E4DFA60009FFFE /* Cache.swift in Sources */,
 				A87D0ABF21E41333001D62B9 /* Protocols.swift in Sources */,
 				A87D0AB321E41333001D62B9 /* MoviesInteractor.swift in Sources */,
@@ -607,6 +645,8 @@
 				A87D0AC121E41333001D62B9 /* TableViewDataSource.swift in Sources */,
 				A8775FC621E63E44004AEAE1 /* MoviesService.swift in Sources */,
 				A87D0AB221E41333001D62B9 /* MoviesBuilder.swift in Sources */,
+				A8775FD121E65C76004AEAE1 /* SplashBuilder.swift in Sources */,
+				A8775FC921E659CE004AEAE1 /* StoryboardFactory.swift in Sources */,
 				A87D0AB421E41333001D62B9 /* MoviesPresenter.swift in Sources */,
 				A87D0AC321E41333001D62B9 /* LocalStore.swift in Sources */,
 				A891BDBC21E4F3590009FFFE /* FavoritesManager.swift in Sources */,

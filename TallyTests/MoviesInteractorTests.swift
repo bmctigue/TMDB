@@ -13,7 +13,7 @@ class MoviesInteractorTests: XCTestCase {
     
     typealias ViewModel = Movies.ViewModel
     
-    private lazy var store = LocalStore(Builder.App.moviesAssetName)
+    private lazy var store = LocalStore(Movies.Builder.moviesAssetName)
     private lazy var dataAdapter = Movies.UnboxDataAdapter()
     private lazy var service = Movies.Service(store, dataAdapter: dataAdapter)
     private lazy var presenter = Movies.Presenter([])
