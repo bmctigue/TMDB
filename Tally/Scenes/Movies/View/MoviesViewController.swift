@@ -10,7 +10,7 @@ import UIKit
 
 final class MoviesViewController: UIViewController {
     
-    lazy var favoritesButton = UIBarButtonItem(image: UIImage(named: "enabled_heart"), style: .plain, target: self, action: #selector(favoritesButtonPressed(_:)))
+    lazy var favoritesButton = UIBarButtonItem(title: "My List", style: .plain, target: self, action: #selector(favoritesButtonPressed(_:)))
     
     lazy var sortButton = UIBarButtonItem(image: UIImage(named: "Happy_Sad_Face"), style: .plain, target: self, action: #selector(sortButtonPressed(_:)))
     
@@ -27,7 +27,6 @@ final class MoviesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.lightGray
-        favoritesButton.tintColor = .red
         self.navigationItem.rightBarButtonItem = favoritesButton
         self.navigationItem.leftBarButtonItem = sortButton
         filterStateChanged(filterState)

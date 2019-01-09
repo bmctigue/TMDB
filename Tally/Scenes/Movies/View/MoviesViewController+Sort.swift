@@ -26,11 +26,11 @@ extension MoviesViewController {
         tableViewController.updateSortState(state)
         switch state {
         case .none:
-            sortButton.image = UIImage(named: "Happy_Sad_Face")
+            sortButton.image = UIImage(named: "happy_sad_face")
         case .descending:
-            sortButton.image = UIImage(named: "Happy_Face")
+            sortButton.image = UIImage(named: "happy_face")
         case .ascending:
-            sortButton.image = UIImage(named: "Sad_Face")
+            sortButton.image = UIImage(named: "sad_face")
         }
     }
 

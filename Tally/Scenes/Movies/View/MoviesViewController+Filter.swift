@@ -19,9 +19,9 @@ extension MoviesViewController {
         tableViewController.updateFilterState(state)
         switch state {
         case .all:
-            favoritesButton.image = UIImage(named: "enabled_heart")
+            favoritesButton.title = "My List"
         case .favorite:
-            favoritesButton.image = UIImage(named: "disabled_heart")
+            favoritesButton.title = "All"
         }
     }
 }
