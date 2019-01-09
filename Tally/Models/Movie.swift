@@ -27,7 +27,7 @@ extension MoviePage: Unboxable {
     }
 }
 
-struct Result {
+struct Result: Codable {
     var voteCount: Int
     var movieId: Int
     var video: Bool

@@ -15,7 +15,7 @@ class MoviesInteractorTests: XCTestCase {
     
     private lazy var store = LocalStore(Builder.App.moviesAssetName)
     private lazy var dataAdapter = Movies.UnboxDataAdapter()
-    private lazy var service = Service(store, dataAdapter: dataAdapter)
+    private lazy var service = Movies.Service(store, dataAdapter: dataAdapter)
     private lazy var presenter = Movies.Presenter([])
     var viewModels = [ViewModel]()
 

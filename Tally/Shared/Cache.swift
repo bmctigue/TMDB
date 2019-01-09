@@ -36,3 +36,26 @@ final class FavoritesCache: BaseCache, CacheProtocol {
         try? storage?.removeObject(forKey: key)
     }
 }
+
+final class MoviesCache: BaseCache, CacheProtocol {
+    typealias CacheObject = [Movie]
+    
+    lazy var storage = try? Storage(
+        diskConfig: diskConfig,
+        memoryConfig: memoryConfig,
+        transformer: TransformerFactory.forCodable(ofType: CacheObject.self)
+    )
+    
+    func setObject<CacheObject>(_ object: CacheObject, key: String) {
+        try? storage?.setObject(object as! MoviesCache.CacheObject, forKey: key)
+    }
+    
+    func getObject<CacheObject>(_ key: String) -> CacheObject {
+        let object = try? storage?.object(forKey: key)
+        return object as! CacheObject
+    }
+    
+    func removeObject(_ key: String) {
+        try? storage?.removeObject(forKey: key)
+    }
+}

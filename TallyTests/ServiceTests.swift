@@ -20,26 +20,12 @@ class ServiceTests: XCTestCase {
         let store = LocalStore(assetName)
         let request = Request()
         
-        let sut = Service(store, dataAdapter: dataAdapter)
+        let sut = Movies.Service(store, dataAdapter: dataAdapter)
         sut.fetchItems(request) { movies in
             results = movies as! [Movie]
             expectation.fulfill()
         }
         waitForExpectations(timeout: 3.0, handler: nil)
         XCTAssert(results.count > 0)
-    }
-    
-    func testServiceBadAsset() {
-        let expectation = self.expectation(description: "fetchItems")
-        var results = [Movie]()
-        let store = LocalStore("badAssetName")
-        let sut = Service(store, dataAdapter: dataAdapter)
-        let request = Request()
-        sut.fetchItems(request) { movies in
-            results = movies as! [Movie]
-            expectation.fulfill()
-        }
-        waitForExpectations(timeout: 3.0, handler: nil)
-        XCTAssert(results.count == 0)
     }
 }

@@ -14,6 +14,7 @@
 		A815A47721E43E3D00AB9A0C /* MoviesUnboxDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A815A47621E43E3D00AB9A0C /* MoviesUnboxDataAdapter.swift */; };
 		A8775FC021E6128B004AEAE1 /* MoviesViewController+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8775FBF21E6128B004AEAE1 /* MoviesViewController+Filter.swift */; };
 		A8775FC221E61B9C004AEAE1 /* MoviesViewController+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8775FC121E61B9C004AEAE1 /* MoviesViewController+Sort.swift */; };
+		A8775FC621E63E44004AEAE1 /* MoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8775FC521E63E44004AEAE1 /* MoviesService.swift */; };
 		A87D0A4321E4109E001D62B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A4221E4109E001D62B9 /* AppDelegate.swift */; };
 		A87D0A4A21E410A0001D62B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A87D0A4921E410A0001D62B9 /* Assets.xcassets */; };
 		A87D0A6321E410A0001D62B9 /* TallyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A6221E410A0001D62B9 /* TallyUITests.swift */; };
@@ -44,7 +45,6 @@
 		A87D0ABD21E41333001D62B9 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0AA421E41333001D62B9 /* Enumerations.swift */; };
 		A87D0ABE21E41333001D62B9 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0AA521E41333001D62B9 /* Structs.swift */; };
 		A87D0ABF21E41333001D62B9 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0AA621E41333001D62B9 /* Protocols.swift */; };
-		A87D0AC021E41333001D62B9 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0AA821E41333001D62B9 /* Service.swift */; };
 		A87D0AC121E41333001D62B9 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0AA921E41333001D62B9 /* TableViewDataSource.swift */; };
 		A87D0AC321E41333001D62B9 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0AAB21E41333001D62B9 /* LocalStore.swift */; };
 		A87D0AC421E41333001D62B9 /* UIViewController+AddRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0AAD21E41333001D62B9 /* UIViewController+AddRemove.swift */; };
@@ -86,6 +86,7 @@
 		A815A47621E43E3D00AB9A0C /* MoviesUnboxDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesUnboxDataAdapter.swift; sourceTree = "<group>"; };
 		A8775FBF21E6128B004AEAE1 /* MoviesViewController+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoviesViewController+Filter.swift"; sourceTree = "<group>"; };
 		A8775FC121E61B9C004AEAE1 /* MoviesViewController+Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoviesViewController+Sort.swift"; sourceTree = "<group>"; };
+		A8775FC521E63E44004AEAE1 /* MoviesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesService.swift; sourceTree = "<group>"; };
 		A87D0A3F21E4109E001D62B9 /* Tally.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tally.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87D0A4221E4109E001D62B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A87D0A4921E410A0001D62B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,7 +124,6 @@
 		A87D0AA421E41333001D62B9 /* Enumerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
 		A87D0AA521E41333001D62B9 /* Structs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		A87D0AA621E41333001D62B9 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
-		A87D0AA821E41333001D62B9 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		A87D0AA921E41333001D62B9 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		A87D0AAB21E41333001D62B9 /* LocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
 		A87D0AAD21E41333001D62B9 /* UIViewController+AddRemove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddRemove.swift"; sourceTree = "<group>"; };
@@ -275,6 +275,7 @@
 		A87D0A9521E41333001D62B9 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				A8775FC521E63E44004AEAE1 /* MoviesService.swift */,
 				A815A47621E43E3D00AB9A0C /* MoviesUnboxDataAdapter.swift */,
 				A80E04E621E546FB008E74FD /* MoviesStore.swift */,
 			);
@@ -333,7 +334,6 @@
 		A87D0AA721E41333001D62B9 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
-				A87D0AA821E41333001D62B9 /* Service.swift */,
 				A87D0AA921E41333001D62B9 /* TableViewDataSource.swift */,
 				A87D0AAB21E41333001D62B9 /* LocalStore.swift */,
 				A80E04E421E5410D008E74FD /* URLManager.swift */,
@@ -603,6 +603,7 @@
 				A87D0AB321E41333001D62B9 /* MoviesInteractor.swift in Sources */,
 				A8775FC221E61B9C004AEAE1 /* MoviesViewController+Sort.swift in Sources */,
 				A87D0AC121E41333001D62B9 /* TableViewDataSource.swift in Sources */,
+				A8775FC621E63E44004AEAE1 /* MoviesService.swift in Sources */,
 				A87D0AB221E41333001D62B9 /* MoviesBuilder.swift in Sources */,
 				A87D0AB421E41333001D62B9 /* MoviesPresenter.swift in Sources */,
 				A87D0AC321E41333001D62B9 /* LocalStore.swift in Sources */,
@@ -613,7 +614,6 @@
 				A891BDC021E51C940009FFFE /* UITableView+ScrollToTop.swift in Sources */,
 				A87D0ABC21E41333001D62B9 /* DynamicValue.swift in Sources */,
 				A8775FC021E6128B004AEAE1 /* MoviesViewController+Filter.swift in Sources */,
-				A87D0AC021E41333001D62B9 /* Service.swift in Sources */,
 				A80E04E721E546FB008E74FD /* MoviesStore.swift in Sources */,
 				A87D0AB821E41333001D62B9 /* MoviesTableViewController.swift in Sources */,
 				A87D0AC521E41333001D62B9 /* LoadingViewController.swift in Sources */,
