@@ -46,11 +46,6 @@ protocol PresenterProtocol {
     associatedtype ViewModel
 }
 
-protocol ColorTheme {
-    func primaryColor() -> UIColor
-    func secondaryColor() -> UIColor
-}
-
 protocol CacheProtocol {
     associatedtype CacheObject
     func setObject<CacheObject>(_ object: CacheObject, key: String)
