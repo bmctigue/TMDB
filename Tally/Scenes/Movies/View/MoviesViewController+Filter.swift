@@ -11,8 +11,8 @@ import UIKit
 extension MoviesViewController {
     
     @IBAction func favoritesButtonPressed(_ sender: Any) {
-        self.state = state == .all ? .favorite : .all
-        filterStateChanged(state)
+        self.filterState = filterState == .all ? .favorite : .all
+        filterStateChanged(filterState)
     }
     
     func filterStateChanged(_ state: MovieFilterState) {
@@ -28,6 +28,6 @@ extension MoviesViewController {
     }
     
     func updateFilteredMovies() {
-        self.tableViewController.updateFilterState(state)
+        self.tableViewController.updateFilterState(filterState)
     }
 }

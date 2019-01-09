@@ -12,7 +12,7 @@ final class MoviesViewController: UIViewController {
     
     lazy var favoritesButton = UIBarButtonItem(image: UIImage(named: "enabled_heart"), style: .plain, target: self, action: #selector(favoritesButtonPressed(_:)))
     
-    var state: MovieFilterState = .all
+    var filterState: MovieFilterState = .all
     var tableViewController: MoviesTableViewController
     
     init(with tableViewController: MoviesTableViewController) {
@@ -25,7 +25,7 @@ final class MoviesViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.lightGray
         self.navigationItem.rightBarButtonItem = favoritesButton
-        filterStateChanged(state)
+        filterStateChanged(filterState)
         add(tableViewController)
     }
     
