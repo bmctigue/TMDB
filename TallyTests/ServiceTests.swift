@@ -28,4 +28,20 @@ class ServiceTests: XCTestCase {
         waitForExpectations(timeout: 3.0, handler: nil)
         XCTAssert(results.count > 0)
     }
+    
+    func testServiceClearCache() {
+        let expectation = self.expectation(description: "fetchItems")
+        var results = [Movie]()
+        let store = LocalStore(assetName)
+        let request = Request()
+        
+        let sut = Movies.Service(store, dataAdapter: dataAdapter)
+        sut.moviesCache.removeObject(sut.moviesKey)
+        sut.fetchItems(request) { movies in
+            results = movies as! [Movie]
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 3.0, handler: nil)
+        XCTAssert(results.count > 0)
+    }
 }
