@@ -50,7 +50,7 @@ extension Movies {
         
         func updateViewModels(_ response: Response<Model>) {
             self.models = response.models
-            self.dynamicModels.value = baseViewModels
+            self.dynamicModels.value = viewModels
         }
         
         func filterModelsByState(_ state: MovieFilterState) {

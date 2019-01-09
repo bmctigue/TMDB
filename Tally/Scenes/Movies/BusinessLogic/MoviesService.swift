@@ -25,7 +25,8 @@ extension Movies {
         }
         
         func fetchItems(_ request: Request, completionHandler: @escaping ([Any]) -> Void) {
-            if movies.isEmpty {
+            let force = request.params["force"]
+            if movies.isEmpty || force != nil {
                 store.fetchData(request) { [weak self] dataResult in
                     switch dataResult {
                     case .success(let data):

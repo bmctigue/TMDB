@@ -13,7 +13,7 @@ import UIEmptyState
 class MoviesTableViewController: UIViewController {
     typealias ViewModel = Movies.ViewModel
     
-    let rowHeight: CGFloat = 74.0
+    let rowHeight: CGFloat = 126.0
     let cellName = "MovieCell"
     let cellNibName = "MovieTableViewCell"
     
@@ -23,6 +23,7 @@ class MoviesTableViewController: UIViewController {
     var tableViewDatasource: TableViewDataSource<ViewModel>?
     lazy var loadingViewController = LoadingViewController()
     lazy var urlManager = URLManager()
+    lazy var refreshControl = UIRefreshControl()
     
     private var interactor: InteractorProtocol
     private var presenter: Movies.Presenter
@@ -40,6 +41,9 @@ class MoviesTableViewController: UIViewController {
         self.tableView.register(UINib(nibName: cellNibName, bundle: nil), forCellReuseIdentifier: cellName)
         self.emptyStateDataSource = self
         self.emptyStateDelegate = self
+        
+        refreshControl.addTarget(self, action: #selector(refreshTableView), for: UIControl.Event.valueChanged)
+        tableView.refreshControl = refreshControl
         
         self.tableViewDatasource = TableViewDataSource(models: viewModels, reuseIdentifier: cellName) { (model: ViewModel, cell: UITableViewCell) in
             let cell = cell as! MovieTableViewCell
@@ -67,6 +71,14 @@ class MoviesTableViewController: UIViewController {
         
         add(loadingViewController)
         let request = Request()
+        interactor.fetchItems(request)
+    }
+    
+    @objc func refreshTableView() {
+        refreshControl.endRefreshing()
+        add(loadingViewController)
+        let params = ["force": "true"]
+        let request = Request(params)
         interactor.fetchItems(request)
     }
     

@@ -17,7 +17,7 @@ extension Movies {
         let posterPath: String
         let popularity: Double
         var formattedPopularity: String {
-            return "Pop: \(Int(popularity))"
+            return "Popularity: \(Int(popularity))"
         }
     }
 }
