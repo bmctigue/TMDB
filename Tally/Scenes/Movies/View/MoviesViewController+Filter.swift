@@ -26,8 +26,4 @@ extension MoviesViewController {
             favoritesButton.tintColor = .red
         }
     }
-    
-    func updateFilteredMovies() {
-        self.tableViewController.updateFilterState(filterState)
-    }
 }
