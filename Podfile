@@ -7,6 +7,7 @@ target 'Tally' do
     pod 'Cache'
     pod 'Kingfisher'
     pod 'UIEmptyState'
+    pod 'lottie-ios'
 
     target 'TallyTests' do
         inherit! :search_paths

@@ -1,12 +1,14 @@
 PODS:
   - Cache (5.2.0)
   - Kingfisher (5.0.1)
+  - lottie-ios (2.5.2)
   - UIEmptyState (4.0.1)
   - Unbox (3.0.0)
 
 DEPENDENCIES:
   - Cache
   - Kingfisher
+  - lottie-ios
   - UIEmptyState
   - Unbox
 
@@ -14,15 +16,17 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Cache
     - Kingfisher
+    - lottie-ios
     - UIEmptyState
     - Unbox
 
 SPEC CHECKSUMS:
   Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
   Kingfisher: 4f771421b9208185217550528a06fd48756cb7c2
+  lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
   UIEmptyState: 767376694d9402452fb3c0a5a5283176c6a53c92
   Unbox: 9ed33b2a31f7a8a049f54b94d40c4a52a28c4d9d
 
-PODFILE CHECKSUM: 8eb1f493d43625a791c474b77f4be12983f8593d
+PODFILE CHECKSUM: 1e07da8de8915162e5057e1c676981158712676d
 
 COCOAPODS: 1.5.2

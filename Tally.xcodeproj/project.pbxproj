@@ -10,6 +10,7 @@
 		8520DB90ECCA53EED6B841CE /* Pods_Tally.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6637F641524C612548B8F25C /* Pods_Tally.framework */; };
 		A80E04E521E5410D008E74FD /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80E04E421E5410D008E74FD /* URLManager.swift */; };
 		A80E04E721E546FB008E74FD /* MoviesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80E04E621E546FB008E74FD /* MoviesStore.swift */; };
+		A80E04E921E5716E008E74FD /* glow_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = A80E04E821E5716E008E74FD /* glow_loading.json */; };
 		A815A47721E43E3D00AB9A0C /* MoviesUnboxDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A815A47621E43E3D00AB9A0C /* MoviesUnboxDataAdapter.swift */; };
 		A87D0A4321E4109E001D62B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A4221E4109E001D62B9 /* AppDelegate.swift */; };
 		A87D0A4A21E410A0001D62B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A87D0A4921E410A0001D62B9 /* Assets.xcassets */; };
@@ -79,6 +80,7 @@
 		92ACC6547960FE9C73EB1939 /* Pods-Tally.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tally.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tally/Pods-Tally.debug.xcconfig"; sourceTree = "<group>"; };
 		A80E04E421E5410D008E74FD /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
 		A80E04E621E546FB008E74FD /* MoviesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesStore.swift; sourceTree = "<group>"; };
+		A80E04E821E5716E008E74FD /* glow_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = glow_loading.json; sourceTree = "<group>"; };
 		A815A47621E43E3D00AB9A0C /* MoviesUnboxDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesUnboxDataAdapter.swift; sourceTree = "<group>"; };
 		A87D0A3F21E4109E001D62B9 /* Tally.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tally.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87D0A4221E4109E001D62B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 		A87D0A9021E41333001D62B9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A80E04E821E5716E008E74FD /* glow_loading.json */,
 				A87D0A9121E41333001D62B9 /* moviesJson.json */,
 			);
 			path = Resources;
@@ -485,6 +488,7 @@
 				A87D0A7121E412DC001D62B9 /* Podfile in Resources */,
 				A87D0A8D21E41325001D62B9 /* LaunchScreen.storyboard in Resources */,
 				A87D0AB121E41333001D62B9 /* moviesJson.json in Resources */,
+				A80E04E921E5716E008E74FD /* glow_loading.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +538,7 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/UIEmptyState/UIEmptyState.framework",
 				"${BUILT_PRODUCTS_DIR}/Unbox/Unbox.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -541,6 +546,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIEmptyState.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Unbox.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
