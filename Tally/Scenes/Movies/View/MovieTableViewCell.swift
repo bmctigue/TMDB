@@ -32,6 +32,10 @@ class MovieTableViewCell: UITableViewCell {
     
     lazy var dynamicFavoriteState: DynamicValue<MovieFavoriteState?> = DynamicValue(favoriteState)
     
+    override func awakeFromNib() {
+        favoriteImageView.tintColor = MoviesViewController.controlsColor
+    }
+    
     @IBAction func favoriteButtonPressed(_ sender: Any) {
         if let favoriteState = favoriteState {
             switch favoriteState {

@@ -8,6 +8,7 @@ target 'Tally' do
     pod 'Kingfisher'
     pod 'UIEmptyState'
     pod 'lottie-ios'
+    pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 
     target 'TallyTests' do
         inherit! :search_paths

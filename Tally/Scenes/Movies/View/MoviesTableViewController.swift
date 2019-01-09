@@ -66,6 +66,7 @@ class MoviesTableViewController: UIViewController {
         let dynamicModels = presenter.getDynamicModels()
         dynamicModels.addObserver(self) { [weak self] in
             self?.updateTableView(dynamicModels.value)
+            self?.refreshControl.endRefreshing()
             self?.loadingViewController.remove()
         }
         
@@ -75,8 +76,6 @@ class MoviesTableViewController: UIViewController {
     }
     
     @objc func refreshTableView() {
-        refreshControl.endRefreshing()
-        add(loadingViewController)
         let params = ["force": "true"]
         let request = Request(params)
         interactor.fetchItems(request)

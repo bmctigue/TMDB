@@ -1,5 +1,8 @@
 PODS:
   - Cache (5.2.0)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
   - Kingfisher (5.0.1)
   - lottie-ios (2.5.2)
   - UIEmptyState (4.0.1)
@@ -7,6 +10,7 @@ PODS:
 
 DEPENDENCIES:
   - Cache
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - Kingfisher
   - lottie-ios
   - UIEmptyState
@@ -20,13 +24,23 @@ SPEC REPOS:
     - UIEmptyState
     - Unbox
 
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
 SPEC CHECKSUMS:
   Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Kingfisher: 4f771421b9208185217550528a06fd48756cb7c2
   lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
   UIEmptyState: 767376694d9402452fb3c0a5a5283176c6a53c92
   Unbox: 9ed33b2a31f7a8a049f54b94d40c4a52a28c4d9d
 
-PODFILE CHECKSUM: 1e07da8de8915162e5057e1c676981158712676d
+PODFILE CHECKSUM: 5bda148036c76b1708c836e98924771e2ffed73a
 
 COCOAPODS: 1.5.2

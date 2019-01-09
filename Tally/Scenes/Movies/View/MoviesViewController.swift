@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 final class MoviesViewController: UIViewController {
+    
+    static let controlsColor = UIColor.flatSkyBlueDark
     
     lazy var favoritesButton = UIBarButtonItem(title: "My List", style: .plain, target: self, action: #selector(favoritesButtonPressed(_:)))
     
@@ -27,6 +30,8 @@ final class MoviesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.lightGray
+        favoritesButton.tintColor = MoviesViewController.controlsColor
+        sortButton.tintColor = MoviesViewController.controlsColor
         self.navigationItem.rightBarButtonItem = favoritesButton
         self.navigationItem.leftBarButtonItem = sortButton
         filterStateChanged(filterState)
