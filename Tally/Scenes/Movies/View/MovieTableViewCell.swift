@@ -30,14 +30,6 @@ class MovieTableViewCell: UITableViewCell {
     
     lazy var dynamicFavoriteState: DynamicValue<MovieFavoriteState?> = DynamicValue(favoriteState)
     
-    override func awakeFromNib() {
-        favoriteButton.backgroundColor = .clear
-    }
-    
-    override func layoutSubviews() {
-        cellImageView.layer.cornerRadius = 8
-    }
-    
     @IBAction func favoriteButtonPressed(_ sender: Any) {
         if let favoriteState = favoriteState {
             switch favoriteState {
