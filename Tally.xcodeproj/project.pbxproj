@@ -13,6 +13,7 @@
 		A80E04E921E5716E008E74FD /* glow_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = A80E04E821E5716E008E74FD /* glow_loading.json */; };
 		A815A47721E43E3D00AB9A0C /* MoviesUnboxDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A815A47621E43E3D00AB9A0C /* MoviesUnboxDataAdapter.swift */; };
 		A8775FC021E6128B004AEAE1 /* MoviesViewController+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8775FBF21E6128B004AEAE1 /* MoviesViewController+Filter.swift */; };
+		A8775FC221E61B9C004AEAE1 /* MoviesViewController+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8775FC121E61B9C004AEAE1 /* MoviesViewController+Sort.swift */; };
 		A87D0A4321E4109E001D62B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A4221E4109E001D62B9 /* AppDelegate.swift */; };
 		A87D0A4A21E410A0001D62B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A87D0A4921E410A0001D62B9 /* Assets.xcassets */; };
 		A87D0A6321E410A0001D62B9 /* TallyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A6221E410A0001D62B9 /* TallyUITests.swift */; };
@@ -84,6 +85,7 @@
 		A80E04E821E5716E008E74FD /* glow_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = glow_loading.json; sourceTree = "<group>"; };
 		A815A47621E43E3D00AB9A0C /* MoviesUnboxDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesUnboxDataAdapter.swift; sourceTree = "<group>"; };
 		A8775FBF21E6128B004AEAE1 /* MoviesViewController+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoviesViewController+Filter.swift"; sourceTree = "<group>"; };
+		A8775FC121E61B9C004AEAE1 /* MoviesViewController+Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoviesViewController+Sort.swift"; sourceTree = "<group>"; };
 		A87D0A3F21E4109E001D62B9 /* Tally.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tally.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87D0A4221E4109E001D62B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A87D0A4921E410A0001D62B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 			children = (
 				A87D0A9C21E41333001D62B9 /* MoviesViewController.swift */,
 				A8775FBF21E6128B004AEAE1 /* MoviesViewController+Filter.swift */,
+				A8775FC121E61B9C004AEAE1 /* MoviesViewController+Sort.swift */,
 				A87D0A9F21E41333001D62B9 /* MoviesViewController.xib */,
 				A87D0A9D21E41333001D62B9 /* MoviesTableViewController.swift */,
 				A87D0A9E21E41333001D62B9 /* MoviesTableViewController.xib */,
@@ -598,6 +601,7 @@
 				A891BDB821E4DFA60009FFFE /* Cache.swift in Sources */,
 				A87D0ABF21E41333001D62B9 /* Protocols.swift in Sources */,
 				A87D0AB321E41333001D62B9 /* MoviesInteractor.swift in Sources */,
+				A8775FC221E61B9C004AEAE1 /* MoviesViewController+Sort.swift in Sources */,
 				A87D0AC121E41333001D62B9 /* TableViewDataSource.swift in Sources */,
 				A87D0AB221E41333001D62B9 /* MoviesBuilder.swift in Sources */,
 				A87D0AB421E41333001D62B9 /* MoviesPresenter.swift in Sources */,

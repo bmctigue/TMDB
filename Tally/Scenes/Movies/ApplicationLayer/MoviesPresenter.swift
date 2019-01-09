@@ -9,24 +9,24 @@
 import UIKit
 
 extension Movies {
-  final class Presenter: PresenterProtocol {
+    final class Presenter: PresenterProtocol {
         typealias Model = Movie
         typealias ViewModel = Movies.ViewModel
         private var models: [Model]
         private var dynamicModels: DynamicValue<[ViewModel]> = DynamicValue([ViewModel]())
-        private var filterState: MovieFilterState
-        private var favoritesManager = FavoritesManager()
+        private var filterState: MovieFilterState = .all
+        private var sortState: MovieSortState = .none
+        private lazy var favoritesManager = FavoritesManager()
         
         init(_ models: [Model] = [Model]()) {
             self.models = models
-            self.filterState = .all
             dynamicModels.value = viewModels
         }
     
         var baseViewModels: [ViewModel] {
             var resultModels = [ViewModel]()
             for model in models {
-                let displayedModel = ViewModel(movieId: model.movieId, title: model.title, overview: model.overview, releaseDate: model.releaseDate, posterPath: model.posterPath)
+                let displayedModel = ViewModel(movieId: model.movieId, title: model.title, overview: model.overview, releaseDate: model.releaseDate, posterPath: model.posterPath, popularity: model.popularity)
                 resultModels.append(displayedModel)
             }
             return resultModels
@@ -34,9 +34,17 @@ extension Movies {
         
         var viewModels: [ViewModel] {
             var resultModels = baseViewModels
+            
             if filterState == .favorite {
                 resultModels = resultModels.filter { favoritesManager.getFavorites().contains($0.movieId) }
             }
+            
+            if sortState == .ascending {
+                resultModels = resultModels.sorted (by: {$0.popularity < $1.popularity})
+            } else if sortState == .descending {
+                resultModels = resultModels.sorted (by: {$0.popularity > $1.popularity})
+            }
+            
             return resultModels
         }
         
@@ -47,6 +55,11 @@ extension Movies {
         
         func filterModelsByState(_ state: MovieFilterState) {
             self.filterState = state
+            self.dynamicModels.value = viewModels
+        }
+    
+        func sortModelsByState(_ state: MovieSortState) {
+            self.sortState = state
             self.dynamicModels.value = viewModels
         }
         

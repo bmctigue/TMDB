@@ -15,5 +15,9 @@ extension Movies {
         let overview: String
         let releaseDate: String
         let posterPath: String
+        let popularity: Double
+        var formattedPopularity: String {
+            return "Pop: \(Int(popularity))"
+        }
     }
 }

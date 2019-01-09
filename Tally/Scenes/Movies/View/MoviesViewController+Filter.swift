@@ -20,10 +20,8 @@ extension MoviesViewController {
         switch state {
         case .all:
             favoritesButton.image = UIImage(named: "enabled_heart")
-            favoritesButton.tintColor = .red
         case .favorite:
             favoritesButton.image = UIImage(named: "disabled_heart")
-            favoritesButton.tintColor = .red
         }
     }
 }

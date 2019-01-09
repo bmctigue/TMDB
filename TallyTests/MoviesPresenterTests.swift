@@ -11,9 +11,9 @@ import XCTest
 
 class MoviesPresenterTests: XCTestCase {
     
-    let movie1 = Movie(voteCount: 0, movieId: 1, video: false, voteAverage: 1, title: "test", popularity: 0, posterPath: "", originalLanguage: "en", originalTitle: "test", genreIds: [0], backdropPath: "", adult: false, overview: "test", releaseDate: "11-03-18")
+    let movie1 = Movie(voteCount: 0, movieId: 1, video: false, voteAverage: 1, title: "test", popularity: 50, posterPath: "", originalLanguage: "en", originalTitle: "test", genreIds: [0], backdropPath: "", adult: false, overview: "test", releaseDate: "11-03-18")
     
-    let movie2 = Movie(voteCount: 0, movieId: 2, video: false, voteAverage: 1, title: "test", popularity: 0, posterPath: "", originalLanguage: "en", originalTitle: "test", genreIds: [0], backdropPath: "", adult: false, overview: "test", releaseDate: "11-03-18")
+    let movie2 = Movie(voteCount: 0, movieId: 2, video: false, voteAverage: 1, title: "test", popularity: 100, posterPath: "", originalLanguage: "en", originalTitle: "test", genreIds: [0], backdropPath: "", adult: false, overview: "test", releaseDate: "11-03-18")
     
     func testDisplayedMovies() {
         let presenter = Movies.Presenter()
@@ -59,7 +59,6 @@ class MoviesPresenterTests: XCTestCase {
         
         presenter.updateFavorites(.unSelected(movieId))
         XCTAssertFalse(presenter.getFavorites().contains(movieId))
-        
     }
     
     func testFilterAllModelsByState() {
@@ -77,6 +76,20 @@ class MoviesPresenterTests: XCTestCase {
         presenter.filterModelsByState(.favorite)
         let dynamicModels = presenter.getDynamicModels()
         XCTAssert(dynamicModels.value.count == 1)
+    }
+    
+    func testSortModelsByState() {
+        let models = [movie1, movie2]
+        let presenter = Movies.Presenter(models)
+        presenter.sortModelsByState(.none)
+        var dynamicModels = presenter.getDynamicModels()
+        XCTAssert(dynamicModels.value.first!.movieId == movie1.movieId)
+        presenter.sortModelsByState(.descending)
+        dynamicModels = presenter.getDynamicModels()
+        XCTAssert(dynamicModels.value.first!.movieId == movie2.movieId)
+        presenter.sortModelsByState(.ascending)
+        dynamicModels = presenter.getDynamicModels()
+        XCTAssert(dynamicModels.value.first!.movieId == movie1.movieId)
     }
     
     func testGetModels() {

@@ -13,6 +13,12 @@ enum MovieFilterState {
     case favorite
 }
 
+enum MovieSortState {
+    case none
+    case ascending
+    case descending
+}
+
 enum MovieFavoriteState: Equatable {
     case selected(Int)
     case unSelected(Int)

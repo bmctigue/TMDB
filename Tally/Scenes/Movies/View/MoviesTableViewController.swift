@@ -47,6 +47,7 @@ class MoviesTableViewController: UIViewController {
             cell.titleLabel.text = model.title
             cell.overViewLabel.text = model.overview
             cell.releaseDateLabel.text = model.releaseDate
+            cell.popularityLabel.text = model.formattedPopularity
             cell.cellImageView.kf.indicatorType = .activity
             cell.cellImageView.kf.setImage(with: self.urlManager.fetchMoviePosterURL(model.posterPath))
             cell.favoriteState = self.presenter.getFavorites().contains(model.movieId) ? MovieFavoriteState.selected(model.movieId) : MovieFavoriteState.unSelected(model.movieId)
@@ -79,6 +80,10 @@ class MoviesTableViewController: UIViewController {
     
     func updateFilterState(_ state: MovieFilterState) {
         presenter.filterModelsByState(state)
+    }
+    
+    func updateSortState(_ state: MovieSortState) {
+        presenter.sortModelsByState(state)
     }
     
     required init?(coder aDecoder: NSCoder) {

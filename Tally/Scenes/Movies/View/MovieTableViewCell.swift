@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 
 class MovieTableViewCell: UITableViewCell {
     typealias ViewModel = Movies.ViewModel
@@ -14,6 +15,7 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var overViewLabel: UILabel!
     @IBOutlet weak var releaseDateLabel: UILabel!
+    @IBOutlet weak var popularityLabel: UILabel!
     @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var favoriteImageView: UIImageView!
     @IBOutlet weak var favoriteButton: UIButton!
