@@ -19,6 +19,7 @@
 		A8775FCE21E659DD004AEAE1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8775FCC21E659DD004AEAE1 /* SplashViewController.swift */; };
 		A8775FCF21E659DD004AEAE1 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8775FCD21E659DD004AEAE1 /* Splash.storyboard */; };
 		A8775FD121E65C76004AEAE1 /* SplashBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8775FD021E65C76004AEAE1 /* SplashBuilder.swift */; };
+		A8775FD321E669C8004AEAE1 /* movie_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = A8775FD221E669C8004AEAE1 /* movie_loading.json */; };
 		A87D0A4321E4109E001D62B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A4221E4109E001D62B9 /* AppDelegate.swift */; };
 		A87D0A4A21E410A0001D62B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A87D0A4921E410A0001D62B9 /* Assets.xcassets */; };
 		A87D0A6321E410A0001D62B9 /* TallyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0A6221E410A0001D62B9 /* TallyUITests.swift */; };
@@ -95,6 +96,7 @@
 		A8775FCC21E659DD004AEAE1 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		A8775FCD21E659DD004AEAE1 /* Splash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		A8775FD021E65C76004AEAE1 /* SplashBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashBuilder.swift; sourceTree = "<group>"; };
+		A8775FD221E669C8004AEAE1 /* movie_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie_loading.json; sourceTree = "<group>"; };
 		A87D0A3F21E4109E001D62B9 /* Tally.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tally.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87D0A4221E4109E001D62B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A87D0A4921E410A0001D62B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 		A87D0A9021E41333001D62B9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A8775FD221E669C8004AEAE1 /* movie_loading.json */,
 				A80E04E821E5716E008E74FD /* glow_loading.json */,
 				A87D0A9121E41333001D62B9 /* moviesJson.json */,
 			);
@@ -524,6 +527,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A87D0AB921E41333001D62B9 /* MoviesTableViewController.xib in Resources */,
+				A8775FD321E669C8004AEAE1 /* movie_loading.json in Resources */,
 				A87D0AB621E41333001D62B9 /* MovieTableViewCell.xib in Resources */,
 				A87D0A4A21E410A0001D62B9 /* Assets.xcassets in Resources */,
 				A87D0ABA21E41333001D62B9 /* MoviesViewController.xib in Resources */,

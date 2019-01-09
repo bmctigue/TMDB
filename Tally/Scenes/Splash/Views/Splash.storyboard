@@ -22,27 +22,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vFx-uf-Lsl">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="430" width="320" height="138"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dxW-GD-5fq">
-                                        <rect key="frame" x="47" y="212" width="226" height="145"/>
+                                        <rect key="frame" x="47" y="0.5" width="226" height="138"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tally" translatesAutoresizingMaskIntoConstraints="NO" id="Cmu-h9-lGA">
-                                                <rect key="frame" x="0.0" y="0.0" width="226" height="145"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="226" height="138"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="226" id="fNl-os-hGN"/>
-                                            <constraint firstAttribute="height" constant="145" id="rMJ-2f-s1B"/>
+                                            <constraint firstAttribute="height" constant="138" id="rMJ-2f-s1B"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="dxW-GD-5fq" firstAttribute="centerY" secondItem="vFx-uf-Lsl" secondAttribute="centerY" constant="0.5" id="Oxr-6O-l8Y"/>
                                     <constraint firstItem="dxW-GD-5fq" firstAttribute="centerX" secondItem="vFx-uf-Lsl" secondAttribute="centerX" id="UZJ-z3-N7p"/>
+                                    <constraint firstAttribute="height" constant="138" id="akN-rc-w9w"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -50,7 +51,6 @@
                         <constraints>
                             <constraint firstItem="60h-AB-wFf" firstAttribute="top" secondItem="vFx-uf-Lsl" secondAttribute="bottom" id="9Wc-CA-Wgg"/>
                             <constraint firstItem="vFx-uf-Lsl" firstAttribute="leading" secondItem="EFC-jM-mBb" secondAttribute="leading" id="IwJ-eR-rJG"/>
-                            <constraint firstItem="vFx-uf-Lsl" firstAttribute="top" secondItem="EFC-jM-mBb" secondAttribute="top" id="Kz3-GC-xaV"/>
                             <constraint firstAttribute="trailing" secondItem="vFx-uf-Lsl" secondAttribute="trailing" id="Wdp-Sq-RKc"/>
                         </constraints>
                     </view>

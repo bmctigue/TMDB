@@ -11,7 +11,7 @@ import ChameleonFramework
 
 final class MoviesViewController: UIViewController {
     
-    static let controlsColor = UIColor.flatSkyBlueDark
+    static let controlsColor = UIColor.flatRedDark
     
     lazy var favoritesButton = UIBarButtonItem(title: "My List", style: .plain, target: self, action: #selector(favoritesButtonPressed(_:)))
     
