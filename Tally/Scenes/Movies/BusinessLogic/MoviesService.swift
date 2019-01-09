@@ -15,6 +15,7 @@ extension Movies {
         private var dataAdapter: Adapter
         private var movies: [Movie] = []
         lazy var moviesCache = MoviesCache()
+        lazy var urlManager = URLManager()
         
         let moviesKey = "movies"
         
@@ -27,7 +28,9 @@ extension Movies {
         func fetchItems(_ request: Request, completionHandler: @escaping ([Any]) -> Void) {
             let force = request.params["force"]
             if movies.isEmpty || force != nil {
-                store.fetchData(request) { [weak self] dataResult in
+                let page = request.params["page"] ?? "1"
+                let url = urlManager.fetchMoviesURL(page)
+                store.fetchData(request, url: url) { [weak self] dataResult in
                     switch dataResult {
                     case .success(let data):
                         self?.itemsFromData(data: data, completionHandler: completionHandler)

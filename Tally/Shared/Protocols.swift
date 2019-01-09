@@ -29,7 +29,7 @@ protocol MoviesDataAdapterProtocol {
 }
 
 protocol StoreProtocol {
-    func fetchData(_ request: Request, completionHandler: @escaping (Store.Result) -> Void)
+    func fetchData(_ request: Request, url: URL?, completionHandler: @escaping (Store.Result) -> Void)
 }
 
 protocol ServiceProtocol: class {

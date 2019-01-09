@@ -10,12 +10,8 @@ import UIKit
 
 extension Movies {
     struct RemoteStore: StoreProtocol {
-        func fetchData(_ request: Request, completionHandler: @escaping (Store.Result) -> Void) {
+        func fetchData(_ request: Request, url: URL? = nil, completionHandler: @escaping (Store.Result) -> Void) {
             let postData = NSData(data: "{}".data(using: String.Encoding.utf8)!)
-            
-            let page = request.params["page"] ?? "1"
-            let urlManager = URLManager()
-            let url = urlManager.fetchMoviesURL(page)
             if let url = url {
                 let urlRequest = NSMutableURLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
                 urlRequest.httpMethod = "GET"

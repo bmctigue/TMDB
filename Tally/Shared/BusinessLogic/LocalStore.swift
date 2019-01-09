@@ -16,7 +16,7 @@ struct LocalStore: StoreProtocol {
         self.assetName = assetName
     }
     
-    func fetchData(_ request: Request, completionHandler: @escaping (Store.Result) -> Void) {
+    func fetchData(_ request: Request, url: URL? = nil, completionHandler: @escaping (Store.Result) -> Void) {
         if let asset = NSDataAsset(name: assetName, bundle: Bundle.main) {
             completionHandler(.success(asset.data))
         } else {
