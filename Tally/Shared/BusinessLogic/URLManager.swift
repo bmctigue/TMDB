@@ -15,7 +15,7 @@ final class URLManager {
     let path = "/3/movie/popular"
     let apiKey = "ac975fc8b7261ca68365d2cf95286764"
     
-    func moviesURLComponents() -> URLComponents {
+    private func moviesURLComponents() -> URLComponents {
         var components = URLComponents()
         components.scheme = scheme
         components.host = host
