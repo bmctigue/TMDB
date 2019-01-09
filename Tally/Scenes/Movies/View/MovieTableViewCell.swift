@@ -34,6 +34,7 @@ class MovieTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         favoriteImageView.tintColor = MoviesViewController.controlsColor
+        cellImageView.layer.cornerRadius = 8
     }
     
     @IBAction func favoriteButtonPressed(_ sender: Any) {
