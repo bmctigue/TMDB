@@ -13,6 +13,7 @@ extension Movies {
         typealias Model = Movie
         typealias ViewModel = Movies.ViewModel
         private var models: [Model]
+        private var viewModels: [ViewModel] = []
         private var dynamicModels: DynamicValue<[ViewModel]> = DynamicValue([ViewModel]())
         private var filterState: MovieFilterState = .all
         private var sortState: MovieSortState = .none
@@ -20,7 +21,8 @@ extension Movies {
         
         init(_ models: [Model] = [Model]()) {
             self.models = models
-            dynamicModels.value = viewModels
+            self.viewModels = baseViewModels
+            dynamicModels.value = updatedViewModels
         }
     
         var baseViewModels: [ViewModel] {
@@ -32,8 +34,8 @@ extension Movies {
             return resultModels
         }
         
-        var viewModels: [ViewModel] {
-            var resultModels = baseViewModels
+        var updatedViewModels: [ViewModel] {
+            var resultModels = viewModels
             
             if filterState == .favorite {
                 resultModels = resultModels.filter { favoritesManager.getFavorites().contains($0.movieId) }
@@ -50,17 +52,18 @@ extension Movies {
         
         func updateViewModels(_ response: Response<Model>) {
             self.models = response.models
-            self.dynamicModels.value = viewModels
+            self.viewModels = baseViewModels
+            self.dynamicModels.value = updatedViewModels
         }
         
         func filterModelsByState(_ state: MovieFilterState) {
             self.filterState = state
-            self.dynamicModels.value = viewModels
+            self.dynamicModels.value = updatedViewModels
         }
     
         func sortModelsByState(_ state: MovieSortState) {
             self.sortState = state
-            self.dynamicModels.value = viewModels
+            self.dynamicModels.value = updatedViewModels
         }
         
         func getDynamicModels() -> DynamicValue<[ViewModel]> {

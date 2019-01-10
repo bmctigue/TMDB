@@ -17,7 +17,7 @@ class MoviesPresenterTests: XCTestCase {
     
     func testDisplayedMovies() {
         let presenter = Movies.Presenter()
-        XCTAssert(presenter.viewModels.count == 0)
+        XCTAssert(presenter.updatedViewModels.count == 0)
     }
     
     func testInitWithDisplayedMovies() {
@@ -31,7 +31,7 @@ class MoviesPresenterTests: XCTestCase {
             expectation.fulfill()
         }
         waitForExpectations(timeout: 3.0, handler: nil)
-        XCTAssert(presenter.viewModels.count == models.count)
+        XCTAssert(presenter.updatedViewModels.count == models.count)
         XCTAssert(resultMovies.count == models.count)
     }
 
