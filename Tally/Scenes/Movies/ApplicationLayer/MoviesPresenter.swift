@@ -52,6 +52,7 @@ extension Movies {
                 } else if self.sortState == .descending {
                     resultModels = resultModels.sorted (by: {$0.popularity > $1.popularity})
                 }
+                
                 self.main.dispatch {
                     completionHandler(resultModels)
                 }

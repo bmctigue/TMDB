@@ -360,10 +360,10 @@
 				A87D0AA521E41333001D62B9 /* Structs.swift */,
 				A891BDB721E4DFA60009FFFE /* Cache.swift */,
 				A891BDBF21E51C940009FFFE /* UITableView+ScrollToTop.swift */,
+				A81B999021E9385700D49446 /* DispatchingQueues.swift */,
 				A87D0AA721E41333001D62B9 /* BusinessLogic */,
 				A87D0AAC21E41333001D62B9 /* View */,
 				A87D0AA221E41333001D62B9 /* Binder */,
-				A81B999021E9385700D49446 /* DispatchingQueues.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
