@@ -18,32 +18,17 @@ class MoviesInteractorTests: XCTestCase {
     private lazy var service = Movies.Service(store, dataAdapter: dataAdapter)
     private lazy var presenter = Movies.Presenter([])
     var viewModels = [ViewModel]()
+    
+    let background = SyncQueue.background
+    let main = SyncQueue.global
 
     func testFetchItemsForAllMovies() {
-        let expectation = self.expectation(description: "fetch")
-        let presenter = Movies.Presenter([])
-        let interactor = Movies.Interactor(service, presenter: presenter)
+        let presenter = Movies.Presenter()
+        presenter.main = main
+        presenter.background = background
+        let sut = Movies.Interactor(service, presenter: presenter)
+        sut.fetchItems(Request())
         let dynamicModels = presenter.getDynamicModels()
-        dynamicModels.addObserver(self) { [weak self] in
-            self?.viewModels = dynamicModels.value
-            expectation.fulfill()
-        }
-        interactor.fetchItems(Request())
-        waitForExpectations(timeout: 3.0, handler: nil)
-        XCTAssertNotNil(viewModels.count == 4)
-    }
-    
-    func testFetchItemsForEntree() {
-        let expectation = self.expectation(description: "fetch")
-        let presenter = Movies.Presenter([])
-        let interactor = Movies.Interactor(service, presenter: presenter)
-        let dynamicModels = presenter.getDynamicModels()
-        dynamicModels.addObserver(self) { [weak self] in
-            self?.viewModels = dynamicModels.value
-            expectation.fulfill()
-        }
-        interactor.fetchItems(Request())
-        waitForExpectations(timeout: 3.0, handler: nil)
-        XCTAssertNotNil(viewModels.count == 3)
+        XCTAssertNotNil(dynamicModels.value.count == 4)
     }
 }

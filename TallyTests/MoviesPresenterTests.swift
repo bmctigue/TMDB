@@ -15,86 +15,90 @@ class MoviesPresenterTests: XCTestCase {
     
     let movie2 = Movie(voteCount: 0, movieId: 2, video: false, voteAverage: 1, title: "test", popularity: 100, posterPath: "", originalLanguage: "en", originalTitle: "test", genreIds: [0], backdropPath: "", adult: false, overview: "test", releaseDate: "11-03-18")
     
+    let background = SyncQueue.background
+    let main = SyncQueue.global
+    
     func testDisplayedMovies() {
-        let presenter = Movies.Presenter()
-        XCTAssert(presenter.updatedViewModels.count == 0)
+        let sut = Movies.Presenter()
+        sut.main = main
+        sut.background = background
+        sut.updateViewModelsInBackground()
+        XCTAssert(sut.getDynamicModels().value.count == 0)
     }
     
     func testInitWithDisplayedMovies() {
         let models = [movie1, movie2]
-        let presenter = Movies.Presenter(models)
-        var resultMovies = [Movies.ViewModel]()
-        let expectation = self.expectation(description: "testUpdateViewModels")
-        let dynamicModels = presenter.getDynamicModels()
-        dynamicModels.addAndNotify(observer: self) {
-            resultMovies = dynamicModels.value
-            expectation.fulfill()
-        }
-        waitForExpectations(timeout: 3.0, handler: nil)
-        XCTAssert(presenter.updatedViewModels.count == models.count)
-        XCTAssert(resultMovies.count == models.count)
+        let sut = Movies.Presenter(models)
+        sut.main = main
+        sut.background = background
+        sut.updateViewModelsInBackground()
+        XCTAssert(sut.getDynamicModels().value.count == models.count)
     }
 
     func testUpdateDisplayedMovies() {
         let models = [movie1, movie2]
-        let presenter = Movies.Presenter()
-        var resultMovies = [Movies.ViewModel]()
-        let expectation = self.expectation(description: "testUpdateViewModels")
-        let dynamicModels = presenter.getDynamicModels()
-        dynamicModels.addObserver(self) {
-            resultMovies = dynamicModels.value
-            expectation.fulfill()
-        }
+        let sut = Movies.Presenter()
+        sut.main = main
+        sut.background = background
         let response = Response(models: models)
-        presenter.updateViewModels(response)
-        waitForExpectations(timeout: 3.0, handler: nil)
-        XCTAssert(resultMovies.count == models.count)
+        sut.updateViewModels(response)
+        let dynamicModels = sut.getDynamicModels()
+        XCTAssert(dynamicModels.value.count == 2)
     }
-    
+
     func testUpdateFavorites() {
         let movieId = 5
-        let presenter = Movies.Presenter()
-        presenter.updateFavorites(.selected(movieId))
-        XCTAssertTrue(presenter.getFavorites().contains(movieId))
-        
-        presenter.updateFavorites(.unSelected(movieId))
-        XCTAssertFalse(presenter.getFavorites().contains(movieId))
+        let sut = Movies.Presenter()
+        sut.main = main
+        sut.background = background
+        sut.updateFavorites(.selected(movieId))
+        XCTAssertTrue(sut.getFavorites().contains(movieId))
+        sut.updateFavorites(.unSelected(movieId))
+        XCTAssertFalse(sut.getFavorites().contains(movieId))
     }
-    
+
     func testFilterAllModelsByState() {
         let models = [movie1, movie2]
-        let presenter = Movies.Presenter(models)
-        presenter.filterModelsByState(.all)
-        let filteredModels = presenter.getModels()
+        let sut = Movies.Presenter(models)
+        sut.main = main
+        sut.background = background
+        sut.filterModelsByState(.all)
+        let filteredModels = sut.getModels()
         XCTAssert(filteredModels.count == 2)
     }
-    
+
     func testFilterModelsByState() {
         let models = [movie1, movie2]
-        let presenter = Movies.Presenter(models)
-        presenter.updateFavorites(.selected(movie1.movieId))
-        presenter.filterModelsByState(.favorite)
-        let dynamicModels = presenter.getDynamicModels()
+        let sut = Movies.Presenter(models)
+        sut.main = main
+        sut.background = background
+        sut.updateFavorites(.selected(movie1.movieId))
+        sut.filterModelsByState(.favorite)
+        let dynamicModels = sut.getDynamicModels()
         XCTAssert(dynamicModels.value.count == 1)
     }
-    
+
     func testSortModelsByState() {
         let models = [movie1, movie2]
-        let presenter = Movies.Presenter(models)
-        presenter.sortModelsByState(.none)
-        var dynamicModels = presenter.getDynamicModels()
+        let sut = Movies.Presenter(models)
+        sut.main = main
+        sut.background = background
+        sut.sortModelsByState(.none)
+        var dynamicModels = sut.getDynamicModels()
         XCTAssert(dynamicModels.value.first!.movieId == movie1.movieId)
-        presenter.sortModelsByState(.descending)
-        dynamicModels = presenter.getDynamicModels()
+        sut.sortModelsByState(.descending)
+        dynamicModels = sut.getDynamicModels()
         XCTAssert(dynamicModels.value.first!.movieId == movie2.movieId)
-        presenter.sortModelsByState(.ascending)
-        dynamicModels = presenter.getDynamicModels()
+        sut.sortModelsByState(.ascending)
+        dynamicModels = sut.getDynamicModels()
         XCTAssert(dynamicModels.value.first!.movieId == movie1.movieId)
     }
-    
+
     func testGetModels() {
         let models = [movie1, movie2]
-        let presenter = Movies.Presenter(models)
-        XCTAssert(presenter.getModels().count == models.count)
+        let sut = Movies.Presenter(models)
+        sut.main = main
+        sut.background = background
+        XCTAssert(sut.getModels().count == models.count)
     }
 }
