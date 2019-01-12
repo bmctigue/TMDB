@@ -18,14 +18,9 @@ class MoviesInteractorTests: XCTestCase {
     private lazy var service = Movies.Service(store, dataAdapter: dataAdapter)
     private lazy var presenter = Movies.Presenter([])
     var viewModels = [ViewModel]()
-    
-    let background = SyncQueue.background
-    let main = SyncQueue.global
 
     func testFetchItemsForAllMovies() {
-        let presenter = Movies.Presenter()
-        presenter.main = main
-        presenter.background = background
+        let presenter = Movies.Presenter([], main: SyncQueue.global, background: SyncQueue.background)
         let sut = Movies.Interactor(service, presenter: presenter)
         sut.fetchItems(Request())
         let dynamicModels = presenter.getDynamicModels()

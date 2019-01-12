@@ -19,8 +19,8 @@ extension Movies {
         private var sortState: MovieSortState = .none
         private lazy var favoritesManager = FavoritesManager()
         
-        var main: Dispatching
-        var background: Dispatching
+        private var main: Dispatching
+        private var background: Dispatching
         
         init(_ models: [Model] = [Model](), main: Dispatching = AsyncQueue.main, background: Dispatching = AsyncQueue.background) {
             self.models = models
