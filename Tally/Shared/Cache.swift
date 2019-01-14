@@ -12,7 +12,7 @@ import Cache
 class BaseCache {
     lazy var diskConfig = DiskConfig(name: "Floppy")
     lazy var memoryConfig = MemoryConfig(expiry: .never, countLimit: 10, totalCostLimit: 10)
-    var appStateManager: AppStateManager
+    fileprivate var appStateManager: AppStateManager
     
     init(_ appStateManager: AppStateManager = AppStateManager.shared) {
         self.appStateManager = appStateManager
