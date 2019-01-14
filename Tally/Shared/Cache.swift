@@ -12,6 +12,11 @@ import Cache
 class BaseCache {
     lazy var diskConfig = DiskConfig(name: "Floppy")
     lazy var memoryConfig = MemoryConfig(expiry: .never, countLimit: 10, totalCostLimit: 10)
+    var appStateManager: AppStateManager
+    
+    init(_ appStateManager: AppStateManager = AppStateManager.shared) {
+        self.appStateManager = appStateManager
+    }
 }
 
 final class FavoritesCache: BaseCache, CacheProtocol {
@@ -28,6 +33,9 @@ final class FavoritesCache: BaseCache, CacheProtocol {
     }
     
     func getObject<CacheObject>(_ key: String) -> CacheObject {
+        guard appStateManager.getCachingState() == .caching else {
+            return Set<Int>() as! CacheObject
+        }
         let object = try? storage?.object(forKey: key)
         return object as! CacheObject
     }
@@ -51,6 +59,9 @@ final class MoviesCache: BaseCache, CacheProtocol {
     }
     
     func getObject<CacheObject>(_ key: String) -> CacheObject {
+        guard appStateManager.getCachingState() == .caching else {
+            return [Movie]() as! CacheObject
+        }
         let object = try? storage?.object(forKey: key)
         return object as! CacheObject
     }

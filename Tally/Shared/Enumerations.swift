@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum CachingState {
+    case caching
+    case notCaching
+}
+
 enum MovieFilterState {
     case all
     case favorite

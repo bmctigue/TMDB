@@ -10,7 +10,11 @@ import XCTest
 @testable import Tally
 
 class CacheTests: XCTestCase {
-
+    
+    override func setUp() {
+        AppStateManager.shared.updateCachingState(.caching)
+    }
+    
     func testAddObjectToFavoritesCache() {
         let key = "favorites"
         let testInt = 5

@@ -15,6 +15,7 @@ class ServiceTests: XCTestCase {
     lazy var dataAdapter = Movies.UnboxDataAdapter()
 
     func testService() {
+        AppStateManager.shared.updateCachingState(.notCaching)
         let expectation = self.expectation(description: "fetchItems")
         var results = [Movie]()
         let store = LocalStore(assetName)
