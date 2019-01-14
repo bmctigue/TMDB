@@ -10,6 +10,13 @@ import UIKit
 
 extension Movies {
     struct RemoteStore: StoreProtocol {
+        
+        private let session: NetworkSession
+        
+        init(session: NetworkSession = URLSession.shared) {
+            self.session = session
+        }
+        
         func fetchData(_ request: Request, url: URL? = nil, completionHandler: @escaping (Store.Result) -> Void) {
             let postData = NSData(data: "{}".data(using: String.Encoding.utf8)!)
             if let url = url {
@@ -17,8 +24,7 @@ extension Movies {
                 urlRequest.httpMethod = "GET"
                 urlRequest.httpBody = postData as Data
                 
-                let session = URLSession.shared
-                let dataTask = session.dataTask(with: urlRequest as URLRequest, completionHandler: { (data, _, error) -> Void in
+                session.loadData(with: urlRequest as URLRequest) { (data, error) in
                     DispatchQueue.main.async {
                         if error == nil {
                             if let data = data {
@@ -30,8 +36,9 @@ extension Movies {
                             completionHandler(.error(.fetchDataFailed))
                         }
                     }
-                })
-                dataTask.resume()
+                }
+            } else {
+                completionHandler(.success(Data([])))
             }
         }
     }

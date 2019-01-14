@@ -52,3 +52,7 @@ protocol CacheProtocol {
     func getObject<CacheObject>(_ key: String) -> CacheObject
     func removeObject(_ key: String)
 }
+
+protocol NetworkSession {
+    func loadData(with urlRequest: URLRequest, completionHandler: @escaping (Data?, Error?) -> Void)
+}
