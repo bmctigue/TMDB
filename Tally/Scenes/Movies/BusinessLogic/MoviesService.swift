@@ -14,7 +14,7 @@ extension Movies {
         private var store: StoreProtocol
         private var dataAdapter: Adapter
         private var movies: [Movie] = []
-        lazy var moviesCache = MoviesCache()
+        lazy var moviesCache = MoviesCache(AppStateManager.shared)
         lazy var urlManager = URLManager()
         
         let moviesKey = "movies"

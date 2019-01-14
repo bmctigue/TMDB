@@ -12,15 +12,16 @@ import Cache
 class BaseCache {
     lazy var diskConfig = DiskConfig(name: "Floppy")
     lazy var memoryConfig = MemoryConfig(expiry: .never, countLimit: 10, totalCostLimit: 10)
-    fileprivate var appStateManager: AppStateManager
-    
-    init(_ appStateManager: AppStateManager = AppStateManager.shared) {
-        self.appStateManager = appStateManager
-    }
 }
 
 final class FavoritesCache: BaseCache, CacheProtocol {
     typealias CacheObject = Set<Int>
+    
+    private var appStateManager: AppStateManager
+    
+    init(_ appStateManager: AppStateManager) {
+        self.appStateManager = appStateManager
+    }
     
     lazy var storage = try? Storage(
         diskConfig: diskConfig,
@@ -47,6 +48,12 @@ final class FavoritesCache: BaseCache, CacheProtocol {
 
 final class MoviesCache: BaseCache, CacheProtocol {
     typealias CacheObject = [Movie]
+    
+    private var appStateManager: AppStateManager
+    
+    init(_ appStateManager: AppStateManager) {
+        self.appStateManager = appStateManager
+    }
     
     lazy var storage = try? Storage(
         diskConfig: diskConfig,
