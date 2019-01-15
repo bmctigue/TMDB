@@ -58,13 +58,13 @@
 		A87D0AC421E41333001D62B9 /* UIViewController+AddRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0AAD21E41333001D62B9 /* UIViewController+AddRemove.swift */; };
 		A87D0AC521E41333001D62B9 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0AAE21E41333001D62B9 /* LoadingViewController.swift */; };
 		A87D0AC621E41333001D62B9 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87D0AB021E41333001D62B9 /* Movie.swift */; };
+		A889B23821EE291A00474CB2 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A889B23721EE291A00474CB2 /* URLProtocolStub.swift */; };
 		A891BDB621E4C9800009FFFE /* MovieTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A891BDB521E4C9800009FFFE /* MovieTableViewCellTests.swift */; };
 		A891BDB821E4DFA60009FFFE /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A891BDB721E4DFA60009FFFE /* Cache.swift */; };
 		A891BDBA21E4E2F40009FFFE /* CacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A891BDB921E4E2F40009FFFE /* CacheTests.swift */; };
 		A891BDBC21E4F3590009FFFE /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A891BDBB21E4F3590009FFFE /* FavoritesManager.swift */; };
 		A891BDBE21E4F7310009FFFE /* FavoritesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A891BDBD21E4F7310009FFFE /* FavoritesManagerTests.swift */; };
 		A891BDC021E51C940009FFFE /* UITableView+ScrollToTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A891BDBF21E51C940009FFFE /* UITableView+ScrollToTop.swift */; };
-		A89B834921ED44A300B8E541 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B834821ED44A300B8E541 /* MockURLSession.swift */; };
 		A89B834B21ED476800B8E541 /* MoviesStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B834A21ED476800B8E541 /* MoviesStoreTests.swift */; };
 		BC3F6B609B4FD1435C8F2161 /* Pods_TallyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0EA0611899F5D8BA81990E /* Pods_TallyTests.framework */; };
 /* End PBXBuildFile section */
@@ -147,13 +147,13 @@
 		A87D0AAD21E41333001D62B9 /* UIViewController+AddRemove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddRemove.swift"; sourceTree = "<group>"; };
 		A87D0AAE21E41333001D62B9 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		A87D0AB021E41333001D62B9 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		A889B23721EE291A00474CB2 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
 		A891BDB521E4C9800009FFFE /* MovieTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCellTests.swift; sourceTree = "<group>"; };
 		A891BDB721E4DFA60009FFFE /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		A891BDB921E4E2F40009FFFE /* CacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTests.swift; sourceTree = "<group>"; };
 		A891BDBB21E4F3590009FFFE /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
 		A891BDBD21E4F7310009FFFE /* FavoritesManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManagerTests.swift; sourceTree = "<group>"; };
 		A891BDBF21E51C940009FFFE /* UITableView+ScrollToTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+ScrollToTop.swift"; sourceTree = "<group>"; };
-		A89B834821ED44A300B8E541 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		A89B834A21ED476800B8E541 /* MoviesStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesStoreTests.swift; sourceTree = "<group>"; };
 		B97BF234A5B208F1B7669625 /* Pods-Tally.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tally.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tally/Pods-Tally.release.xcconfig"; sourceTree = "<group>"; };
 		EEDD071EF8BE4C3B4A8DD8D2 /* Pods-TallyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TallyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TallyTests/Pods-TallyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -369,7 +369,7 @@
 				A891BDB721E4DFA60009FFFE /* Cache.swift */,
 				A891BDBF21E51C940009FFFE /* UITableView+ScrollToTop.swift */,
 				A81B999021E9385700D49446 /* DispatchingQueues.swift */,
-				A89B834821ED44A300B8E541 /* MockURLSession.swift */,
+				A889B23721EE291A00474CB2 /* URLProtocolStub.swift */,
 				A87D0AA721E41333001D62B9 /* BusinessLogic */,
 				A87D0AAC21E41333001D62B9 /* View */,
 				A87D0AA221E41333001D62B9 /* Binder */,
@@ -657,7 +657,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8775FCE21E659DD004AEAE1 /* SplashViewController.swift in Sources */,
-				A89B834921ED44A300B8E541 /* MockURLSession.swift in Sources */,
 				A891BDB821E4DFA60009FFFE /* Cache.swift in Sources */,
 				A87D0ABF21E41333001D62B9 /* Protocols.swift in Sources */,
 				A87D0AB321E41333001D62B9 /* MoviesInteractor.swift in Sources */,
@@ -667,6 +666,7 @@
 				A87D0AB221E41333001D62B9 /* MoviesBuilder.swift in Sources */,
 				A8775FD121E65C76004AEAE1 /* SplashBuilder.swift in Sources */,
 				A8775FC921E659CE004AEAE1 /* StoryboardFactory.swift in Sources */,
+				A889B23821EE291A00474CB2 /* URLProtocolStub.swift in Sources */,
 				A81B999121E9385700D49446 /* DispatchingQueues.swift in Sources */,
 				A87D0AB421E41333001D62B9 /* MoviesPresenter.swift in Sources */,
 				A87D0AC321E41333001D62B9 /* LocalStore.swift in Sources */,
