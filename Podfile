@@ -1,7 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'Tally' do
+target 'TMDB' do
 
     pod 'Unbox'
     pod 'Cache'
@@ -10,7 +10,7 @@ target 'Tally' do
     pod 'lottie-ios'
     pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 
-    target 'TallyTests' do
+    target 'TMDBTests' do
         inherit! :search_paths
     end
 end

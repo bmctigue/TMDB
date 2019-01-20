@@ -19,12 +19,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Tally.xcscheme</key>
+		<key>Pods-TMDB.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-TallyTests.xcscheme</key>
+		<key>Pods-TMDBTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

@@ -1,6 +1,0 @@
-framework module Pods_TallyTests {
-  umbrella header "Pods-TallyTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
