@@ -29,8 +29,6 @@ class MoviesUnboxDataAdapterTests: XCTestCase {
                     switch adapterResult {
                     case .success(let items):
                         self.items = items
-                    case .error:
-                        XCTFail()
                     }
                 case .error(let error):
                     print(error)

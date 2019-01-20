@@ -36,7 +36,6 @@ enum StoreError: Error {
 enum Store {
     enum Result {
         case success(Data)
-        case error(StoreError)
     }
 }
 
@@ -47,13 +46,11 @@ enum DataAdapterError: Error {
 enum DataAdapter {
     enum Result<Model> {
         case success([Model])
-        case error(DataAdapterError)
     }
 }
 
 enum MovieDataAdapter {
     enum Result {
         case success([Movie])
-        case error(DataAdapterError)
     }
 }

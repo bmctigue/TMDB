@@ -36,9 +36,6 @@ extension Movies {
                     switch storeResult {
                     case .success(let data):
                         return (self!.dataAdapter.itemsFromData(data))
-                    case .error(let error):
-                        print("data fetch error: \(error.localizedDescription)")
-                        return (self!.dataAdapter.itemsFromData(Data([])))
                     }
                 }.finally(queue: .main) { future in
                     switch future.state {
@@ -47,12 +44,9 @@ extension Movies {
                         case .success(let items):
                             self.moviesCache.setObject(items, key: self.moviesKey)
                             completionHandler(items)
-                        case .error(let error):
-                            print("data fetch error: \(error.localizedDescription)")
-                            completionHandler([])
                         }
-                    case .error(let err):
-                        print(String(describing: err))
+                    case .error(let error):
+                        print("data fetch error: \(error.localizedDescription)")
                         completionHandler([])
                     case .cancelled:
                         print("future is in a cancelled state")

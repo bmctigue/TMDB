@@ -25,9 +25,6 @@ class LocalStoreTests: XCTestCase {
                 switch storeResult {
                 case .success(let data):
                     self.fetchedData = data
-                case .error(let error):
-                    print(error)
-                    XCTFail()
                 }
             case .error(let error):
                 print(error)
@@ -41,20 +38,20 @@ class LocalStoreTests: XCTestCase {
         }
         waitForExpectations(timeout: 3.0, handler: nil)
         XCTAssertNotNil(fetchedData)
+        XCTAssertNil(error)
     }
 
     func testLocalStoreBadAsset() {
         let expectation = self.expectation(description: "fetchData")
         let sut = LocalStore("badAssetName")
         let request = Request()
+        self.fetchedData = nil
         sut.fetchData(request, url: nil).finally { future in
             switch future.state {
             case .result(let storeResult):
                 switch storeResult {
                 case .success(let data):
                     self.fetchedData = data
-                case .error(let error):
-                    XCTFail()
                 }
             case .error(let error):
                 print(error.localizedDescription)
@@ -68,5 +65,6 @@ class LocalStoreTests: XCTestCase {
         }
         waitForExpectations(timeout: 3.0, handler: nil)
         XCTAssertNotNil(error)
+        XCTAssertNil(fetchedData)
     }
 }
