@@ -28,7 +28,7 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A87D0A5221E410A0001D62B9"
+               BlueprintIdentifier = "A85EBDD221F4E7CB0012ACFF"
                BuildableName = "TMDBTests.xctest"
                BlueprintName = "TMDBTests"
                ReferencedContainer = "container:TMDB.xcodeproj">
@@ -42,7 +42,7 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A87D0A5D21E410A0001D62B9"
+               BlueprintIdentifier = "A85EBDE021F4E7DC0012ACFF"
                BuildableName = "TMDBUITests.xctest"
                BlueprintName = "TMDBUITests"
                ReferencedContainer = "container:TMDB.xcodeproj">

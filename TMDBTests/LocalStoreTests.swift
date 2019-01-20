@@ -15,37 +15,58 @@ class LocalStoreTests: XCTestCase {
     var fetchedData: Data?
     var error: StoreError?
     
-//    func testLocalStore() {
-//        let expectation = self.expectation(description: "fetchData")
-//        let sut = LocalStore(assetName)
-//        let request = Request()
-//        sut.fetchData(request) {[weak self] result in
-//            switch result {
-//            case .success(let data):
-//                self?.fetchedData = data
-//            case .error:
-//                XCTFail()
-//            }
-//            expectation.fulfill()
-//        }
-//        waitForExpectations(timeout: 3.0, handler: nil)
-//        XCTAssertNotNil(fetchedData)
-//    }
-//    
-//    func testLocalStoreBadAsset() {
-//        let expectation = self.expectation(description: "fetchData")
-//        let sut = LocalStore("badAssetName")
-//        let request = Request()
-//        sut.fetchData(request) {[weak self] result in
-//            switch result {
-//            case .success(let data):
-//                self?.fetchedData = data
-//            case .error(let error):
-//                self?.error = error
-//            }
-//            expectation.fulfill()
-//        }
-//        waitForExpectations(timeout: 3.0, handler: nil)
-//        XCTAssertNotNil(error)
-//    }
+    func testLocalStore() {
+        let expectation = self.expectation(description: "fetchData")
+        let sut = LocalStore(assetName)
+        let request = Request()
+        sut.fetchData(request, url: nil).finally { future in
+            switch future.state {
+            case .result(let storeResult):
+                switch storeResult {
+                case .success(let data):
+                    self.fetchedData = data
+                case .error(let error):
+                    print(error)
+                    XCTFail()
+                }
+            case .error(let error):
+                print(error)
+                XCTFail()
+            case .cancelled:
+                XCTFail()
+            case .unresolved:
+                XCTFail()
+            }
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 3.0, handler: nil)
+        XCTAssertNotNil(fetchedData)
+    }
+
+    func testLocalStoreBadAsset() {
+        let expectation = self.expectation(description: "fetchData")
+        let sut = LocalStore("badAssetName")
+        let request = Request()
+        sut.fetchData(request, url: nil).finally { future in
+            switch future.state {
+            case .result(let storeResult):
+                switch storeResult {
+                case .success(let data):
+                    self.fetchedData = data
+                case .error(let error):
+                    XCTFail()
+                }
+            case .error(let error):
+                print(error.localizedDescription)
+                self.error = error as? StoreError
+            case .cancelled:
+                XCTFail()
+            case .unresolved:
+                XCTFail()
+            }
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 3.0, handler: nil)
+        XCTAssertNotNil(error)
+    }
 }
