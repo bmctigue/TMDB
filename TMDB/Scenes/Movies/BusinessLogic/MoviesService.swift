@@ -53,10 +53,13 @@ extension Movies {
                         }
                     case .error(let err):
                         print(String(describing: err))
+                        completionHandler([])
                     case .cancelled:
                         print("future is in a cancelled state")
+                        completionHandler([])
                     case .unresolved:
                         print("this really cannot be if any chaining block is executed")
+                        completionHandler([])
                     }
                 }
             } else {

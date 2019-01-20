@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C9AAD7A5233C44D756186BF /* Pods_TMDBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF87FE775338476A96C567B /* Pods_TMDBTests.framework */; };
 		664BEEF8E799909781D8214B /* Pods_TMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B776AAE85E2BDBEEA657099 /* Pods_TMDB.framework */; };
 		6ACA99E5C5C7E4C71E920325 /* Pods_TMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80C91B721F4C045003C2432 /* Pods_TMDB.framework */; };
 		A80C918C21F4BDA6003C2432 /* SplashBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C915321F4BDA6003C2432 /* SplashBuilder.swift */; };
@@ -85,6 +86,19 @@
 			remoteInfo = TMDB;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A818F30421F5015300F54CC9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		360D73DB2D9AAB07E8DA70E6 /* Pods-TMDBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDBTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TMDBTests/Pods-TMDBTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C9AAD7A5233C44D756186BF /* Pods_TMDBTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,8 +342,8 @@
 		A80C917E21F4BDA6003C2432 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
-				A80C917F21F4BDA6003C2432 /* TableViewDataSource.swift */,
 				A80C918021F4BDA6003C2432 /* LocalStore.swift */,
+				A80C917F21F4BDA6003C2432 /* TableViewDataSource.swift */,
 				A80C918121F4BDA6003C2432 /* URLManager.swift */,
 			);
 			path = BusinessLogic;
@@ -443,6 +458,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A85EBDDA21F4E7CB0012ACFF /* Build configuration list for PBXNativeTarget "TMDBTests" */;
 			buildPhases = (
+				A6BB687B18F6226AB34E7985 /* [CP] Check Pods Manifest.lock */,
 				A85EBDCF21F4E7CB0012ACFF /* Sources */,
 				A85EBDD021F4E7CB0012ACFF /* Frameworks */,
 				A85EBDD121F4E7CB0012ACFF /* Resources */,
@@ -485,6 +501,7 @@
 				A87D0A3D21E4109E001D62B9 /* Resources */,
 				50FAA9ECB73C7DEED9A20210 /* [CP] Embed Pods Frameworks */,
 				A87D0AC821E416BE001D62B9 /* SwiftLint */,
+				A818F30421F5015300F54CC9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -621,6 +638,24 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TMDB/Pods-TMDB-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A6BB687B18F6226AB34E7985 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TMDBTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A87D0AC821E416BE001D62B9 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -737,6 +772,7 @@
 /* Begin XCBuildConfiguration section */
 		A85EBDDB21F4E7CB0012ACFF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 360D73DB2D9AAB07E8DA70E6 /* Pods-TMDBTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -760,6 +796,7 @@
 		};
 		A85EBDDC21F4E7CB0012ACFF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC531E53F170996E86EF9B6E /* Pods-TMDBTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -850,7 +887,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: bmctigue@tiguer.com (L9X39T962F)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -911,7 +948,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: bmctigue@tiguer.com (L9X39T962F)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
