@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Promis
 
 typealias VCBuilderBlock = ((UIViewController) -> Void)
 typealias TabBarBuilderBlock = ((UITabBarController) -> Void)
@@ -19,17 +20,17 @@ protocol VCBuilder: class {
     func run(completionHandler: VCBuilderBlock)
 }
 
+protocol StoreProtocol {
+    func fetchData(_ request: Request, url: URL?) -> Future<Store.Result>
+}
+
 protocol DataAdapterProtocol {
     associatedtype Model
     func itemsFromData(_ data: Data, completionHandler: @escaping (DataAdapter.Result<Model>) -> Void)
 }
 
 protocol MoviesDataAdapterProtocol {
-    func itemsFromData(_ data: Data, completionHandler: @escaping (MovieDataAdapter.Result) -> Void)
-}
-
-protocol StoreProtocol {
-    func fetchData(_ request: Request, url: URL?, completionHandler: @escaping (Store.Result) -> Void)
+    func itemsFromData(_ data: Data) -> Future<MovieDataAdapter.Result>
 }
 
 protocol ServiceProtocol: class {

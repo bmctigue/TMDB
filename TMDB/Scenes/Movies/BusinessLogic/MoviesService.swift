@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Promis
 
 extension Movies {
     final class Service<Adapter: MoviesDataAdapterProtocol>: ServiceProtocol {
@@ -30,30 +31,36 @@ extension Movies {
             if movies.isEmpty || force != nil {
                 let page = request.params["page"] ?? "1"
                 let url = urlManager.fetchMoviesURL(page)
-                store.fetchData(request, url: url) { [weak self] dataResult in
-                    switch dataResult {
+                
+                store.fetchData(request, url: url).thenWithResult { [weak self] (storeResult: Store.Result) -> Future<MovieDataAdapter.Result> in
+                    switch storeResult {
                     case .success(let data):
-                        self?.itemsFromData(data: data, completionHandler: completionHandler)
+                        return (self!.dataAdapter.itemsFromData(data))
                     case .error(let error):
                         print("data fetch error: \(error.localizedDescription)")
-                        completionHandler([])
+                        return (self!.dataAdapter.itemsFromData(Data([])))
+                    }
+                }.finally(queue: .main) { future in
+                    switch future.state {
+                    case .result(let adapterResult):
+                        switch adapterResult {
+                        case .success(let items):
+                            self.moviesCache.setObject(items, key: self.moviesKey)
+                            completionHandler(items)
+                        case .error(let error):
+                            print("data fetch error: \(error.localizedDescription)")
+                            completionHandler([])
+                        }
+                    case .error(let err):
+                        print(String(describing: err))
+                    case .cancelled:
+                        print("future is in a cancelled state")
+                    case .unresolved:
+                        print("this really cannot be if any chaining block is executed")
                     }
                 }
             } else {
                 completionHandler(movies)
-            }
-        }
-        
-        private func itemsFromData(data: Data, completionHandler: @escaping ([Any]) -> Void) {
-            self.dataAdapter.itemsFromData(data) { adapterResult in
-                switch adapterResult {
-                case .success(let items):
-                    self.moviesCache.setObject(items, key: self.moviesKey)
-                    completionHandler(items)
-                case .error(let error):
-                    print("adapter conversion error for data: \(error.localizedDescription)")
-                    completionHandler([])
-                }
             }
         }
     }

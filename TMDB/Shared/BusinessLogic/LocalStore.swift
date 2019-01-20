@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Promis
 
 struct LocalStore: StoreProtocol {
     
@@ -16,11 +17,13 @@ struct LocalStore: StoreProtocol {
         self.assetName = assetName
     }
     
-    func fetchData(_ request: Request, url: URL? = nil, completionHandler: @escaping (Store.Result) -> Void) {
+    func fetchData(_ request: Request, url: URL?) -> Future<Store.Result> {
+        let promise = Promise<Store.Result>()
         if let asset = NSDataAsset(name: assetName, bundle: Bundle.main) {
-            completionHandler(.success(asset.data))
+            promise.setResult(.success(asset.data))
         } else {
-            completionHandler(.error(StoreError.fetchDataFailed))
+            promise.setError(StoreError.fetchDataFailed)
         }
+        return promise.future
     }
 }

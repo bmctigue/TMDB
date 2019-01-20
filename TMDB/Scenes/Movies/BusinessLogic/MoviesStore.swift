@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Promis
 
 extension Movies {
     struct RemoteStore: StoreProtocol {
@@ -17,7 +18,8 @@ extension Movies {
             self.session = session
         }
         
-        func fetchData(_ request: Request, url: URL? = nil, completionHandler: @escaping (Store.Result) -> Void) {
+        func fetchData(_ request: Request, url: URL?) -> Future<Store.Result> {
+            let promise = Promise<Store.Result>()
             let postData = NSData(data: "{}".data(using: String.Encoding.utf8)!)
             if let url = url {
                 let urlRequest = NSMutableURLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
@@ -28,19 +30,20 @@ extension Movies {
                     DispatchQueue.main.async {
                         if error == nil {
                             if let data = data {
-                                completionHandler(.success(data))
+                                promise.setResult(.success(data))
                             } else {
-                                completionHandler(.error(.fetchDataFailed))
+                                promise.setError(StoreError.fetchDataFailed)
                             }
                         } else {
-                            completionHandler(.error(.fetchDataFailed))
+                            promise.setError(StoreError.fetchDataFailed)
                         }
                     }
                 })
                 dataTask.resume()
             } else {
-                completionHandler(.success(Data([])))
+                promise.setResult(.success(Data([])))
             }
+            return promise.future
         }
     }
 }

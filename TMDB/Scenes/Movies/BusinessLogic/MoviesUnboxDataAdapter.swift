@@ -7,17 +7,20 @@
 //
 
 import Foundation
+import Promis
 import Unbox
 
 extension Movies {
     struct UnboxDataAdapter: MoviesDataAdapterProtocol {
-        func itemsFromData(_ data: Data, completionHandler: @escaping (MovieDataAdapter.Result) -> Void) {
+        func itemsFromData(_ data: Data) -> Future<MovieDataAdapter.Result> {
+            let promise = Promise<MovieDataAdapter.Result>()
             do {
                 let moviePage: MoviePage = try unbox(data: data)
-                completionHandler(.success(moviePage.results))
+                promise.setResult(.success(moviePage.results))
             } catch {
-                completionHandler(.error(.conversionFailed))
+                promise.setError(DataAdapterError.conversionFailed)
             }
+            return promise.future
         }
     }
 }

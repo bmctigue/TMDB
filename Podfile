@@ -9,6 +9,7 @@ target 'TMDB' do
     pod 'UIEmptyState'
     pod 'lottie-ios'
     pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+    pod 'Promis'
 
     target 'TMDBTests' do
         inherit! :search_paths
