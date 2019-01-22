@@ -56,28 +56,4 @@ class MoviesStoreTests: XCTestCase {
         XCTAssert(fetchedData?.count == initialData.count)
         XCTAssertNil(error)
     }
-
-    func testMoviesStoreFetchDataNilURL() {
-        let expectation = self.expectation(description: "fetchData")
-        sut.fetchData(request, url: nil).finally { future in
-            switch future.state {
-            case .result(let storeResult):
-                switch storeResult {
-                case .success(let data):
-                    self.fetchedData = data
-                }
-            case .error(let error):
-                print(error)
-                XCTFail()
-            case .cancelled:
-                XCTFail()
-            case .unresolved:
-                XCTFail()
-            }
-            expectation.fulfill()
-        }
-        waitForExpectations(timeout: 3.0, handler: nil)
-        XCTAssertNotNil(fetchedData?.count == 0)
-        XCTAssertNil(error)
-    }
 }

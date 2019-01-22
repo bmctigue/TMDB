@@ -28,40 +28,54 @@ extension Movies {
         
         func fetchItems(_ request: Request, completionHandler: @escaping ([Any]) -> Void) {
             let force = request.params["force"]
+            let queryItems = updateQueryItems(request)
+            urlManager.updateQueryItems(queryItems)
             if movies.isEmpty || force != nil {
-                if let page = request.params["page"], Int(page) != nil {
-                    let queryItems = [URLQueryItem(name: "page", value: page)]
-                    urlManager.updateQueryItems(queryItems)
-                }
-                let url = urlManager.url()
-                
-                store.fetchData(request, url: url).thenWithResult { [weak self] (storeResult: Store.Result) -> Future<MovieDataAdapter.Result> in
-                    switch storeResult {
-                    case .success(let data):
-                        return (self!.dataAdapter.itemsFromData(data))
-                    }
-                }.finally(queue: .main) { future in
-                    switch future.state {
-                    case .result(let adapterResult):
-                        switch adapterResult {
-                        case .success(let items):
-                            self.moviesCache.setObject(items, key: self.moviesKey)
-                            completionHandler(items)
+                if let url = urlManager.url() {
+                    store.fetchData(request, url: url).thenWithResult { [weak self] (storeResult: Store.Result) -> Future<MovieDataAdapter.Result> in
+                        switch storeResult {
+                        case .success(let data):
+                            return (self!.dataAdapter.itemsFromData(data))
                         }
-                    case .error(let error):
-                        print("data fetch error: \(error.localizedDescription)")
-                        completionHandler([])
-                    case .cancelled:
-                        print("future is in a cancelled state")
-                        completionHandler([])
-                    case .unresolved:
-                        print("this really cannot be if any chaining block is executed")
-                        completionHandler([])
+                    }.finally(queue: .main) { future in
+                        switch future.state {
+                        case .result(let adapterResult):
+                            switch adapterResult {
+                            case .success(let items):
+                                self.moviesCache.setObject(items, key: self.moviesKey)
+                                completionHandler(items)
+                            }
+                        case .error(let error):
+                            print("data fetch error: \(error.localizedDescription)")
+                            completionHandler([])
+                        case .cancelled:
+                            print("future is in a cancelled state")
+                            completionHandler([])
+                        case .unresolved:
+                            print("this really cannot be if any chaining block is executed")
+                            completionHandler([])
+                        }
                     }
+                } else {
+                    print("data fetch error: url was not valid")
+                    completionHandler([])
                 }
             } else {
                 completionHandler(movies)
             }
+        }
+        
+        func updateQueryItems(_ request: Request) -> [URLQueryItem] {
+            var queryItems = [URLQueryItem]()
+            for (key, value) in request.params {
+                if key == "page", Int(value) != nil {
+                    let pageItem = URLQueryItem(name: key, value: value)
+                    queryItems.append(pageItem)
+                } else {
+                    queryItems.append(URLQueryItem(name: key, value: value))
+                }
+            }
+            return queryItems
         }
     }
 }

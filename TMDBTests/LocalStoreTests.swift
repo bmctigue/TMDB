@@ -12,6 +12,7 @@ import XCTest
 class LocalStoreTests: XCTestCase {
     
     let assetName = "moviesJson"
+    let url = URL(string: "https://www.google.com")
     var fetchedData: Data?
     var error: StoreError?
     
@@ -19,7 +20,7 @@ class LocalStoreTests: XCTestCase {
         let expectation = self.expectation(description: "fetchData")
         let sut = LocalStore(assetName)
         let request = Request()
-        sut.fetchData(request, url: nil).finally { future in
+        sut.fetchData(request, url: url!).finally { future in
             switch future.state {
             case .result(let storeResult):
                 switch storeResult {
@@ -46,7 +47,7 @@ class LocalStoreTests: XCTestCase {
         let sut = LocalStore("badAssetName")
         let request = Request()
         self.fetchedData = nil
-        sut.fetchData(request, url: nil).finally { future in
+        sut.fetchData(request, url: url!).finally { future in
             switch future.state {
             case .result(let storeResult):
                 switch storeResult {
