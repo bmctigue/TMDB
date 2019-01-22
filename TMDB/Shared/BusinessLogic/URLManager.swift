@@ -10,30 +10,31 @@ import Foundation
 
 final class URLManager {
     
-    let scheme = "https"
-    let host = "api.themoviedb.org"
-    let path = "/3/movie/popular"
-    let apiKey = "ac975fc8b7261ca68365d2cf95286764"
+    private var components: URLComponents = URLComponents()
     
-    private func moviesURLComponents() -> URLComponents {
-        var components = URLComponents()
-        components.scheme = scheme
+    init(host: String = Constants.Movie.Data.host, path: String = Constants.Movie.Data.path, scheme: String = Constants.scheme, apiKey: String? = Constants.apiKey) {
         components.host = host
         components.path = path
-        components.queryItems = [URLQueryItem(name: "api_key", value: apiKey)]
-        return components
+        components.scheme = scheme
+        if let key = apiKey {
+            self.updateQueryItems([URLQueryItem(name: "api_key", value: key)])
+        }
     }
     
-    func fetchMoviesURL(_ page: String = "1") -> URL? {
-        var components = moviesURLComponents()
-        components.queryItems?.append(URLQueryItem(name: "page", value: page))
-        return components.url
+    func updatePath(_ path: String) {
+        components.path = path
     }
     
-    func fetchMoviePosterURL(_ posterPath: String) -> URL? {
-        var components = moviesURLComponents()
-        components.host = "image.tmdb.org"
-        components.path = "/t/p/w500\(posterPath)"
+    func updateQueryItems(_ queryItems: [URLQueryItem]) {
+        if var items = components.queryItems {
+            items += queryItems
+            components.queryItems = items
+        } else {
+            components.queryItems = queryItems
+        }
+    }
+    
+    func url() -> URL? {
         return components.url
     }
 }

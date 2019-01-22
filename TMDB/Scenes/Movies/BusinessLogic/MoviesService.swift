@@ -29,8 +29,11 @@ extension Movies {
         func fetchItems(_ request: Request, completionHandler: @escaping ([Any]) -> Void) {
             let force = request.params["force"]
             if movies.isEmpty || force != nil {
-                let page = request.params["page"] ?? "1"
-                let url = urlManager.fetchMoviesURL(page)
+                if let page = request.params["page"], Int(page) != nil {
+                    let queryItems = [URLQueryItem(name: "page", value: page)]
+                    urlManager.updateQueryItems(queryItems)
+                }
+                let url = urlManager.url()
                 
                 store.fetchData(request, url: url).thenWithResult { [weak self] (storeResult: Store.Result) -> Future<MovieDataAdapter.Result> in
                     switch storeResult {

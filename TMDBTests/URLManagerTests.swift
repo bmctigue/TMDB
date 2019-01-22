@@ -13,20 +13,24 @@ class URLManagerTests: XCTestCase {
 
     func testFetchMoviesURL() {
         let urlManager = URLManager()
-        let url = urlManager.fetchMoviesURL()
-        XCTAssert(url?.path == urlManager.path)
+        let url = urlManager.url()
+        XCTAssert(url?.path == Constants.Movie.Data.path)
     }
     
     func testFetchMoviesURLWithPage() {
         let urlManager = URLManager()
-        let url = urlManager.fetchMoviesURL("1")
-        let page = url?.query
-        XCTAssert(page!.contains("page=1"))
+        let queryItems = [URLQueryItem(name: "page", value: "1")]
+        urlManager.updateQueryItems(queryItems)
+        let url = urlManager.url()
+        let query = url?.query
+        XCTAssert(query!.contains("page=1"))
     }
     
     func testFetchMoviePosterURL() {
-        let urlManager = URLManager()
-        let url = urlManager.fetchMoviePosterURL("/posterpath")
+        let urlManager = URLManager(host: Constants.Movie.PosterImage.host)
+        let path = "\(Constants.Movie.PosterImage.path)/posterpath"
+        urlManager.updatePath(path)
+        let url = urlManager.url()
         XCTAssert(url!.path.contains("posterpath"))
     }
 }

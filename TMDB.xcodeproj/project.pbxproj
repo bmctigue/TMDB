@@ -52,6 +52,7 @@
 		A80C91B321F4BDA6003C2432 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C918721F4BDA6003C2432 /* Movie.swift */; };
 		A80C91B421F4BDA6003C2432 /* StoryboardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C918921F4BDA6003C2432 /* StoryboardFactory.swift */; };
 		A80C91B521F4BDA6003C2432 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C918A21F4BDA6003C2432 /* AppDelegate.swift */; };
+		A831DB1021F7670800EEF5B5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A831DB0F21F7670800EEF5B5 /* Constants.swift */; };
 		A85EBDE421F4E7DC0012ACFF /* TMDBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85EBDE321F4E7DC0012ACFF /* TMDBUITests.swift */; };
 		A85EBE1921F4E8BA0012ACFF /* TableViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85EBE0921F4E8B90012ACFF /* TableViewDataSourceTests.swift */; };
 		A85EBE1A21F4E8BA0012ACFF /* MoviesStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85EBE0A21F4E8B90012ACFF /* MoviesStoreTests.swift */; };
@@ -149,6 +150,7 @@
 		A80C918A21F4BDA6003C2432 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A80C918B21F4BDA6003C2432 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A80C91B721F4C045003C2432 /* Pods_TMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_TMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A831DB0F21F7670800EEF5B5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A85EBDD321F4E7CB0012ACFF /* TMDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85EBDD721F4E7CB0012ACFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A85EBDE121F4E7DC0012ACFF /* TMDBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMDBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,13 +209,14 @@
 		A80C915021F4BDA6003C2432 /* TMDB */ = {
 			isa = PBXGroup;
 			children = (
-				A80C915121F4BDA6003C2432 /* Scenes */,
 				A80C916B21F4BDA6003C2432 /* App */,
+				A80C915121F4BDA6003C2432 /* Scenes */,
 				A80C917021F4BDA6003C2432 /* Resources */,
 				A80C917421F4BDA6003C2432 /* Assets.xcassets */,
 				A80C917521F4BDA6003C2432 /* Shared */,
 				A80C918621F4BDA6003C2432 /* Models */,
 				A80C918821F4BDA6003C2432 /* Factories */,
+				A831DB0E21F766F100EEF5B5 /* Lib */,
 				A80C918A21F4BDA6003C2432 /* AppDelegate.swift */,
 				A80C918B21F4BDA6003C2432 /* Info.plist */,
 			);
@@ -250,10 +253,10 @@
 		A80C915721F4BDA6003C2432 /* Movies */ = {
 			isa = PBXGroup;
 			children = (
+				A80C916A21F4BDA6003C2432 /* MoviesBuilder.swift */,
 				A80C915821F4BDA6003C2432 /* BusinessLogic */,
 				A80C915C21F4BDA6003C2432 /* ApplicationLayer */,
 				A80C916121F4BDA6003C2432 /* View */,
-				A80C916A21F4BDA6003C2432 /* MoviesBuilder.swift */,
 			);
 			path = Movies;
 			sourceTree = "<group>";
@@ -372,6 +375,14 @@
 				A80C918921F4BDA6003C2432 /* StoryboardFactory.swift */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		A831DB0E21F766F100EEF5B5 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				A831DB0F21F7670800EEF5B5 /* Constants.swift */,
+			);
+			path = Lib;
 			sourceTree = "<group>";
 		};
 		A85EBDD421F4E7CB0012ACFF /* TMDBTests */ = {
@@ -708,6 +719,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A80C91B521F4BDA6003C2432 /* AppDelegate.swift in Sources */,
+				A831DB1021F7670800EEF5B5 /* Constants.swift in Sources */,
 				A80C91B121F4BDA6003C2432 /* UIViewController+AddRemove.swift in Sources */,
 				A80C919D21F4BDA6003C2432 /* MovieTableViewCell.swift in Sources */,
 				A80C918C21F4BDA6003C2432 /* SplashBuilder.swift in Sources */,
