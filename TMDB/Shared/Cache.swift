@@ -30,13 +30,13 @@ final class FavoritesCache: BaseCache, CacheProtocol {
     )
     
     func setObject<CacheObject>(_ object: CacheObject, key: String) {
+        guard appStateManager.getCachingState() == .caching else {
+            return
+        }
         try? storage?.setObject(object as! FavoritesCache.CacheObject, forKey: key)
     }
     
     func getObject<CacheObject>(_ key: String) -> CacheObject {
-        guard appStateManager.getCachingState() == .caching else {
-            return Set<Int>() as! CacheObject
-        }
         let object = try? storage?.object(forKey: key)
         return object as! CacheObject
     }
@@ -62,13 +62,13 @@ final class MoviesCache: BaseCache, CacheProtocol {
     )
     
     func setObject<CacheObject>(_ object: CacheObject, key: String) {
+        guard appStateManager.getCachingState() == .caching else {
+            return
+        }
         try? storage?.setObject(object as! MoviesCache.CacheObject, forKey: key)
     }
     
     func getObject<CacheObject>(_ key: String) -> CacheObject {
-        guard appStateManager.getCachingState() == .caching else {
-            return [Movie]() as! CacheObject
-        }
         let object = try? storage?.object(forKey: key)
         return object as! CacheObject
     }
