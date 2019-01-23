@@ -53,7 +53,9 @@ class MoviesTableViewController: UIViewController {
             cell.releaseDateLabel.text = model.releaseDate
             cell.popularityLabel.text = model.formattedPopularity
             cell.cellImageView.kf.indicatorType = .activity
-            if !model.posterPath.isEmpty {
+            if model.posterPath.isEmpty {
+                cell.cellImageView.kf.setImage(with: nil as Resource?)
+            } else {
                 let path = "\(Constants.Movie.PosterImage.path)\(model.posterPath)"
                 self.imageUrlGenerator.updatePath(path)
                 let imageUrl = self.imageUrlGenerator.url()
