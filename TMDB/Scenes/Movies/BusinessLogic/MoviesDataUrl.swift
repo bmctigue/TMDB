@@ -16,7 +16,7 @@ class MoviesDataUrl: URLGenerator {
         self.components.host = Constants.Movie.Data.host
         self.components.path = Constants.Movie.Data.path
         self.components.scheme = Constants.scheme
-        let apiQueryItem = URLQueryItem(name: "api_key", value: Constants.apiKey)
+        let apiQueryItem = URLQueryItem(name: Constants.apiKeyString, value: Constants.apiKey)
         if var queryItems = queryItemsFromRequest(request) {
             queryItems.append(apiQueryItem)
             self.components.queryItems = queryItems

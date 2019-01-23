@@ -30,7 +30,7 @@ extension Movies {
             self.updateViewModelsInBackground()
         }
     
-        var baseViewModels: [ViewModel] {
+        private var baseViewModels: [ViewModel] {
             var resultModels = [ViewModel]()
             for model in models {
                 let displayedModel = ViewModel(movieId: model.movieId, title: model.title, overview: model.overview, releaseDate: model.releaseDate, posterPath: model.posterPath, popularity: model.popularity)
@@ -39,7 +39,7 @@ extension Movies {
             return resultModels
         }
         
-        func updatedViewModels(completionHandler: @escaping ([ViewModel]) -> Void) {
+        private func updatedViewModels(completionHandler: @escaping ([ViewModel]) -> Void) {
             background.dispatch {
                 var resultModels = self.viewModels
                 

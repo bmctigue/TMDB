@@ -840,6 +840,7 @@
 		A85EBDE921F4E7DC0012ACFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K6R8L8WN5N;
 				INFOPLIST_FILE = TMDBUITests/Info.plist;
@@ -850,6 +851,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiguer.TMDBUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = TMDB;
@@ -859,6 +861,7 @@
 		A85EBDEA21F4E7DC0012ACFF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K6R8L8WN5N;
 				INFOPLIST_FILE = TMDBUITests/Info.plist;
@@ -869,6 +872,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiguer.TMDBUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = TMDB;
