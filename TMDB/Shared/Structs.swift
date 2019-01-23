@@ -9,7 +9,7 @@
 import Foundation
 
 struct Request {
-    let params: [String: String]
+    var params: [String: String]
     init(_ params: [String: String] = [:]) {
         self.params = params
     }

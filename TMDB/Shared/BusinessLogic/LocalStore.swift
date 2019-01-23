@@ -10,14 +10,14 @@ import UIKit
 import Promis
 
 struct LocalStore: StoreProtocol {
-    
+
     private var assetName: String
     
     init(_ assetName: String) {
         self.assetName = assetName
     }
     
-    func fetchData(_ request: Request, url: URL) -> Future<Store.Result> {
+    func fetchData(_ url: URL) -> Future<Store.Result> {
         let promise = Promise<Store.Result>()
         if let asset = NSDataAsset(name: assetName, bundle: Bundle.main) {
             promise.setResult(.success(asset.data))

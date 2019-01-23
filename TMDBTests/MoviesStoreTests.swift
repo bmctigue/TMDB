@@ -20,7 +20,6 @@ class MoviesStoreTests: XCTestCase {
     var fetchedData: Data?
     var error: StoreError?
     let url = URL(string: "https://www.google.com")!
-    lazy var request = Request([:])
     lazy var config = URLSessionConfiguration.ephemeral
     var session: URLSession!
     var sut: StoreProtocol!
@@ -35,7 +34,7 @@ class MoviesStoreTests: XCTestCase {
     
     func testMoviesStoreFetchData() {
         let expectation = self.expectation(description: "fetchData")
-        sut.fetchData(request, url: url).finally { future in
+        sut.fetchData(url).finally { future in
             switch future.state {
             case .result(let storeResult):
                 switch storeResult {

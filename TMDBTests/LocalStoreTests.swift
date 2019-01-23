@@ -19,8 +19,7 @@ class LocalStoreTests: XCTestCase {
     func testLocalStore() {
         let expectation = self.expectation(description: "fetchData")
         let sut = LocalStore(assetName)
-        let request = Request()
-        sut.fetchData(request, url: url!).finally { future in
+        sut.fetchData(url!).finally { future in
             switch future.state {
             case .result(let storeResult):
                 switch storeResult {
@@ -45,9 +44,8 @@ class LocalStoreTests: XCTestCase {
     func testLocalStoreBadAsset() {
         let expectation = self.expectation(description: "fetchData")
         let sut = LocalStore("badAssetName")
-        let request = Request()
         self.fetchedData = nil
-        sut.fetchData(request, url: url!).finally { future in
+        sut.fetchData(url!).finally { future in
             switch future.state {
             case .result(let storeResult):
                 switch storeResult {

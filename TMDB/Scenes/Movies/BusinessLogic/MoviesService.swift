@@ -16,7 +16,6 @@ extension Movies {
         private var dataAdapter: Adapter
         private var movies: [Movie] = []
         lazy var moviesCache = MoviesCache(AppStateManager.shared)
-        lazy var urlManager = URLManager()
         
         let moviesKey = "movies"
         
@@ -27,12 +26,11 @@ extension Movies {
         }
         
         func fetchItems(_ request: Request, completionHandler: @escaping ([Any]) -> Void) {
-            let force = request.params["force"]
-            let queryItems = updateQueryItems(request)
-            urlManager.updateQueryItems(queryItems)
+            let force = request.params[Constants.forceKey]
+            let dataUrlGenerator = MoviesDataUrl(request)
             if movies.isEmpty || force != nil {
-                if let url = urlManager.url() {
-                    store.fetchData(request, url: url).thenWithResult { [weak self] (storeResult: Store.Result) -> Future<MovieDataAdapter.Result> in
+                if let url = dataUrlGenerator.url() {
+                    store.fetchData(url).thenWithResult { [weak self] (storeResult: Store.Result) -> Future<MovieDataAdapter.Result> in
                         switch storeResult {
                         case .success(let data):
                             return (self!.dataAdapter.itemsFromData(data))
@@ -63,19 +61,6 @@ extension Movies {
             } else {
                 completionHandler(movies)
             }
-        }
-        
-        func updateQueryItems(_ request: Request) -> [URLQueryItem] {
-            var queryItems = [URLQueryItem]()
-            for (key, value) in request.params {
-                if key == "page", Int(value) != nil {
-                    let pageItem = URLQueryItem(name: key, value: value)
-                    queryItems.append(pageItem)
-                } else {
-                    queryItems.append(URLQueryItem(name: key, value: value))
-                }
-            }
-            return queryItems
         }
     }
 }

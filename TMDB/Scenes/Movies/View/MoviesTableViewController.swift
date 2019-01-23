@@ -23,7 +23,7 @@ class MoviesTableViewController: UIViewController {
     var tableViewDatasource: TableViewDataSource<ViewModel>?
     lazy var loadingViewController = LoadingViewController()
     lazy var refreshControl = UIRefreshControl()
-    lazy var urlManager = URLManager(host: Constants.Movie.PosterImage.host)
+    lazy var imageUrlGenerator = MoviesImageUrl(Request())
     
     private var interactor: InteractorProtocol
     private var presenter: Movies.Presenter
@@ -53,9 +53,12 @@ class MoviesTableViewController: UIViewController {
             cell.releaseDateLabel.text = model.releaseDate
             cell.popularityLabel.text = model.formattedPopularity
             cell.cellImageView.kf.indicatorType = .activity
-            let path = "\(Constants.Movie.PosterImage.path)\(model.posterPath)"
-            self.urlManager.updatePath(path)
-            cell.cellImageView.kf.setImage(with: self.urlManager.url())
+            if !model.posterPath.isEmpty {
+                let path = "\(Constants.Movie.PosterImage.path)\(model.posterPath)"
+                self.imageUrlGenerator.updatePath(path)
+                let imageUrl = self.imageUrlGenerator.url()
+                cell.cellImageView.kf.setImage(with: imageUrl)
+            }
             cell.favoriteState = self.presenter.getFavorites().contains(model.movieId) ? MovieFavoriteState.selected(model.movieId) : MovieFavoriteState.unSelected(model.movieId)
             cell.dynamicFavoriteState.addObserver(self) {
                 if let state = cell.dynamicFavoriteState.value {
@@ -78,7 +81,7 @@ class MoviesTableViewController: UIViewController {
     }
     
     @objc func refreshTableView() {
-        let params = ["force": "true"]
+        let params = [Constants.forceKey: "true"]
         let request = Request(params)
         interactor.fetchItems(request)
     }

@@ -21,7 +21,7 @@ protocol VCBuilder: class {
 }
 
 protocol StoreProtocol {
-    func fetchData(_ request: Request, url: URL) -> Future<Store.Result>
+    func fetchData(_ url: URL) -> Future<Store.Result>
 }
 
 protocol DataAdapterProtocol {
@@ -56,4 +56,22 @@ protocol CacheProtocol {
 
 protocol NetworkSession {
     func loadData(with urlRequest: URLRequest, completionHandler: @escaping (Data?, Error?) -> Void)
+}
+
+protocol URLGenerator {
+    func url() -> URL?
+    func queryItemsFromRequest(_ request: Request) -> [URLQueryItem]?
+}
+
+extension URLGenerator {
+    func queryItemsFromRequest(_ request: Request) -> [URLQueryItem]? {
+        guard !request.params.isEmpty else {
+            return nil
+        }
+        var queryItems = [URLQueryItem]()
+        for (key, value) in request.params where key != Constants.forceKey {
+            queryItems.append(URLQueryItem(name: key, value: value))
+        }
+        return queryItems
+    }
 }

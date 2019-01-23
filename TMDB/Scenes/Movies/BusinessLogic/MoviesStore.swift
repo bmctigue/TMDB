@@ -18,11 +18,8 @@ extension Movies {
             self.session = session
         }
         
-        func fetchData(_ request: Request, url: URL) -> Future<Store.Result> {
-            var url = url
+        func fetchData(_ url: URL) -> Future<Store.Result> {
             let promise = Promise<Store.Result>()
-            url = addParametersToUrl(url, request: request)
-            
             let postData = NSData(data: "{}".data(using: String.Encoding.utf8)!)
             
             let urlRequest = NSMutableURLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
@@ -43,17 +40,6 @@ extension Movies {
             })
             dataTask.resume()
             return promise.future
-        }
-        
-        func addParametersToUrl(_ url: URL, request: Request) -> URL {
-            var urlComponents = URLComponents(string: url.absoluteString)
-            var queryItems = [URLQueryItem]()
-            for (key, value) in request.params {
-                queryItems.append(URLQueryItem(name: key, value: value))
-            }
-            urlComponents = URLComponents(string: url.absoluteString)
-            urlComponents?.queryItems = queryItems
-            return urlComponents?.url ?? url
         }
     }
 }
