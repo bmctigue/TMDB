@@ -60,16 +60,9 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A85EBDD221F4E7CB0012ACFF"
-            BuildableName = "TMDBTests.xctest"
-            BlueprintName = "TMDBTests"
-            ReferencedContainer = "container:TMDB.xcodeproj">
-         </BuildableReference>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A85EBDE021F4E7DC0012ACFF"
-            BuildableName = "TMDBUITests.xctest"
-            BlueprintName = "TMDBUITests"
+            BlueprintIdentifier = "A87D0A3E21E4109E001D62B9"
+            BuildableName = "TMDB.app"
+            BlueprintName = "TMDB"
             ReferencedContainer = "container:TMDB.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
