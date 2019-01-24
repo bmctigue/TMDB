@@ -11,47 +11,63 @@ import XCTest
 
 class CacheTests: XCTestCase {
     
+    let favoritesKey = "favorites"
+    let moviesKey = "movies"
+    
     let testMovie = Movie(voteCount: 1, movieId: 1, video: true, voteAverage: 5, title: "test", popularity: 1.2, posterPath: "test", originalLanguage: "en", originalTitle: "test", genreIds: [1], backdropPath: "test", adult: false, overview: "test", releaseDate: "testDate")
     
-    override func setUp() {
-        AppStateManager.shared.updateCachingState(.caching)
-    }
-    
     func testAddObjectToFavoritesCache() {
-        let key = "favorites"
         let testInt = 5
         let set: Set<Int> = [testInt]
-        let favoritesCache = FavoritesCache(AppStateManager.shared)
-        favoritesCache.setObject(set, key: key)
-        let cachedSet: Set<Int> = favoritesCache.getObject(key)
-        XCTAssert(cachedSet.contains(testInt))
+        let favoritesCache = FavoritesCache(TestingState.notTesting)
+        favoritesCache.setObject(set, key: favoritesKey)
+        let cachedSet: Set<Int>? = favoritesCache.getObject(favoritesKey)
+        XCTAssertNotNil(cachedSet)
+    }
+    
+    func testAddObjectToFavoritesCacheTesting() {
+        let testInt = 5
+        let set: Set<Int> = [testInt]
+        let favoritesCache = FavoritesCache(TestingState.testing)
+        favoritesCache.removeObject(favoritesKey)
+        favoritesCache.setObject(set, key: favoritesKey)
+        let cachedSet: Set<Int>? = favoritesCache.getObject(favoritesKey)
+        XCTAssertNil(cachedSet)
     }
     
     func testRemoveObjectFromFavoritesCache() {
         let key = "favorites"
         let testInt = 5
         let set: Set<Int> = [testInt]
-        let favoritesCache = FavoritesCache(AppStateManager.shared)
-        favoritesCache.setObject(set, key: key)
+        let favoritesCache = FavoritesCache(TestingState.notTesting)
+        favoritesCache.setObject(set, key: favoritesKey)
         favoritesCache.removeObject(key)
-        XCTAssertNil(favoritesCache.getObject(key))
+        let cachedSet: Set<Int>? = favoritesCache.getObject(favoritesKey)
+        XCTAssertNil(cachedSet)
     }
     
     func testAddObjectToMoviesCache() {
-        let key = "movies"
         let movies = [testMovie]
-        let moviesCache = MoviesCache(AppStateManager.shared)
-        moviesCache.setObject(movies, key: key)
-        let cachedMovies: [Movie] = moviesCache.getObject(key)
-        XCTAssert(cachedMovies.count == 1)
+        let moviesCache = MoviesCache(TestingState.notTesting)
+        moviesCache.setObject(movies, key: moviesKey)
+        let cachedMovies: [Movie]? = moviesCache.getObject(moviesKey)
+        XCTAssertNotNil(cachedMovies)
+    }
+    
+    func testAddObjectToMoviesCacheTesting() {
+        let movies = [testMovie]
+        let moviesCache = MoviesCache(TestingState.testing)
+        moviesCache.removeObject(moviesKey)
+        moviesCache.setObject(movies, key: moviesKey)
+        let cachedMovies: [Movie]? = moviesCache.getObject(moviesKey)
+        XCTAssertNil(cachedMovies)
     }
     
     func testRemoveObjectFromMoviesCache() {
-        let key = "movies"
         let movies = [testMovie]
-        let moviesCache = MoviesCache(AppStateManager.shared)
-        moviesCache.setObject(movies, key: key)
-        moviesCache.removeObject(key)
-        XCTAssertNil(moviesCache.getObject(key))
+        let moviesCache = MoviesCache(TestingState.notTesting)
+        moviesCache.setObject(movies, key: moviesKey)
+        moviesCache.removeObject(moviesKey)
+        XCTAssertNil(moviesCache.getObject(moviesKey))
     }
 }

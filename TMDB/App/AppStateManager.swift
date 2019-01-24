@@ -13,13 +13,13 @@ final class AppStateManager {
     static let shared = AppStateManager()
     private init() {}
     
-    private var cachingState = CachingState.caching
+    private var testingState = TestingState.notTesting
     
-    func updateCachingState(_ state: CachingState) {
-        self.cachingState = state
+    func updateTestingState(_ state: TestingState) {
+        self.testingState = state
     }
     
-    func getCachingState() -> CachingState {
-        return cachingState
+    func getStateState() -> TestingState {
+        return testingState
     }
 }

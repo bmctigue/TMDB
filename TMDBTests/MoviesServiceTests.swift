@@ -15,13 +15,12 @@ class ServiceTests: XCTestCase {
     lazy var dataAdapter = Movies.UnboxDataAdapter()
 
     func testService() {
-        AppStateManager.shared.updateCachingState(.notCaching)
         let expectation = self.expectation(description: "fetchItems")
         var results = [Movie]()
         let store = LocalStore(assetName)
         let request = Request()
         
-        let sut = Movies.Service(store, dataAdapter: dataAdapter)
+        let sut = Movies.Service(store, dataAdapter: dataAdapter, testingState: TestingState.testing)
         sut.fetchItems(request) { movies in
             results = movies as! [Movie]
             expectation.fulfill()
@@ -36,7 +35,7 @@ class ServiceTests: XCTestCase {
         let store = LocalStore(assetName)
         let request = Request()
         
-        let sut = Movies.Service(store, dataAdapter: dataAdapter)
+        let sut = Movies.Service(store, dataAdapter: dataAdapter, testingState: TestingState.testing)
         sut.moviesCache.removeObject(sut.moviesKey)
         sut.fetchItems(request) { movies in
             results = movies as! [Movie]

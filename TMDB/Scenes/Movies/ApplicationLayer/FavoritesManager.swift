@@ -16,7 +16,7 @@ extension Movies {
         let favoritesKey = "favorites"
         
         private var favorites: Set<Int> = []
-        private lazy var favoritesCache = FavoritesCache(AppStateManager.shared)
+        private lazy var favoritesCache = FavoritesCache(TestingState.notTesting)
         
         init() {
             self.favorites = favoritesCache.getObject(favoritesKey) ?? []

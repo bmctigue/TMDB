@@ -17,10 +17,10 @@ class BaseCache {
 final class FavoritesCache: BaseCache, CacheProtocol {
     typealias CacheObject = Set<Int>
     
-    private var appStateManager: AppStateManager
+    private var testingState: TestingState
     
-    init(_ appStateManager: AppStateManager) {
-        self.appStateManager = appStateManager
+    init(_ testingState: TestingState) {
+        self.testingState = testingState
     }
     
     lazy var storage = try? Storage(
@@ -30,15 +30,15 @@ final class FavoritesCache: BaseCache, CacheProtocol {
     )
     
     func setObject<CacheObject>(_ object: CacheObject, key: String) {
-        guard appStateManager.getCachingState() == .caching else {
+        guard testingState == .notTesting else {
             return
         }
         try? storage?.setObject(object as! FavoritesCache.CacheObject, forKey: key)
     }
     
-    func getObject<CacheObject>(_ key: String) -> CacheObject {
+    func getObject<CacheObject>(_ key: String) -> CacheObject? {
         let object = try? storage?.object(forKey: key)
-        return object as! CacheObject
+        return object as? CacheObject
     }
     
     func removeObject(_ key: String) {
@@ -49,10 +49,10 @@ final class FavoritesCache: BaseCache, CacheProtocol {
 final class MoviesCache: BaseCache, CacheProtocol {
     typealias CacheObject = [Movie]
     
-    private var appStateManager: AppStateManager
+    private var testingState: TestingState
     
-    init(_ appStateManager: AppStateManager) {
-        self.appStateManager = appStateManager
+    init(_ testingState: TestingState) {
+        self.testingState = testingState
     }
     
     lazy var storage = try? Storage(
@@ -62,15 +62,15 @@ final class MoviesCache: BaseCache, CacheProtocol {
     )
     
     func setObject<CacheObject>(_ object: CacheObject, key: String) {
-        guard appStateManager.getCachingState() == .caching else {
+        guard testingState == .notTesting else {
             return
         }
         try? storage?.setObject(object as! MoviesCache.CacheObject, forKey: key)
     }
     
-    func getObject<CacheObject>(_ key: String) -> CacheObject {
+    func getObject<CacheObject>(_ key: String) -> CacheObject? {
         let object = try? storage?.object(forKey: key)
-        return object as! CacheObject
+        return object as! CacheObject?
     }
     
     func removeObject(_ key: String) {

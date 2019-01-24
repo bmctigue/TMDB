@@ -35,6 +35,7 @@ protocol MoviesDataAdapterProtocol {
 
 protocol ServiceProtocol: class {
     associatedtype Model
+    var moviesCache: MoviesCache { get }
     func fetchItems(_ request: Request, completionHandler: @escaping ([Model]) -> Void)
 }
 
@@ -50,7 +51,7 @@ protocol PresenterProtocol {
 protocol CacheProtocol {
     associatedtype CacheObject
     func setObject<CacheObject>(_ object: CacheObject, key: String)
-    func getObject<CacheObject>(_ key: String) -> CacheObject
+    func getObject<CacheObject>(_ key: String) -> CacheObject?
     func removeObject(_ key: String)
 }
 

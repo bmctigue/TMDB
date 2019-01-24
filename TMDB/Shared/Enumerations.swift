@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum CachingState {
-    case caching
-    case notCaching
+enum TestingState {
+    case testing
+    case notTesting
 }
 
 enum MovieFilterState {

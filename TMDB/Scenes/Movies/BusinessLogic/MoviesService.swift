@@ -15,13 +15,14 @@ extension Movies {
         private var store: StoreProtocol
         private var dataAdapter: Adapter
         private var movies: [Movie] = []
-        lazy var moviesCache = MoviesCache(AppStateManager.shared)
+        private (set) var moviesCache: MoviesCache
         
         let moviesKey = "movies"
         
-        init(_ store: StoreProtocol, dataAdapter: Adapter) {
+        init(_ store: StoreProtocol, dataAdapter: Adapter, testingState: TestingState = TestingState.notTesting) {
             self.store = store
             self.dataAdapter = dataAdapter
+            self.moviesCache = MoviesCache(testingState)
             self.movies = moviesCache.getObject(moviesKey) ?? []
         }
         
