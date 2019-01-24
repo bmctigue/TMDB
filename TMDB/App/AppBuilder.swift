@@ -12,11 +12,19 @@ enum App {
     final class Builder: BaseBuilder {
         
         private var window: UIWindow?
-        private (set) var splashBuilder: Splash.Builder
+        private var builder: VCBuilder
+        private var testingState: TestingState
         
-        init(with window: UIWindow?) {
+        init(with window: UIWindow?, testingState: TestingState = TestingState.notTesting) {
             self.window = window
-            self.splashBuilder = Splash.Builder(with: window)
+            self.testingState = testingState
+            switch testingState {
+            case .notTesting:
+                self.builder = Splash.Builder(with: window)
+            case .testing:
+                let store = Movies.RemoteStore()
+                self.builder = Movies.Builder(with: Movies.Builder.moviesTitle, store: store, state: .all)
+            }
         }
         
         func getWindow() -> UIWindow? {
@@ -24,7 +32,7 @@ enum App {
         }
         
         func run() {
-            splashBuilder.run { [weak self] viewController in
+            builder.run { [weak self] viewController in
                 self?.window?.rootViewController = viewController
                 self?.window?.makeKeyAndVisible()
             }

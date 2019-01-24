@@ -10,12 +10,18 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-    private lazy var appBuilder = App.Builder(with: window)
+    var appBuilder: App.Builder!
+    let testingKey = "testing"
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
+        if UserDefaults.standard.string(forKey: testingKey) == nil {
+            self.appBuilder = App.Builder(with: window)
+        } else {
+            self.appBuilder = App.Builder(with: window, testingState: TestingState.testing)
+        }
         appBuilder.run()
         return true
     }

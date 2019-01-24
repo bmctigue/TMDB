@@ -31,7 +31,6 @@
 		A80C919E21F4BDA6003C2432 /* MoviesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C916A21F4BDA6003C2432 /* MoviesBuilder.swift */; };
 		A80C919F21F4BDA6003C2432 /* AppBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C916C21F4BDA6003C2432 /* AppBuilder.swift */; };
 		A80C91A021F4BDA6003C2432 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A80C916D21F4BDA6003C2432 /* LaunchScreen.storyboard */; };
-		A80C91A121F4BDA6003C2432 /* AppStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C916F21F4BDA6003C2432 /* AppStateManager.swift */; };
 		A80C91A221F4BDA6003C2432 /* moviesJson.json in Resources */ = {isa = PBXBuildFile; fileRef = A80C917121F4BDA6003C2432 /* moviesJson.json */; };
 		A80C91A321F4BDA6003C2432 /* movie_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = A80C917221F4BDA6003C2432 /* movie_loading.json */; };
 		A80C91A421F4BDA6003C2432 /* glow_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = A80C917321F4BDA6003C2432 /* glow_loading.json */; };
@@ -128,7 +127,6 @@
 		A80C916A21F4BDA6003C2432 /* MoviesBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesBuilder.swift; sourceTree = "<group>"; };
 		A80C916C21F4BDA6003C2432 /* AppBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBuilder.swift; sourceTree = "<group>"; };
 		A80C916E21F4BDA6003C2432 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A80C916F21F4BDA6003C2432 /* AppStateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStateManager.swift; sourceTree = "<group>"; };
 		A80C917121F4BDA6003C2432 /* moviesJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = moviesJson.json; sourceTree = "<group>"; };
 		A80C917221F4BDA6003C2432 /* movie_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie_loading.json; sourceTree = "<group>"; };
 		A80C917321F4BDA6003C2432 /* glow_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = glow_loading.json; sourceTree = "<group>"; };
@@ -306,7 +304,6 @@
 			children = (
 				A80C916C21F4BDA6003C2432 /* AppBuilder.swift */,
 				A80C916D21F4BDA6003C2432 /* LaunchScreen.storyboard */,
-				A80C916F21F4BDA6003C2432 /* AppStateManager.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -733,7 +730,6 @@
 				A80C91A721F4BDA6003C2432 /* DispatchingQueues.swift in Sources */,
 				A80C91B421F4BDA6003C2432 /* StoryboardFactory.swift in Sources */,
 				A80C91A621F4BDA6003C2432 /* UITableView+ScrollToTop.swift in Sources */,
-				A80C91A121F4BDA6003C2432 /* AppStateManager.swift in Sources */,
 				A80C91AB21F4BDA6003C2432 /* Structs.swift in Sources */,
 				A80C91A821F4BDA6003C2432 /* DynamicValue.swift in Sources */,
 				A80C91AD21F4BDA6003C2432 /* TableViewDataSource.swift in Sources */,
