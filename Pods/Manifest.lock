@@ -3,9 +3,11 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
-  - Kingfisher (5.0.1)
+  - Kingfisher (5.1.0)
   - lottie-ios (2.5.2)
   - Promis (2.0.0)
+  - Tiguer (0.0.1):
+    - Promis
   - UIEmptyState (4.0.1)
   - Unbox (3.0.0)
 
@@ -15,6 +17,7 @@ DEPENDENCIES:
   - Kingfisher
   - lottie-ios
   - Promis
+  - Tiguer (from `https://github.com/bmctigue/Tiguer.git`)
   - UIEmptyState
   - Unbox
 
@@ -30,21 +33,27 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   ChameleonFramework:
     :git: https://github.com/ViccAlexander/Chameleon.git
+  Tiguer:
+    :git: https://github.com/bmctigue/Tiguer.git
 
 CHECKOUT OPTIONS:
   ChameleonFramework:
     :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
     :git: https://github.com/ViccAlexander/Chameleon.git
+  Tiguer:
+    :commit: c9d269f8c94130ddc44e97ff98b8591e90e7af78
+    :git: https://github.com/bmctigue/Tiguer.git
 
 SPEC CHECKSUMS:
   Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
-  Kingfisher: 4f771421b9208185217550528a06fd48756cb7c2
+  Kingfisher: fcec238063d17404fca89bf0a850583211c4cbf6
   lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
   Promis: 92878a15a9d146622b1815e137638e2c0be974ff
+  Tiguer: a93aa1b464d2402cf12cdd75f372c2e62b3890d2
   UIEmptyState: 767376694d9402452fb3c0a5a5283176c6a53c92
   Unbox: 9ed33b2a31f7a8a049f54b94d40c4a52a28c4d9d
 
-PODFILE CHECKSUM: 44c62245dbac325813f754c9209873ecd2bad3c5
+PODFILE CHECKSUM: 60fba251a8b5e7dde28d2d2dcb4ba74d56562458
 
 COCOAPODS: 1.5.2

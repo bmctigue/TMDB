@@ -8,6 +8,7 @@
 
 import UIKit
 import Lottie
+import Tiguer
 
 class MovieTableViewCell: UITableViewCell {
     typealias ViewModel = Movies.ViewModel

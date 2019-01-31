@@ -37,7 +37,6 @@
 		A80C91A521F4BDA6003C2432 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A80C917421F4BDA6003C2432 /* Assets.xcassets */; };
 		A80C91A621F4BDA6003C2432 /* UITableView+ScrollToTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C917621F4BDA6003C2432 /* UITableView+ScrollToTop.swift */; };
 		A80C91A721F4BDA6003C2432 /* DispatchingQueues.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C917721F4BDA6003C2432 /* DispatchingQueues.swift */; };
-		A80C91A821F4BDA6003C2432 /* DynamicValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C917921F4BDA6003C2432 /* DynamicValue.swift */; };
 		A80C91A921F4BDA6003C2432 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C917A21F4BDA6003C2432 /* URLProtocolStub.swift */; };
 		A80C91AA21F4BDA6003C2432 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C917B21F4BDA6003C2432 /* Enumerations.swift */; };
 		A80C91AB21F4BDA6003C2432 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C917C21F4BDA6003C2432 /* Structs.swift */; };
@@ -133,7 +132,6 @@
 		A80C917421F4BDA6003C2432 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A80C917621F4BDA6003C2432 /* UITableView+ScrollToTop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ScrollToTop.swift"; sourceTree = "<group>"; };
 		A80C917721F4BDA6003C2432 /* DispatchingQueues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchingQueues.swift; sourceTree = "<group>"; };
-		A80C917921F4BDA6003C2432 /* DynamicValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicValue.swift; sourceTree = "<group>"; };
 		A80C917A21F4BDA6003C2432 /* URLProtocolStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
 		A80C917B21F4BDA6003C2432 /* Enumerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
 		A80C917C21F4BDA6003C2432 /* Structs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
@@ -338,7 +336,6 @@
 		A80C917821F4BDA6003C2432 /* Binder */ = {
 			isa = PBXGroup;
 			children = (
-				A80C917921F4BDA6003C2432 /* DynamicValue.swift */,
 			);
 			path = Binder;
 			sourceTree = "<group>";
@@ -731,7 +728,6 @@
 				A80C91B421F4BDA6003C2432 /* StoryboardFactory.swift in Sources */,
 				A80C91A621F4BDA6003C2432 /* UITableView+ScrollToTop.swift in Sources */,
 				A80C91AB21F4BDA6003C2432 /* Structs.swift in Sources */,
-				A80C91A821F4BDA6003C2432 /* DynamicValue.swift in Sources */,
 				A80C91AD21F4BDA6003C2432 /* TableViewDataSource.swift in Sources */,
 				A80C918D21F4BDA6003C2432 /* SplashViewController.swift in Sources */,
 				A80C91B021F4BDA6003C2432 /* Cache.swift in Sources */,
@@ -786,6 +782,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 360D73DB2D9AAB07E8DA70E6 /* Pods-TMDBTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -812,6 +809,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC531E53F170996E86EF9B6E /* Pods-TMDBTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -995,6 +993,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B3E20ABB866B8DF27C67D09 /* Pods-TMDB.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1016,6 +1015,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F90662A85AE308DED5F9E276 /* Pods-TMDB.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
