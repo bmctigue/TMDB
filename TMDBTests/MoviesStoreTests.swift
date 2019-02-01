@@ -9,6 +9,7 @@
 import XCTest
 import Promis
 @testable import TMDB
+@testable import Tiguer
 
 class MoviesStoreTests: XCTestCase {
     

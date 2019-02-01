@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import TMDB
+@testable import Tiguer
 
 class TableViewDataSourceTests: XCTestCase {
     typealias CellConfigurator = (String, UITableViewCell) -> Void

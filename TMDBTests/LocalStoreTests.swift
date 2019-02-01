@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import TMDB
+@testable import Tiguer
 
 class LocalStoreTests: XCTestCase {
     
@@ -28,11 +28,10 @@ class LocalStoreTests: XCTestCase {
                 }
             case .error(let error):
                 print(error)
-                XCTFail()
             case .cancelled:
-                XCTFail()
+                print("cancelled")
             case .unresolved:
-                XCTFail()
+                print("unresolved")
             }
             expectation.fulfill()
         }

@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import TMDB
+@testable import Tiguer
 
 class MoviesPresenterTests: XCTestCase {
     
@@ -31,7 +32,7 @@ class MoviesPresenterTests: XCTestCase {
     func testUpdateDisplayedMovies() {
         let models = [movie1, movie2]
         let sut = Movies.Presenter(models, main: SyncQueue.global, background: SyncQueue.background)
-        let response = Response(models: models)
+        let response = Response(models)
         sut.updateViewModels(response)
         let dynamicModels = sut.getDynamicModels()
         XCTAssert(dynamicModels.value.count == 2)

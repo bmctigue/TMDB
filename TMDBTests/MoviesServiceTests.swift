@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import TMDB
+@testable import Tiguer
 
 class ServiceTests: XCTestCase {
     
