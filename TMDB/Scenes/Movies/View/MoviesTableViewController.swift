@@ -47,6 +47,7 @@ class MoviesTableViewController: UIViewController {
         tableView.refreshControl = refreshControl
         
         self.tableViewDatasource = TableViewDataSource(models: viewModels, reuseIdentifier: cellName) { (model: ViewModel, cell: UITableViewCell) in
+            var model = model
             let cell = cell as! MovieTableViewCell
             cell.movieId = model.movieId
             cell.titleLabel.text = model.title
@@ -54,14 +55,7 @@ class MoviesTableViewController: UIViewController {
             cell.releaseDateLabel.text = model.releaseDate
             cell.popularityLabel.text = model.formattedPopularity
             cell.cellImageView.kf.indicatorType = .activity
-            if model.posterPath.isEmpty {
-                cell.cellImageView.kf.setImage(with: nil as Resource?)
-            } else {
-                let path = "\(Constants.Movie.PosterImage.path)\(model.posterPath)"
-                self.imageUrlGenerator.updatePath(path)
-                let imageUrl = self.imageUrlGenerator.url()
-                cell.cellImageView.kf.setImage(with: imageUrl)
-            }
+            cell.cellImageView.kf.setImage(with: model.postPathUrl())
             cell.favoriteState = self.presenter.getFavorites().contains(model.movieId) ? MovieFavoriteState.selected(model.movieId) : MovieFavoriteState.unSelected(model.movieId)
             cell.dynamicFavoriteState.addObserver(self) {
                 if let state = cell.dynamicFavoriteState.value {

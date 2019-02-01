@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Tiguer
 
 extension Movies {
     struct ViewModel {
+        
+        lazy var imageUrlGenerator = MoviesImageUrl(Request())
+        
         let movieId: Int
         let title: String
         let overview: String
@@ -18,6 +22,24 @@ extension Movies {
         let popularity: Double
         var formattedPopularity: String {
             return "Popularity: \(Int(popularity))"
+        }
+        
+        init(movieId: Int, title: String, overview: String, releaseDate: String, posterPath: String, popularity: Double) {
+            self.movieId = movieId
+            self.title = title
+            self.overview = overview
+            self.releaseDate = releaseDate
+            self.posterPath = posterPath
+            self.popularity = popularity
+        }
+        
+        mutating func postPathUrl() -> URL? {
+            guard !posterPath.isEmpty else {
+                return nil
+            }
+            let path = "\(Constants.Movie.PosterImage.path)\(posterPath)"
+            self.imageUrlGenerator.updatePath(path)
+            return self.imageUrlGenerator.url()
         }
     }
 }
