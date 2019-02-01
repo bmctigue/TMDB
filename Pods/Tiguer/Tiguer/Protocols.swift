@@ -10,7 +10,6 @@ import UIKit
 import Promis
 
 public typealias VCBuilderBlock = ((UIViewController) -> Void)
-public typealias TabBarBuilderBlock = ((UITabBarController) -> Void)
 
 public let forceKey = "force"
 
