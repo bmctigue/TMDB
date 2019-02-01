@@ -14,7 +14,7 @@ public protocol Dispatching {
 
 public class Dispatcher {
     let queue: DispatchQueue
-    init(queue: DispatchQueue) {
+    public init(queue: DispatchQueue) {
         self.queue = queue
     }
 }

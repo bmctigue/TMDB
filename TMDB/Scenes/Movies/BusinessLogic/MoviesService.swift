@@ -28,14 +28,15 @@ extension Movies {
         }
         
         func fetchItems(_ request: Request, completionHandler: @escaping ([Any]) -> Void) {
+            typealias Model = Movie
             let force = request.params[Constants.forceKey]
             let dataUrlGenerator = MoviesDataUrl(request)
             if movies.isEmpty || force != nil {
                 if let url = dataUrlGenerator.url() {
-                    store.fetchData(url).thenWithResult { [weak self] (storeResult: Store.Result) -> Future<DataAdapter.Result<Movie>> in
+                    store.fetchData(url).thenWithResult { [weak self] (storeResult: Store.Result) -> Future<DataAdapter.Result<Model>> in
                         switch storeResult {
                         case .success(let data):
-                            return (self!.dataAdapter.itemsFromData(data) as! Future<DataAdapter.Result<Movie>>)
+                            return (self!.dataAdapter.itemsFromData(data) as! Future<DataAdapter.Result<Model>>)
                         }
                     }.finally(queue: .main) { future in
                         switch future.state {

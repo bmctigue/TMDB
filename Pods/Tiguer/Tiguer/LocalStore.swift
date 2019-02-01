@@ -13,7 +13,7 @@ public struct LocalStore: StoreProtocol {
 
     private var assetName: String
     
-    init(_ assetName: String) {
+    public init(_ assetName: String) {
         self.assetName = assetName
     }
     
