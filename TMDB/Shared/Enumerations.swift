@@ -23,9 +23,3 @@ enum MovieFavoriteState: Equatable {
     case selected(Int)
     case unSelected(Int)
 }
-
-enum MovieDataAdapter {
-    enum Result {
-        case success([Movie])
-    }
-}

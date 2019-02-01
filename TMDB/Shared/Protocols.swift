@@ -10,16 +10,6 @@ import UIKit
 import Promis
 import Tiguer
 
-protocol MoviesDataAdapterProtocol {
-    func itemsFromData(_ data: Data) -> Future<MovieDataAdapter.Result>
-}
-
-protocol ServiceProtocol: class {
-    associatedtype Model
-    var moviesCache: MoviesCache { get }
-    func fetchItems(_ request: Request, completionHandler: @escaping ([Model]) -> Void)
-}
-
 protocol CacheProtocol {
     associatedtype CacheObject
     func setObject<CacheObject>(_ object: CacheObject, key: String)

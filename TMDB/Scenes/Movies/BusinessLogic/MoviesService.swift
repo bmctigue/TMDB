@@ -11,7 +11,7 @@ import Promis
 import Tiguer
 
 extension Movies {
-    final class Service<Adapter: MoviesDataAdapterProtocol>: ServiceProtocol {
+    final class Service<Adapter: DataAdapterProtocol>: ServiceProtocol {
         
         private var store: StoreProtocol
         private var dataAdapter: Adapter
@@ -32,10 +32,10 @@ extension Movies {
             let dataUrlGenerator = MoviesDataUrl(request)
             if movies.isEmpty || force != nil {
                 if let url = dataUrlGenerator.url() {
-                    store.fetchData(url).thenWithResult { [weak self] (storeResult: Store.Result) -> Future<MovieDataAdapter.Result> in
+                    store.fetchData(url).thenWithResult { [weak self] (storeResult: Store.Result) -> Future<DataAdapter.Result<Movie>> in
                         switch storeResult {
                         case .success(let data):
-                            return (self!.dataAdapter.itemsFromData(data))
+                            return (self!.dataAdapter.itemsFromData(data) as! Future<DataAdapter.Result<Movie>>)
                         }
                     }.finally(queue: .main) { future in
                         switch future.state {
