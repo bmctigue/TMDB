@@ -20,15 +20,6 @@ protocol ServiceProtocol: class {
     func fetchItems(_ request: Request, completionHandler: @escaping ([Model]) -> Void)
 }
 
-protocol InteractorProtocol: class {
-    func fetchItems(_ request: Request)
-}
-
-protocol PresenterProtocol {
-    associatedtype Model
-    associatedtype ViewModel
-}
-
 protocol CacheProtocol {
     associatedtype CacheObject
     func setObject<CacheObject>(_ object: CacheObject, key: String)
