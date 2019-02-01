@@ -20,4 +20,11 @@ class AppBuilderTests: XCTestCase {
         builder.run()
         XCTAssert(builder.getWindow() != nil)
     }
+    
+    func testGetWindow() {
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        let builder = App.Builder(with: window, testingState: TestingState.testing)
+        let testWindow = builder.getWindow()!
+        XCTAssert(testWindow.isKind(of: UIWindow.self))
+    }
 }
