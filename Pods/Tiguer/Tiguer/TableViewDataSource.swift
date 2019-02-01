@@ -1,23 +1,22 @@
 //
 //  TableViewDataSource.swift
-//  TMDB
+//  Tiguer
 //
-//  Created by Bruce McTigue on 12/29/18.
+//  Created by John Sundell on 1/2/19.
 //  Copyright © 2018 tiguer. All rights reserved.
 //
 
 import UIKit
 
-class TableViewDataSource<Model>: NSObject, UITableViewDataSource {
+public class TableViewDataSource<Model>: NSObject, UITableViewDataSource {
     
-    typealias CellConfigurator = (Model, UITableViewCell) -> Void
+    public typealias CellConfigurator = (Model, UITableViewCell) -> Void
     
-    var models: [Model]
-    
+    public var models: [Model]
     private let reuseIdentifier: String
     private let cellConfigurator: CellConfigurator
     
-    init(models: [Model],
+    public init(models: [Model],
          reuseIdentifier: String,
          cellConfigurator: @escaping CellConfigurator) {
         self.models = models
@@ -25,11 +24,11 @@ class TableViewDataSource<Model>: NSObject, UITableViewDataSource {
         self.cellConfigurator = cellConfigurator
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return models.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = models[indexPath.row]
         let cell = tableView.dequeueReusableCell(
             withIdentifier: reuseIdentifier,

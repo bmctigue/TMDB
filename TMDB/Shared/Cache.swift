@@ -8,6 +8,7 @@
 
 import UIKit
 import Cache
+import Tiguer
 
 class BaseCache {
     lazy var diskConfig = DiskConfig(name: "Floppy")

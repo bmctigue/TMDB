@@ -8,6 +8,7 @@
 
 import UIKit
 import ChameleonFramework
+import Tiguer
 
 final class MoviesViewController: UIViewController {
     

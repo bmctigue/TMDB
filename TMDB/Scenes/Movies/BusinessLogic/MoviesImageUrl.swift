@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import Tiguer
 
 class MoviesImageUrl: URLGenerator {
-    
+
     private lazy var components: URLComponents = URLComponents()
     
     init(_ request: Request) {

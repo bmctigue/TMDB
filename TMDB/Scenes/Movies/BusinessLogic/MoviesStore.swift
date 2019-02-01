@@ -8,6 +8,7 @@
 
 import UIKit
 import Promis
+import Tiguer
 
 extension Movies {
     struct RemoteStore: StoreProtocol {

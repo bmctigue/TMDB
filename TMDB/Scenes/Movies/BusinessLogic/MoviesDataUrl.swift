@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Tiguer
 
 class MoviesDataUrl: URLGenerator {
     

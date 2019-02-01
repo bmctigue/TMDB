@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Tiguer
 
 enum Splash {
     final class Builder: VCBuilder {

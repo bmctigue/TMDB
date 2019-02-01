@@ -35,17 +35,8 @@
 		A80C91A321F4BDA6003C2432 /* movie_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = A80C917221F4BDA6003C2432 /* movie_loading.json */; };
 		A80C91A421F4BDA6003C2432 /* glow_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = A80C917321F4BDA6003C2432 /* glow_loading.json */; };
 		A80C91A521F4BDA6003C2432 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A80C917421F4BDA6003C2432 /* Assets.xcassets */; };
-		A80C91A621F4BDA6003C2432 /* UITableView+ScrollToTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C917621F4BDA6003C2432 /* UITableView+ScrollToTop.swift */; };
-		A80C91A721F4BDA6003C2432 /* DispatchingQueues.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C917721F4BDA6003C2432 /* DispatchingQueues.swift */; };
-		A80C91A921F4BDA6003C2432 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C917A21F4BDA6003C2432 /* URLProtocolStub.swift */; };
 		A80C91AA21F4BDA6003C2432 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C917B21F4BDA6003C2432 /* Enumerations.swift */; };
-		A80C91AB21F4BDA6003C2432 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C917C21F4BDA6003C2432 /* Structs.swift */; };
-		A80C91AC21F4BDA6003C2432 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C917D21F4BDA6003C2432 /* Protocols.swift */; };
-		A80C91AD21F4BDA6003C2432 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C917F21F4BDA6003C2432 /* TableViewDataSource.swift */; };
-		A80C91AE21F4BDA6003C2432 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C918021F4BDA6003C2432 /* LocalStore.swift */; };
 		A80C91B021F4BDA6003C2432 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C918221F4BDA6003C2432 /* Cache.swift */; };
-		A80C91B121F4BDA6003C2432 /* UIViewController+AddRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C918421F4BDA6003C2432 /* UIViewController+AddRemove.swift */; };
-		A80C91B221F4BDA6003C2432 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C918521F4BDA6003C2432 /* LoadingViewController.swift */; };
 		A80C91B321F4BDA6003C2432 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C918721F4BDA6003C2432 /* Movie.swift */; };
 		A80C91B421F4BDA6003C2432 /* StoryboardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C918921F4BDA6003C2432 /* StoryboardFactory.swift */; };
 		A80C91B521F4BDA6003C2432 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C918A21F4BDA6003C2432 /* AppDelegate.swift */; };
@@ -66,6 +57,7 @@
 		A85EBE2521F4E8BA0012ACFF /* MoviesUnboxDataAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85EBE1621F4E8BA0012ACFF /* MoviesUnboxDataAdapterTests.swift */; };
 		A85EBE2621F4E8BA0012ACFF /* MoviesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85EBE1721F4E8BA0012ACFF /* MoviesPresenterTests.swift */; };
 		A85EBE2721F4E8BA0012ACFF /* CacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85EBE1821F4E8BA0012ACFF /* CacheTests.swift */; };
+		A8A0EDEE2203B43600B8359E /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A0EDED2203B43600B8359E /* Protocols.swift */; };
 		A8F9825A21F8AB9F00A3BC16 /* MoviesDataUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9825921F8AB9F00A3BC16 /* MoviesDataUrl.swift */; };
 		A8F9825C21F8B3B200A3BC16 /* MoviesImageUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9825B21F8B3B200A3BC16 /* MoviesImageUrl.swift */; };
 /* End PBXBuildFile section */
@@ -86,19 +78,6 @@
 			remoteInfo = TMDB;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		A818F30421F5015300F54CC9 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		360D73DB2D9AAB07E8DA70E6 /* Pods-TMDBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDBTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TMDBTests/Pods-TMDBTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,23 +109,15 @@
 		A80C917221F4BDA6003C2432 /* movie_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie_loading.json; sourceTree = "<group>"; };
 		A80C917321F4BDA6003C2432 /* glow_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = glow_loading.json; sourceTree = "<group>"; };
 		A80C917421F4BDA6003C2432 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A80C917621F4BDA6003C2432 /* UITableView+ScrollToTop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ScrollToTop.swift"; sourceTree = "<group>"; };
-		A80C917721F4BDA6003C2432 /* DispatchingQueues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchingQueues.swift; sourceTree = "<group>"; };
-		A80C917A21F4BDA6003C2432 /* URLProtocolStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
 		A80C917B21F4BDA6003C2432 /* Enumerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
-		A80C917C21F4BDA6003C2432 /* Structs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
-		A80C917D21F4BDA6003C2432 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
-		A80C917F21F4BDA6003C2432 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
-		A80C918021F4BDA6003C2432 /* LocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
 		A80C918221F4BDA6003C2432 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
-		A80C918421F4BDA6003C2432 /* UIViewController+AddRemove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddRemove.swift"; sourceTree = "<group>"; };
-		A80C918521F4BDA6003C2432 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		A80C918721F4BDA6003C2432 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		A80C918921F4BDA6003C2432 /* StoryboardFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardFactory.swift; sourceTree = "<group>"; };
 		A80C918A21F4BDA6003C2432 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A80C918B21F4BDA6003C2432 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A80C91B721F4C045003C2432 /* Pods_TMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_TMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A831DB0F21F7670800EEF5B5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A857CB3B2203C34200FB4BD9 /* Tiguer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Tiguer.framework; path = "../../Library/Developer/Xcode/DerivedData/TMDB-asdtfjzdugkcotfqlkjfwqfjutpk/Build/Products/Debug-iphoneos/Tiguer.framework"; sourceTree = "<group>"; };
 		A85EBDD321F4E7CB0012ACFF /* TMDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85EBDD721F4E7CB0012ACFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A85EBDE121F4E7DC0012ACFF /* TMDBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMDBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +141,7 @@
 		A85EBE1721F4E8BA0012ACFF /* MoviesPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesPresenterTests.swift; sourceTree = "<group>"; };
 		A85EBE1821F4E8BA0012ACFF /* CacheTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheTests.swift; sourceTree = "<group>"; };
 		A87D0A3F21E4109E001D62B9 /* TMDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8A0EDED2203B43600B8359E /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		A8F9825921F8AB9F00A3BC16 /* MoviesDataUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesDataUrl.swift; sourceTree = "<group>"; };
 		A8F9825B21F8B3B200A3BC16 /* MoviesImageUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesImageUrl.swift; sourceTree = "<group>"; };
 		BC531E53F170996E86EF9B6E /* Pods-TMDBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDBTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TMDBTests/Pods-TMDBTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -320,42 +292,10 @@
 			isa = PBXGroup;
 			children = (
 				A80C917B21F4BDA6003C2432 /* Enumerations.swift */,
-				A80C917D21F4BDA6003C2432 /* Protocols.swift */,
-				A80C917C21F4BDA6003C2432 /* Structs.swift */,
+				A8A0EDED2203B43600B8359E /* Protocols.swift */,
 				A80C918221F4BDA6003C2432 /* Cache.swift */,
-				A80C917621F4BDA6003C2432 /* UITableView+ScrollToTop.swift */,
-				A80C917721F4BDA6003C2432 /* DispatchingQueues.swift */,
-				A80C917A21F4BDA6003C2432 /* URLProtocolStub.swift */,
-				A80C917821F4BDA6003C2432 /* Binder */,
-				A80C917E21F4BDA6003C2432 /* BusinessLogic */,
-				A80C918321F4BDA6003C2432 /* View */,
 			);
 			path = Shared;
-			sourceTree = "<group>";
-		};
-		A80C917821F4BDA6003C2432 /* Binder */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Binder;
-			sourceTree = "<group>";
-		};
-		A80C917E21F4BDA6003C2432 /* BusinessLogic */ = {
-			isa = PBXGroup;
-			children = (
-				A80C918021F4BDA6003C2432 /* LocalStore.swift */,
-				A80C917F21F4BDA6003C2432 /* TableViewDataSource.swift */,
-			);
-			path = BusinessLogic;
-			sourceTree = "<group>";
-		};
-		A80C918321F4BDA6003C2432 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A80C918421F4BDA6003C2432 /* UIViewController+AddRemove.swift */,
-				A80C918521F4BDA6003C2432 /* LoadingViewController.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		A80C918621F4BDA6003C2432 /* Models */ = {
@@ -452,6 +392,7 @@
 		FA6439B7EF21A54C80E8B721 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A857CB3B2203C34200FB4BD9 /* Tiguer.framework */,
 				A80C91B721F4C045003C2432 /* Pods_TMDB.framework */,
 				5B776AAE85E2BDBEEA657099 /* Pods_TMDB.framework */,
 				5DF87FE775338476A96C567B /* Pods_TMDBTests.framework */,
@@ -509,7 +450,6 @@
 				A87D0A3D21E4109E001D62B9 /* Resources */,
 				50FAA9ECB73C7DEED9A20210 /* [CP] Embed Pods Frameworks */,
 				A87D0AC821E416BE001D62B9 /* SwiftLint */,
-				A818F30421F5015300F54CC9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -717,18 +657,11 @@
 			files = (
 				A80C91B521F4BDA6003C2432 /* AppDelegate.swift in Sources */,
 				A831DB1021F7670800EEF5B5 /* Constants.swift in Sources */,
-				A80C91B121F4BDA6003C2432 /* UIViewController+AddRemove.swift in Sources */,
 				A80C919D21F4BDA6003C2432 /* MovieTableViewCell.swift in Sources */,
 				A80C918C21F4BDA6003C2432 /* SplashBuilder.swift in Sources */,
-				A80C91AC21F4BDA6003C2432 /* Protocols.swift in Sources */,
 				A80C919221F4BDA6003C2432 /* MoviesPresenter.swift in Sources */,
 				A80C919121F4BDA6003C2432 /* MoviesUnboxDataAdapter.swift in Sources */,
-				A80C91B221F4BDA6003C2432 /* LoadingViewController.swift in Sources */,
-				A80C91A721F4BDA6003C2432 /* DispatchingQueues.swift in Sources */,
 				A80C91B421F4BDA6003C2432 /* StoryboardFactory.swift in Sources */,
-				A80C91A621F4BDA6003C2432 /* UITableView+ScrollToTop.swift in Sources */,
-				A80C91AB21F4BDA6003C2432 /* Structs.swift in Sources */,
-				A80C91AD21F4BDA6003C2432 /* TableViewDataSource.swift in Sources */,
 				A80C918D21F4BDA6003C2432 /* SplashViewController.swift in Sources */,
 				A80C91B021F4BDA6003C2432 /* Cache.swift in Sources */,
 				A80C919421F4BDA6003C2432 /* MovieViewModel.swift in Sources */,
@@ -743,11 +676,10 @@
 				A80C919F21F4BDA6003C2432 /* AppBuilder.swift in Sources */,
 				A80C919521F4BDA6003C2432 /* MoviesInteractor.swift in Sources */,
 				A80C91AA21F4BDA6003C2432 /* Enumerations.swift in Sources */,
+				A8A0EDEE2203B43600B8359E /* Protocols.swift in Sources */,
 				A80C919321F4BDA6003C2432 /* FavoritesManager.swift in Sources */,
 				A8F9825A21F8AB9F00A3BC16 /* MoviesDataUrl.swift in Sources */,
 				A8F9825C21F8B3B200A3BC16 /* MoviesImageUrl.swift in Sources */,
-				A80C91AE21F4BDA6003C2432 /* LocalStore.swift in Sources */,
-				A80C91A921F4BDA6003C2432 /* URLProtocolStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -993,7 +925,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B3E20ABB866B8DF27C67D09 /* Pods-TMDB.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1015,7 +946,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F90662A85AE308DED5F9E276 /* Pods-TMDB.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;

@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 import UIEmptyState
+import Tiguer
 
 class MoviesTableViewController: UIViewController {
     typealias ViewModel = Movies.ViewModel

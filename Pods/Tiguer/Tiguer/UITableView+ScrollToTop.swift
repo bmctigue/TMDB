@@ -1,6 +1,6 @@
 //
 //  UITableView+ScrollToTop.swift
-//  TMDB
+//  Tiguer
 //
 //  Created by Bruce McTigue on 1/8/19.
 //  Copyright © 2019 tiguer. All rights reserved.
@@ -18,7 +18,7 @@ extension UITableView {
         })
     }
     
-    func scroll(to: ScrollsTo, animated: Bool) {
+    public func scroll(to: ScrollsTo, animated: Bool) {
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(300)) {
             let numberOfSections = self.numberOfSections
             let numberOfRows = self.numberOfRows(inSection: numberOfSections-1)
@@ -37,7 +37,7 @@ extension UITableView {
         }
     }
     
-    enum ScrollsTo {
+    public enum ScrollsTo {
         case top, bottom
     }
 }

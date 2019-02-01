@@ -9,6 +9,7 @@
 import Foundation
 import Promis
 import Unbox
+import Tiguer
 
 extension Movies {
     struct UnboxDataAdapter: MoviesDataAdapterProtocol {

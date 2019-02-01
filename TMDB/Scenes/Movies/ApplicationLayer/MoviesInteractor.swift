@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Tiguer
 
 extension Movies {
     final class Interactor<ServProtocol: ServiceProtocol>: InteractorProtocol {
@@ -26,7 +27,7 @@ extension Movies {
             service.fetchItems(request) { [weak self] models in
                 let models = models as! [Model]
                 if let self = self {
-                    let response = Response(models: models)
+                    let response = Response(models)
                     self.presenter.updateViewModels(response)
                 }
             }

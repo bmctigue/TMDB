@@ -41,7 +41,7 @@ CHECKOUT OPTIONS:
     :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
     :git: https://github.com/ViccAlexander/Chameleon.git
   Tiguer:
-    :commit: c9d269f8c94130ddc44e97ff98b8591e90e7af78
+    :commit: 99d4e10e7c66a5a79b3ac5cbae2b3321a6715150
     :git: https://github.com/bmctigue/Tiguer.git
 
 SPEC CHECKSUMS:
