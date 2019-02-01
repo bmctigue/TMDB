@@ -24,6 +24,7 @@ class MoviesTableViewController: UIViewController {
     var tableViewDatasource: TableViewDataSource<ViewModel>?
     lazy var loadingViewController = LoadingViewController()
     lazy var refreshControl = UIRefreshControl()
+    var reloadEmptyStateCalled = false
     
     private var interactor: InteractorProtocol
     private var presenter: Movies.Presenter
@@ -86,7 +87,11 @@ class MoviesTableViewController: UIViewController {
         self.tableViewDatasource?.models = models
         self.tableView.reloadData {
             self.tableView.scroll(to: .top, animated: true)
-            self.reloadEmptyStateForTableView(self.tableView)
+            if self.reloadEmptyStateCalled {
+                self.reloadEmptyStateForTableView(self.tableView)
+            } else {
+                self.reloadEmptyStateCalled = true
+            }
         }
     }
     
