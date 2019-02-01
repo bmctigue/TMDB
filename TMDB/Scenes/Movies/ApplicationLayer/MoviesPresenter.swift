@@ -28,7 +28,6 @@ extension Movies {
             self.main = main
             self.background = background
             self.viewModels = baseViewModels
-            self.updateViewModelsInBackground()
         }
     
         private var baseViewModels: [ViewModel] {

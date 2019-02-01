@@ -35,8 +35,7 @@ final class MoviesViewController: UIViewController {
         sortButton.tintColor = MoviesViewController.controlsColor
         self.navigationItem.rightBarButtonItem = favoritesButton
         self.navigationItem.leftBarButtonItem = sortButton
-        filterStateChanged(filterState)
-        sortStateChanged(sortState)
+        sortButton.image = UIImage(named: "happy_sad_face")
         add(tableViewController)
     }
     
