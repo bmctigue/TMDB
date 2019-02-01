@@ -24,7 +24,6 @@ class MoviesTableViewController: UIViewController {
     var tableViewDatasource: TableViewDataSource<ViewModel>?
     lazy var loadingViewController = LoadingViewController()
     lazy var refreshControl = UIRefreshControl()
-    lazy var imageUrlGenerator = MoviesImageUrl(Request())
     
     private var interactor: InteractorProtocol
     private var presenter: Movies.Presenter
