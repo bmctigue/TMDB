@@ -7,12 +7,11 @@
 //
 
 import UIKit
-import ChameleonFramework
 import Tiguer
 
 final class MoviesViewController: UIViewController {
     
-    static let controlsColor = UIColor.flatRedDark
+    static let controlsColor = UIColor.red
     
     lazy var favoritesButton = UIBarButtonItem(title: "My List", style: .plain, target: self, action: #selector(favoritesButtonPressed(_:)))
     
