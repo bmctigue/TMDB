@@ -17,10 +17,10 @@ extension Movies {
         let favoritesKey = "favorites"
         
         private var favorites: Set<Int> = []
-        private lazy var favoritesCache = FavoritesCache(TestingState.notTesting)
+        private lazy var cache = BaseCache<Set<Int>>()
         
         init() {
-            self.favorites = favoritesCache.getObject(favoritesKey) ?? []
+            self.favorites = cache.getObject(favoritesKey) ?? []
         }
         
         func updateFavorites(_ state: MovieFavoriteState) {
@@ -30,7 +30,7 @@ extension Movies {
             case .unSelected(let movieId):
                 favorites.remove(movieId)
             }
-            favoritesCache.setObject(favorites, key: favoritesKey)
+            cache.setObject(favorites, key: favoritesKey)
         }
         
         func getFavorites() -> Set<Int> {

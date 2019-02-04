@@ -16,15 +16,15 @@ extension Movies {
         private var store: StoreProtocol
         private var dataAdapter: Adapter
         private var movies: [Movie] = []
-        private (set) var moviesCache: MoviesCache
+        private (set) var cache: BaseCache<[Movie]>
         
         let moviesKey = "movies"
         
         init(_ store: StoreProtocol, dataAdapter: Adapter, testingState: TestingState = TestingState.notTesting) {
             self.store = store
             self.dataAdapter = dataAdapter
-            self.moviesCache = MoviesCache(testingState)
-            self.movies = moviesCache.getObject(moviesKey) ?? []
+            self.cache = BaseCache<[Movie]>(testingState)
+            self.movies = cache.getObject(moviesKey) ?? []
         }
         
         func fetchItems(_ request: Request, completionHandler: @escaping ([Any]) -> Void) {
@@ -43,7 +43,7 @@ extension Movies {
                         case .result(let adapterResult):
                             switch adapterResult {
                             case .success(let items):
-                                self.moviesCache.setObject(items, key: self.moviesKey)
+                                self.cache.setObject(items, key: self.moviesKey)
                                 completionHandler(items)
                             }
                         case .error(let error):

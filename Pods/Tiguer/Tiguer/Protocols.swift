@@ -65,3 +65,10 @@ extension URLGenerator {
         return queryItems
     }
 }
+
+public protocol CacheProtocol {
+    associatedtype CacheObject
+    func setObject<CacheObject>(_ object: CacheObject, key: String)
+    func getObject<CacheObject>(_ key: String) -> CacheObject?
+    func removeObject(_ key: String)
+}

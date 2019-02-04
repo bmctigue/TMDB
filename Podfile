@@ -4,7 +4,6 @@ use_frameworks!
 target 'TMDB' do
 
     pod 'Unbox'
-    pod 'Cache'
     pod 'Kingfisher'
     pod 'UIEmptyState'
     pod 'lottie-ios'

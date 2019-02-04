@@ -37,7 +37,7 @@ class ServiceTests: XCTestCase {
         let request = Request()
         
         let sut = Movies.Service(store, dataAdapter: dataAdapter, testingState: TestingState.testing)
-        sut.moviesCache.removeObject(sut.moviesKey)
+        sut.cache.removeObject(sut.moviesKey)
         sut.fetchItems(request) { movies in
             results = movies as! [Movie]
             expectation.fulfill()
