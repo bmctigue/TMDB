@@ -14,13 +14,14 @@ enum Movies {
         
         static let moviesAssetName = "moviesJson"
         static let moviesTitle = "Movies"
+        static let cacheKey = "movies"
         
         private var title: String
         
         private var state: MovieFilterState
         private var store: StoreProtocol
         private lazy var dataAdapter = Movies.UnboxDataAdapter()
-        private lazy var service = Service(store, dataAdapter: dataAdapter)
+        private lazy var service = Service<Movie, UnboxDataAdapter>(store, dataAdapter: dataAdapter, cacheKey: Movies.Builder.cacheKey)
         private lazy var presenter = Movies.Presenter([])
         private lazy var interactor = Movies.Interactor(service, presenter: presenter)
         private lazy var tableViewController = MoviesTableViewController(with: interactor, presenter: presenter)

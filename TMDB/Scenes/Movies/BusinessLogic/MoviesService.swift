@@ -11,27 +11,25 @@ import Promis
 import Tiguer
 
 extension Movies {
-    final class Service<Adapter: DataAdapterProtocol>: ServiceProtocol {
+    final class Service<Model: Codable, Adapter: DataAdapterProtocol>: ServiceProtocol {
         
         private var store: StoreProtocol
         private var dataAdapter: Adapter
-        private var movies: [Movie] = []
-        private (set) var cache: BaseCache<[Movie]>
+        private var cacheKey: String
+        private var models: [Model] = []
+        private lazy var cache = BaseCache<[Model]>()
         
-        let moviesKey = "movies"
-        
-        init(_ store: StoreProtocol, dataAdapter: Adapter, testingState: TestingState = TestingState.notTesting) {
+        init(_ store: StoreProtocol, dataAdapter: Adapter, cacheKey: String) {
             self.store = store
             self.dataAdapter = dataAdapter
-            self.cache = BaseCache<[Movie]>(testingState)
-            self.movies = cache.getObject(moviesKey) ?? []
+            self.cacheKey = cacheKey
+            self.models = cache.getObject(cacheKey) ?? []
         }
         
         func fetchItems(_ request: Request, completionHandler: @escaping ([Any]) -> Void) {
-            typealias Model = Movie
             let force = request.params[Constants.forceKey]
             let dataUrlGenerator = MoviesDataUrl(request)
-            if movies.isEmpty || force != nil {
+            if models.isEmpty || force != nil {
                 if let url = dataUrlGenerator.url() {
                     store.fetchData(url).thenWithResult { [weak self] (storeResult: Store.Result) -> Future<DataAdapter.Result<Model>> in
                         switch storeResult {
@@ -43,7 +41,7 @@ extension Movies {
                         case .result(let adapterResult):
                             switch adapterResult {
                             case .success(let items):
-                                self.cache.setObject(items, key: self.moviesKey)
+                                self.cache.setObject(items, key: self.cacheKey)
                                 completionHandler(items)
                             }
                         case .error(let error):
@@ -62,8 +60,12 @@ extension Movies {
                     completionHandler([])
                 }
             } else {
-                completionHandler(movies)
+                completionHandler(models)
             }
+        }
+        
+        func updateCacheTestingState(_ testingState: TestingState) {
+            self.cache.updateTestingState(testingState)
         }
     }
 }

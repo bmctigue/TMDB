@@ -14,12 +14,13 @@ class MoviesInteractorTests: XCTestCase {
     
     typealias ViewModel = Movies.ViewModel
     
+    let cacheKey = "movies"
     private lazy var store = LocalStore(Movies.Builder.moviesAssetName)
     private lazy var dataAdapter = Movies.UnboxDataAdapter()
-    private lazy var service = Movies.Service(store, dataAdapter: dataAdapter)
+    private lazy var service = Movies.Service<Movie, Movies.UnboxDataAdapter>(store, dataAdapter: dataAdapter, cacheKey: cacheKey)
     private lazy var presenter = Movies.Presenter([])
     var viewModels = [ViewModel]()
-
+    
     func testFetchItemsForAllMovies() {
         let presenter = Movies.Presenter([], main: SyncQueue.global, background: SyncQueue.background)
         let sut = Movies.Interactor(service, presenter: presenter)

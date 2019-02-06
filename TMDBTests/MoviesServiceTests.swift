@@ -14,6 +14,7 @@ class ServiceTests: XCTestCase {
     
     let assetName = Movies.Builder.moviesAssetName
     lazy var dataAdapter = Movies.UnboxDataAdapter()
+    let cacheKey = "movies"
 
     func testService() {
         let expectation = self.expectation(description: "fetchItems")
@@ -21,23 +22,8 @@ class ServiceTests: XCTestCase {
         let store = LocalStore(assetName)
         let request = Request()
         
-        let sut = Movies.Service(store, dataAdapter: dataAdapter, testingState: TestingState.testing)
-        sut.fetchItems(request) { movies in
-            results = movies as! [Movie]
-            expectation.fulfill()
-        }
-        waitForExpectations(timeout: 3.0, handler: nil)
-        XCTAssert(results.count > 0)
-    }
-    
-    func testServiceClearCache() {
-        let expectation = self.expectation(description: "fetchItems")
-        var results = [Movie]()
-        let store = LocalStore(assetName)
-        let request = Request()
-        
-        let sut = Movies.Service(store, dataAdapter: dataAdapter, testingState: TestingState.testing)
-        sut.cache.removeObject(sut.moviesKey)
+        let sut = Movies.Service<Movie, Movies.UnboxDataAdapter>(store, dataAdapter: dataAdapter, cacheKey: cacheKey)
+        sut.updateCacheTestingState(.testing)
         sut.fetchItems(request) { movies in
             results = movies as! [Movie]
             expectation.fulfill()

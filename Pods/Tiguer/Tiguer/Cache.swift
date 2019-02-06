@@ -12,11 +12,9 @@ import Cache
 public final class BaseCache<CacheObject: Codable>: CacheProtocol {
     private lazy var diskConfig = DiskConfig(name: "Floppy")
     private lazy var memoryConfig = MemoryConfig(expiry: .never, countLimit: 10, totalCostLimit: 10)
-    private var testingState: TestingState
+    private var testingState: TestingState = .notTesting
     
-    public init(_ testingState: TestingState = .notTesting) {
-        self.testingState = testingState
-    }
+    public init() {}
     
     private lazy var storage = try? Storage(
         diskConfig: diskConfig,
@@ -38,6 +36,10 @@ public final class BaseCache<CacheObject: Codable>: CacheProtocol {
     
     public func removeObject(_ key: String) {
         try? storage?.removeObject(forKey: key)
+    }
+    
+    public func updateTestingState(_ testingState: TestingState) {
+        self.testingState = testingState
     }
 }
 
