@@ -26,11 +26,10 @@ extension Movies {
             self.models = cache.getObject(cacheKey) ?? []
         }
         
-        func fetchItems(_ request: Request, completionHandler: @escaping ([Any]) -> Void) {
+        func fetchItems(_ request: Request, urlGenerator: URLGenerator, completionHandler: @escaping ([Any]) -> Void) {
             let force = request.params[Constants.forceKey]
-            let dataUrlGenerator = MoviesDataUrl(request)
             if models.isEmpty || force != nil {
-                if let url = dataUrlGenerator.url() {
+                if let url = urlGenerator.url() {
                     store.fetchData(url).thenWithResult { [weak self] (storeResult: Store.Result) -> Future<DataAdapter.Result<Model>> in
                         switch storeResult {
                         case .success(let data):

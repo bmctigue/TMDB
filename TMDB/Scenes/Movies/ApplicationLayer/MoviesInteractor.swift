@@ -24,7 +24,8 @@ extension Movies {
         }
         
         func fetchItems(_ request: Request) {
-            service.fetchItems(request) { [weak self] models in
+            let urlGenerator = MoviesDataUrl(request)
+            service.fetchItems(request, urlGenerator: urlGenerator) { [weak self] models in
                 let models = models as! [Model]
                 if let self = self {
                     let response = Response(models)
