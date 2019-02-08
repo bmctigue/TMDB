@@ -10,10 +10,7 @@ import Foundation
 import Tiguer
 
 extension Movies {
-    final class Interactor<ServProtocol: ServiceProtocol>: InteractorProtocol {
-        
-        typealias Model = Movie
-        typealias Presenter =  Movies.Presenter
+    final class Interactor<Model, Presenter: PresenterProtocol, ServProtocol: ServiceProtocol>: InteractorProtocol {
         
         private var service: ServProtocol
         private var presenter: Presenter
@@ -26,7 +23,7 @@ extension Movies {
         func fetchItems(_ request: Request) {
             let urlGenerator = MoviesDataUrl(request)
             service.fetchItems(request, urlGenerator: urlGenerator) { [weak self] models in
-                let models = models as! [Model]
+                let models = models as! [Presenter.Model]
                 if let self = self {
                     let response = Response(models)
                     self.presenter.updateViewModels(response)

@@ -11,6 +11,7 @@ import Tiguer
 
 extension Movies {
     final class Presenter: PresenterProtocol {
+        
         typealias Model = Movie
         typealias ViewModel = Movies.ViewModel
         private var models: [Model]
