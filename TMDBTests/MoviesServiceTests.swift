@@ -25,7 +25,8 @@ class ServiceTests: XCTestCase {
         let sut = Movies.Service<Movie, Movies.UnboxDataAdapter>(store, dataAdapter: dataAdapter, cacheKey: cacheKey)
         sut.updateCacheTestingState(.testing)
         let urlGenerator = MoviesDataUrl(request)
-        sut.fetchItems(request, urlGenerator: urlGenerator) { movies in
+        let url = urlGenerator.url()!
+        sut.fetchItems(request, url: url) { movies in
             results = movies as! [Movie]
             expectation.fulfill()
         }

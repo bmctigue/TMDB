@@ -24,7 +24,10 @@ class MoviesInteractorTests: XCTestCase {
     func testFetchItemsForAllMovies() {
         let presenter = Movies.Presenter([], main: SyncQueue.global, background: SyncQueue.background)
         let sut = Movies.Interactor<Movie, Movies.Presenter, Movies.Service>(service, presenter: presenter)
-        sut.fetchItems(Request())
+        let request = Request()
+        let urlGenerator = MoviesDataUrl(request)
+        let url = urlGenerator.url()!
+        sut.fetchItems(request, url: url)
         let dynamicModels = presenter.getDynamicModels()
         XCTAssertNotNil(dynamicModels.value.count == 4)
     }
