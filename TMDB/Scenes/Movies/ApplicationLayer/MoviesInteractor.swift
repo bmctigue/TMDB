@@ -20,9 +20,8 @@ extension Movies {
             self.presenter = presenter
         }
         
-        func fetchItems(_ request: Request) {
-            let urlGenerator = MoviesDataUrl(request)
-            service.fetchItems(request, urlGenerator: urlGenerator) { [weak self] models in
+        func fetchItems(_ request: Request, url: URL) {
+            service.fetchItems(request, url: url) { [weak self] models in
                 let models = models as! [Presenter.Model]
                 if let self = self {
                     let response = Response(models)

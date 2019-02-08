@@ -32,11 +32,11 @@ public protocol DataAdapterProtocol {
 
 public protocol ServiceProtocol: class {
     associatedtype Model
-    func fetchItems(_ request: Request, urlGenerator: URLGenerator, completionHandler: @escaping ([Model]) -> Void)
+    func fetchItems(_ request: Request, url: URL, completionHandler: @escaping ([Model]) -> Void)
 }
 
 public protocol InteractorProtocol: class {
-    func fetchItems(_ request: Request)
+    func fetchItems(_ request: Request, url: URL)
 }
 
 public protocol PresenterProtocol {

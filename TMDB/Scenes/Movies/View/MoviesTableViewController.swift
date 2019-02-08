@@ -73,13 +73,20 @@ class MoviesTableViewController: UIViewController {
         
         add(loadingViewController)
         let request = Request()
-        interactor.fetchItems(request)
+        fetchItems(request: request)
     }
     
     @objc func refreshTableView() {
         let params = [Constants.forceKey: "true"]
         let request = Request(params)
-        interactor.fetchItems(request)
+        fetchItems(request: request)
+    }
+    
+    func fetchItems(request: Request) {
+        let urlGenerator = MoviesDataUrl(request)
+        if let url = urlGenerator.url() {
+            interactor.fetchItems(request, url: url)
+        }
     }
     
     func updateTableView(_ models: [ViewModel]) {
