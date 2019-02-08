@@ -22,7 +22,7 @@ class ServiceTests: XCTestCase {
         let store = LocalStore(assetName)
         let request = Request()
         
-        let sut = Movies.Service<Movie, Movies.UnboxDataAdapter>(store, dataAdapter: dataAdapter, cacheKey: cacheKey)
+        let sut = Service<Movie, Movies.UnboxDataAdapter>(store, dataAdapter: dataAdapter, cacheKey: cacheKey)
         sut.updateCacheTestingState(.testing)
         let urlGenerator = MoviesDataUrl(request)
         let url = urlGenerator.url()!

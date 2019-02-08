@@ -12,7 +12,6 @@ enum Constants {
     static let scheme = "https"
     static let apiKey = "ac975fc8b7261ca68365d2cf95286764"
     static let queryItems = [URLQueryItem(name: Constants.apiKeyString, value: apiKey)]
-    static let forceKey = "force"
     static let apiKeyString = "api_key"
     
     enum Movie {

@@ -30,7 +30,7 @@ class MoviesStoreTests: XCTestCase {
         URLProtocolStub.testURLs = [url: initialData!]
         config.protocolClasses = [URLProtocolStub.self]
         self.session = URLSession(configuration: config)
-        self.sut = Movies.RemoteStore(session: session)
+        self.sut = RemoteStore(session: session)
     }
     
     func testMoviesStoreFetchData() {

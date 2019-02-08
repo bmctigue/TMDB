@@ -11,8 +11,6 @@ import Promis
 
 public typealias VCBuilderBlock = ((UIViewController) -> Void)
 
-public let forceKey = "force"
-
 public protocol BaseBuilder: class {
     func run()
 }
@@ -60,7 +58,7 @@ extension URLGenerator {
             return nil
         }
         var queryItems = [URLQueryItem]()
-        for (key, value) in request.params where key != forceKey {
+        for (key, value) in request.params where key != Tiguer.Constants.forceKey {
             queryItems.append(URLQueryItem(name: key, value: value))
         }
         return queryItems

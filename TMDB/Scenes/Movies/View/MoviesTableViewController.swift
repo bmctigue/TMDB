@@ -77,7 +77,7 @@ class MoviesTableViewController: UIViewController {
     }
     
     @objc func refreshTableView() {
-        let params = [Constants.forceKey: "true"]
+        let params = [Tiguer.Constants.forceKey: "true"]
         let request = Request(params)
         fetchItems(request: request)
     }
