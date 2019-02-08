@@ -17,7 +17,6 @@
 		A80C919221F4BDA6003C2432 /* MoviesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C915D21F4BDA6003C2432 /* MoviesPresenter.swift */; };
 		A80C919321F4BDA6003C2432 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C915E21F4BDA6003C2432 /* FavoritesManager.swift */; };
 		A80C919421F4BDA6003C2432 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C915F21F4BDA6003C2432 /* MovieViewModel.swift */; };
-		A80C919521F4BDA6003C2432 /* MoviesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C916021F4BDA6003C2432 /* MoviesInteractor.swift */; };
 		A80C919621F4BDA6003C2432 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A80C916221F4BDA6003C2432 /* MovieTableViewCell.xib */; };
 		A80C919721F4BDA6003C2432 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C916321F4BDA6003C2432 /* MoviesViewController.swift */; };
 		A80C919821F4BDA6003C2432 /* MoviesViewController+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C916421F4BDA6003C2432 /* MoviesViewController+Sort.swift */; };
@@ -88,7 +87,6 @@
 		A80C915D21F4BDA6003C2432 /* MoviesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesPresenter.swift; sourceTree = "<group>"; };
 		A80C915E21F4BDA6003C2432 /* FavoritesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
 		A80C915F21F4BDA6003C2432 /* MovieViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
-		A80C916021F4BDA6003C2432 /* MoviesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesInteractor.swift; sourceTree = "<group>"; };
 		A80C916221F4BDA6003C2432 /* MovieTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
 		A80C916321F4BDA6003C2432 /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		A80C916421F4BDA6003C2432 /* MoviesViewController+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoviesViewController+Sort.swift"; sourceTree = "<group>"; };
@@ -241,7 +239,6 @@
 				A80C915D21F4BDA6003C2432 /* MoviesPresenter.swift */,
 				A80C915E21F4BDA6003C2432 /* FavoritesManager.swift */,
 				A80C915F21F4BDA6003C2432 /* MovieViewModel.swift */,
-				A80C916021F4BDA6003C2432 /* MoviesInteractor.swift */,
 			);
 			path = ApplicationLayer;
 			sourceTree = "<group>";
@@ -661,7 +658,6 @@
 				A80C919821F4BDA6003C2432 /* MoviesViewController+Sort.swift in Sources */,
 				A80C919921F4BDA6003C2432 /* MoviesTableViewController.swift in Sources */,
 				A80C919F21F4BDA6003C2432 /* AppBuilder.swift in Sources */,
-				A80C919521F4BDA6003C2432 /* MoviesInteractor.swift in Sources */,
 				A80C91AA21F4BDA6003C2432 /* Enumerations.swift in Sources */,
 				A80C919321F4BDA6003C2432 /* FavoritesManager.swift in Sources */,
 				A8F9825A21F8AB9F00A3BC16 /* MoviesDataUrl.swift in Sources */,

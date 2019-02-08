@@ -23,7 +23,7 @@ class MoviesInteractorTests: XCTestCase {
     
     func testFetchItemsForAllMovies() {
         let presenter = Movies.Presenter([], main: SyncQueue.global, background: SyncQueue.background)
-        let sut = Movies.Interactor<Movie, Movies.Presenter, Service>(service, presenter: presenter)
+        let sut = Interactor<Movie, Movies.Presenter, Service>(service, presenter: presenter)
         let request = Request()
         let urlGenerator = MoviesDataUrl(request)
         let url = urlGenerator.url()!
