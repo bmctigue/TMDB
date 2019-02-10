@@ -8,12 +8,12 @@
 
 import Foundation
 
-public final class Interactor<Model, Presenter: PresenterProtocol, ServProtocol: ServiceProtocol>: InteractorProtocol {
+public final class Interactor<Model, Presenter: PresenterProtocol, Service: ServiceProtocol>: InteractorProtocol {
     
-    private var service: ServProtocol
+    private var service: Service
     private var presenter: Presenter
     
-    public init(_ service: ServProtocol, presenter: Presenter) {
+    public init(_ presenter: Presenter, service: Service) {
         self.service = service
         self.presenter = presenter
     }
