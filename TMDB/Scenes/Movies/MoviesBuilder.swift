@@ -21,9 +21,9 @@ enum Movies {
         private var state: MovieFilterState
         private var store: StoreProtocol
         private lazy var dataAdapter = Movies.UnboxDataAdapter()
-        private lazy var service = Service<Movie, UnboxDataAdapter>(store, dataAdapter: dataAdapter, cacheKey: Movies.Builder.cacheKey)
+        private lazy var service = Movies.Service<Movie, UnboxDataAdapter>(store, dataAdapter: dataAdapter, cacheKey: Movies.Builder.cacheKey)
         private lazy var presenter = Movies.Presenter([])
-        private lazy var interactor = Interactor<Movie, Movies.Presenter, Service>(presenter, service: service)
+        private lazy var interactor = Movies.Interactor<Movie, Movies.Presenter, Movies.Service>(presenter, service: service)
         private lazy var tableViewController = MoviesTableViewController(with: interactor, presenter: presenter)
         
         init(with title: String, store: StoreProtocol, state: MovieFilterState) {

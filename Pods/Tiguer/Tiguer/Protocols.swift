@@ -23,6 +23,12 @@ public protocol StoreProtocol {
     func fetchData(_ url: URL, bundle: Bundle) -> Future<Store.Result>
 }
 
+extension StoreProtocol {
+    func fetchData(_ url: URL) -> Future<Store.Result> {
+        return fetchData(url, bundle: Bundle.main)
+    }
+}
+
 public protocol DataAdapterProtocol {
     associatedtype Model
     func itemsFromData(_ data: Data) -> Future<DataAdapter.Result<Model>>

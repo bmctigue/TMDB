@@ -9,54 +9,56 @@
 import Foundation
 import Promis
 
-public final class Service<Model: Codable, Adapter: DataAdapterProtocol>: ServiceProtocol {
-    
-    private var store: StoreProtocol
-    private var dataAdapter: Adapter
-    private var cacheKey: String
-    private var models: [Model] = []
-    private lazy var cache = BaseCache<[Model]>()
-    
-    public init(_ store: StoreProtocol, dataAdapter: Adapter, cacheKey: String) {
-        self.store = store
-        self.dataAdapter = dataAdapter
-        self.cacheKey = cacheKey
-        self.models = cache.getObject(cacheKey) ?? []
-    }
-    
-    public func fetchItems(_ request: Request, url: URL, completionHandler: @escaping ([Any]) -> Void) {
-        let force = request.params[Tiguer.Constants.forceKey]
-        if models.isEmpty || force != nil {
-            store.fetchData(url, bundle: Bundle.main).thenWithResult { [weak self] (storeResult: Store.Result) -> Future<DataAdapter.Result<Model>> in
-                switch storeResult {
-                case .success(let data):
-                    return (self!.dataAdapter.itemsFromData(data) as! Future<DataAdapter.Result<Model>>)
-                }
-                }.finally(queue: .main) { future in
-                    switch future.state {
-                    case .result(let adapterResult):
-                        switch adapterResult {
-                        case .success(let items):
-                            self.cache.setObject(items, key: self.cacheKey)
-                            completionHandler(items)
-                        }
-                    case .error(let error):
-                        print("data fetch error: \(error.localizedDescription)")
-                        completionHandler([])
-                    case .cancelled:
-                        print("future is in a cancelled state")
-                        completionHandler([])
-                    case .unresolved:
-                        print("this really cannot be if any chaining block is executed")
-                        completionHandler([])
-                    }
-            }
-        } else {
-            completionHandler(models)
+extension Tiguer {
+    open class Service<Model: Codable, Adapter: DataAdapterProtocol>: ServiceProtocol {
+        
+        private var store: StoreProtocol
+        private var dataAdapter: Adapter
+        private var cacheKey: String
+        private var models: [Model] = []
+        private lazy var cache = BaseCache<[Model]>()
+        
+        public init(_ store: StoreProtocol, dataAdapter: Adapter, cacheKey: String) {
+            self.store = store
+            self.dataAdapter = dataAdapter
+            self.cacheKey = cacheKey
+            self.models = cache.getObject(cacheKey) ?? []
         }
-    }
-    
-    public func updateCacheTestingState(_ testingState: TestingState) {
-        self.cache.updateTestingState(testingState)
+        
+        public func fetchItems(_ request: Request, url: URL, completionHandler: @escaping ([Any]) -> Void) {
+            let force = request.params[Tiguer.Constants.forceKey]
+            if models.isEmpty || force != nil {
+                store.fetchData(url).thenWithResult { [weak self] (storeResult: Store.Result) -> Future<DataAdapter.Result<Model>> in
+                    switch storeResult {
+                    case .success(let data):
+                        return (self!.dataAdapter.itemsFromData(data) as! Future<DataAdapter.Result<Model>>)
+                    }
+                    }.finally(queue: .main) { future in
+                        switch future.state {
+                        case .result(let adapterResult):
+                            switch adapterResult {
+                            case .success(let items):
+                                self.cache.setObject(items, key: self.cacheKey)
+                                completionHandler(items)
+                            }
+                        case .error(let error):
+                            print("data fetch error: \(error.localizedDescription)")
+                            completionHandler([])
+                        case .cancelled:
+                            print("future is in a cancelled state")
+                            completionHandler([])
+                        case .unresolved:
+                            print("this really cannot be if any chaining block is executed")
+                            completionHandler([])
+                        }
+                }
+            } else {
+                completionHandler(models)
+            }
+        }
+        
+        public func updateCacheTestingState(_ testingState: TestingState) {
+            self.cache.updateTestingState(testingState)
+        }
     }
 }
