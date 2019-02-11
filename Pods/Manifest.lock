@@ -32,7 +32,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Tiguer:
-    :commit: c9979a234ffabf10cebc49dbb09f86a5e3f3f749
+    :commit: 5041948f3fb4bd3e9379977f9deba9681646322e
     :git: https://github.com/bmctigue/Tiguer.git
 
 SPEC CHECKSUMS:
@@ -46,4 +46,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 349e0bf39afdce8ddafc6cdfee26d3cbcfae3ba6
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.6.0

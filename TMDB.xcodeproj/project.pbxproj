@@ -34,7 +34,6 @@
 		A80C91A521F4BDA6003C2432 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A80C917421F4BDA6003C2432 /* Assets.xcassets */; };
 		A80C91AA21F4BDA6003C2432 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C917B21F4BDA6003C2432 /* Enumerations.swift */; };
 		A80C91B321F4BDA6003C2432 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C918721F4BDA6003C2432 /* Movie.swift */; };
-		A80C91B421F4BDA6003C2432 /* StoryboardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C918921F4BDA6003C2432 /* StoryboardFactory.swift */; };
 		A80C91B521F4BDA6003C2432 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C918A21F4BDA6003C2432 /* AppDelegate.swift */; };
 		A831DB1021F7670800EEF5B5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A831DB0F21F7670800EEF5B5 /* Constants.swift */; };
 		A85EBDE421F4E7DC0012ACFF /* TMDBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85EBDE321F4E7DC0012ACFF /* TMDBUITests.swift */; };
@@ -104,7 +103,6 @@
 		A80C917421F4BDA6003C2432 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A80C917B21F4BDA6003C2432 /* Enumerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
 		A80C918721F4BDA6003C2432 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		A80C918921F4BDA6003C2432 /* StoryboardFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardFactory.swift; sourceTree = "<group>"; };
 		A80C918A21F4BDA6003C2432 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A80C918B21F4BDA6003C2432 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A80C91B721F4C045003C2432 /* Pods_TMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_TMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,7 +173,6 @@
 				A80C915121F4BDA6003C2432 /* Scenes */,
 				A80C917521F4BDA6003C2432 /* Shared */,
 				A80C918621F4BDA6003C2432 /* Models */,
-				A80C918821F4BDA6003C2432 /* Factories */,
 				A831DB0E21F766F100EEF5B5 /* Lib */,
 				A80C917021F4BDA6003C2432 /* Resources */,
 				A80C918A21F4BDA6003C2432 /* AppDelegate.swift */,
@@ -291,14 +288,6 @@
 				A80C918721F4BDA6003C2432 /* Movie.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		A80C918821F4BDA6003C2432 /* Factories */ = {
-			isa = PBXGroup;
-			children = (
-				A80C918921F4BDA6003C2432 /* StoryboardFactory.swift */,
-			);
-			path = Factories;
 			sourceTree = "<group>";
 		};
 		A831DB0E21F766F100EEF5B5 /* Lib */ = {
@@ -550,7 +539,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TMDB/Pods-TMDB-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-TMDB/Pods-TMDB-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Promis/Promis.framework",
@@ -569,7 +558,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TMDB/Pods-TMDB-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TMDB/Pods-TMDB-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A6BB687B18F6226AB34E7985 /* [CP] Check Pods Manifest.lock */ = {
@@ -648,7 +637,6 @@
 				A80C918C21F4BDA6003C2432 /* SplashBuilder.swift in Sources */,
 				A80C919221F4BDA6003C2432 /* MoviesPresenter.swift in Sources */,
 				A80C919121F4BDA6003C2432 /* MoviesUnboxDataAdapter.swift in Sources */,
-				A80C91B421F4BDA6003C2432 /* StoryboardFactory.swift in Sources */,
 				A80C918D21F4BDA6003C2432 /* SplashViewController.swift in Sources */,
 				A80C919421F4BDA6003C2432 /* MovieViewModel.swift in Sources */,
 				A80C919E21F4BDA6003C2432 /* MoviesBuilder.swift in Sources */,

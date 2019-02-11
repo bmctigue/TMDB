@@ -6,7 +6,7 @@
 //  Copyright © 2018 tiguer. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import Promis
 
 public struct LocalStore: StoreProtocol {
