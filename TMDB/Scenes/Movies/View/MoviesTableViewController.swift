@@ -26,9 +26,9 @@ class MoviesTableViewController: UIViewController {
     lazy var refreshControl = UIRefreshControl()
     
     private var interactor: InteractorProtocol
-    private var presenter: Movies.Presenter
+    private var presenter: Movies.Presenter<Any, Any>
     
-    init(with interactor: InteractorProtocol, presenter: Movies.Presenter) {
+    init(with interactor: InteractorProtocol, presenter: Movies.Presenter<Any, Any>) {
         self.interactor = interactor
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
@@ -66,7 +66,7 @@ class MoviesTableViewController: UIViewController {
         
         let dynamicModels = presenter.getDynamicModels()
         dynamicModels.addObserver(self) { [weak self] in
-            self?.updateTableView(dynamicModels.value)
+            self?.updateTableView(dynamicModels.value as! [MoviesTableViewController.ViewModel])
             self?.refreshControl.endRefreshing()
             self?.loadingViewController.remove()
         }

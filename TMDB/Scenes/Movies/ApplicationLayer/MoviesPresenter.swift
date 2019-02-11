@@ -10,48 +10,48 @@ import UIKit
 import Tiguer
 
 extension Movies {
-    final class Presenter: PresenterProtocol {
+    final class Presenter<Model, ViewModel>: Tiguer.Presenter<Model, ViewModel> {
         
-        typealias Model = Movie
-        typealias ViewModel = Movies.ViewModel
-        private var models: [Model]
-        private var viewModels: [ViewModel] = []
-        private var dynamicModels: DynamicValue<[ViewModel]> = DynamicValue([ViewModel]())
+        typealias MovieModel = Movie
+        typealias MovieViewModel = Movies.ViewModel
+
         private var filterState: MovieFilterState = .all
         private var sortState: MovieSortState = .none
         private lazy var favoritesManager = FavoritesManager()
-        
-        private var main: Dispatching
-        private var background: Dispatching
-        
-        init(_ models: [Model] = [Model](), main: Dispatching = AsyncQueue.main, background: Dispatching = AsyncQueue.background) {
-            self.models = models
-            self.main = main
-            self.background = background
-            self.viewModels = baseViewModels
-        }
     
-        private var baseViewModels: [ViewModel] {
+        override var baseViewModels: [ViewModel] {
             var resultModels = [ViewModel]()
-            for model in models {
-                let displayedModel = ViewModel(movieId: model.movieId, title: model.title, overview: model.overview, releaseDate: model.releaseDate, posterPath: model.posterPath, popularity: model.popularity)
+            for movieModel in models {
+                let model = movieModel as! MovieModel
+                let displayedModel = MovieViewModel(movieId: model.movieId, title: model.title, overview: model.overview, releaseDate: model.releaseDate, posterPath: model.posterPath, popularity: model.popularity) as! ViewModel
                 resultModels.append(displayedModel)
             }
             return resultModels
         }
         
-        private func updatedViewModels(completionHandler: @escaping ([ViewModel]) -> Void) {
+        override func updatedViewModels(completionHandler: @escaping ([ViewModel]) -> Void) {
             background.dispatch {
                 var resultModels = self.viewModels
                 
                 if self.filterState == .favorite {
-                    resultModels = resultModels.filter { self.favoritesManager.getFavorites().contains($0.movieId) }
+                    resultModels = resultModels.filter {
+                        let model = $0 as! MovieViewModel
+                        return self.favoritesManager.getFavorites().contains(model.movieId) }
                 }
                 
                 if self.sortState == .ascending {
-                    resultModels = resultModels.sorted (by: {$0.popularity < $1.popularity})
+                    resultModels = resultModels.sorted (by: {
+                        let lhs = $0 as! MovieViewModel
+                        let rhs = $1 as! MovieViewModel
+                        return lhs.popularity < rhs.popularity
+                        
+                    })
                 } else if self.sortState == .descending {
-                    resultModels = resultModels.sorted (by: {$0.popularity > $1.popularity})
+                    resultModels = resultModels.sorted (by: {
+                        let lhs = $0 as! MovieViewModel
+                        let rhs = $1 as! MovieViewModel
+                        return lhs.popularity > rhs.popularity
+                    })
                 }
                 
                 self.main.dispatch {
@@ -59,43 +59,25 @@ extension Movies {
                 }
             }
         }
-        
-        func updateViewModels(_ response: Response<Model>) {
-            self.models = response.models
-            self.viewModels = baseViewModels
-            self.updateViewModelsInBackground()
-        }
-        
-        func filterModelsByState(_ state: MovieFilterState) {
-            self.filterState = state
-            self.updateViewModelsInBackground()
-        }
+    }
+}
+
+extension Movies.Presenter {
+    func filterModelsByState(_ state: MovieFilterState) {
+        self.filterState = state
+        self.updateViewModelsInBackground()
+    }
     
-        func sortModelsByState(_ state: MovieSortState) {
-            self.sortState = state
-            self.updateViewModelsInBackground()
-        }
-        
-        func updateViewModelsInBackground() {
-            updatedViewModels { [weak self] results in
-                self?.dynamicModels.value = results
-            }
-        }
-        
-        func getDynamicModels() -> DynamicValue<[ViewModel]> {
-            return dynamicModels
-        }
-        
-        func getModels() -> [Model] {
-            return models
-        }
-        
-        func updateFavorites(_ state: MovieFavoriteState) {
-            favoritesManager.updateFavorites(state)
-        }
-        
-        func getFavorites() -> Set<Int> {
-            return favoritesManager.getFavorites()
-        }
+    func sortModelsByState(_ state: MovieSortState) {
+        self.sortState = state
+        self.updateViewModelsInBackground()
+    }
+    
+    func updateFavorites(_ state: MovieFavoriteState) {
+        favoritesManager.updateFavorites(state)
+    }
+    
+    func getFavorites() -> Set<Int> {
+        return favoritesManager.getFavorites()
     }
 }

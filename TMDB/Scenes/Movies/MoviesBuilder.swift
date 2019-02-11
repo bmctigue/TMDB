@@ -22,7 +22,7 @@ enum Movies {
         private var store: StoreProtocol
         private lazy var dataAdapter = Movies.UnboxDataAdapter()
         private lazy var service = Movies.Service<Movie, UnboxDataAdapter>(store, dataAdapter: dataAdapter, cacheKey: Movies.Builder.cacheKey)
-        private lazy var presenter = Movies.Presenter([])
+        private lazy var presenter = Movies.Presenter<Any, Any>([])
         private lazy var interactor = Movies.Interactor<Movie, Movies.Presenter, Movies.Service>(presenter, service: service)
         private lazy var tableViewController = MoviesTableViewController(with: interactor, presenter: presenter)
         
