@@ -12,8 +12,8 @@ public struct StoryboardFactory: StoryboardFactoryProtocol {
     
     public init() {}
     
-    public func create(name: String) -> UIStoryboard {
-        let storyboard = UIStoryboard(name: name, bundle: nil)
+    public func create(name: String, bundle: Bundle = Bundle.main) -> UIStoryboard {
+        let storyboard = UIStoryboard(name: name, bundle: bundle)
         return storyboard
     }
 }

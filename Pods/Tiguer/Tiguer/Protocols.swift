@@ -20,7 +20,7 @@ public protocol VCBuilder: class {
 }
 
 public protocol StoreProtocol {
-    func fetchData(_ url: URL) -> Future<Store.Result>
+    func fetchData(_ url: URL, bundle: Bundle) -> Future<Store.Result>
 }
 
 public protocol DataAdapterProtocol {
@@ -73,5 +73,5 @@ public protocol CacheProtocol {
 }
 
 protocol StoryboardFactoryProtocol {
-    func create(name: String) -> UIStoryboard
+    func create(name: String, bundle: Bundle) -> UIStoryboard
 }
