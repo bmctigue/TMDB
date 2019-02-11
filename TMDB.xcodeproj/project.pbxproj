@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4C9AAD7A5233C44D756186BF /* Pods_TMDBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF87FE775338476A96C567B /* Pods_TMDBTests.framework */; };
 		664BEEF8E799909781D8214B /* Pods_TMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B776AAE85E2BDBEEA657099 /* Pods_TMDB.framework */; };
-		6ACA99E5C5C7E4C71E920325 /* Pods_TMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80C91B721F4C045003C2432 /* Pods_TMDB.framework */; };
 		A80C918C21F4BDA6003C2432 /* SplashBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C915321F4BDA6003C2432 /* SplashBuilder.swift */; };
 		A80C918D21F4BDA6003C2432 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C915521F4BDA6003C2432 /* SplashViewController.swift */; };
 		A80C918E21F4BDA6003C2432 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A80C915621F4BDA6003C2432 /* Splash.storyboard */; };
@@ -149,7 +148,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				664BEEF8E799909781D8214B /* Pods_TMDB.framework in Frameworks */,
-				6ACA99E5C5C7E4C71E920325 /* Pods_TMDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
