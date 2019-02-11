@@ -233,11 +233,11 @@
 			children = (
 				A80C916221F4BDA6003C2432 /* MovieTableViewCell.xib */,
 				A80C916321F4BDA6003C2432 /* MoviesViewController.swift */,
+				A80C916721F4BDA6003C2432 /* MoviesViewController+Filter.swift */,
 				A80C916421F4BDA6003C2432 /* MoviesViewController+Sort.swift */,
+				A80C916821F4BDA6003C2432 /* MoviesViewController.xib */,
 				A80C916521F4BDA6003C2432 /* MoviesTableViewController.swift */,
 				A80C916621F4BDA6003C2432 /* MoviesTableViewController.xib */,
-				A80C916721F4BDA6003C2432 /* MoviesViewController+Filter.swift */,
-				A80C916821F4BDA6003C2432 /* MoviesViewController.xib */,
 				A80C916921F4BDA6003C2432 /* MovieTableViewCell.swift */,
 			);
 			path = View;
