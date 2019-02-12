@@ -21,3 +21,10 @@ public struct Response<Model> {
         self.models = models
     }
 }
+
+public struct SampleViewModel {
+    let sampleId: Int
+    init(sampleId: Int) {
+        self.sampleId = sampleId
+    }
+}

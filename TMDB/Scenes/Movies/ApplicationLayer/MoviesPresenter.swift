@@ -11,9 +11,6 @@ import Tiguer
 
 extension Movies {
     final class Presenter<Model, ViewModel>: Tiguer.Presenter<Model, ViewModel> {
-        
-        typealias MovieModel = Movie
-        typealias MovieViewModel = Movies.ViewModel
 
         private var filterState: MovieFilterState = .all
         private var sortState: MovieSortState = .none
@@ -22,8 +19,8 @@ extension Movies {
         override var baseViewModels: [ViewModel] {
             var resultModels = [ViewModel]()
             for movieModel in models {
-                let model = movieModel as! MovieModel
-                let displayedModel = MovieViewModel(movieId: model.movieId, title: model.title, overview: model.overview, releaseDate: model.releaseDate, posterPath: model.posterPath, popularity: model.popularity) as! ViewModel
+                let model = movieModel as! Movie
+                let displayedModel = Movies.ViewModel(movieId: model.movieId, title: model.title, overview: model.overview, releaseDate: model.releaseDate, posterPath: model.posterPath, popularity: model.popularity) as! ViewModel
                 resultModels.append(displayedModel)
             }
             return resultModels
@@ -35,21 +32,21 @@ extension Movies {
                 
                 if self.filterState == .favorite {
                     resultModels = resultModels.filter {
-                        let model = $0 as! MovieViewModel
+                        let model = $0 as! Movies.ViewModel
                         return self.favoritesManager.getFavorites().contains(model.movieId) }
                 }
                 
                 if self.sortState == .ascending {
                     resultModels = resultModels.sorted (by: {
-                        let lhs = $0 as! MovieViewModel
-                        let rhs = $1 as! MovieViewModel
+                        let lhs = $0 as! Movies.ViewModel
+                        let rhs = $1 as! Movies.ViewModel
                         return lhs.popularity < rhs.popularity
                         
                     })
                 } else if self.sortState == .descending {
                     resultModels = resultModels.sorted (by: {
-                        let lhs = $0 as! MovieViewModel
-                        let rhs = $1 as! MovieViewModel
+                        let lhs = $0 as! Movies.ViewModel
+                        let rhs = $1 as! Movies.ViewModel
                         return lhs.popularity > rhs.popularity
                     })
                 }

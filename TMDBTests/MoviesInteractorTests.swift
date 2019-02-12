@@ -18,11 +18,10 @@ class MoviesInteractorTests: XCTestCase {
     private lazy var store = LocalStore(Movies.Builder.moviesAssetName)
     private lazy var dataAdapter = Movies.UnboxDataAdapter()
     private lazy var service = Tiguer.Service<Movie, Movies.UnboxDataAdapter>(store, dataAdapter: dataAdapter, cacheKey: cacheKey)
-    private lazy var presenter = Movies.Presenter([])
     var viewModels = [ViewModel]()
     
     func testFetchItemsForAllMovies() {
-        let presenter = Movies.Presenter([], main: SyncQueue.global, background: SyncQueue.background)
+        let presenter = Movies.Presenter<Movie, Movies.ViewModel>([], main: SyncQueue.global, background: SyncQueue.background)
         let sut = Tiguer.Interactor<Movie, Movies.Presenter, Tiguer.Service>(presenter, service: service)
         let request = Request()
         let urlGenerator = MoviesDataUrl(request)
