@@ -66,7 +66,7 @@ class MoviesTableViewController: UIViewController {
         
         let dynamicModels = presenter.getDynamicModels()
         dynamicModels.addObserver(self) { [weak self] in
-            self?.updateTableView(dynamicModels.value as! [MoviesTableViewController.ViewModel])
+            self?.updateTableView(dynamicModels.value)
             self?.refreshControl.endRefreshing()
             self?.loadingViewController.remove()
         }
