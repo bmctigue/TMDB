@@ -10,7 +10,7 @@ import UIKit
 import Tiguer
 
 extension Movies {
-    final class Presenter<Model, ViewModel>: Tiguer.Presenter<Model, ViewModel> {
+    final class Presenter<Model, ViewModel: Comparable>: Tiguer.Presenter<Model, ViewModel> {
         
         typealias MovieViewModel = Movies.ViewModel
 

@@ -9,7 +9,7 @@
 import Foundation
 
 extension Tiguer {
-    open class Presenter<Model, ViewModel>: PresenterProtocol {
+    open class Presenter<Model, ViewModel: Comparable>: PresenterProtocol {
         
         public var models: [Model]
         public var viewModels: [ViewModel] = []
@@ -32,9 +32,8 @@ extension Tiguer {
         
         open func updatedViewModels(completionHandler: @escaping ([ViewModel]) -> Void) {
             background.dispatch {
-                let resultModels = self.viewModels
                 self.main.dispatch {
-                    completionHandler(resultModels)
+                    completionHandler(self.viewModels)
                 }
             }
         }

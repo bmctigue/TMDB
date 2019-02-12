@@ -43,9 +43,8 @@ public protocol InteractorProtocol: class {
     func fetchItems(_ request: Request, url: URL)
 }
 
-public protocol PresenterProtocol {
+public protocol PresenterProtocol: class {
     associatedtype Model
-    associatedtype ViewModel
     func updateViewModels(_ response: Response<Model>)
 }
 

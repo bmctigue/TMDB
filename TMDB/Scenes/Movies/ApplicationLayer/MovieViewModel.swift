@@ -10,7 +10,7 @@ import UIKit
 import Tiguer
 
 extension Movies {
-    struct ViewModel {
+    struct ViewModel: Comparable, Equatable {
         
         lazy var imageUrlGenerator = MoviesImageUrl(Request())
         
@@ -40,6 +40,14 @@ extension Movies {
             let path = "\(Constants.Movie.PosterImage.path)\(posterPath)"
             self.imageUrlGenerator.updatePath(path)
             return self.imageUrlGenerator.url()
+        }
+        
+        static func == (lhs: Movies.ViewModel, rhs: Movies.ViewModel) -> Bool {
+            return lhs.movieId == rhs.movieId
+        }
+        
+        static func < (lhs: Movies.ViewModel, rhs: Movies.ViewModel) -> Bool {
+            return lhs.popularity < rhs.popularity
         }
     }
 }
