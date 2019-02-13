@@ -9,7 +9,7 @@
 import Foundation
 
 extension Tiguer {
-    open class Presenter<Model, ViewModel: Comparable>: PresenterProtocol {
+    open class Presenter<Model, ViewModel>: PresenterProtocol {
         
         public var models: [Model]
         public var viewModels: [ViewModel] = []

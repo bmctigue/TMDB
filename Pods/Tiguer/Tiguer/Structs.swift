@@ -22,13 +22,9 @@ public struct Response<Model> {
     }
 }
 
-public struct SampleViewModel: Comparable {
+public struct SampleViewModel {
     let sampleId: Int
     init(sampleId: Int) {
         self.sampleId = sampleId
-    }
-    
-    public static func < (lhs: SampleViewModel, rhs: SampleViewModel) -> Bool {
-        return lhs.sampleId < rhs.sampleId
     }
 }
