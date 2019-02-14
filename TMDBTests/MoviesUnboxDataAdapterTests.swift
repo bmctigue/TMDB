@@ -14,7 +14,7 @@ class MoviesUnboxDataAdapterTests: XCTestCase {
     
     let assetName = "moviesJson"
     var items: [Movie] = [Movie]()
-    lazy var sut = Movies.UnboxDataAdapter()
+    lazy var sut = Movies.UnboxDataAdapter<Movie>()
     
     override func setUp() {
         items = [Movie]()

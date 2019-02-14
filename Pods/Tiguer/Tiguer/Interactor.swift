@@ -19,7 +19,7 @@ extension Tiguer {
             self.presenter = presenter
         }
         
-        public func fetchItems(_ request: Request, url: URL) {
+        open func fetchItems(_ request: Request, url: URL) {
             service.fetchItems(request, url: url) { [weak self] models in
                 let models = models as! [Presenter.Model]
                 if let self = self {

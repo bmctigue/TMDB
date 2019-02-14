@@ -9,25 +9,23 @@
 import UIKit
 import Unbox
 
-typealias Movie = Result
-
-struct MoviePage {
+struct MovieResults {
     var page: Int
     var totalResults: Int
     var totalPages: Int
-    var results: [Result]
+    var movies: [Movie]
 }
 
-extension MoviePage: Unboxable {
+extension MovieResults: Unboxable {
     init(unboxer: Unboxer) throws {
         self.page = try unboxer.unbox(key: "page")
         self.totalResults = try unboxer.unbox(key: "total_results")
         self.totalPages = try unboxer.unbox(key: "total_pages")
-        self.results = try unboxer.unbox(key: "results")
+        self.movies = try unboxer.unbox(key: "results")
     }
 }
 
-struct Result: Codable {
+struct Movie: Codable {
     var voteCount: Int
     var movieId: Int
     var video: Bool
@@ -44,7 +42,7 @@ struct Result: Codable {
     var releaseDate: String
 }
 
-extension Result: Unboxable {
+extension Movie: Unboxable {
     init(unboxer: Unboxer) throws {
         self.voteCount = try unboxer.unbox(key: "vote_count")
         self.movieId = try unboxer.unbox(key: "id")

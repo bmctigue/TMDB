@@ -12,13 +12,14 @@ import Unbox
 import Tiguer
 
 extension Movies {
-    struct UnboxDataAdapter: DataAdapterProtocol {
-        typealias Model = Movie
-        func itemsFromData(_ data: Data) -> Future<DataAdapter.Result<Movie>> {
-            let promise = Promise<DataAdapter.Result<Movie>>()
+    class UnboxDataAdapter<Model>: Tiguer.DataAdapter<Model> {
+        
+        override func itemsFromData(_ data: Data) -> Future<DataAdapterResult.Result<Model>> {
+            let promise = Promise<DataAdapterResult.Result<Model>>()
             do {
-                let moviePage: MoviePage = try unbox(data: data)
-                promise.setResult(.success(moviePage.results))
+                let results: MovieResults = try unbox(data: data)
+                let models = results.movies.map { $0 as! Model }
+                promise.setResult(DataAdapterResult.Result.success(models))
             } catch {
                 promise.setError(DataAdapterError.conversionFailed)
             }

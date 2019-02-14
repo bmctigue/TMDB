@@ -16,7 +16,7 @@ class MoviesInteractorTests: XCTestCase {
     
     let cacheKey = "movies"
     private lazy var store = LocalStore(Movies.Builder.moviesAssetName)
-    private lazy var dataAdapter = Movies.UnboxDataAdapter()
+    private lazy var dataAdapter = Movies.UnboxDataAdapter<Movie>()
     private lazy var service = Tiguer.Service<Movie, Movies.UnboxDataAdapter>(store, dataAdapter: dataAdapter, cacheKey: cacheKey)
     var viewModels = [ViewModel]()
     

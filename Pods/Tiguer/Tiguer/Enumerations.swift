@@ -27,7 +27,7 @@ public enum DataAdapterError: Error {
     case conversionFailed
 }
 
-public enum DataAdapter {
+public enum DataAdapterResult {
     public enum Result<Model> {
         case success([Model])
     }

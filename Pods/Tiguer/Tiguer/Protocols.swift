@@ -29,9 +29,9 @@ extension StoreProtocol {
     }
 }
 
-public protocol DataAdapterProtocol {
+public protocol DataAdapterProtocol: class {
     associatedtype Model
-    func itemsFromData(_ data: Data) -> Future<DataAdapter.Result<Model>>
+    func itemsFromData(_ data: Data) -> Future<DataAdapterResult.Result<Model>>
 }
 
 public protocol ServiceProtocol: class {
@@ -77,6 +77,6 @@ public protocol CacheProtocol {
     func removeObject(_ key: String)
 }
 
-protocol StoryboardFactoryProtocol {
+public protocol StoryboardFactoryProtocol {
     func create(name: String, bundle: Bundle) -> UIStoryboard
 }
