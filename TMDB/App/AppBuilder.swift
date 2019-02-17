@@ -23,7 +23,7 @@ enum App {
             case .notTesting:
                 self.builder = Splash.Builder(with: window)
             case .testing:
-                let store = RemoteStore()
+                let store = LocalStore("moviesJson")
                 self.builder = Movies.Builder(with: Movies.Builder.moviesTitle, store: store, state: .all)
             }
         }

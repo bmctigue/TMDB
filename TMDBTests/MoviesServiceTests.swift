@@ -27,7 +27,7 @@ class ServiceTests: XCTestCase {
         let urlGenerator = MoviesDataUrl(request)
         let url = urlGenerator.url()!
         sut.fetchItems(request, url: url) { movies in
-            results = movies as! [Movie]
+            results = movies
             expectation.fulfill()
         }
         waitForExpectations(timeout: 3.0, handler: nil)

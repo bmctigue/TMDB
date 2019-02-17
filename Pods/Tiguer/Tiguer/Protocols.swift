@@ -20,13 +20,7 @@ public protocol VCBuilder: class {
 }
 
 public protocol StoreProtocol {
-    func fetchData(_ url: URL, bundle: Bundle) -> Future<Store.Result>
-}
-
-extension StoreProtocol {
-    func fetchData(_ url: URL) -> Future<Store.Result> {
-        return fetchData(url, bundle: Bundle.main)
-    }
+    func fetchData(_ url: URL) -> Future<Store.Result>
 }
 
 public protocol DataAdapterProtocol: class {
@@ -35,7 +29,7 @@ public protocol DataAdapterProtocol: class {
 }
 
 public protocol ServiceProtocol: class {
-    associatedtype Model
+    associatedtype Model: Codable
     func fetchItems(_ request: Request, url: URL, completionHandler: @escaping ([Model]) -> Void)
 }
 

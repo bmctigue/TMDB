@@ -218,9 +218,9 @@
 			isa = PBXGroup;
 			children = (
 				A80C915B21F4BDA6003C2432 /* MoviesUnboxDataAdapter.swift */,
+				A8693E952212240C0018CDEB /* MoviesService.swift */,
 				A8F9825921F8AB9F00A3BC16 /* MoviesDataUrl.swift */,
 				A8F9825B21F8B3B200A3BC16 /* MoviesImageUrl.swift */,
-				A8693E952212240C0018CDEB /* MoviesService.swift */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -228,10 +228,10 @@
 		A80C915C21F4BDA6003C2432 /* ApplicationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				A80C915D21F4BDA6003C2432 /* MoviesPresenter.swift */,
-				A80C915E21F4BDA6003C2432 /* FavoritesManager.swift */,
 				A80C915F21F4BDA6003C2432 /* MovieViewModel.swift */,
 				A8693E9322121F000018CDEB /* MoviesInteractor.swift */,
+				A80C915D21F4BDA6003C2432 /* MoviesPresenter.swift */,
+				A80C915E21F4BDA6003C2432 /* FavoritesManager.swift */,
 			);
 			path = ApplicationLayer;
 			sourceTree = "<group>";
@@ -239,7 +239,6 @@
 		A80C916121F4BDA6003C2432 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A80C916221F4BDA6003C2432 /* MovieTableViewCell.xib */,
 				A80C916321F4BDA6003C2432 /* MoviesViewController.swift */,
 				A80C916721F4BDA6003C2432 /* MoviesViewController+Filter.swift */,
 				A80C916421F4BDA6003C2432 /* MoviesViewController+Sort.swift */,
@@ -247,6 +246,7 @@
 				A80C916521F4BDA6003C2432 /* MoviesTableViewController.swift */,
 				A80C916621F4BDA6003C2432 /* MoviesTableViewController.xib */,
 				A80C916921F4BDA6003C2432 /* MovieTableViewCell.swift */,
+				A80C916221F4BDA6003C2432 /* MovieTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";

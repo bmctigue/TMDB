@@ -17,7 +17,7 @@ public struct RemoteStore: StoreProtocol {
         self.session = session
     }
     
-    public func fetchData(_ url: URL, bundle: Bundle) -> Future<Store.Result> {
+    public func fetchData(_ url: URL) -> Future<Store.Result> {
         let promise = Promise<Store.Result>()
         let postData = NSData(data: "{}".data(using: String.Encoding.utf8)!)
         
