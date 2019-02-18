@@ -30,7 +30,6 @@
 		A80C91A021F4BDA6003C2432 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A80C916D21F4BDA6003C2432 /* LaunchScreen.storyboard */; };
 		A80C91A221F4BDA6003C2432 /* moviesJson.json in Resources */ = {isa = PBXBuildFile; fileRef = A80C917121F4BDA6003C2432 /* moviesJson.json */; };
 		A80C91A321F4BDA6003C2432 /* movie_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = A80C917221F4BDA6003C2432 /* movie_loading.json */; };
-		A80C91A421F4BDA6003C2432 /* glow_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = A80C917321F4BDA6003C2432 /* glow_loading.json */; };
 		A80C91A521F4BDA6003C2432 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A80C917421F4BDA6003C2432 /* Assets.xcassets */; };
 		A80C91AA21F4BDA6003C2432 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C917B21F4BDA6003C2432 /* Enumerations.swift */; };
 		A80C91B321F4BDA6003C2432 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C918721F4BDA6003C2432 /* Movie.swift */; };
@@ -96,7 +95,6 @@
 		A80C916E21F4BDA6003C2432 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A80C917121F4BDA6003C2432 /* moviesJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = moviesJson.json; sourceTree = "<group>"; };
 		A80C917221F4BDA6003C2432 /* movie_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie_loading.json; sourceTree = "<group>"; };
-		A80C917321F4BDA6003C2432 /* glow_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = glow_loading.json; sourceTree = "<group>"; };
 		A80C917421F4BDA6003C2432 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A80C917B21F4BDA6003C2432 /* Enumerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
 		A80C918721F4BDA6003C2432 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
@@ -265,7 +263,6 @@
 			children = (
 				A80C917121F4BDA6003C2432 /* moviesJson.json */,
 				A80C917221F4BDA6003C2432 /* movie_loading.json */,
-				A80C917321F4BDA6003C2432 /* glow_loading.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -495,7 +492,6 @@
 				A80C91A521F4BDA6003C2432 /* Assets.xcassets in Resources */,
 				A80C91A021F4BDA6003C2432 /* LaunchScreen.storyboard in Resources */,
 				A80C91A221F4BDA6003C2432 /* moviesJson.json in Resources */,
-				A80C91A421F4BDA6003C2432 /* glow_loading.json in Resources */,
 				A80C919621F4BDA6003C2432 /* MovieTableViewCell.xib in Resources */,
 				A80C91A321F4BDA6003C2432 /* movie_loading.json in Resources */,
 				A80C918E21F4BDA6003C2432 /* Splash.storyboard in Resources */,

@@ -10,7 +10,7 @@ import XCTest
 @testable import TMDB
 @testable import Tiguer
 
-class ServiceTests: XCTestCase {
+class MoviesServiceTests: XCTestCase {
     
     let assetName = Movies.Builder.moviesAssetName
     lazy var dataAdapter = Movies.UnboxDataAdapter<Movie>()
