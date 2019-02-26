@@ -26,7 +26,7 @@ class MoviesTableViewController: UIViewController {
     lazy var refreshControl = UIRefreshControl()
     
     private var interactor: InteractorProtocol
-    private var presenter: Movies.Presenter<Movie, Movies.ViewModel>
+    var presenter: Movies.Presenter<Movie, Movies.ViewModel>
     
     init(with interactor: InteractorProtocol, presenter: Movies.Presenter<Movie, Movies.ViewModel>) {
         self.interactor = interactor
@@ -42,27 +42,10 @@ class MoviesTableViewController: UIViewController {
         self.emptyStateDataSource = self
         self.emptyStateDelegate = self
         
+        self.addDataSource(self)
+        
         refreshControl.addTarget(self, action: #selector(refreshTableView), for: UIControl.Event.valueChanged)
         tableView.refreshControl = refreshControl
-        
-        self.tableViewDatasource = TableViewDataSource(models: viewModels, reuseIdentifier: cellName) { (model: ViewModel, cell: UITableViewCell) in
-            var model = model
-            let cell = cell as! MovieTableViewCell
-            cell.movieId = model.selectionId
-            cell.titleLabel.text = model.title
-            cell.overViewLabel.text = model.overview
-            cell.releaseDateLabel.text = model.releaseDate
-            cell.popularityLabel.text = model.formattedPopularity
-            cell.cellImageView.kf.indicatorType = .activity
-            cell.cellImageView.kf.setImage(with: model.postPathUrl())
-            cell.favoriteState = self.presenter.getFavorites().contains(model.selectionId) ? SelectionState.selected(model.selectionId) : SelectionState.unSelected(model.selectionId)
-            cell.dynamicFavoriteState.addObserver(self) {
-                if let state = cell.dynamicFavoriteState.value {
-                    self.presenter.updateFavorites(state)
-                }
-            }
-        }
-        self.tableView.dataSource = tableViewDatasource
         
         let dynamicModels = presenter.getDynamicModels()
         dynamicModels.addObserver(self) { [weak self] in
