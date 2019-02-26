@@ -42,7 +42,7 @@ class MoviesTableViewController: UIViewController {
         self.emptyStateDataSource = self
         self.emptyStateDelegate = self
         
-        self.addDataSource(self)
+        self.addDataSource()
         
         refreshControl.addTarget(self, action: #selector(refreshTableView), for: UIControl.Event.valueChanged)
         tableView.refreshControl = refreshControl
