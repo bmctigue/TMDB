@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Tiguer
 
 enum MovieFilterState {
     case all
@@ -17,9 +18,4 @@ enum MovieSortState {
     case none
     case ascending
     case descending
-}
-
-enum MovieFavoriteState: Equatable {
-    case selected(Int)
-    case unSelected(Int)
 }

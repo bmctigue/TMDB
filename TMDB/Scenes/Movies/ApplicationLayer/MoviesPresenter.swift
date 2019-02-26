@@ -16,7 +16,7 @@ extension Movies {
 
         private var filterState: MovieFilterState = .all
         private var sortState: MovieSortState = .none
-        private lazy var favoritesManager = FavoritesManager()
+        private lazy var favoritesManager = Movies.SelectionManager<Movie>()
     
         override var baseViewModels: [ViewModel] {
             var resultModels = [ViewModel]()
@@ -35,7 +35,7 @@ extension Movies {
                 if self.filterState == .favorite {
                     resultModels = resultModels.filter {
                         let model = $0 as! MovieViewModel
-                        return self.favoritesManager.getFavorites().contains(model.movieId) }
+                        return self.favoritesManager.getSelections().contains(model.selectionId) }
                 }
                 
                 if self.sortState == .ascending {
@@ -72,11 +72,11 @@ extension Movies.Presenter {
         self.updateViewModelsInBackground()
     }
     
-    func updateFavorites(_ state: MovieFavoriteState) {
-        favoritesManager.updateFavorites(state)
+    func updateFavorites(_ state: SelectionState) {
+        favoritesManager.updateSelections(state)
     }
     
-    func getFavorites() -> Set<Int> {
-        return favoritesManager.getFavorites()
+    func getFavorites() -> Set<String> {
+        return favoritesManager.getSelections()
     }
 }

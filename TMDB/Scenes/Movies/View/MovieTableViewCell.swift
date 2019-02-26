@@ -21,9 +21,9 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet weak var favoriteImageView: UIImageView!
     @IBOutlet weak var favoriteButton: UIButton!
     
-    var movieId: Int = 0
+    var movieId: String = ""
     
-    var favoriteState: MovieFavoriteState? {
+    var favoriteState: SelectionState? {
         didSet {
             if let favoriteState = favoriteState {
                 self.favoriteStateChanged(favoriteState)
@@ -31,7 +31,7 @@ class MovieTableViewCell: UITableViewCell {
         }
     }
     
-    lazy var dynamicFavoriteState: DynamicValue<MovieFavoriteState?> = DynamicValue(favoriteState)
+    lazy var dynamicFavoriteState: DynamicValue<SelectionState?> = DynamicValue(favoriteState)
     
     override func awakeFromNib() {
         favoriteImageView.tintColor = MoviesViewController.controlsColor
@@ -49,7 +49,7 @@ class MovieTableViewCell: UITableViewCell {
         }
     }
     
-    func favoriteStateChanged(_ state: MovieFavoriteState) {
+    func favoriteStateChanged(_ state: SelectionState) {
         switch state {
         case .selected(let movieId):
             dynamicFavoriteState.value = .selected(movieId)

@@ -48,14 +48,14 @@ class MoviesTableViewController: UIViewController {
         self.tableViewDatasource = TableViewDataSource(models: viewModels, reuseIdentifier: cellName) { (model: ViewModel, cell: UITableViewCell) in
             var model = model
             let cell = cell as! MovieTableViewCell
-            cell.movieId = model.movieId
+            cell.movieId = model.selectionId
             cell.titleLabel.text = model.title
             cell.overViewLabel.text = model.overview
             cell.releaseDateLabel.text = model.releaseDate
             cell.popularityLabel.text = model.formattedPopularity
             cell.cellImageView.kf.indicatorType = .activity
             cell.cellImageView.kf.setImage(with: model.postPathUrl())
-            cell.favoriteState = self.presenter.getFavorites().contains(model.movieId) ? MovieFavoriteState.selected(model.movieId) : MovieFavoriteState.unSelected(model.movieId)
+            cell.favoriteState = self.presenter.getFavorites().contains(model.selectionId) ? SelectionState.selected(model.selectionId) : SelectionState.unSelected(model.selectionId)
             cell.dynamicFavoriteState.addObserver(self) {
                 if let state = cell.dynamicFavoriteState.value {
                     self.presenter.updateFavorites(state)

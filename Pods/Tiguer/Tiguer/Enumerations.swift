@@ -32,3 +32,8 @@ public enum DataAdapterResult {
         case success([Model])
     }
 }
+
+public enum SelectionState: Equatable {
+    case selected(String)
+    case unSelected(String)
+}

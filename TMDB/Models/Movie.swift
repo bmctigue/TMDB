@@ -8,6 +8,7 @@
 
 import UIKit
 import Unbox
+import Tiguer
 
 struct MovieResults {
     var page: Int

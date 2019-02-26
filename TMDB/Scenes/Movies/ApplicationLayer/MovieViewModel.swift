@@ -24,6 +24,10 @@ extension Movies {
             return "Popularity: \(Int(popularity))"
         }
         
+        var selectionId: String {
+            return String(movieId)
+        }
+        
         init(movieId: Int, title: String, overview: String, releaseDate: String, posterPath: String, popularity: Double) {
             self.movieId = movieId
             self.title = title
