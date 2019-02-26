@@ -7,12 +7,13 @@
 //
 
 import XCTest
+import Tiguer
 @testable import TMDB
 
 class MovieTableViewCellTests: XCTestCase {
     
     private var cell: MovieTableViewCell?
-    var newState = MovieFavoriteState.unSelected(0)
+    var newState = SelectionState.unSelected("0")
     
     override func setUp() {
         super.setUp()
@@ -27,13 +28,13 @@ class MovieTableViewCellTests: XCTestCase {
     }
 
     func testFavoriteStateChanged() {
-        cell?.favoriteState = .selected(0)
+        cell?.favoriteState = .selected("0")
         
         cell?.favoriteButtonPressed(UIButton())
-        XCTAssert(cell?.favoriteState! == MovieFavoriteState.unSelected(0))
+        XCTAssert(cell?.favoriteState! == SelectionState.unSelected(""))
         
         cell?.favoriteButtonPressed(UIButton())
-        XCTAssert(cell?.favoriteState! == MovieFavoriteState.selected(0))
+        XCTAssert(cell?.favoriteState! == SelectionState.selected(""))
     }
     
     func testDynamicFavoriteStateChanged() {
@@ -44,9 +45,9 @@ class MovieTableViewCellTests: XCTestCase {
                 self?.newState = (cell.dynamicFavoriteState.value)!
                 expectation.fulfill()
             }
-            cell.favoriteState = .selected(0)
+            cell.favoriteState = .selected("0")
             waitForExpectations(timeout: 3.0, handler: nil)
-            XCTAssert(self.newState == .selected(0))
+            XCTAssert(self.newState == .selected("0"))
         } else {
             XCTFail()
         }

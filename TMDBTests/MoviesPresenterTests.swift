@@ -20,12 +20,12 @@ class MoviesPresenterTests: XCTestCase {
     let movie2 = Movie(voteCount: 0, movieId: 2, video: false, voteAverage: 1, title: "test", popularity: 100, posterPath: "", originalLanguage: "en", originalTitle: "test", genreIds: [0], backdropPath: "", adult: false, overview: "test", releaseDate: "11-03-18")
 
     func testUpdateFavorites() {
-        let movieId = 5
+        let testId = String(movie1.movieId)
         let sut = Movies.Presenter<Model, ViewModel>([], main: SyncQueue.global, background: SyncQueue.background)
-        sut.updateFavorites(.selected(movieId))
-        XCTAssertTrue(sut.getFavorites().contains(movieId))
-        sut.updateFavorites(.unSelected(movieId))
-        XCTAssertFalse(sut.getFavorites().contains(movieId))
+        sut.updateFavorites(.selected(testId))
+        XCTAssertTrue(sut.getFavorites().contains(testId))
+        sut.updateFavorites(.unSelected(testId))
+        XCTAssertFalse(sut.getFavorites().contains(testId))
     }
 
     func testFilterAllModelsByState() {
@@ -37,9 +37,10 @@ class MoviesPresenterTests: XCTestCase {
     }
 
     func testFilterModelsByState() {
+        let testId = String(movie1.movieId)
         let models = [movie1, movie2]
         let sut = Movies.Presenter<Model, ViewModel>(models, main: SyncQueue.global, background: SyncQueue.background)
-        sut.updateFavorites(.selected(movie1.movieId))
+        sut.updateFavorites(.selected(testId))
         sut.filterModelsByState(.favorite)
         let dynamicModels = sut.getDynamicModels()
         XCTAssert(dynamicModels.value.count == 1)
