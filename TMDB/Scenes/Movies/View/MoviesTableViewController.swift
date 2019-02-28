@@ -26,9 +26,9 @@ class MoviesTableViewController: UIViewController {
     lazy var refreshControl = UIRefreshControl()
     
     private var interactor: InteractorProtocol
-    var presenter: Movies.Presenter<Movie, Movies.ViewModel>
+    var presenter: Movies.Presenter<Movie, ViewModel>
     
-    init(with interactor: InteractorProtocol, presenter: Movies.Presenter<Movie, Movies.ViewModel>) {
+    init(with interactor: InteractorProtocol, presenter: Movies.Presenter<Movie, ViewModel>) {
         self.interactor = interactor
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
