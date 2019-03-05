@@ -31,9 +31,11 @@ extension Tiguer {
         }
         
         open func updatedViewModels(completionHandler: @escaping ([ViewModel]) -> Void) {
-            background.dispatch {
-                self.main.dispatch {
-                    completionHandler(self.viewModels)
+            background.dispatch { [weak self] in
+                if let self = self {
+                    self.main.dispatch {
+                        completionHandler(self.viewModels)
+                    }
                 }
             }
         }
