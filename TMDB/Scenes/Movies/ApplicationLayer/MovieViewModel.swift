@@ -10,7 +10,7 @@ import UIKit
 import Tiguer
 
 extension Movies {
-    struct ViewModel: Comparable, Equatable {
+    struct ViewModel: Comparable {
         
         lazy var imageUrlGenerator = MoviesImageUrl(Request())
         
