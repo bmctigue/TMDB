@@ -35,7 +35,8 @@ extension Movies {
                 if self.filterState == .favorite {
                     resultModels = resultModels.filter {
                         let model = $0 as! MovieViewModel
-                        return self.favoritesManager.getSelections().contains(model.selectionId) }
+                        return self.favoritesManager.getSelections().contains(model.selectionId)
+                    }
                 }
                 
                 if self.sortState == .ascending {
@@ -43,7 +44,6 @@ extension Movies {
                         let lhs = $0 as! MovieViewModel
                         let rhs = $1 as! MovieViewModel
                         return lhs.popularity < rhs.popularity
-                        
                     })
                 } else if self.sortState == .descending {
                     resultModels = resultModels.sorted (by: {
