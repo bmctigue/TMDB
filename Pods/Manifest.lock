@@ -32,7 +32,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Tiguer:
-    :commit: 511c78dd710e63e4ff4bf1ed6761ed8909f08b57
+    :commit: 2d12333eaccc86fc487dd34605d8e4151216cbf6
     :git: https://github.com/bmctigue/Tiguer.git
 
 SPEC CHECKSUMS:

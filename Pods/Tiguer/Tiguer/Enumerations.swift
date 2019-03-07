@@ -15,6 +15,7 @@ public enum TestingState {
 
 public enum StoreError: Error {
     case fetchDataFailed
+    case invalidUrl
 }
 
 public enum Store {

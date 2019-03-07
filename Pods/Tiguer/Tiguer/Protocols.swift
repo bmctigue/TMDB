@@ -20,7 +20,7 @@ public protocol VCBuilder: class {
 }
 
 public protocol StoreProtocol {
-    func fetchData(_ url: URL) -> Future<Store.Result>
+    func fetchData(_ url: URL?) -> Future<Store.Result>
 }
 
 public protocol DataAdapterProtocol: class {
@@ -30,11 +30,11 @@ public protocol DataAdapterProtocol: class {
 
 public protocol ServiceProtocol: class {
     associatedtype Model: Codable
-    func fetchItems(_ request: Request, url: URL, completionHandler: @escaping ([Model]) -> Void)
+    func fetchItems(_ request: Request, url: URL?, completionHandler: @escaping ([Model]) -> Void)
 }
 
 public protocol InteractorProtocol: class {
-    func fetchItems(_ request: Request, url: URL)
+    func fetchItems(_ request: Request, url: URL?)
 }
 
 public protocol PresenterProtocol: class {

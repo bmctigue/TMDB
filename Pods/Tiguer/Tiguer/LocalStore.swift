@@ -19,7 +19,7 @@ public struct LocalStore: StoreProtocol {
         self.bundle = bundle
     }
     
-    public func fetchData(_ url: URL) -> Future<Store.Result> {
+    public func fetchData(_ url: URL? = nil) -> Future<Store.Result> {
         let promise = Promise<Store.Result>()
         if let asset = NSDataAsset(name: assetName, bundle: self.bundle) {
             promise.setResult(.success(asset.data))

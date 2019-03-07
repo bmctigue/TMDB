@@ -25,7 +25,7 @@ extension Tiguer {
             self.models = cache.getObject(cacheKey) ?? []
         }
         
-        public func fetchItems(_ request: Request, url: URL, completionHandler: @escaping ([Model]) -> Void) {
+        public func fetchItems(_ request: Request, url: URL?, completionHandler: @escaping ([Model]) -> Void) {
             let force = request.params[Tiguer.Constants.forceKey]
             if models.isEmpty || force != nil {
                 store.fetchData(url).thenWithResult { [weak self] (storeResult: Store.Result) -> Future<DataAdapterResult.Result<Model>> in
