@@ -1,6 +1,6 @@
 PODS:
   - Cache (5.2.0)
-  - Kingfisher (5.1.0)
+  - Kingfisher (5.3.0)
   - lottie-ios (2.5.2)
   - Promis (2.0.0)
   - Tiguer (0.0.1):
@@ -37,7 +37,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
-  Kingfisher: fcec238063d17404fca89bf0a850583211c4cbf6
+  Kingfisher: 4692c783ffb99e9e2e40a6eb3e518c3b96c6fa8c
   lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
   Promis: 92878a15a9d146622b1815e137638e2c0be974ff
   Tiguer: e041ce3e134c5d1379ac460af96e961c83ba87cf
