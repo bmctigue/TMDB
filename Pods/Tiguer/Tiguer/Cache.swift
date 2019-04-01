@@ -7,39 +7,34 @@
 //
 
 import Foundation
-import Cache
 
-public final class BaseCache<CacheObject: Codable>: CacheProtocol {
-    private lazy var diskConfig = DiskConfig(name: "Floppy")
-    private lazy var memoryConfig = MemoryConfig(expiry: .never, countLimit: 10, totalCostLimit: 10)
+open class BaseCache: CacheProtocol {
+    public typealias CacheObject = Int
+    
     private var testingState: TestingState = .notTesting
+    private var storage: NSCache<NSString, AnyObject>
     
-    public init() {}
+    public init() {
+        self.storage = NSCache<NSString, AnyObject>()
+    }
     
-    private lazy var storage = try? Storage(
-        diskConfig: diskConfig,
-        memoryConfig: memoryConfig,
-        transformer: TransformerFactory.forCodable(ofType: CacheObject.self)
-    )
-    
-    public func setObject<CacheObject>(_ object: CacheObject, key: String) {
+    public func setObject<CacheObject>(_ object: CacheObject, key: NSString) {
         guard testingState == .notTesting else {
             return
         }
-        try? storage?.setObject(object as! BaseCache.CacheObject, forKey: key)
+        storage.setObject(object as AnyObject, forKey: key)
     }
     
-    public func getObject<CacheObject>(_ key: String) -> CacheObject? {
-        let object = try? storage?.object(forKey: key)
+    public func getObject<CacheObject>(_ key: NSString) -> CacheObject? {
+        let object = storage.object(forKey: key)
         return object as? CacheObject
     }
     
-    public func removeObject(_ key: String) {
-        try? storage?.removeObject(forKey: key)
+    public func removeObject(_ key: NSString) {
+        storage.removeObject(forKey: key)
     }
     
     public func updateTestingState(_ testingState: TestingState) {
         self.testingState = testingState
     }
 }
-

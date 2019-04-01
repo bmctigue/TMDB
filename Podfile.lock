@@ -1,10 +1,8 @@
 PODS:
-  - Cache (5.2.0)
   - Kingfisher (5.3.0)
   - lottie-ios (2.5.2)
   - Promis (2.0.0)
-  - Tiguer (0.0.1):
-    - Cache
+  - Tiguer (0.0.5):
     - Promis
   - UIEmptyState (4.0.1)
   - Unbox (3.0.0)
@@ -19,7 +17,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Cache
     - Kingfisher
     - lottie-ios
     - Promis
@@ -32,15 +29,14 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Tiguer:
-    :commit: 2d12333eaccc86fc487dd34605d8e4151216cbf6
+    :commit: dae80bac460035c0a20332d1a1fb14c485ff1fd2
     :git: https://github.com/bmctigue/Tiguer.git
 
 SPEC CHECKSUMS:
-  Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
   Kingfisher: 4692c783ffb99e9e2e40a6eb3e518c3b96c6fa8c
   lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
   Promis: 92878a15a9d146622b1815e137638e2c0be974ff
-  Tiguer: e041ce3e134c5d1379ac460af96e961c83ba87cf
+  Tiguer: 8e0a373dec3e32225bd2bb23cbb7c959275d7f88
   UIEmptyState: 767376694d9402452fb3c0a5a5283176c6a53c92
   Unbox: 9ed33b2a31f7a8a049f54b94d40c4a52a28c4d9d
 

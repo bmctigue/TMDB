@@ -11,10 +11,10 @@ import Foundation
 extension Tiguer {
     open class SelectionManager<Model> {
         
-        let selectionKey = "\(Model.self)"
+        let selectionKey = NSString(string: "\(Model.self)")
         
         private var selections: Set<String> = []
-        private lazy var cache = BaseCache<Set<String>>()
+        private lazy var cache = SelectionCache()
         
         public init() {
             self.selections = cache.getObject(selectionKey) ?? []
@@ -33,5 +33,9 @@ extension Tiguer {
         open func getSelections() -> Set<String> {
             return selections
         }
+    }
+    
+    private class SelectionCache: BaseCache {
+        typealias CacheObject = Set<String>
     }
 }
