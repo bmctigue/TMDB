@@ -36,7 +36,8 @@ extension Movies {
                     if self.filterState == .favorite {
                         resultModels = resultModels.filter {
                             let model = $0 as! MovieViewModel
-                            return self.favoritesManager.getSelections().contains(model.selectionId)
+                            let selections = self.favoritesManager.getSelections()
+                            return selections.contains(model.selectionId)
                         }
                     }
                     

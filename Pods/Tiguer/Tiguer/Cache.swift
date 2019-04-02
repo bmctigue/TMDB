@@ -8,33 +8,37 @@
 
 import Foundation
 
-open class BaseCache: CacheProtocol {
-    public typealias CacheObject = Int
-    
-    private var testingState: TestingState = .notTesting
-    private var storage: NSCache<NSString, AnyObject>
-    
-    public init() {
-        self.storage = NSCache<NSString, AnyObject>()
-    }
-    
-    public func setObject<CacheObject>(_ object: CacheObject, key: NSString) {
-        guard testingState == .notTesting else {
-            return
+extension Tiguer {
+    open class BaseCache<CacheObject: Codable>: CacheProtocol {
+        
+        private var testingState: TestingState = .notTesting
+        private let queue = DispatchQueue(label: "com.tiguer.cache")
+        
+        public func setObject<CacheObject: Codable>(_ object: CacheObject, forKey key: String) {
+            guard testingState == .notTesting else {
+                return
+            }
+            queue.async {
+                UserDefaults.standard.save(customObject: (object as CacheObject), inKey: key)
+            }
         }
-        storage.setObject(object as AnyObject, forKey: key)
-    }
-    
-    public func getObject<CacheObject>(_ key: NSString) -> CacheObject? {
-        let object = storage.object(forKey: key)
-        return object as? CacheObject
-    }
-    
-    public func removeObject(_ key: NSString) {
-        storage.removeObject(forKey: key)
-    }
-    
-    public func updateTestingState(_ testingState: TestingState) {
-        self.testingState = testingState
+        
+        public func getObjectForKey<CacheObject>(_ key: String, completionHandler: @escaping (CacheObject?) -> ()) where CacheObject : Decodable, CacheObject : Encodable {
+            queue.sync {
+                let object = UserDefaults.standard.retrieve(object: CacheObject.self, fromKey: key)
+                completionHandler(object)
+            }
+            
+        }
+        
+        public func removeObjectForKey(_ key: String) {
+            queue.async {
+                UserDefaults.standard.delete(forKey: key)
+            }
+        }
+        
+        public func updateTestingState(_ testingState: TestingState) {
+            self.testingState = testingState
+        }
     }
 }

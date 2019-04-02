@@ -14,15 +14,18 @@ extension Tiguer {
         
         private var store: StoreProtocol
         private var dataAdapter: Adapter
-        private var cacheKey: NSString
+        private var cacheKey: String
         private var models: [Model] = []
-        private lazy var cache = ServiceCache()
+        private lazy var cache = BaseCache<Model>()
         
         public init(_ store: StoreProtocol, dataAdapter: Adapter, cacheKey: String) {
             self.store = store
             self.dataAdapter = dataAdapter
-            self.cacheKey = NSString(string: cacheKey)
-            self.models = cache.getObject(cacheKey as NSString) ?? []
+            self.cacheKey = cacheKey
+            
+            cache.getObjectForKey(cacheKey) { [weak self] (object: [Model]?) in
+                self?.models = object ?? []
+            }
         }
         
         public func fetchItems(_ request: Request, url: URL?, completionHandler: @escaping ([Model]) -> Void) {
@@ -39,7 +42,7 @@ extension Tiguer {
                         case .result(let adapterResult):
                             switch adapterResult {
                             case .success(let items):
-                                self.cache.setObject(items, key: self.cacheKey)
+                                self.cache.setObject(items, forKey: self.cacheKey)
                                 completionHandler(items)
                             }
                         case .error(let error):
@@ -60,10 +63,6 @@ extension Tiguer {
         
         public func updateCacheTestingState(_ testingState: TestingState) {
             self.cache.updateTestingState(testingState)
-        }
-        
-        private class ServiceCache: BaseCache {
-            typealias CacheObject = Set<String>
         }
     }
 }

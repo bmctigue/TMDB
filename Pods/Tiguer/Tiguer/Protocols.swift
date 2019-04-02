@@ -66,9 +66,9 @@ extension URLGenerator {
 
 public protocol CacheProtocol {
     associatedtype CacheObject
-    func setObject(_ object: CacheObject, key: NSString)
-    func getObject(_ key: NSString) -> CacheObject?
-    func removeObject(_ key: NSString)
+    func setObject<CacheObject: Codable>(_ object:CacheObject, forKey key:String)
+    func getObjectForKey<CacheObject: Codable>(_ key: String, completionHandler: @escaping (CacheObject?)->())
+    func removeObjectForKey(_ key:String)
 }
 
 public protocol StoryboardFactoryProtocol {
