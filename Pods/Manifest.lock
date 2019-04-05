@@ -2,7 +2,7 @@ PODS:
   - Kingfisher (5.3.0)
   - lottie-ios (2.5.2)
   - Promis (2.0.0)
-  - Tiguer (0.0.15):
+  - Tiguer (0.0.16):
     - Promis
   - UIEmptyState (4.0.1)
   - Unbox (3.0.0)
@@ -29,14 +29,14 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Tiguer:
-    :commit: a5f1be9fc433410f42aa5bbfa5e48857def3cc39
+    :commit: 73fd52ca75988c032334c05453604c8b5d0c5241
     :git: https://github.com/bmctigue/Tiguer.git
 
 SPEC CHECKSUMS:
   Kingfisher: 4692c783ffb99e9e2e40a6eb3e518c3b96c6fa8c
   lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
   Promis: 92878a15a9d146622b1815e137638e2c0be974ff
-  Tiguer: b4016741ca6e6fcad9f5503c9a3181dd1d05afa7
+  Tiguer: 295c54d09e465ec4e4cbbbb7bf57e7e6691f6aa5
   UIEmptyState: 767376694d9402452fb3c0a5a5283176c6a53c92
   Unbox: 9ed33b2a31f7a8a049f54b94d40c4a52a28c4d9d
 

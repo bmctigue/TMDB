@@ -28,7 +28,6 @@ extension Tiguer {
                 let object = UserDefaults.standard.retrieve(object: CacheObject.self, fromKey: key)
                 completionHandler(object)
             }
-            
         }
         
         public func removeObjectForKey(_ key: String) {
