@@ -11,10 +11,10 @@ import Kingfisher
 import UIEmptyState
 import Tiguer
 
-class MoviesTableViewController: UIViewController {
+final class MoviesTableViewController: UIViewController {
     typealias ViewModel = Movies.ViewModel
     
-    let rowHeight: CGFloat = 126.0
+    private let rowHeight: CGFloat = 126.0
     let cellName = "MovieCell"
     let cellNibName = "MovieTableViewCell"
     
@@ -22,11 +22,11 @@ class MoviesTableViewController: UIViewController {
     
     var viewModels = [ViewModel]()
     var tableViewDatasource: TableViewDataSource<ViewModel>?
-    lazy var loadingViewController = LoadingViewController()
-    lazy var refreshControl = UIRefreshControl()
+    private lazy var loadingViewController = LoadingViewController()
+    private lazy var refreshControl = UIRefreshControl()
     
-    private var interactor: InteractorProtocol
-    var presenter: Movies.Presenter<Movie, ViewModel>
+    private let interactor: InteractorProtocol
+    let presenter: Movies.Presenter<Movie, ViewModel>
     
     init(with interactor: InteractorProtocol, presenter: Movies.Presenter<Movie, ViewModel>) {
         self.interactor = interactor
