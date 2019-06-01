@@ -31,9 +31,18 @@ public class DynamicValue<T> {
         }
     }
     
+    public func addSoloObserver(_ observer: NSObject, completionHandler: @escaping CompletionHandler) {
+        self.dispose()
+        self.addObserver(observer, completionHandler: completionHandler)
+    }
+    
     public func addAndNotify(observer: NSObject, completionHandler: @escaping CompletionHandler) {
         self.addObserver(observer, completionHandler: completionHandler)
         self.notify()
+    }
+    
+    public func dispose() {
+        observers.removeAll()
     }
     
     private func notify() {
@@ -41,6 +50,6 @@ public class DynamicValue<T> {
     }
     
     deinit {
-        observers.removeAll()
+        dispose()
     }
 }
