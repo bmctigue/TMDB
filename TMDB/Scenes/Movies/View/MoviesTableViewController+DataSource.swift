@@ -11,7 +11,7 @@ import Tiguer
 
 extension MoviesTableViewController {
     func addDataSource() {
-        self.tableViewDatasource = TableViewDataSource(models: viewModels, reuseIdentifier: cellName) { (model: ViewModel, cell: UITableViewCell) in
+        self.tableViewDatasource = TableViewDataSource(models: viewModels, reuseIdentifier: MoviesTableViewController.cellName) { (model: ViewModel, cell: UITableViewCell) in
             var model = model
             let cell = cell as! MovieTableViewCell
             cell.movieId = model.selectionId

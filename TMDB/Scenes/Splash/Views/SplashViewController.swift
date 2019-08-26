@@ -15,8 +15,10 @@ final class SplashViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var logoView: UIView!
     
+    static let movieLoading = "movie_loading"
+    
     var window: UIWindow?
-    private var animationView = LOTAnimationView(name: "movie_loading", bundle: Bundle.main)
+    private var animationView = LOTAnimationView(name: SplashViewController.movieLoading, bundle: Bundle.main)
     
     override func viewDidLoad() {
         super.viewDidLoad()

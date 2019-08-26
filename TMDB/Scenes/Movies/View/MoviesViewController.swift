@@ -12,10 +12,11 @@ import Tiguer
 final class MoviesViewController: UIViewController {
     
     static let controlsColor = UIColor.red
+    static let happySadFace = "happy_sad_face"
     
     lazy var favoritesButton = UIBarButtonItem(title: "My List", style: .plain, target: self, action: #selector(favoritesButtonPressed(_:)))
     
-    lazy var sortButton = UIBarButtonItem(image: UIImage(named: "Happy_Sad_Face"), style: .plain, target: self, action: #selector(sortButtonPressed(_:)))
+    lazy var sortButton = UIBarButtonItem(image: UIImage(named: MoviesViewController.happySadFace), style: .plain, target: self, action: #selector(sortButtonPressed(_:)))
     
     var filterState: MovieFilterState = .all
     var sortState: MovieSortState = .none
@@ -34,7 +35,7 @@ final class MoviesViewController: UIViewController {
         sortButton.tintColor = MoviesViewController.controlsColor
         self.navigationItem.rightBarButtonItem = favoritesButton
         self.navigationItem.leftBarButtonItem = sortButton
-        sortButton.image = UIImage(named: "happy_sad_face")
+        sortButton.image = UIImage(named: MoviesViewController.happySadFace)
         add(tableViewController)
     }
     

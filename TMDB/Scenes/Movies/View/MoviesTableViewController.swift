@@ -14,9 +14,9 @@ import Tiguer
 final class MoviesTableViewController: UIViewController {
     typealias ViewModel = Movies.ViewModel
     
-    private let rowHeight: CGFloat = 126.0
-    let cellName = "MovieCell"
-    let cellNibName = "MovieTableViewCell"
+    private static let rowHeight: CGFloat = 126.0
+    static let cellName = "MovieCell"
+    static let cellNibName = "MovieTableViewCell"
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -37,8 +37,8 @@ final class MoviesTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = rowHeight
-        self.tableView.register(UINib(nibName: cellNibName, bundle: nil), forCellReuseIdentifier: cellName)
+        self.tableView.estimatedRowHeight = MoviesTableViewController.rowHeight
+        self.tableView.register(UINib(nibName: MoviesTableViewController.cellNibName, bundle: nil), forCellReuseIdentifier: MoviesTableViewController.cellName)
         self.emptyStateDataSource = self
         self.emptyStateDelegate = self
         
