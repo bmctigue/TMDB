@@ -10,7 +10,7 @@ import Foundation
 
 enum Constants {
     static let scheme = "https"
-    static let apiKey = "ac975fc8b7261ca68365d2cf95286764"
+    static let apiKey = "97999d8d7fdb9cafbfc5d93c9c647489"
     static let queryItems = [URLQueryItem(name: Constants.apiKeyString, value: apiKey)]
     static let apiKeyString = "api_key"
     
