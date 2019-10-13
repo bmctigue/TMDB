@@ -21,11 +21,8 @@ public struct RemoteStore: StoreProtocol {
         let promise = Promise<Store.Result>()
         
         if let url = url {
-            let postData = NSData(data: "{}".data(using: String.Encoding.utf8)!)
-            
             let urlRequest = NSMutableURLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
             urlRequest.httpMethod = "GET"
-            urlRequest.httpBody = postData as Data
             let dataTask = session.dataTask(with: urlRequest as URLRequest, completionHandler: { (data, _, error) -> Void in
                 DispatchQueue.main.async {
                     if error == nil {

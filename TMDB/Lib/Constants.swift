@@ -11,8 +11,11 @@ import Foundation
 enum Constants {
     static let scheme = "https"
     static let apiKey = "97999d8d7fdb9cafbfc5d93c9c647489"
-    static let queryItems = [URLQueryItem(name: Constants.apiKeyString, value: apiKey)]
-    static let apiKeyString = "api_key"
+    static let apiKeyParam = "api_key"
+    static let pagesKeyParam = "total_pages"
+    static let pagesCount = "1"
+    static let movieQueryItems = [URLQueryItem(name: Constants.apiKeyParam, value: apiKey), URLQueryItem(name: Constants.pagesKeyParam, value: Constants.pagesCount)]
+    static let imageQueryItems = [URLQueryItem(name: Constants.apiKeyParam, value: apiKey)]
     
     enum Movie {
         struct Data {

@@ -24,6 +24,7 @@ final class MoviesTableViewController: UIViewController {
     var tableViewDatasource: TableViewDataSource<ViewModel>?
     private lazy var loadingViewController = LoadingViewController()
     private lazy var refreshControl = UIRefreshControl()
+    private var filterState: MovieFilterState = .all
     
     private let interactor: InteractorProtocol
     let presenter: Movies.Presenter<Movie, ViewModel>
@@ -81,6 +82,7 @@ final class MoviesTableViewController: UIViewController {
     }
     
     func updateFilterState(_ state: MovieFilterState) {
+        filterState = state
         presenter.filterModelsByState(state)
     }
     
@@ -98,6 +100,7 @@ extension MoviesTableViewController: UIEmptyStateDelegate, UIEmptyStateDataSourc
     var emptyStateTitle: NSAttributedString {
         let attrs = [NSAttributedString.Key.foregroundColor: UIColor.red,
                      NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22)]
-        return NSAttributedString(string: "Sorry, no favorites!", attributes: attrs)
+        let title = filterState == .favorite ? "Sorry, no favorites!" : "Sorry, no movies found!"
+        return NSAttributedString(string: title, attributes: attrs)
     }
 }
