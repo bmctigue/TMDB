@@ -10,7 +10,7 @@ import Foundation
 
 enum Constants {
     static let scheme = "https"
-    static let apiKey = "97999d8d7fdb9cafbfc5d93c9c647489"
+    static let apiKey = "1e1c266b3ca81dad5aea7386cd74c596"
     static let apiKeyParam = "api_key"
     static let pagesKeyParam = "total_pages"
     static let pagesCount = "1"
