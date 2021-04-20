@@ -9,7 +9,7 @@
 import Foundation
 import Tiguer
 
-class MoviesDataUrl: URLGenerator {
+final class MoviesDataUrl: URLGenerator {
     
     private lazy var components: URLComponents = URLComponents()
     

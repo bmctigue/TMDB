@@ -23,7 +23,7 @@ class URLGeneratorTests: XCTestCase {
         let urlManager = MoviesDataUrl(request)
         let url = urlManager.url()
         let query = url?.query
-        XCTAssert(query!.contains("page=1"))
+        XCTAssert(query!.contains("pages=1"))
     }
     
     func testFetchMoviePosterURL() {

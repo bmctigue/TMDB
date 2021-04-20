@@ -20,8 +20,11 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var favoriteImageView: UIImageView!
     @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var detailButton: UIButton!
     
     var movieId: String = ""
+    var model: ViewModel?
+    weak var tableViewDelegate: MoviesViewController?
     
     var favoriteState: SelectionState? {
         didSet {
@@ -46,6 +49,12 @@ class MovieTableViewCell: UITableViewCell {
             case .unSelected:
                 self.favoriteState = .selected(movieId)
             }
+        }
+    }
+    
+    @IBAction func detailButtonPressed(_ sender: Any) {
+        if let delegate = tableViewDelegate, let model = model {
+            delegate.showDetailView(model: model)
         }
     }
     

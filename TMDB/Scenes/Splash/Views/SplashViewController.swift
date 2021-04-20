@@ -22,6 +22,7 @@ final class SplashViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         self.view.backgroundColor = UIColor.white
         animationView.loopAnimation = false
         animationView.center = view.center

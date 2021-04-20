@@ -28,6 +28,7 @@ final class MoviesTableViewController: UIViewController {
     
     private let interactor: InteractorProtocol
     let presenter: Movies.Presenter<Movie, ViewModel>
+    weak var tableViewDelegate: MoviesViewController?
     
     init(with interactor: InteractorProtocol, presenter: Movies.Presenter<Movie, ViewModel>) {
         self.interactor = interactor
@@ -42,7 +43,6 @@ final class MoviesTableViewController: UIViewController {
         self.tableView.register(UINib(nibName: MoviesTableViewController.cellNibName, bundle: nil), forCellReuseIdentifier: MoviesTableViewController.cellName)
         self.emptyStateDataSource = self
         self.emptyStateDelegate = self
-        
         self.addDataSource()
         
         refreshControl.addTarget(self, action: #selector(refreshTableView), for: UIControl.Event.valueChanged)
@@ -60,9 +60,14 @@ final class MoviesTableViewController: UIViewController {
         fetchItems(request: request)
     }
     
+    func showDetailView(model: ViewModel) {
+        if let delegate = tableViewDelegate {
+            delegate.showDetailView(model: model)
+        }
+    }
+    
     @objc func refreshTableView() {
-        let params = [Tiguer.Constants.forceKey: "true"]
-        let request = Request(params)
+        let request = Request()
         fetchItems(request: request)
     }
     
@@ -98,7 +103,7 @@ final class MoviesTableViewController: UIViewController {
 extension MoviesTableViewController: UIEmptyStateDelegate, UIEmptyStateDataSource {
     
     var emptyStateTitle: NSAttributedString {
-        let attrs = [NSAttributedString.Key.foregroundColor: UIColor.red,
+        let attrs = [NSAttributedString.Key.foregroundColor: UIColor.white,
                      NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22)]
         let title = filterState == .favorite ? "Sorry, no favorites!" : "Sorry, no movies found!"
         return NSAttributedString(string: title, attributes: attrs)

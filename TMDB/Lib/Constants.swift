@@ -20,7 +20,7 @@ enum Constants {
     enum Movie {
         struct Data {
             static let host = "api.themoviedb.org"
-            static let path = "/3/movie/popular"
+            static let path = "/3/movie/now_playing"
         }
         
         struct PosterImage {

@@ -30,6 +30,8 @@ final class MoviesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableViewController.tableViewDelegate = self
+        self.navigationController?.isNavigationBarHidden = false
         self.view.backgroundColor = UIColor.lightGray
         favoritesButton.tintColor = MoviesViewController.controlsColor
         sortButton.tintColor = MoviesViewController.controlsColor
@@ -37,6 +39,11 @@ final class MoviesViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = sortButton
         sortButton.image = UIImage(named: MoviesViewController.happySadFace)
         add(tableViewController)
+    }
+    
+    func showDetailView(model: Movies.ViewModel) {
+        let controller = MovieDetailViewController(with: model, presenter: tableViewController.presenter)
+        show(controller, sender: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {

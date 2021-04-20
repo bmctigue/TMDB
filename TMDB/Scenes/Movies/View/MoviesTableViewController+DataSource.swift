@@ -14,6 +14,7 @@ extension MoviesTableViewController {
         self.tableViewDatasource = TableViewDataSource(models: viewModels, reuseIdentifier: MoviesTableViewController.cellName) { (model: ViewModel, cell: UITableViewCell) in
             var model = model
             let cell = cell as! MovieTableViewCell
+            cell.model = model
             cell.movieId = model.selectionId
             cell.titleLabel.text = model.title
             cell.overViewLabel.text = model.overview
@@ -27,6 +28,7 @@ extension MoviesTableViewController {
                     self.presenter.updateFavorites(state)
                 }
             }
+            cell.tableViewDelegate = self.tableViewDelegate
         }
         self.tableView.dataSource = tableViewDatasource
     }

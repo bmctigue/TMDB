@@ -21,8 +21,9 @@ enum Splash {
         func run(completionHandler: VCBuilderBlock) {
             let storyboard = StoryboardFactory().create(name: "Splash")
             let controller: SplashViewController = storyboard.instantiateInitialViewController() as! SplashViewController
+            let navController = UINavigationController(rootViewController: controller)
             controller.window = window
-            completionHandler(controller)
+            completionHandler(navController)
         }
     }
 }
