@@ -46,7 +46,6 @@
 		A88969AA2225914A0090780C /* MoviesSelectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88969A9222591490090780C /* MoviesSelectionManager.swift */; };
 		A88969AC2225956E0090780C /* MoviesTableViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88969AB2225956E0090780C /* MoviesTableViewController+DataSource.swift */; };
 		A88D339A262F677500723C7D /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88D3399262F677500723C7D /* MovieDetailViewController.swift */; };
-		A88D339B262F677500723C7D /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88D3399262F677500723C7D /* MovieDetailViewController.swift */; };
 		A88D33A6262F6F4100723C7D /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88D33A5262F6F4100723C7D /* MovieDetailViewController.xib */; };
 		A88D33A7262F6F4100723C7D /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88D33A5262F6F4100723C7D /* MovieDetailViewController.xib */; };
 		A8DB9E092256CDC200577BA1 /* MoviesDataUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DB9E052256CDC200577BA1 /* MoviesDataUrl.swift */; };
@@ -599,7 +598,6 @@
 				A85EBE2521F4E8BA0012ACFF /* MoviesUnboxDataAdapterTests.swift in Sources */,
 				A8DE79952204B403004F0C1F /* SplashBuilderTests.swift in Sources */,
 				A85EBE2221F4E8BA0012ACFF /* AppBuilderTests.swift in Sources */,
-				A88D339B262F677500723C7D /* MovieDetailViewController.swift in Sources */,
 				A85EBE1E21F4E8BA0012ACFF /* URLGeneratorTests.swift in Sources */,
 				A85EBE2121F4E8BA0012ACFF /* MoviesBuilderTests.swift in Sources */,
 				A85EBE1F21F4E8BA0012ACFF /* MovieTableViewCellTests.swift in Sources */,

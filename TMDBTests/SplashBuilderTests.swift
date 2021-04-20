@@ -22,6 +22,6 @@ class SplashBuilderTests: XCTestCase {
         }
         waitForExpectations(timeout: 3.0, handler: nil)
         XCTAssertNotNil(resultViewController)
-        XCTAssert(resultViewController!.isKind(of: SplashViewController.self))
+        XCTAssert(resultViewController!.isKind(of: UIViewController.self))
     }
 }
