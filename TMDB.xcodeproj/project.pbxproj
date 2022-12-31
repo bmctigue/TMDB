@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,6 +32,8 @@
 		A80C91AA21F4BDA6003C2432 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C917B21F4BDA6003C2432 /* Enumerations.swift */; };
 		A80C91B321F4BDA6003C2432 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C918721F4BDA6003C2432 /* Movie.swift */; };
 		A80C91B521F4BDA6003C2432 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C918A21F4BDA6003C2432 /* AppDelegate.swift */; };
+		A8295E3C2960E66F00722A15 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = A8295E3B2960E66F00722A15 /* SwiftPackageProductDependency */; };
+		A8295E3F2960EA4800722A15 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = A8295E3E2960EA4800722A15 /* SwiftPackageProductDependency */; };
 		A831DB1021F7670800EEF5B5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A831DB0F21F7670800EEF5B5 /* Constants.swift */; };
 		A85EBDE421F4E7DC0012ACFF /* TMDBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85EBDE321F4E7DC0012ACFF /* TMDBUITests.swift */; };
 		A85EBE1921F4E8BA0012ACFF /* TableViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85EBE0921F4E8B90012ACFF /* TableViewDataSourceTests.swift */; };
@@ -155,6 +157,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8295E3F2960EA4800722A15 /* BuildFile in Frameworks */,
+				A8295E3C2960E66F00722A15 /* BuildFile in Frameworks */,
 				664BEEF8E799909781D8214B /* Pods_TMDB.framework in Frameworks */,
 				40E9DF6E398018572B0678F3 /* Pods_TMDB.framework in Frameworks */,
 			);
@@ -420,14 +424,18 @@
 				A87D0A3B21E4109E001D62B9 /* Sources */,
 				A87D0A3C21E4109E001D62B9 /* Frameworks */,
 				A87D0A3D21E4109E001D62B9 /* Resources */,
-				50FAA9ECB73C7DEED9A20210 /* [CP] Embed Pods Frameworks */,
 				A87D0AC821E416BE001D62B9 /* SwiftLint */,
+				BE5147A351A9360537679076 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = TMDB;
+			packageProductDependencies = (
+				A8295E3B2960E66F00722A15 /* SwiftPackageProductDependency */,
+				A8295E3E2960EA4800722A15 /* SwiftPackageProductDependency */,
+			);
 			productName = Tally;
 			productReference = A87D0A3F21E4109E001D62B9 /* TMDB.app */;
 			productType = "com.apple.product-type.application";
@@ -467,6 +475,10 @@
 				Base,
 			);
 			mainGroup = A87D0A3621E4109E001D62B9;
+			packageReferences = (
+				A8295E3A2960E66F00722A15 /* RemoteSwiftPackageReference */,
+				A8295E3D2960EA4800722A15 /* RemoteSwiftPackageReference */,
+			);
 			productRefGroup = A87D0A4021E4109E001D62B9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -531,23 +543,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		50FAA9ECB73C7DEED9A20210 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TMDB/Pods-TMDB-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TMDB/Pods-TMDB-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TMDB/Pods-TMDB-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A6BB687B18F6226AB34E7985 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -579,6 +574,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		BE5147A351A9360537679076 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TMDB/Pods-TMDB-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TMDB/Pods-TMDB-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TMDB/Pods-TMDB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -960,6 +972,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A8295E3A2960E66F00722A15 /* RemoteSwiftPackageReference */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JohnSundell/Unbox.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		A8295E3D2960EA4800722A15 /* RemoteSwiftPackageReference */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A8295E3B2960E66F00722A15 /* SwiftPackageProductDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8295E3A2960E66F00722A15 /* RemoteSwiftPackageReference */;
+			productName = Unbox;
+		};
+		A8295E3E2960EA4800722A15 /* SwiftPackageProductDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8295E3D2960EA4800722A15 /* RemoteSwiftPackageReference */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A87D0A3721E4109E001D62B9 /* Project object */;
 }

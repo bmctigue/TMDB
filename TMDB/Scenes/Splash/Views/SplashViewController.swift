@@ -15,16 +15,14 @@ final class SplashViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var logoView: UIView!
     
-    static let movieLoading = "movie_loading"
-    
     var window: UIWindow?
-    private var animationView = LOTAnimationView(name: SplashViewController.movieLoading, bundle: Bundle.main)
+    private var animationView = AnimationView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         self.view.backgroundColor = UIColor.white
-        animationView.loopAnimation = false
+        animationView.loopMode = .playOnce
         animationView.center = view.center
         animationView.contentMode = .scaleAspectFill
         animationView.frame = view.bounds

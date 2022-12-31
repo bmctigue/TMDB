@@ -8,18 +8,17 @@
 
 import Foundation
 
-public class Future<ResultType>: NSObject {
+public class Future<ResultType> {
     
     let cv: NSCondition
     var continuation: ((Future) -> Void)?
     private(set) public var state: FutureState<ResultType> = .unresolved
     
-    public override init() {
+    public init() {
         self.cv = NSCondition()
-        super.init()
     }
     
-    public override var description: String {
+    public var description: String {
         return "<Future: state \(stateString())>"
     }
     
@@ -168,14 +167,14 @@ public class Future<ResultType>: NSObject {
         return !timeoutExpired
     }
     
-    // MARK: State setting (Private)
+    // MARK: State setting
     
     /**
      Resolves the receiver by setting a result.
      
      - parameter result: The result to use for the resolution.
      */
-    func setResult(_ result: ResultType) {
+    public func setResult(_ result: ResultType) {
         cv.lock()
         assert(state == .unresolved, "Cannot set result. Future already resolved")
         
@@ -196,7 +195,7 @@ public class Future<ResultType>: NSObject {
      
      - parameter error: The error to use for the resolution.
      */
-    func setError(_ error: Error) {
+    public func setError(_ error: Error) {
         cv.lock()
         assert(state == .unresolved, "Cannot set error. Future already resolved")
         
@@ -215,7 +214,7 @@ public class Future<ResultType>: NSObject {
     /**
      Resolves the receiver by cancelling it.
      */
-    func cancel() {
+    public func cancel() {
         cv.lock()
         assert(state == .unresolved, "Cannot cancel. Future already resolved")
         
