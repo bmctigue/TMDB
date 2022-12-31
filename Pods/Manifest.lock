@@ -16,7 +16,7 @@ DEPENDENCIES:
   - Unbox
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Kingfisher
     - lottie-ios
     - Promis
@@ -42,4 +42,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 392285323bafeaae3057ff35f097dd1b10a7cb09
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.10.0
