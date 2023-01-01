@@ -4,7 +4,6 @@ use_frameworks!
 target 'TMDB' do
     pod 'UIEmptyState'
     pod 'lottie-ios'
-    pod 'Promis'
     pod 'Tiguer', :git => 'https://github.com/bmctigue/Tiguer.git'
 
     target 'TMDBTests' do

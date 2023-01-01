@@ -32,8 +32,8 @@
 		A80C91AA21F4BDA6003C2432 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C917B21F4BDA6003C2432 /* Enumerations.swift */; };
 		A80C91B321F4BDA6003C2432 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C918721F4BDA6003C2432 /* Movie.swift */; };
 		A80C91B521F4BDA6003C2432 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C918A21F4BDA6003C2432 /* AppDelegate.swift */; };
-		A8295E3C2960E66F00722A15 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = A8295E3B2960E66F00722A15 /* SwiftPackageProductDependency */; };
-		A8295E3F2960EA4800722A15 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = A8295E3E2960EA4800722A15 /* SwiftPackageProductDependency */; };
+		A8295E3C2960E66F00722A15 /* Unbox in Frameworks */ = {isa = PBXBuildFile; productRef = A8295E3B2960E66F00722A15 /* Unbox */; };
+		A8295E3F2960EA4800722A15 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A8295E3E2960EA4800722A15 /* Kingfisher */; };
 		A831DB1021F7670800EEF5B5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A831DB0F21F7670800EEF5B5 /* Constants.swift */; };
 		A85EBDE421F4E7DC0012ACFF /* TMDBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85EBDE321F4E7DC0012ACFF /* TMDBUITests.swift */; };
 		A85EBE1921F4E8BA0012ACFF /* TableViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85EBE0921F4E8B90012ACFF /* TableViewDataSourceTests.swift */; };
@@ -51,6 +51,7 @@
 		A88D339A262F677500723C7D /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88D3399262F677500723C7D /* MovieDetailViewController.swift */; };
 		A88D33A6262F6F4100723C7D /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88D33A5262F6F4100723C7D /* MovieDetailViewController.xib */; };
 		A88D33A7262F6F4100723C7D /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88D33A5262F6F4100723C7D /* MovieDetailViewController.xib */; };
+		A890399329622BEA003973B3 /* Promis in Frameworks */ = {isa = PBXBuildFile; productRef = A890399229622BEA003973B3 /* Promis */; };
 		A8DB9E092256CDC200577BA1 /* MoviesDataUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DB9E052256CDC200577BA1 /* MoviesDataUrl.swift */; };
 		A8DB9E0A2256CDC200577BA1 /* MoviesImageUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DB9E062256CDC200577BA1 /* MoviesImageUrl.swift */; };
 		A8DB9E0B2256CDC200577BA1 /* MoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DB9E072256CDC200577BA1 /* MoviesService.swift */; };
@@ -157,8 +158,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8295E3F2960EA4800722A15 /* BuildFile in Frameworks */,
-				A8295E3C2960E66F00722A15 /* BuildFile in Frameworks */,
+				A890399329622BEA003973B3 /* Promis in Frameworks */,
+				A8295E3F2960EA4800722A15 /* Kingfisher in Frameworks */,
+				A8295E3C2960E66F00722A15 /* Unbox in Frameworks */,
 				664BEEF8E799909781D8214B /* Pods_TMDB.framework in Frameworks */,
 				40E9DF6E398018572B0678F3 /* Pods_TMDB.framework in Frameworks */,
 			);
@@ -433,8 +435,9 @@
 			);
 			name = TMDB;
 			packageProductDependencies = (
-				A8295E3B2960E66F00722A15 /* SwiftPackageProductDependency */,
-				A8295E3E2960EA4800722A15 /* SwiftPackageProductDependency */,
+				A8295E3B2960E66F00722A15 /* Unbox */,
+				A8295E3E2960EA4800722A15 /* Kingfisher */,
+				A890399229622BEA003973B3 /* Promis */,
 			);
 			productName = Tally;
 			productReference = A87D0A3F21E4109E001D62B9 /* TMDB.app */;
@@ -476,8 +479,9 @@
 			);
 			mainGroup = A87D0A3621E4109E001D62B9;
 			packageReferences = (
-				A8295E3A2960E66F00722A15 /* RemoteSwiftPackageReference */,
-				A8295E3D2960EA4800722A15 /* RemoteSwiftPackageReference */,
+				A8295E3A2960E66F00722A15 /* XCRemoteSwiftPackageReference "Unbox" */,
+				A8295E3D2960EA4800722A15 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				A890399129622BEA003973B3 /* XCRemoteSwiftPackageReference "Promis" */,
 			);
 			productRefGroup = A87D0A4021E4109E001D62B9 /* Products */;
 			projectDirPath = "";
@@ -974,7 +978,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A8295E3A2960E66F00722A15 /* RemoteSwiftPackageReference */ = {
+		A8295E3A2960E66F00722A15 /* XCRemoteSwiftPackageReference "Unbox" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/JohnSundell/Unbox.git";
 			requirement = {
@@ -982,7 +986,7 @@
 				minimumVersion = 4.0.0;
 			};
 		};
-		A8295E3D2960EA4800722A15 /* RemoteSwiftPackageReference */ = {
+		A8295E3D2960EA4800722A15 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
@@ -990,18 +994,31 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		A890399129622BEA003973B3 /* XCRemoteSwiftPackageReference "Promis" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/albertodebortoli/Promis.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A8295E3B2960E66F00722A15 /* SwiftPackageProductDependency */ = {
+		A8295E3B2960E66F00722A15 /* Unbox */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A8295E3A2960E66F00722A15 /* RemoteSwiftPackageReference */;
+			package = A8295E3A2960E66F00722A15 /* XCRemoteSwiftPackageReference "Unbox" */;
 			productName = Unbox;
 		};
-		A8295E3E2960EA4800722A15 /* SwiftPackageProductDependency */ = {
+		A8295E3E2960EA4800722A15 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A8295E3D2960EA4800722A15 /* RemoteSwiftPackageReference */;
+			package = A8295E3D2960EA4800722A15 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		A890399229622BEA003973B3 /* Promis */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A890399129622BEA003973B3 /* XCRemoteSwiftPackageReference "Promis" */;
+			productName = Promis;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

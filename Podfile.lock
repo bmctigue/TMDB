@@ -7,7 +7,6 @@ PODS:
 
 DEPENDENCIES:
   - lottie-ios
-  - Promis
   - Tiguer (from `https://github.com/bmctigue/Tiguer.git`)
   - UIEmptyState
 
@@ -32,6 +31,6 @@ SPEC CHECKSUMS:
   Tiguer: f9dd0781f3ad36b34b7e93fd3c47d153e0e0211e
   UIEmptyState: 69a89a434a6609365f6adcf691458936c70f6d00
 
-PODFILE CHECKSUM: 25ff989619fbe0e25c66a2fcdae2590d3217ba8a
+PODFILE CHECKSUM: 8a44dca4fc6e740413d3273c3ef2f9b97386cee9
 
 COCOAPODS: 1.10.0
