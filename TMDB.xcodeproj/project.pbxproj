@@ -52,6 +52,7 @@
 		A88D33A6262F6F4100723C7D /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88D33A5262F6F4100723C7D /* MovieDetailViewController.xib */; };
 		A88D33A7262F6F4100723C7D /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88D33A5262F6F4100723C7D /* MovieDetailViewController.xib */; };
 		A890399329622BEA003973B3 /* Promis in Frameworks */ = {isa = PBXBuildFile; productRef = A890399229622BEA003973B3 /* Promis */; };
+		A8C0B8A8296269350075B722 /* Tiguer in Frameworks */ = {isa = PBXBuildFile; productRef = A8C0B8A7296269350075B722 /* Tiguer */; };
 		A8DB9E092256CDC200577BA1 /* MoviesDataUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DB9E052256CDC200577BA1 /* MoviesDataUrl.swift */; };
 		A8DB9E0A2256CDC200577BA1 /* MoviesImageUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DB9E062256CDC200577BA1 /* MoviesImageUrl.swift */; };
 		A8DB9E0B2256CDC200577BA1 /* MoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DB9E072256CDC200577BA1 /* MoviesService.swift */; };
@@ -129,6 +130,7 @@
 		A88969AB2225956E0090780C /* MoviesTableViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoviesTableViewController+DataSource.swift"; sourceTree = "<group>"; };
 		A88D3399262F677500723C7D /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		A88D33A5262F6F4100723C7D /* MovieDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieDetailViewController.xib; sourceTree = "<group>"; };
+		A8C0B8A4296264870075B722 /* Tiguer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Tiguer; path = ../Tiguer; sourceTree = "<group>"; };
 		A8DB9E052256CDC200577BA1 /* MoviesDataUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesDataUrl.swift; sourceTree = "<group>"; };
 		A8DB9E062256CDC200577BA1 /* MoviesImageUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesImageUrl.swift; sourceTree = "<group>"; };
 		A8DB9E072256CDC200577BA1 /* MoviesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesService.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8C0B8A8296269350075B722 /* Tiguer in Frameworks */,
 				A890399329622BEA003973B3 /* Promis in Frameworks */,
 				A8295E3F2960EA4800722A15 /* Kingfisher in Frameworks */,
 				A8295E3C2960E66F00722A15 /* Unbox in Frameworks */,
@@ -326,6 +329,7 @@
 		A87D0A3621E4109E001D62B9 = {
 			isa = PBXGroup;
 			children = (
+				A8C0B8A1296261620075B722 /* Packages */,
 				A80C915021F4BDA6003C2432 /* TMDB */,
 				A85EBDD421F4E7CB0012ACFF /* TMDBTests */,
 				A85EBDE221F4E7DC0012ACFF /* TMDBUITests */,
@@ -343,6 +347,14 @@
 				A85EBDE121F4E7DC0012ACFF /* TMDBUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A8C0B8A1296261620075B722 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				A8C0B8A4296264870075B722 /* Tiguer */,
+			);
+			name = Packages;
 			sourceTree = "<group>";
 		};
 		A8DB9E042256CDC200577BA1 /* DataLayer */ = {
@@ -432,12 +444,14 @@
 			buildRules = (
 			);
 			dependencies = (
+				A8C0B8A62962670F0075B722 /* PBXTargetDependency */,
 			);
 			name = TMDB;
 			packageProductDependencies = (
 				A8295E3B2960E66F00722A15 /* Unbox */,
 				A8295E3E2960EA4800722A15 /* Kingfisher */,
 				A890399229622BEA003973B3 /* Promis */,
+				A8C0B8A7296269350075B722 /* Tiguer */,
 			);
 			productName = Tally;
 			productReference = A87D0A3F21E4109E001D62B9 /* TMDB.app */;
@@ -666,6 +680,10 @@
 			isa = PBXTargetDependency;
 			target = A87D0A3E21E4109E001D62B9 /* TMDB */;
 			targetProxy = A85EBDE621F4E7DC0012ACFF /* PBXContainerItemProxy */;
+		};
+		A8C0B8A62962670F0075B722 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = A8C0B8A52962670F0075B722 /* Tiguer */;
 		};
 /* End PBXTargetDependency section */
 
@@ -903,6 +921,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 462PHCYTGY;
 				INFOPLIST_FILE = "$(SRCROOT)/TMDB/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -924,6 +943,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 462PHCYTGY;
 				INFOPLIST_FILE = "$(SRCROOT)/TMDB/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1019,6 +1039,14 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A890399129622BEA003973B3 /* XCRemoteSwiftPackageReference "Promis" */;
 			productName = Promis;
+		};
+		A8C0B8A52962670F0075B722 /* Tiguer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Tiguer;
+		};
+		A8C0B8A7296269350075B722 /* Tiguer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Tiguer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

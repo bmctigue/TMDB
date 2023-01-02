@@ -1,36 +1,20 @@
 PODS:
   - lottie-ios (3.2.1)
-  - Promis (2.3.0)
-  - Tiguer (0.0.32):
-    - Promis
   - UIEmptyState (5.0.0)
 
 DEPENDENCIES:
   - lottie-ios
-  - Tiguer (from `https://github.com/bmctigue/Tiguer.git`)
   - UIEmptyState
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - lottie-ios
-    - Promis
     - UIEmptyState
-
-EXTERNAL SOURCES:
-  Tiguer:
-    :git: https://github.com/bmctigue/Tiguer.git
-
-CHECKOUT OPTIONS:
-  Tiguer:
-    :commit: 39651be9e1d1ab861090ec53f99d0f13c061ef13
-    :git: https://github.com/bmctigue/Tiguer.git
 
 SPEC CHECKSUMS:
   lottie-ios: 106e92eaf11fbed0a76590b4cdb9b5ec26123ff7
-  Promis: 9fd23086449bd457acb7b5a5deaa4b973a237b3f
-  Tiguer: f9dd0781f3ad36b34b7e93fd3c47d153e0e0211e
   UIEmptyState: 69a89a434a6609365f6adcf691458936c70f6d00
 
-PODFILE CHECKSUM: 8a44dca4fc6e740413d3273c3ef2f9b97386cee9
+PODFILE CHECKSUM: 4fb2e3066e81c2fe6f492700768638b5d4782efb
 
 COCOAPODS: 1.10.0
