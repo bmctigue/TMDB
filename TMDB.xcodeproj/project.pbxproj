@@ -52,12 +52,12 @@
 		A88D33A6262F6F4100723C7D /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88D33A5262F6F4100723C7D /* MovieDetailViewController.xib */; };
 		A88D33A7262F6F4100723C7D /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88D33A5262F6F4100723C7D /* MovieDetailViewController.xib */; };
 		A890399329622BEA003973B3 /* Promis in Frameworks */ = {isa = PBXBuildFile; productRef = A890399229622BEA003973B3 /* Promis */; };
-		A8C0B8A8296269350075B722 /* Tiguer in Frameworks */ = {isa = PBXBuildFile; productRef = A8C0B8A7296269350075B722 /* Tiguer */; };
 		A8DB9E092256CDC200577BA1 /* MoviesDataUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DB9E052256CDC200577BA1 /* MoviesDataUrl.swift */; };
 		A8DB9E0A2256CDC200577BA1 /* MoviesImageUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DB9E062256CDC200577BA1 /* MoviesImageUrl.swift */; };
 		A8DB9E0B2256CDC200577BA1 /* MoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DB9E072256CDC200577BA1 /* MoviesService.swift */; };
 		A8DB9E0C2256CDC200577BA1 /* MoviesUnboxDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DB9E082256CDC200577BA1 /* MoviesUnboxDataAdapter.swift */; };
 		A8DE79952204B403004F0C1F /* SplashBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DE79942204B403004F0C1F /* SplashBuilderTests.swift */; };
+		A8F4D35C299970E000913B52 /* Tiguer in Frameworks */ = {isa = PBXBuildFile; productRef = A8F4D35B299970E000913B52 /* Tiguer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,12 +130,52 @@
 		A88969AB2225956E0090780C /* MoviesTableViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoviesTableViewController+DataSource.swift"; sourceTree = "<group>"; };
 		A88D3399262F677500723C7D /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		A88D33A5262F6F4100723C7D /* MovieDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieDetailViewController.xib; sourceTree = "<group>"; };
-		A8C0B8A4296264870075B722 /* Tiguer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Tiguer; path = ../Tiguer; sourceTree = "<group>"; };
 		A8DB9E052256CDC200577BA1 /* MoviesDataUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesDataUrl.swift; sourceTree = "<group>"; };
 		A8DB9E062256CDC200577BA1 /* MoviesImageUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesImageUrl.swift; sourceTree = "<group>"; };
 		A8DB9E072256CDC200577BA1 /* MoviesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesService.swift; sourceTree = "<group>"; };
 		A8DB9E082256CDC200577BA1 /* MoviesUnboxDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesUnboxDataAdapter.swift; sourceTree = "<group>"; };
 		A8DE79942204B403004F0C1F /* SplashBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashBuilderTests.swift; sourceTree = "<group>"; };
+		A8F4D32E29996F0A00913B52 /* Tiguer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Tiguer; path = ../Tiguer; sourceTree = "<group>"; };
+		A8F4D33129996F4A00913B52 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A8F4D33229996F4A00913B52 /* UITableView+ScrollToTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+ScrollToTop.swift"; sourceTree = "<group>"; };
+		A8F4D33329996F4A00913B52 /* DeviceOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceOrientation.swift; sourceTree = "<group>"; };
+		A8F4D33429996F4A00913B52 /* DispatchingQueues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchingQueues.swift; sourceTree = "<group>"; };
+		A8F4D33529996F4A00913B52 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
+		A8F4D33629996F4A00913B52 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		A8F4D33729996F4A00913B52 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
+		A8F4D33829996F4A00913B52 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		A8F4D33929996F4A00913B52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A8F4D33A29996F4A00913B52 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		A8F4D33B29996F4A00913B52 /* Enumerations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
+		A8F4D33C29996F4A00913B52 /* LocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
+		A8F4D33D29996F4A00913B52 /* TiguerAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TiguerAssets.xcassets; sourceTree = "<group>"; };
+		A8F4D33E29996F4A00913B52 /* RemoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStore.swift; sourceTree = "<group>"; };
+		A8F4D33F29996F4A00913B52 /* UserDefaults+Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Storage.swift"; sourceTree = "<group>"; };
+		A8F4D34029996F4A00913B52 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		A8F4D34129996F4A00913B52 /* DynamicValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicValue.swift; sourceTree = "<group>"; };
+		A8F4D34229996F4A00913B52 /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
+		A8F4D34329996F4A00913B52 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		A8F4D34429996F4A00913B52 /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
+		A8F4D34529996F4A00913B52 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		A8F4D34629996F4A00913B52 /* SelectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionManager.swift; sourceTree = "<group>"; };
+		A8F4D34729996F4A00913B52 /* UIViewController+AddRemove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddRemove.swift"; sourceTree = "<group>"; };
+		A8F4D34829996F4A00913B52 /* DataAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAdapter.swift; sourceTree = "<group>"; };
+		A8F4D34929996F4A00913B52 /* StoryboardFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardFactory.swift; sourceTree = "<group>"; };
+		A8F4D34A29996F4A00913B52 /* TestModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModels.swift; sourceTree = "<group>"; };
+		A8F4D34B29996F4A00913B52 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		A8F4D34E29996F4B00913B52 /* RemoteStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStoreTests.swift; sourceTree = "<group>"; };
+		A8F4D34F29996F4B00913B52 /* CacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTests.swift; sourceTree = "<group>"; };
+		A8F4D35029996F4B00913B52 /* DispatchingQueuesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchingQueuesTests.swift; sourceTree = "<group>"; };
+		A8F4D35129996F4B00913B52 /* DynamicValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicValueTests.swift; sourceTree = "<group>"; };
+		A8F4D35229996F4B00913B52 /* DataAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAdapterTests.swift; sourceTree = "<group>"; };
+		A8F4D35329996F4B00913B52 /* PresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterTests.swift; sourceTree = "<group>"; };
+		A8F4D35429996F4B00913B52 /* LocalStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStoreTests.swift; sourceTree = "<group>"; };
+		A8F4D35529996F4B00913B52 /* InteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorTests.swift; sourceTree = "<group>"; };
+		A8F4D35629996F4B00913B52 /* SelectionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionManagerTests.swift; sourceTree = "<group>"; };
+		A8F4D35729996F4B00913B52 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../Tiguer/README.md; sourceTree = "<group>"; };
+		A8F4D35829996F4B00913B52 /* Package.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; name = Package.resolved; path = ../Tiguer/Package.resolved; sourceTree = "<group>"; };
+		A8F4D35929996F4B00913B52 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Tiguer/Package.swift; sourceTree = "<group>"; };
+		A8F4D35A299970A000913B52 /* Tiguer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Tiguer; path = ../Tiguer; sourceTree = "<group>"; };
 		BC531E53F170996E86EF9B6E /* Pods-TMDBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDBTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TMDBTests/Pods-TMDBTests.release.xcconfig"; sourceTree = "<group>"; };
 		F90662A85AE308DED5F9E276 /* Pods-TMDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDB.release.xcconfig"; path = "Pods/Target Support Files/Pods-TMDB/Pods-TMDB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,7 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8C0B8A8296269350075B722 /* Tiguer in Frameworks */,
+				A8F4D35C299970E000913B52 /* Tiguer in Frameworks */,
 				A890399329622BEA003973B3 /* Promis in Frameworks */,
 				A8295E3F2960EA4800722A15 /* Kingfisher in Frameworks */,
 				A8295E3C2960E66F00722A15 /* Unbox in Frameworks */,
@@ -175,15 +215,15 @@
 		A80C915021F4BDA6003C2432 /* TMDB */ = {
 			isa = PBXGroup;
 			children = (
+				A80C918A21F4BDA6003C2432 /* AppDelegate.swift */,
+				A80C918B21F4BDA6003C2432 /* Info.plist */,
+				A80C917421F4BDA6003C2432 /* Assets.xcassets */,
 				A80C916B21F4BDA6003C2432 /* App */,
 				A80C915121F4BDA6003C2432 /* Scenes */,
 				A80C917521F4BDA6003C2432 /* Shared */,
 				A80C918621F4BDA6003C2432 /* Models */,
 				A831DB0E21F766F100EEF5B5 /* Lib */,
 				A80C917021F4BDA6003C2432 /* Resources */,
-				A80C918A21F4BDA6003C2432 /* AppDelegate.swift */,
-				A80C918B21F4BDA6003C2432 /* Info.plist */,
-				A80C917421F4BDA6003C2432 /* Assets.xcassets */,
 			);
 			path = TMDB;
 			sourceTree = "<group>";
@@ -329,11 +369,11 @@
 		A87D0A3621E4109E001D62B9 = {
 			isa = PBXGroup;
 			children = (
-				A8C0B8A1296261620075B722 /* Packages */,
 				A80C915021F4BDA6003C2432 /* TMDB */,
 				A85EBDD421F4E7CB0012ACFF /* TMDBTests */,
 				A85EBDE221F4E7DC0012ACFF /* TMDBUITests */,
 				A87D0A4021E4109E001D62B9 /* Products */,
+				A8C0B8A1296261620075B722 /* Packages */,
 				B9C4A0AAA04BDFC2C35D9F22 /* Pods */,
 				FA6439B7EF21A54C80E8B721 /* Frameworks */,
 			);
@@ -352,7 +392,7 @@
 		A8C0B8A1296261620075B722 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				A8C0B8A4296264870075B722 /* Tiguer */,
+				A8F4D35A299970A000913B52 /* Tiguer */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -366,6 +406,74 @@
 				A8DB9E082256CDC200577BA1 /* MoviesUnboxDataAdapter.swift */,
 			);
 			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		A8F4D32F29996F4A00913B52 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A8F4D33029996F4A00913B52 /* Tiguer */,
+			);
+			name = Sources;
+			path = ../Tiguer/Sources;
+			sourceTree = "<group>";
+		};
+		A8F4D33029996F4A00913B52 /* Tiguer */ = {
+			isa = PBXGroup;
+			children = (
+				A8F4D33129996F4A00913B52 /* Constants.swift */,
+				A8F4D33229996F4A00913B52 /* UITableView+ScrollToTop.swift */,
+				A8F4D33329996F4A00913B52 /* DeviceOrientation.swift */,
+				A8F4D33429996F4A00913B52 /* DispatchingQueues.swift */,
+				A8F4D33529996F4A00913B52 /* CollectionViewDataSource.swift */,
+				A8F4D33629996F4A00913B52 /* Service.swift */,
+				A8F4D33729996F4A00913B52 /* URLProtocolStub.swift */,
+				A8F4D33829996F4A00913B52 /* TableViewDataSource.swift */,
+				A8F4D33929996F4A00913B52 /* Assets.xcassets */,
+				A8F4D33A29996F4A00913B52 /* Interactor.swift */,
+				A8F4D33B29996F4A00913B52 /* Enumerations.swift */,
+				A8F4D33C29996F4A00913B52 /* LocalStore.swift */,
+				A8F4D33D29996F4A00913B52 /* TiguerAssets.xcassets */,
+				A8F4D33E29996F4A00913B52 /* RemoteStore.swift */,
+				A8F4D33F29996F4A00913B52 /* UserDefaults+Storage.swift */,
+				A8F4D34029996F4A00913B52 /* Presenter.swift */,
+				A8F4D34129996F4A00913B52 /* DynamicValue.swift */,
+				A8F4D34229996F4A00913B52 /* Structs.swift */,
+				A8F4D34329996F4A00913B52 /* Protocols.swift */,
+				A8F4D34429996F4A00913B52 /* Test.storyboard */,
+				A8F4D34529996F4A00913B52 /* Cache.swift */,
+				A8F4D34629996F4A00913B52 /* SelectionManager.swift */,
+				A8F4D34729996F4A00913B52 /* UIViewController+AddRemove.swift */,
+				A8F4D34829996F4A00913B52 /* DataAdapter.swift */,
+				A8F4D34929996F4A00913B52 /* StoryboardFactory.swift */,
+				A8F4D34A29996F4A00913B52 /* TestModels.swift */,
+				A8F4D34B29996F4A00913B52 /* LoadingViewController.swift */,
+			);
+			path = Tiguer;
+			sourceTree = "<group>";
+		};
+		A8F4D34C29996F4B00913B52 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A8F4D34D29996F4B00913B52 /* TiguerTests */,
+			);
+			name = Tests;
+			path = ../Tiguer/Tests;
+			sourceTree = "<group>";
+		};
+		A8F4D34D29996F4B00913B52 /* TiguerTests */ = {
+			isa = PBXGroup;
+			children = (
+				A8F4D34E29996F4B00913B52 /* RemoteStoreTests.swift */,
+				A8F4D34F29996F4B00913B52 /* CacheTests.swift */,
+				A8F4D35029996F4B00913B52 /* DispatchingQueuesTests.swift */,
+				A8F4D35129996F4B00913B52 /* DynamicValueTests.swift */,
+				A8F4D35229996F4B00913B52 /* DataAdapterTests.swift */,
+				A8F4D35329996F4B00913B52 /* PresenterTests.swift */,
+				A8F4D35429996F4B00913B52 /* LocalStoreTests.swift */,
+				A8F4D35529996F4B00913B52 /* InteractorTests.swift */,
+				A8F4D35629996F4B00913B52 /* SelectionManagerTests.swift */,
+			);
+			path = TiguerTests;
 			sourceTree = "<group>";
 		};
 		B9C4A0AAA04BDFC2C35D9F22 /* Pods */ = {
@@ -382,6 +490,12 @@
 		FA6439B7EF21A54C80E8B721 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A8F4D35829996F4B00913B52 /* Package.resolved */,
+				A8F4D35929996F4B00913B52 /* Package.swift */,
+				A8F4D35729996F4B00913B52 /* README.md */,
+				A8F4D32F29996F4A00913B52 /* Sources */,
+				A8F4D34C29996F4B00913B52 /* Tests */,
+				A8F4D32E29996F0A00913B52 /* Tiguer */,
 				A857CB3B2203C34200FB4BD9 /* Tiguer.framework */,
 				A80C91B721F4C045003C2432 /* Pods_TMDB.framework */,
 				5B776AAE85E2BDBEEA657099 /* Pods_TMDB.framework */,
@@ -451,7 +565,7 @@
 				A8295E3B2960E66F00722A15 /* Unbox */,
 				A8295E3E2960EA4800722A15 /* Kingfisher */,
 				A890399229622BEA003973B3 /* Promis */,
-				A8C0B8A7296269350075B722 /* Tiguer */,
+				A8F4D35B299970E000913B52 /* Tiguer */,
 			);
 			productName = Tally;
 			productReference = A87D0A3F21E4109E001D62B9 /* TMDB.app */;
@@ -1044,7 +1158,7 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Tiguer;
 		};
-		A8C0B8A7296269350075B722 /* Tiguer */ = {
+		A8F4D35B299970E000913B52 /* Tiguer */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Tiguer;
 		};
