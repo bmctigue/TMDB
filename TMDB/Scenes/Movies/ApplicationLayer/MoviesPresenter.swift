@@ -28,38 +28,30 @@ extension Movies {
             return resultModels
         }
         
-        override func updatedViewModels(completionHandler: @escaping ([ViewModel]) -> Void) {
-            background.dispatch { [weak self] in
-                if let self = self {
-                    var resultModels = self.viewModels
-                    
-                    if self.filterState == .favorite {
-                        resultModels = resultModels.filter {
-                            let model = $0 as! MovieViewModel
-                            let selections = self.favoritesManager.getSelections()
-                            return selections.contains(model.selectionId)
-                        }
-                    }
-                    
-                    if self.sortState == .ascending {
-                        resultModels = resultModels.sorted (by: {
-                            let lhs = $0 as! MovieViewModel
-                            let rhs = $1 as! MovieViewModel
-                            return lhs.popularity < rhs.popularity
-                        })
-                    } else if self.sortState == .descending {
-                        resultModels = resultModels.sorted (by: {
-                            let lhs = $0 as! MovieViewModel
-                            let rhs = $1 as! MovieViewModel
-                            return lhs.popularity > rhs.popularity
-                        })
-                    }
-                    
-                    self.main.dispatch {
-                        completionHandler(resultModels)
-                    }
+        override func filterViewModels(_ models: [ViewModel]) -> [ViewModel] {
+            var resultModels = self.viewModels
+            if self.filterState == .favorite {
+                resultModels = resultModels.filter {
+                    let model = $0 as! MovieViewModel
+                    let selections = self.favoritesManager.getSelections()
+                    return selections.contains(model.selectionId)
                 }
             }
+            
+            if self.sortState == .ascending {
+                resultModels = resultModels.sorted (by: {
+                    let lhs = $0 as! MovieViewModel
+                    let rhs = $1 as! MovieViewModel
+                    return lhs.popularity < rhs.popularity
+                })
+            } else if self.sortState == .descending {
+                resultModels = resultModels.sorted (by: {
+                    let lhs = $0 as! MovieViewModel
+                    let rhs = $1 as! MovieViewModel
+                    return lhs.popularity > rhs.popularity
+                })
+            }
+            return resultModels
         }
     }
 }
@@ -67,12 +59,12 @@ extension Movies {
 extension Movies.Presenter {
     func filterModelsByState(_ state: MovieFilterState) {
         self.filterState = state
-        self.updateViewModelsInBackground()
+        self.updateViewModels(self.models)
     }
     
     func sortModelsByState(_ state: MovieSortState) {
         self.sortState = state
-        self.updateViewModelsInBackground()
+        self.updateViewModels(self.models)
     }
     
     func updateFavorites(_ state: SelectionState) {

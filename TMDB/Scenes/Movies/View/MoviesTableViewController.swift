@@ -50,9 +50,11 @@ final class MoviesTableViewController: UIViewController {
         
         let dynamicModels = presenter.getDynamicModels()
         dynamicModels.addObserver(self) { [weak self] in
-            self?.updateTableView(dynamicModels.value)
-            self?.refreshControl.endRefreshing()
-            self?.loadingViewController.remove()
+            DispatchQueue.main.async {
+                self?.updateTableView(dynamicModels.value)
+                self?.refreshControl.endRefreshing()
+                self?.loadingViewController.remove()
+            }
         }
         
         add(loadingViewController)
@@ -74,7 +76,13 @@ final class MoviesTableViewController: UIViewController {
     func fetchItems(request: Request) {
         let urlGenerator = MoviesDataUrl(request)
         if let url = urlGenerator.url() {
-            interactor.fetchItems(request, url: url)
+            Task.init {
+                do {
+                    try await interactor.fetchItems(request, url: url)
+                } catch {
+                    throw InteractorError.fetchItemsFailed
+                }
+            }
         }
     }
     

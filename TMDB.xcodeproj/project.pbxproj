@@ -46,6 +46,7 @@
 		A85EBE2521F4E8BA0012ACFF /* MoviesUnboxDataAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85EBE1621F4E8BA0012ACFF /* MoviesUnboxDataAdapterTests.swift */; };
 		A85EBE2621F4E8BA0012ACFF /* MoviesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85EBE1721F4E8BA0012ACFF /* MoviesPresenterTests.swift */; };
 		A8693E9422121F000018CDEB /* MoviesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8693E9322121F000018CDEB /* MoviesInteractor.swift */; };
+		A86988A2299E703E00A1F76B /* Tiguer in Frameworks */ = {isa = PBXBuildFile; productRef = A86988A1299E703E00A1F76B /* Tiguer */; };
 		A88969AA2225914A0090780C /* MoviesSelectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88969A9222591490090780C /* MoviesSelectionManager.swift */; };
 		A88969AC2225956E0090780C /* MoviesTableViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88969AB2225956E0090780C /* MoviesTableViewController+DataSource.swift */; };
 		A88D339A262F677500723C7D /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88D3399262F677500723C7D /* MovieDetailViewController.swift */; };
@@ -55,9 +56,7 @@
 		A8DB9E092256CDC200577BA1 /* MoviesDataUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DB9E052256CDC200577BA1 /* MoviesDataUrl.swift */; };
 		A8DB9E0A2256CDC200577BA1 /* MoviesImageUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DB9E062256CDC200577BA1 /* MoviesImageUrl.swift */; };
 		A8DB9E0B2256CDC200577BA1 /* MoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DB9E072256CDC200577BA1 /* MoviesService.swift */; };
-		A8DB9E0C2256CDC200577BA1 /* MoviesUnboxDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DB9E082256CDC200577BA1 /* MoviesUnboxDataAdapter.swift */; };
 		A8DE79952204B403004F0C1F /* SplashBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DE79942204B403004F0C1F /* SplashBuilderTests.swift */; };
-		A8F4D35C299970E000913B52 /* Tiguer in Frameworks */ = {isa = PBXBuildFile; productRef = A8F4D35B299970E000913B52 /* Tiguer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,7 +106,6 @@
 		A80C918B21F4BDA6003C2432 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A80C91B721F4C045003C2432 /* Pods_TMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_TMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A831DB0F21F7670800EEF5B5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		A857CB3B2203C34200FB4BD9 /* Tiguer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Tiguer.framework; path = "../../Library/Developer/Xcode/DerivedData/TMDB-asdtfjzdugkcotfqlkjfwqfjutpk/Build/Products/Debug-iphoneos/Tiguer.framework"; sourceTree = "<group>"; };
 		A85EBDD321F4E7CB0012ACFF /* TMDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85EBDD721F4E7CB0012ACFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A85EBDE121F4E7DC0012ACFF /* TMDBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMDBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,9 +131,7 @@
 		A8DB9E052256CDC200577BA1 /* MoviesDataUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesDataUrl.swift; sourceTree = "<group>"; };
 		A8DB9E062256CDC200577BA1 /* MoviesImageUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesImageUrl.swift; sourceTree = "<group>"; };
 		A8DB9E072256CDC200577BA1 /* MoviesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesService.swift; sourceTree = "<group>"; };
-		A8DB9E082256CDC200577BA1 /* MoviesUnboxDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesUnboxDataAdapter.swift; sourceTree = "<group>"; };
 		A8DE79942204B403004F0C1F /* SplashBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashBuilderTests.swift; sourceTree = "<group>"; };
-		A8F4D32E29996F0A00913B52 /* Tiguer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Tiguer; path = ../Tiguer; sourceTree = "<group>"; };
 		A8F4D33129996F4A00913B52 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A8F4D33229996F4A00913B52 /* UITableView+ScrollToTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+ScrollToTop.swift"; sourceTree = "<group>"; };
 		A8F4D33329996F4A00913B52 /* DeviceOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceOrientation.swift; sourceTree = "<group>"; };
@@ -175,7 +171,6 @@
 		A8F4D35729996F4B00913B52 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../Tiguer/README.md; sourceTree = "<group>"; };
 		A8F4D35829996F4B00913B52 /* Package.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; name = Package.resolved; path = ../Tiguer/Package.resolved; sourceTree = "<group>"; };
 		A8F4D35929996F4B00913B52 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Tiguer/Package.swift; sourceTree = "<group>"; };
-		A8F4D35A299970A000913B52 /* Tiguer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Tiguer; path = ../Tiguer; sourceTree = "<group>"; };
 		BC531E53F170996E86EF9B6E /* Pods-TMDBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDBTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TMDBTests/Pods-TMDBTests.release.xcconfig"; sourceTree = "<group>"; };
 		F90662A85AE308DED5F9E276 /* Pods-TMDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDB.release.xcconfig"; path = "Pods/Target Support Files/Pods-TMDB/Pods-TMDB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,7 +195,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8F4D35C299970E000913B52 /* Tiguer in Frameworks */,
+				A86988A2299E703E00A1F76B /* Tiguer in Frameworks */,
 				A890399329622BEA003973B3 /* Promis in Frameworks */,
 				A8295E3F2960EA4800722A15 /* Kingfisher in Frameworks */,
 				A8295E3C2960E66F00722A15 /* Unbox in Frameworks */,
@@ -392,7 +387,6 @@
 		A8C0B8A1296261620075B722 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				A8F4D35A299970A000913B52 /* Tiguer */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -403,7 +397,6 @@
 				A8DB9E052256CDC200577BA1 /* MoviesDataUrl.swift */,
 				A8DB9E062256CDC200577BA1 /* MoviesImageUrl.swift */,
 				A8DB9E072256CDC200577BA1 /* MoviesService.swift */,
-				A8DB9E082256CDC200577BA1 /* MoviesUnboxDataAdapter.swift */,
 			);
 			path = DataLayer;
 			sourceTree = "<group>";
@@ -495,8 +488,6 @@
 				A8F4D35729996F4B00913B52 /* README.md */,
 				A8F4D32F29996F4A00913B52 /* Sources */,
 				A8F4D34C29996F4B00913B52 /* Tests */,
-				A8F4D32E29996F0A00913B52 /* Tiguer */,
-				A857CB3B2203C34200FB4BD9 /* Tiguer.framework */,
 				A80C91B721F4C045003C2432 /* Pods_TMDB.framework */,
 				5B776AAE85E2BDBEEA657099 /* Pods_TMDB.framework */,
 				5DF87FE775338476A96C567B /* Pods_TMDBTests.framework */,
@@ -565,7 +556,7 @@
 				A8295E3B2960E66F00722A15 /* Unbox */,
 				A8295E3E2960EA4800722A15 /* Kingfisher */,
 				A890399229622BEA003973B3 /* Promis */,
-				A8F4D35B299970E000913B52 /* Tiguer */,
+				A86988A1299E703E00A1F76B /* Tiguer */,
 			);
 			productName = Tally;
 			productReference = A87D0A3F21E4109E001D62B9 /* TMDB.app */;
@@ -610,6 +601,7 @@
 				A8295E3A2960E66F00722A15 /* XCRemoteSwiftPackageReference "Unbox" */,
 				A8295E3D2960EA4800722A15 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				A890399129622BEA003973B3 /* XCRemoteSwiftPackageReference "Promis" */,
+				A86988A0299E703D00A1F76B /* XCRemoteSwiftPackageReference "Tiguer" */,
 			);
 			productRefGroup = A87D0A4021E4109E001D62B9 /* Products */;
 			projectDirPath = "";
@@ -778,7 +770,6 @@
 				A88969AC2225956E0090780C /* MoviesTableViewController+DataSource.swift in Sources */,
 				A8DB9E0B2256CDC200577BA1 /* MoviesService.swift in Sources */,
 				A8DB9E092256CDC200577BA1 /* MoviesDataUrl.swift in Sources */,
-				A8DB9E0C2256CDC200577BA1 /* MoviesUnboxDataAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1128,6 +1119,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		A86988A0299E703D00A1F76B /* XCRemoteSwiftPackageReference "Tiguer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bmctigue/Tiguer";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		A890399129622BEA003973B3 /* XCRemoteSwiftPackageReference "Promis" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/albertodebortoli/Promis.git";
@@ -1149,16 +1148,17 @@
 			package = A8295E3D2960EA4800722A15 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
+		A86988A1299E703E00A1F76B /* Tiguer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A86988A0299E703D00A1F76B /* XCRemoteSwiftPackageReference "Tiguer" */;
+			productName = Tiguer;
+		};
 		A890399229622BEA003973B3 /* Promis */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A890399129622BEA003973B3 /* XCRemoteSwiftPackageReference "Promis" */;
 			productName = Promis;
 		};
 		A8C0B8A52962670F0075B722 /* Tiguer */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Tiguer;
-		};
-		A8F4D35B299970E000913B52 /* Tiguer */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Tiguer;
 		};
