@@ -16,18 +16,21 @@ class MoviesInteractorTests: XCTestCase {
     
     let cacheKey = "movies"
     private lazy var store = LocalStore(Movies.Builder.moviesAssetName)
-    private lazy var dataAdapter = Movies.UnboxDataAdapter<Movie>()
-    private lazy var service = Tiguer.Service<Movie, Movies.UnboxDataAdapter>(store, dataAdapter: dataAdapter, cacheKey: cacheKey)
+    private lazy var service = Tiguer.Service<Movie>(store, cacheKey: cacheKey)
     var viewModels = [ViewModel]()
     
     func testFetchItemsForAllMovies() {
-        let presenter = Movies.Presenter<Movie, Movies.ViewModel>([], main: SyncQueue.global, background: SyncQueue.background)
+        let presenter = Movies.Presenter<Movie, Movies.ViewModel>([])
         let sut = Tiguer.Interactor<Movie, Movies.Presenter, Tiguer.Service>(presenter, service: service)
         let request = Request()
         let urlGenerator = MoviesDataUrl(request)
         let url = urlGenerator.url()!
-        sut.fetchItems(request, url: url)
-        let dynamicModels = presenter.getDynamicModels()
-        XCTAssertNotNil(dynamicModels.value.count == 4)
+        Task.init {
+            do {
+                try await sut.fetchItems(request, url: url)
+                let dynamicModels = presenter.getDynamicModels()
+                XCTAssertNotNil(dynamicModels.value.count == 4)
+            }
+        }
     }
 }

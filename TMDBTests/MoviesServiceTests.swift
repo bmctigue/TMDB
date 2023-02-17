@@ -13,24 +13,21 @@ import XCTest
 class MoviesServiceTests: XCTestCase {
     
     let assetName = Movies.Builder.moviesAssetName
-    lazy var dataAdapter = Movies.UnboxDataAdapter<Movie>()
     let cacheKey = "movies"
 
     func testService() {
-        let expectation = self.expectation(description: "fetchItems")
-        var results = [Movie]()
         let store = LocalStore(assetName)
         let request = Request()
         
-        let sut = Tiguer.Service<Movie, Movies.UnboxDataAdapter>(store, dataAdapter: dataAdapter, cacheKey: cacheKey)
+        let sut = Tiguer.Service<Movie>(store, cacheKey: cacheKey)
         sut.updateCacheTestingState(.testing)
         let urlGenerator = MoviesDataUrl(request)
         let url = urlGenerator.url()!
-        sut.fetchItems(request, url: url) { movies in
-            results = movies
-            expectation.fulfill()
+        Task.init {
+            do {
+                let results = try await sut.items(Request(), url: url)
+                XCTAssert(results.count > 0)
+            }
         }
-        waitForExpectations(timeout: 3.0, handler: nil)
-        XCTAssert(results.count > 0)
     }
 }
