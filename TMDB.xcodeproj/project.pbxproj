@@ -1004,9 +1004,9 @@
 			baseConfigurationReference = 5B3E20ABB866B8DF27C67D09 /* Pods-TMDB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 462PHCYTGY;
+				DEVELOPMENT_TEAM = K6R8L8WN5N;
 				INFOPLIST_FILE = "$(SRCROOT)/TMDB/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1026,9 +1026,9 @@
 			baseConfigurationReference = F90662A85AE308DED5F9E276 /* Pods-TMDB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 462PHCYTGY;
+				DEVELOPMENT_TEAM = K6R8L8WN5N;
 				INFOPLIST_FILE = "$(SRCROOT)/TMDB/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
