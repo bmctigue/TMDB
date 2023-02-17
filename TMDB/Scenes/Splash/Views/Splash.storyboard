@@ -19,11 +19,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vFx-uf-Lsl">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vFx-uf-Lsl">
                                 <rect key="frame" x="0.0" y="357" width="393" height="138"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dxW-GD-5fq">
-                                        <rect key="frame" x="83.666666666666686" y="0.66666666666662877" width="226" height="138"/>
+                                        <rect key="frame" x="83.666666666666686" y="0.66666666666668561" width="226" height="138"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TMDB" translatesAutoresizingMaskIntoConstraints="NO" id="Cmu-h9-lGA">
                                                 <rect key="frame" x="0.0" y="0.0" width="226" height="138"/>
@@ -47,9 +47,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="60h-AB-wFf" firstAttribute="top" secondItem="vFx-uf-Lsl" secondAttribute="bottom" id="9Wc-CA-Wgg"/>
+                            <constraint firstItem="vFx-uf-Lsl" firstAttribute="centerX" secondItem="EFC-jM-mBb" secondAttribute="centerX" id="5Kp-Lr-lee"/>
                             <constraint firstItem="vFx-uf-Lsl" firstAttribute="leading" secondItem="EFC-jM-mBb" secondAttribute="leading" id="IwJ-eR-rJG"/>
                             <constraint firstAttribute="trailing" secondItem="vFx-uf-Lsl" secondAttribute="trailing" id="Wdp-Sq-RKc"/>
+                            <constraint firstItem="vFx-uf-Lsl" firstAttribute="centerY" secondItem="EFC-jM-mBb" secondAttribute="centerY" id="bRf-x3-VSG"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -60,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hzC-6f-McH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14812.5" y="-10397.535211267606"/>
+            <point key="canvasLocation" x="-14604" y="-10399"/>
         </scene>
     </scenes>
     <resources>

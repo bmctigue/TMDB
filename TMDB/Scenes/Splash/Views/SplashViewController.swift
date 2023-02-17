@@ -24,6 +24,7 @@ final class SplashViewController: UIViewController {
         self.view.backgroundColor = UIColor.white
         animationView.loopMode = .playOnce
         animationView.center = view.center
+        containerView.center = view.convert(view.center, from: view)
         animationView.contentMode = .scaleAspectFill
         animationView.frame = view.bounds
         view.addSubview(animationView)
