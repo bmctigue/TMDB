@@ -20,14 +20,14 @@ class MoviesInteractorTests: XCTestCase {
     var viewModels = [ViewModel]()
     
     func testFetchItemsForAllMovies() {
-        let presenter = Movies.Presenter<Movie, Movies.ViewModel>([])
+        let presenter = Movies.Presenter<Movie, Movies.ViewModel>()
         let sut = Tiguer.Interactor<Movie, Movies.Presenter, Tiguer.Service>(presenter, service: service)
         let request = Request()
         let urlGenerator = MoviesDataUrl(request)
         let url = urlGenerator.url()!
         Task.init {
             do {
-                try await sut.fetchItems(request, url: url)
+                try await sut.refreshModels(request, url: url)
                 let dynamicModels = presenter.getDynamicModels()
                 XCTAssertNotNil(dynamicModels.value.count == 4)
             }

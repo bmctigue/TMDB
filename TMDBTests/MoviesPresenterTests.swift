@@ -21,7 +21,7 @@ class MoviesPresenterTests: XCTestCase {
 
     func testUpdateFavorites() {
         let testId = String(movie1.movieId)
-        let sut = Movies.Presenter<Model, ViewModel>([])
+        let sut = Movies.Presenter<Model, ViewModel>()
         sut.updateFavorites(.selected(testId))
         XCTAssertTrue(sut.getFavorites().contains(testId))
         sut.updateFavorites(.unSelected(testId))
@@ -29,8 +29,9 @@ class MoviesPresenterTests: XCTestCase {
     }
 
     func testFilterAllModelsByState() {
-        let models = [movie1, movie2]
-        let sut = Movies.Presenter<Model, ViewModel>(models)
+        let sut = Movies.Presenter<Model, ViewModel>()
+        sut.models = [movie1, movie2]
+        sut.updateBaseViewModels()
         sut.filterModelsByState(.all)
         let filteredModels = sut.getModels()
         XCTAssert(filteredModels.count == 2)
@@ -38,8 +39,9 @@ class MoviesPresenterTests: XCTestCase {
 
     func testFilterModelsByState() {
         let testId = String(movie1.movieId)
-        let models = [movie1, movie2]
-        let sut = Movies.Presenter<Model, ViewModel>(models)
+        let sut = Movies.Presenter<Model, ViewModel>()
+        sut.models = [movie1, movie2]
+        sut.updateBaseViewModels()
         sut.updateFavorites(.selected(testId))
         sut.filterModelsByState(.favorite)
         let dynamicModels = sut.getDynamicModels()
@@ -47,8 +49,9 @@ class MoviesPresenterTests: XCTestCase {
     }
 
     func testSortModelsByState() {
-        let models = [movie1, movie2]
-        let sut = Movies.Presenter<Model, ViewModel>(models)
+        let sut = Movies.Presenter<Model, ViewModel>()
+        sut.models = [movie1, movie2]
+        sut.updateBaseViewModels()
         sut.sortModelsByState(.none)
         var dynamicModels = sut.getDynamicModels()
         XCTAssert(dynamicModels.value.first!.movieId == movie1.movieId)
@@ -61,8 +64,8 @@ class MoviesPresenterTests: XCTestCase {
     }
 
     func testGetModels() {
-        let models = [movie1, movie2]
-        let sut = Movies.Presenter<Model, ViewModel>(models)
-        XCTAssert(sut.getModels().count == models.count)
+        let sut = Movies.Presenter<Model, ViewModel>()
+        sut.models = [movie1, movie2]
+        XCTAssert(sut.getModels().count == sut.models.count)
     }
 }

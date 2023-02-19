@@ -15,6 +15,10 @@ extension MoviesViewController {
         filterStateChanged(filterState)
     }
     
+    func refreshFavorites() {
+        filterStateChanged(.favorite)
+    }
+    
     func filterStateChanged(_ state: MovieFilterState) {
         tableViewController.updateFilterState(state)
         switch state {

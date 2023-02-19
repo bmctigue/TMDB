@@ -50,6 +50,9 @@ class MovieTableViewCell: UITableViewCell {
                 self.favoriteState = .selected(movieId)
             }
         }
+        if tableViewDelegate?.filterState == .favorite {
+            tableViewDelegate?.refreshFavorites()
+        }
     }
     
     @IBAction func detailButtonPressed(_ sender: Any) {

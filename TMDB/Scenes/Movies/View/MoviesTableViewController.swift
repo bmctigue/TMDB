@@ -24,7 +24,7 @@ final class MoviesTableViewController: UIViewController {
     var tableViewDatasource: TableViewDataSource<ViewModel>?
     private lazy var loadingViewController = LoadingViewController()
     private lazy var refreshControl = UIRefreshControl()
-    private var filterState: MovieFilterState = .all
+    public var filterState: MovieFilterState = .all
     
     private let interactor: InteractorProtocol
     let presenter: Movies.Presenter<Movie, ViewModel>
@@ -59,7 +59,7 @@ final class MoviesTableViewController: UIViewController {
         
         add(loadingViewController)
         let request = Request()
-        fetchItems(request: request)
+        refreshModels(request: request)
     }
     
     func showDetailView(model: ViewModel) {
@@ -70,17 +70,17 @@ final class MoviesTableViewController: UIViewController {
     
     @objc func refreshTableView() {
         let request = Request()
-        fetchItems(request: request)
+        refreshModels(request: request)
     }
     
-    func fetchItems(request: Request) {
+    func refreshModels(request: Request) {
         let urlGenerator = MoviesDataUrl(request)
         if let url = urlGenerator.url() {
             Task.init {
                 do {
-                    try await interactor.fetchItems(request, url: url)
+                    try await interactor.refreshModels(request, url: url)
                 } catch {
-                    throw InteractorError.fetchItemsFailed
+                    throw InteractorError.modelsFailed
                 }
             }
         }

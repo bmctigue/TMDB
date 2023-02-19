@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -50,7 +50,6 @@
 		A88D339A262F677500723C7D /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88D3399262F677500723C7D /* MovieDetailViewController.swift */; };
 		A88D33A6262F6F4100723C7D /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88D33A5262F6F4100723C7D /* MovieDetailViewController.xib */; };
 		A88D33A7262F6F4100723C7D /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88D33A5262F6F4100723C7D /* MovieDetailViewController.xib */; };
-		A890399329622BEA003973B3 /* Promis in Frameworks */ = {isa = PBXBuildFile; productRef = A890399229622BEA003973B3 /* Promis */; };
 		A8DB9E092256CDC200577BA1 /* MoviesDataUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DB9E052256CDC200577BA1 /* MoviesDataUrl.swift */; };
 		A8DB9E0A2256CDC200577BA1 /* MoviesImageUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DB9E062256CDC200577BA1 /* MoviesImageUrl.swift */; };
 		A8DB9E0B2256CDC200577BA1 /* MoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DB9E072256CDC200577BA1 /* MoviesService.swift */; };
@@ -191,7 +190,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A86988A2299E703E00A1F76B /* Tiguer in Frameworks */,
-				A890399329622BEA003973B3 /* Promis in Frameworks */,
 				A8295E3F2960EA4800722A15 /* Kingfisher in Frameworks */,
 				A8295E3C2960E66F00722A15 /* Unbox in Frameworks */,
 				664BEEF8E799909781D8214B /* Pods_TMDB.framework in Frameworks */,
@@ -539,7 +537,6 @@
 			packageProductDependencies = (
 				A8295E3B2960E66F00722A15 /* Unbox */,
 				A8295E3E2960EA4800722A15 /* Kingfisher */,
-				A890399229622BEA003973B3 /* Promis */,
 				A86988A1299E703E00A1F76B /* Tiguer */,
 			);
 			productName = Tally;
@@ -584,7 +581,6 @@
 			packageReferences = (
 				A8295E3A2960E66F00722A15 /* XCRemoteSwiftPackageReference "Unbox" */,
 				A8295E3D2960EA4800722A15 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				A890399129622BEA003973B3 /* XCRemoteSwiftPackageReference "Promis" */,
 				A86988A0299E703D00A1F76B /* XCRemoteSwiftPackageReference "Tiguer" */,
 			);
 			productRefGroup = A87D0A4021E4109E001D62B9 /* Products */;
@@ -671,6 +667,7 @@
 		};
 		A87D0AC821E416BE001D62B9 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -1109,14 +1106,6 @@
 				kind = branch;
 			};
 		};
-		A890399129622BEA003973B3 /* XCRemoteSwiftPackageReference "Promis" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/albertodebortoli/Promis.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1134,11 +1123,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A86988A0299E703D00A1F76B /* XCRemoteSwiftPackageReference "Tiguer" */;
 			productName = Tiguer;
-		};
-		A890399229622BEA003973B3 /* Promis */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A890399129622BEA003973B3 /* XCRemoteSwiftPackageReference "Promis" */;
-			productName = Promis;
 		};
 		A8C0B8A52962670F0075B722 /* Tiguer */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -17,41 +17,45 @@ extension Movies {
         private var filterState: MovieFilterState = .all
         private var sortState: MovieSortState = .none
         private lazy var favoritesManager = Movies.SelectionManager<Movie>()
-    
-        override var baseViewModels: [ViewModel] {
-            var resultModels = [ViewModel]()
+        
+        override func updateBaseViewModels() {
+            var viewModels = [ViewModel]()
             for movieModel in models {
                 let model = movieModel as! Movie
                 let displayedModel = MovieViewModel(movieId: model.movieId, title: model.title, overview: model.overview, releaseDate: model.releaseDate, posterPath: model.posterPath, popularity: model.popularity) as! ViewModel
-                resultModels.append(displayedModel)
+                viewModels.append(displayedModel)
             }
-            return resultModels
+            self.baseViewModels = viewModels
         }
         
-        override func filterViewModels(_ models: [ViewModel]) -> [ViewModel] {
-            var resultModels = self.viewModels
+        override func filterViewModels(_ viewModels: [ViewModel]) -> [ViewModel] {
+            var filteredViewModels = viewModels
             if self.filterState == .favorite {
-                resultModels = resultModels.filter {
+                filteredViewModels = filteredViewModels.filter {
                     let model = $0 as! MovieViewModel
                     let selections = self.favoritesManager.getSelections()
                     return selections.contains(model.selectionId)
                 }
             }
-            
+            return filteredViewModels
+        }
+        
+        override func sortViewModels(_ viewModels: [ViewModel]) -> [ViewModel] {
+            var sortedViewModels = viewModels
             if self.sortState == .ascending {
-                resultModels = resultModels.sorted (by: {
+                sortedViewModels = sortedViewModels.sorted (by: {
                     let lhs = $0 as! MovieViewModel
                     let rhs = $1 as! MovieViewModel
                     return lhs.popularity < rhs.popularity
                 })
             } else if self.sortState == .descending {
-                resultModels = resultModels.sorted (by: {
+                sortedViewModels = sortedViewModels.sorted (by: {
                     let lhs = $0 as! MovieViewModel
                     let rhs = $1 as! MovieViewModel
                     return lhs.popularity > rhs.popularity
                 })
             }
-            return resultModels
+            return sortedViewModels
         }
     }
 }
@@ -59,12 +63,12 @@ extension Movies {
 extension Movies.Presenter {
     func filterModelsByState(_ state: MovieFilterState) {
         self.filterState = state
-        self.updateViewModels(self.models)
+        self.updateViewModels()
     }
     
     func sortModelsByState(_ state: MovieSortState) {
         self.sortState = state
-        self.updateViewModels(self.models)
+        self.updateViewModels()
     }
     
     func updateFavorites(_ state: SelectionState) {

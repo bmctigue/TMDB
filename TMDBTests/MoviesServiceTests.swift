@@ -25,7 +25,7 @@ class MoviesServiceTests: XCTestCase {
         let url = urlGenerator.url()!
         Task.init {
             do {
-                let results = try await sut.items(Request(), url: url)
+                let results = try await sut.models(Request(), url: url)
                 XCTAssert(results.count > 0)
             }
         }
