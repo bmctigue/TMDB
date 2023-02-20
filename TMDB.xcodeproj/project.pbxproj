@@ -257,7 +257,6 @@
 		A80C915C21F4BDA6003C2432 /* ApplicationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				A80C915F21F4BDA6003C2432 /* MovieViewModel.swift */,
 				A8693E9322121F000018CDEB /* MoviesInteractor.swift */,
 				A80C915D21F4BDA6003C2432 /* MoviesPresenter.swift */,
 				A88969A9222591490090780C /* MoviesSelectionManager.swift */,
@@ -313,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				A80C918721F4BDA6003C2432 /* Movie.swift */,
+				A80C915F21F4BDA6003C2432 /* MovieViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
