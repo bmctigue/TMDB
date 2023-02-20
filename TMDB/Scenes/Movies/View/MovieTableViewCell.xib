@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHd-0a-Qh4">
-                        <rect key="frame" x="70" y="15" width="234" height="30"/>
+                        <rect key="frame" x="70" y="15" width="220" height="30"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khx-hD-SrZ">
-                        <rect key="frame" x="70" y="53" width="234" height="18"/>
+                        <rect key="frame" x="70" y="53" width="220" height="18"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -63,14 +63,14 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" translatesAutoresizingMaskIntoConstraints="NO" id="HHg-gq-qP7">
-                        <rect key="frame" x="282" y="97.666666666666671" width="21" height="21"/>
+                        <rect key="frame" x="269" y="97.5" width="21" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="21" id="KQg-H3-6p7"/>
                             <constraint firstAttribute="height" constant="21" id="slr-wR-rQD"/>
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d77-is-D28">
-                        <rect key="frame" x="274" y="91.666666666666671" width="46" height="34"/>
+                        <rect key="frame" x="274" y="91.5" width="46" height="34"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="34" id="2of-az-WsR"/>
@@ -126,16 +126,16 @@
                     <constraint firstItem="wqp-1B-AVH" firstAttribute="top" secondItem="d77-is-D28" secondAttribute="bottom" constant="-0.5" id="MG2-VH-lI1"/>
                     <constraint firstItem="wqp-1B-AVH" firstAttribute="top" secondItem="jaD-rN-iKV" secondAttribute="bottom" constant="4" id="NRN-Gl-XA6"/>
                     <constraint firstItem="d77-is-D28" firstAttribute="leading" secondItem="jaD-rN-iKV" secondAttribute="trailing" constant="8" id="RYX-Eb-qee"/>
-                    <constraint firstItem="khx-hD-SrZ" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="X1f-4o-2sP"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="khx-hD-SrZ" secondAttribute="trailing" constant="14" id="Wk4-vN-y7M"/>
+                    <constraint firstAttribute="trailing" secondItem="HHg-gq-qP7" secondAttribute="trailing" constant="30" id="Ya2-sE-qzb"/>
                     <constraint firstItem="oLI-hZ-l9E" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="b5F-vZ-8QI"/>
                     <constraint firstItem="BHd-0a-Qh4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="cin-IJ-7fs"/>
                     <constraint firstAttribute="trailing" secondItem="d77-is-D28" secondAttribute="trailing" id="d6Q-WI-cq4"/>
-                    <constraint firstAttribute="trailing" secondItem="HHg-gq-qP7" secondAttribute="trailing" constant="17" id="dpK-GK-Ns6"/>
                     <constraint firstItem="OWW-Ai-mm3" firstAttribute="top" secondItem="khx-hD-SrZ" secondAttribute="bottom" constant="8" id="dwu-Jz-pQa"/>
-                    <constraint firstItem="BHd-0a-Qh4" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="gIP-sA-W62"/>
                     <constraint firstAttribute="trailingMargin" secondItem="dql-LB-1Hp" secondAttribute="trailing" constant="38" id="jOz-EY-ZlR"/>
                     <constraint firstItem="OWW-Ai-mm3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="70" id="k3W-2F-5qu"/>
                     <constraint firstItem="dql-LB-1Hp" firstAttribute="leading" secondItem="OWW-Ai-mm3" secondAttribute="trailing" constant="5" id="mho-BR-Ib5"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="BHd-0a-Qh4" secondAttribute="trailing" constant="14" id="nWh-PJ-3EO"/>
                     <constraint firstItem="oLI-hZ-l9E" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="pOb-cr-dGd"/>
                     <constraint firstItem="BHd-0a-Qh4" firstAttribute="leading" secondItem="oLI-hZ-l9E" secondAttribute="trailing" constant="12" id="tyW-3F-DZP"/>
                     <constraint firstItem="t3J-4W-OHr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="uDT-ZB-c67"/>
