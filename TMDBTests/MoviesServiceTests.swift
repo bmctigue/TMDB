@@ -19,7 +19,7 @@ class MoviesServiceTests: XCTestCase {
         let store = LocalStore(assetName)
         let request = Request()
         
-        let sut = Tiguer.Service<Movie>(store, cacheKey: cacheKey)
+        let sut = Movies.Service<Movie>(store, cacheKey: cacheKey)
         sut.updateCacheTestingState(.testing)
         let urlGenerator = MoviesDataUrl(request)
         let url = urlGenerator.url()!
