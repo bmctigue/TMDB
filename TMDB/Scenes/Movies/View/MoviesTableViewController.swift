@@ -22,17 +22,19 @@ final class MoviesTableViewController: UIViewController {
     
     var viewModels = [ViewModel]()
     var tableViewDatasource: TableViewDataSource<ViewModel>?
-    private lazy var loadingViewController = LoadingViewController()
-    private lazy var refreshControl = UIRefreshControl()
+    private var loadingViewController: LoadingViewController
+    private var refreshControl: UIRefreshControl
     public var filterState: MovieFilterState = .all
     
-    private let interactor: InteractorProtocol
+    let interactor: Movies.Interactor<Movie, Movies.Presenter<Movie, Movies.ViewModel>, Movies.Service<Movie>>
     let presenter: Movies.Presenter<Movie, ViewModel>
     weak var tableViewDelegate: MoviesViewController?
     
-    init(with interactor: InteractorProtocol, presenter: Movies.Presenter<Movie, ViewModel>) {
+    init(with interactor: Movies.Interactor<Movie, Movies.Presenter<Movie, Movies.ViewModel>, Movies.Service<Movie>>, presenter: Movies.Presenter<Movie, ViewModel>) {
         self.interactor = interactor
         self.presenter = presenter
+        self.loadingViewController = LoadingViewController()
+        self.refreshControl = UIRefreshControl()
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -96,11 +98,11 @@ final class MoviesTableViewController: UIViewController {
     
     func updateFilterState(_ state: MovieFilterState) {
         filterState = state
-        presenter.filterModelsByState(state)
+        interactor.filterModelsByState(state)
     }
     
     func updateSortState(_ state: MovieSortState) {
-        presenter.sortModelsByState(state)
+        interactor.sortModelsByState(state)
     }
     
     required init?(coder aDecoder: NSCoder) {

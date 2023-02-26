@@ -10,5 +10,24 @@ import Foundation
 import Tiguer
 
 extension Movies {
-    final class Interactor<Model, Presenter: PresenterProtocol, Service: ServiceProtocol>: Tiguer.Interactor<Model, Presenter, Service> {}
+    final class Interactor<Model, Presenter: Movies.Presenter<Model, Movies.ViewModel>, Service: ServiceProtocol>: Tiguer.Interactor<Model, Presenter, Service> {}
+}
+
+extension Movies.Interactor {
+    
+    func filterModelsByState(_ state: MovieFilterState) {
+        presenter.filterModelsByState(state)
+    }
+    
+    func sortModelsByState(_ state: MovieSortState) {
+        presenter.sortModelsByState(state)
+    }
+    
+    func updateFavorites(_ state: SelectionState) {
+        presenter.updateFavorites(state)
+    }
+    
+    func getFavorites() -> Set<String> {
+        return presenter.getFavorites()
+    }
 }

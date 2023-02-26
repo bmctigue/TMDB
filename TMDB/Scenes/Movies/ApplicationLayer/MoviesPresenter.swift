@@ -14,9 +14,9 @@ extension Movies {
         
         typealias MovieViewModel = Movies.ViewModel
 
-        private var filterState: MovieFilterState = .all
-        private var sortState: MovieSortState = .none
-        private let favoritesManager = Movies.SelectionManager<Movie>()
+        public var filterState: MovieFilterState = .all
+        public var sortState: MovieSortState = .none
+        public let favoritesManager = Movies.SelectionManager<Movie>()
         private var filterDecorator = MovieSelectedFilterDecorator<ViewModel>()
         private var sortDecorator = MoviePopularitySortDecorator<ViewModel>()
         

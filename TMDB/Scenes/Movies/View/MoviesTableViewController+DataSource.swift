@@ -22,10 +22,10 @@ extension MoviesTableViewController {
             cell.popularityLabel.text = model.formattedPopularity
             cell.cellImageView.kf.indicatorType = .activity
             cell.cellImageView.kf.setImage(with: model.postPathUrl())
-            cell.favoriteState = self.presenter.getFavorites().contains(model.selectionId) ? SelectionState.selected(model.selectionId) : SelectionState.unSelected(model.selectionId)
+            cell.favoriteState = self.interactor.getFavorites().contains(model.selectionId) ? SelectionState.selected(model.selectionId) : SelectionState.unSelected(model.selectionId)
             cell.dynamicFavoriteState.addObserver(self) {
                 if let state = cell.dynamicFavoriteState.value {
-                    self.presenter.updateFavorites(state)
+                    self.interactor.updateFavorites(state)
                 }
             }
             cell.tableViewDelegate = self.tableViewDelegate

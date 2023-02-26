@@ -20,15 +20,19 @@ enum Movies {
         
         private var state: MovieFilterState
         private var store: StoreProtocol
-        private lazy var service = Movies.Service<Movie>(store, cacheKey: Movies.Builder.cacheKey)
-        private lazy var presenter = Movies.Presenter<Movie, Movies.ViewModel>()
-        private lazy var interactor = Movies.Interactor<Movie, Movies.Presenter, Movies.Service>(presenter, service: service)
-        private lazy var tableViewController = MoviesTableViewController(with: interactor, presenter: presenter)
+        private var service: Movies.Service<Movie>
+        private var presenter: Movies.Presenter<Movie, Movies.ViewModel>
+        private var interactor: Movies.Interactor<Movie, Movies.Presenter<Movie, Movies.ViewModel>, Movies.Service<Movie>>
+        private var tableViewController: MoviesTableViewController
         
         init(with title: String, store: StoreProtocol, state: MovieFilterState) {
             self.title = title
             self.store = store
             self.state = state
+            self.service = Movies.Service<Movie>(store, cacheKey: Movies.Builder.cacheKey)
+            self.presenter = Movies.Presenter<Movie, Movies.ViewModel>()
+            self.interactor = Movies.Interactor<Movie, Movies.Presenter, Movies.Service>(presenter, service: service)
+            self.tableViewController = MoviesTableViewController(with: interactor, presenter: presenter)
         }
         
         func run(completionHandler: VCBuilderBlock) {
