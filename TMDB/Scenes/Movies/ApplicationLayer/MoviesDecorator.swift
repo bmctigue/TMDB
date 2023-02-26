@@ -11,7 +11,7 @@ import Tiguer
 
 extension Movies {
     
-    struct MovieSelectedFilterDecorator<ViewModel>: Decorator {
+    public struct MovieSelectedFilterDecorator<ViewModel>: Decorator {
         
         typealias MovieViewModel = Movies.ViewModel
         public var filterState: MovieFilterState = .all
@@ -30,7 +30,7 @@ extension Movies {
         }
     }
     
-    struct MoviePopularitySortDecorator<ViewModel>: Decorator {
+    public struct MoviePopularitySortDecorator<ViewModel>: Decorator {
         
         typealias MovieViewModel = Movies.ViewModel
         public var sortState: MovieSortState = .none
