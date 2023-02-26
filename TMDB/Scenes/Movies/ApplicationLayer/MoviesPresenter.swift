@@ -16,7 +16,9 @@ extension Movies {
 
         private var filterState: MovieFilterState = .all
         private var sortState: MovieSortState = .none
-        private lazy var favoritesManager = Movies.SelectionManager<Movie>()
+        private let favoritesManager = Movies.SelectionManager<Movie>()
+        private var filterDecorator = MovieSelectedFilterDecorator<ViewModel>()
+        private var sortDecorator = MoviePopularitySortDecorator<ViewModel>()
         
         override func updateBaseViewModels() {
             var viewModels = [ViewModel]()
@@ -28,34 +30,13 @@ extension Movies {
             self.baseViewModels = viewModels
         }
         
-        override func filterViewModels(_ viewModels: [ViewModel]) -> [ViewModel] {
-            var filteredViewModels = viewModels
-            if self.filterState == .favorite {
-                filteredViewModels = filteredViewModels.filter {
-                    let model = $0 as! MovieViewModel
-                    let selections = self.favoritesManager.getSelections()
-                    return selections.contains(model.selectionId)
-                }
-            }
-            return filteredViewModels
-        }
-        
-        override func sortViewModels(_ viewModels: [ViewModel]) -> [ViewModel] {
-            var sortedViewModels = viewModels
-            if self.sortState == .ascending {
-                sortedViewModels = sortedViewModels.sorted (by: {
-                    let lhs = $0 as! MovieViewModel
-                    let rhs = $1 as! MovieViewModel
-                    return lhs.popularity < rhs.popularity
-                })
-            } else if self.sortState == .descending {
-                sortedViewModels = sortedViewModels.sorted (by: {
-                    let lhs = $0 as! MovieViewModel
-                    let rhs = $1 as! MovieViewModel
-                    return lhs.popularity > rhs.popularity
-                })
-            }
-            return sortedViewModels
+        override func updateViewModels() {
+            filterDecorator.filterState = filterState
+            sortDecorator.sortState = sortState
+            self.viewModels = baseViewModels
+            self.viewModels = filterDecorator.decorate(self.viewModels)
+            self.viewModels = sortDecorator.decorate(self.viewModels)
+            setDynamicModels(self.viewModels)
         }
     }
 }
@@ -77,5 +58,9 @@ extension Movies.Presenter {
     
     func getFavorites() -> Set<String> {
         return favoritesManager.getSelections()
+    }
+    
+    func getModels() -> [Model] {
+        return self.models
     }
 }

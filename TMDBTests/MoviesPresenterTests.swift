@@ -32,7 +32,7 @@ class MoviesPresenterTests: XCTestCase {
         let sut = Movies.Presenter<Model, ViewModel>()
         sut.models = [movie1, movie2]
         sut.updateBaseViewModels()
-        sut.filterModelsByState(.all)
+        sut.filterModelsByState(MovieFilterState.all)
         let filteredModels = sut.getModels()
         XCTAssert(filteredModels.count == 2)
     }
@@ -42,7 +42,7 @@ class MoviesPresenterTests: XCTestCase {
         let sut = Movies.Presenter<Model, ViewModel>()
         sut.models = [movie1, movie2]
         sut.updateBaseViewModels()
-        sut.updateFavorites(.selected(testId))
+        sut.updateFavorites(SelectionState.selected(testId))
         sut.filterModelsByState(.favorite)
         let dynamicModels = sut.getDynamicModels()
         XCTAssert(dynamicModels.value.count == 1)
