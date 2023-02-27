@@ -9,12 +9,12 @@
 import Foundation
 import Tiguer
 
-enum MovieFilterState {
+public enum MovieFilterState {
     case all
     case favorite
 }
 
-enum MovieSortState {
+public enum MovieSortState {
     case none
     case ascending
     case descending
