@@ -20,8 +20,8 @@ enum Movies {
         
         private var state: MovieFilterState
         private var store: DataStoreProtocol
-        private var modelFactory: Movies.ModelFactory<Movie>
         private var dataAdapter: MoviesDataAdapter<Movie>
+        private var modelFactory: Movies.ModelFactory<Movie>
         private var presenter: Movies.Presenter<Movie, Movies.ViewModel>
         private var interactor: Movies.Interactor<Movie, Movies.Presenter<Movie, Movies.ViewModel>, Movies.ModelFactory<Movie>>
         private var tableViewController: MoviesTableViewController

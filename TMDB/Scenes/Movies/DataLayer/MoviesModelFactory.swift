@@ -11,14 +11,5 @@ import Tiguer
 import Unbox
 
 extension Movies {
-    final class ModelFactory<Model: Codable>: Tiguer.ModelFactory<Model> {
-        override func adaptData(_ data: Data) throws -> [Model] {
-            do {
-                let results: MovieResults = try unbox(data: data)
-                return results.movies.map { $0 as! Model }
-            } catch {
-                throw DataAdapterError.conversionFailed
-            }
-        }
-    }
+    final class ModelFactory<Model: Codable>: Tiguer.ModelFactory<Model> {}
 }
