@@ -26,11 +26,11 @@ final class MoviesTableViewController: UIViewController {
     private var refreshControl: UIRefreshControl
     public var filterState: MovieFilterState = .all
     
-    let interactor: Movies.Interactor<Movie, Movies.Presenter<Movie, Movies.ViewModel>, Movies.Service<Movie>>
+    let interactor: Movies.Interactor<Movie, Movies.Presenter<Movie, Movies.ViewModel>, Movies.ModelFactory<Movie>>
     let presenter: Movies.Presenter<Movie, ViewModel>
     weak var tableViewDelegate: MoviesViewController?
     
-    init(with interactor: Movies.Interactor<Movie, Movies.Presenter<Movie, Movies.ViewModel>, Movies.Service<Movie>>, presenter: Movies.Presenter<Movie, ViewModel>) {
+    init(with interactor: Movies.Interactor<Movie, Movies.Presenter<Movie, Movies.ViewModel>, Movies.ModelFactory<Movie>>, presenter: Movies.Presenter<Movie, ViewModel>) {
         self.interactor = interactor
         self.presenter = presenter
         self.loadingViewController = LoadingViewController()

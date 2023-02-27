@@ -1,5 +1,5 @@
 //
-//  MoviesService.swift
+//  MoviesModelFactory.swift
 //  TMDB
 //
 //  Created by Bruce McTigue on 2/11/19.
@@ -11,7 +11,7 @@ import Tiguer
 import Unbox
 
 extension Movies {
-    final class Service<Model: Codable>: Tiguer.Service<Model> {
+    final class ModelFactory<Model: Codable>: Tiguer.ModelFactory<Model> {
         override func adaptData(_ data: Data) throws -> [Model] {
             do {
                 let results: MovieResults = try unbox(data: data)

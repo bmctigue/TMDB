@@ -10,7 +10,7 @@ import Foundation
 import Tiguer
 
 extension Movies {
-    final class Interactor<Model, Presenter: PresenterDecorator, Service: ServiceProtocol>: Tiguer.Interactor<Model, Presenter, Service>, InteractorPresenter {}
+    final class Interactor<Model, Presenter: PresenterDecorator, ModelFactory: ModelFactoryProtocol>: Tiguer.Interactor<Model, Presenter, ModelFactory>, InteractorPresenter {}
 }
 
 extension Movies.Interactor {

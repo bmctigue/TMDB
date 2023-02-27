@@ -23,10 +23,11 @@ class MoviesInteractorTests: XCTestCase {
     var viewModels = [ViewModel]()
     
     func testFetchItemsForAllMovies() {
-        let store = LocalStore(Movies.Builder.moviesAssetName)
-        let service = Movies.Service<Movie>(store, cacheKey: cacheKey)
+        let store = LocalDataStore(Movies.Builder.moviesAssetName)
+        let dataAdapter = Movies.MoviesDataAdapter<Movie>()
+        let modelFactory = Movies.ModelFactory<Movie>(store, dataAdapter: dataAdapter, cacheKey: cacheKey)
         let presenter = Movies.Presenter<Movie, Movies.ViewModel>()
-        let sut = Movies.Interactor<Movie, Movies.Presenter, Movies.Service>(presenter, service: service)
+        let sut = Movies.Interactor<Movie, Movies.Presenter, Movies.ModelFactory>(presenter, modelFactory: modelFactory)
         let request = Request()
         let urlGenerator = MoviesDataUrl(request)
         let url = urlGenerator.url()!
@@ -40,11 +41,12 @@ class MoviesInteractorTests: XCTestCase {
     }
 
     func testUpdateFavorites() {
-        let store = LocalStore(Movies.Builder.moviesAssetName)
-        let service = Movies.Service<Movie>(store, cacheKey: cacheKey)
+        let store = LocalDataStore(Movies.Builder.moviesAssetName)
+        let dataAdapter = Movies.MoviesDataAdapter<Movie>()
+        let modelFactory = Movies.ModelFactory<Movie>(store, dataAdapter: dataAdapter, cacheKey: cacheKey)
         let testId = String(movie1.movieId)
         let presenter = Movies.Presenter<Model, ViewModel>()
-        let sut = Movies.Interactor<Movie, Movies.Presenter, Movies.Service>(presenter, service: service)
+        let sut = Movies.Interactor<Movie, Movies.Presenter, Movies.ModelFactory<Movie>>(presenter, modelFactory: modelFactory)
         sut.updateFavorites(SelectionState.selected(testId))
         XCTAssertTrue(sut.getFavorites().contains(testId))
         sut.updateFavorites(SelectionState.unSelected(testId))
@@ -52,10 +54,11 @@ class MoviesInteractorTests: XCTestCase {
     }
 
     func testFilterAllModelsByState() {
-        let store = LocalStore(Movies.Builder.moviesAssetName)
-        let service = Movies.Service<Movie>(store, cacheKey: cacheKey)
+        let store = LocalDataStore(Movies.Builder.moviesAssetName)
+        let dataAdapter = Movies.MoviesDataAdapter<Movie>()
+        let modelFactory = Movies.ModelFactory<Movie>(store, dataAdapter: dataAdapter, cacheKey: cacheKey)
         let presenter = Movies.Presenter<Model, ViewModel>()
-        let sut = Movies.Interactor<Movie, Movies.Presenter, Movies.Service>(presenter, service: service)
+        let sut = Movies.Interactor<Movie, Movies.Presenter, Movies.ModelFactory>(presenter, modelFactory: modelFactory)
         presenter.models = [movie1, movie2]
         presenter.updateBaseViewModels()
         sut.filterModelsByState(MovieFilterState.all)
@@ -64,13 +67,14 @@ class MoviesInteractorTests: XCTestCase {
     }
 
     func testFilterModelsByState() {
-        let store = LocalStore(Movies.Builder.moviesAssetName)
-        let service = Movies.Service<Movie>(store, cacheKey: cacheKey)
+        let store = LocalDataStore(Movies.Builder.moviesAssetName)
+        let dataAdapter = Movies.MoviesDataAdapter<Movie>()
+        let modelFactory = Movies.ModelFactory<Movie>(store, dataAdapter: dataAdapter, cacheKey: cacheKey)
         let testId = String(movie1.movieId)
         let presenter = Movies.Presenter<Model, ViewModel>()
         presenter.models = [movie1, movie2]
         presenter.updateBaseViewModels()
-        let sut = Movies.Interactor<Movie, Movies.Presenter, Movies.Service>(presenter, service: service)
+        let sut = Movies.Interactor<Movie, Movies.Presenter, Movies.ModelFactory>(presenter, modelFactory: modelFactory)
         sut.updateFavorites(SelectionState.selected(testId))
         sut.filterModelsByState(MovieFilterState.favorite)
         let dynamicModels = presenter.getDynamicModels()
@@ -78,12 +82,13 @@ class MoviesInteractorTests: XCTestCase {
     }
 
     func testSortModelsByState() {
-        let store = LocalStore(Movies.Builder.moviesAssetName)
-        let service = Movies.Service<Movie>(store, cacheKey: cacheKey)
+        let store = LocalDataStore(Movies.Builder.moviesAssetName)
+        let dataAdapter = Movies.MoviesDataAdapter<Movie>()
+        let modelFactory = Movies.ModelFactory<Movie>(store, dataAdapter: dataAdapter, cacheKey: cacheKey)
         let presenter = Movies.Presenter<Model, ViewModel>()
         presenter.models = [movie1, movie2]
         presenter.updateBaseViewModels()
-        let sut = Movies.Interactor<Movie, Movies.Presenter, Movies.Service>(presenter, service: service)
+        let sut = Movies.Interactor<Movie, Movies.Presenter, Movies.ModelFactory>(presenter, modelFactory: modelFactory)
         sut.sortModelsByState(MovieSortState.none)
         var dynamicModels = presenter.getDynamicModels()
         XCTAssert(dynamicModels.value.first!.movieId == movie1.movieId)

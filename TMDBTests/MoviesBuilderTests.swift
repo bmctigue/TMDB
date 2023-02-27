@@ -12,7 +12,7 @@ import XCTest
 
 class MoviesBuilderTests: XCTestCase {
     
-    lazy var store = LocalStore(Movies.Builder.moviesAssetName)
+    lazy var store = LocalDataStore(Movies.Builder.moviesAssetName)
     var resultController: UINavigationController?
 
     func testMoviesBuilder() {

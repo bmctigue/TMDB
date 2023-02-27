@@ -19,19 +19,21 @@ enum Movies {
         private var title: String
         
         private var state: MovieFilterState
-        private var store: StoreProtocol
-        private var service: Movies.Service<Movie>
+        private var store: DataStoreProtocol
+        private var modelFactory: Movies.ModelFactory<Movie>
+        private var dataAdapter: MoviesDataAdapter<Movie>
         private var presenter: Movies.Presenter<Movie, Movies.ViewModel>
-        private var interactor: Movies.Interactor<Movie, Movies.Presenter<Movie, Movies.ViewModel>, Movies.Service<Movie>>
+        private var interactor: Movies.Interactor<Movie, Movies.Presenter<Movie, Movies.ViewModel>, Movies.ModelFactory<Movie>>
         private var tableViewController: MoviesTableViewController
         
-        init(with title: String, store: StoreProtocol, state: MovieFilterState) {
+        init(with title: String, store: DataStoreProtocol, state: MovieFilterState) {
             self.title = title
             self.store = store
             self.state = state
-            self.service = Movies.Service<Movie>(store, cacheKey: Movies.Builder.cacheKey)
+            self.dataAdapter = MoviesDataAdapter<Movie>()
+            self.modelFactory = Movies.ModelFactory<Movie>(store, dataAdapter: dataAdapter, cacheKey: Movies.Builder.cacheKey)
             self.presenter = Movies.Presenter<Movie, Movies.ViewModel>()
-            self.interactor = Movies.Interactor<Movie, Movies.Presenter, Movies.Service>(presenter, service: service)
+            self.interactor = Movies.Interactor<Movie, Movies.Presenter, Movies.ModelFactory>(presenter, modelFactory: modelFactory)
             self.tableViewController = MoviesTableViewController(with: interactor, presenter: presenter)
         }
         

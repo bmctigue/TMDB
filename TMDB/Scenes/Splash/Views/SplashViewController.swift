@@ -52,7 +52,7 @@ final class SplashViewController: UIViewController {
     }
     
     func loadMainView() {
-        let store = RemoteStore()
+        let store = RemoteDataStore()
         let moviesBuilder = Movies.Builder(with: Movies.Builder.moviesTitle, store: store, state: .all)
         if let window = window {
             UIView.transition(with: window, duration: 2.0, options: .transitionCrossDissolve, animations: {}, completion: { _ in
