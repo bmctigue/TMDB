@@ -15,7 +15,7 @@ class MoviesModelFactoryTests: XCTestCase {
     let assetName = Movies.Builder.moviesAssetName
     let cacheKey = "movies"
 
-    func testModelFactory() {
+    func testModelFactory() async throws {
         let store = LocalDataStore(assetName)
         let request = Request()
         let dataAdapter = Movies.MoviesDataAdapter<Movie>()
